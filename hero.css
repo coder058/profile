@@ -69,34 +69,6 @@
   z-index: 1;
 }
 
-.portrait-chart__orbit {
-  fill: none;
-  stroke: color-mix(in srgb, var(--section-ink) 45%, transparent);
-  transform-box: fill-box;
-  transform-origin: center;
-}
-
-.portrait-chart__orbit-group {
-  animation: portrait-orbit 60s linear infinite;
-  transform-box: view-box;
-  transform-origin: center;
-}
-
-.portrait-chart__orbit--outer {
-  stroke-dasharray: 178 570;
-}
-
-.portrait-chart__orbit--inner {
-  opacity: 0.35;
-  stroke-dasharray: 2 9;
-}
-
-.portrait-chart__satellite {
-  fill: #8b5b29;
-  stroke: var(--section-bg);
-  stroke-width: 2;
-}
-
 .portrait-chart__grid {
   fill: none;
   opacity: 0.18;
@@ -134,8 +106,6 @@
   transform: translateX(-50%);
   white-space: nowrap;
 }
-
-@keyframes portrait-orbit { to { transform: rotate(360deg); } }
 
 @keyframes portrait-trace {
   from { stroke-dashoffset: 260; }
@@ -190,7 +160,5 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .portrait-chart__orbit-group,
-  .portrait-chart__trace,
-  .portrait-chart__satellite { animation: none; }
+  .portrait-chart__trace { animation: none; }
 }
