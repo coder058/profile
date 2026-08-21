@@ -1,0 +1,4 @@
+.project-card>a,.project-card:not(:has(>a)){grid-template-rows:100%}
+.project-card .project-image{display:none}
+.project-copy{min-height:100%;padding:18px 19px 17px}
+@media(max-width:700px){.project-copy{padding:15px 16px 15px}}
