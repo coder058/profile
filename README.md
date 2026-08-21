@@ -12,7 +12,7 @@ Ruby on Rails, Python, TypeScript & SQL | AI Products, Data Systems and Operatio
 - **Hyperliquid** — market microstructure research focused on execution cost and rejecting unsuitable strategies.
 - **Challenges** — a curated archive of Ruby, Rails, SQL and web-development exercises.
 
-The interaction system uses scroll-linked palette changes, progressive reveals, restrained parallax and reduced-motion fallbacks. It takes inspiration from archival editorial websites without copying their branding or assets.
+The interaction system uses scroll-linked palette changes, progressive reveals, a moving portrait chart and reduced-motion fallbacks. It takes inspiration from archival editorial websites without copying their branding or assets.
 
 ## Run locally
 

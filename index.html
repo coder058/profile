@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Jordi Lluis — software engineer building operational products, data systems and applied AI tools.">
-  <title>Jordi Lluis — Software Engineer</title>
+  <meta name="description" content="Jordi Lluis — projects and practice across design, code, operations, data and applied AI.">
+  <title>Jordi Lluis — Projects and Practice</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="enhancements.css">
   <link rel="stylesheet" href="hero.css">
@@ -32,7 +32,28 @@
           </div>
         </div>
         <div class="hero-profile">
-          <figure class="hero-portrait"><img src="assets/jordi-lluis.png" alt="Portrait of Jordi Lluis"></figure>
+          <figure class="hero-portrait">
+            <img src="assets/jordi-lluis.png" alt="Portrait of Jordi Lluis">
+            <svg class="portrait-chart" viewBox="0 0 280 280" role="img" aria-labelledby="portrait-chart-title portrait-chart-desc">
+              <title id="portrait-chart-title">Design process trace</title>
+              <desc id="portrait-chart-desc">A decorative line showing a cycle of questioning, building, testing and iteration around the portrait.</desc>
+              <g class="portrait-chart__orbit-group">
+                <circle class="portrait-chart__orbit portrait-chart__orbit--outer" cx="140" cy="140" r="119"></circle>
+                <circle class="portrait-chart__satellite" cx="272" cy="140" r="3.5"></circle>
+              </g>
+              <circle class="portrait-chart__orbit portrait-chart__orbit--inner" cx="140" cy="140" r="105"></circle>
+              <path class="portrait-chart__trace" d="M40 190L61 218L90 240L126 250L163 239L200 220L238 190"></path>
+              <circle class="portrait-chart__point" cx="90" cy="240" r="3"></circle>
+              <circle class="portrait-chart__point" cx="126" cy="250" r="3"></circle>
+              <circle class="portrait-chart__point" cx="200" cy="220" r="4"></circle>
+              <g class="portrait-chart__ticks" aria-hidden="true">
+                <text x="30" y="246">ASK</text>
+                <text x="111" y="246">BUILD</text>
+                <text x="207" y="246">TEST</text>
+              </g>
+            </svg>
+            <span class="portrait-chart__label" aria-hidden="true">PROCESS / TRACE</span>
+          </figure>
         </div>
       </div>
       <div class="hero-marquee" aria-hidden="true"><span>SOFTWARE / OPERATIONS / RESEARCH / SOFTWARE / OPERATIONS / RESEARCH /</span></div>
@@ -45,8 +66,8 @@
       </header>
       <div class="project-grid">
         <article class="project-card card-sand reveal">
-          <a href="https://polybow-archive.vercel.app" target="_blank" rel="noreferrer" aria-label="Open the Polybow closed desk">
-            <div class="project-copy"><p class="project-index">001 / LIVE SYSTEM FORENSICS</p><h3>Polybow</h3><p>An anonymized reconstruction of 1,137 live prediction markets: peak, drawdown and the controls that were missing.</p><footer><span>PYTHON · DATA · RISK</span><span>CLOSED DESK ↗</span></footer></div>
+          <a href="https://polybow-archive.vercel.app" target="_blank" rel="noreferrer" aria-label="Open the Polybow live trading system archive">
+            <div class="project-copy"><p class="project-index">001 / LIVE SYSTEM FORENSICS</p><h3>Polybow</h3><p>A live Python trading bot for short-duration Polymarket markets, reconstructed from discovery, oracle data, execution and the full drawdown.</p><footer><span>PYTHON · APIS · PROBABILITY</span><span>ARCHIVE ↗</span></footer></div>
           </a>
         </article>
         <article class="project-card card-stone reveal">
@@ -88,7 +109,7 @@
     </section>
     <section id="about" class="about-feature palette-section" data-bg="#d9cba0" data-ink="#292824" aria-labelledby="about-title">
       <p>02 / ABOUT</p>
-      <p id="about-title" class="about-copy">I start with curiosity, asking questions, understanding how things work, and learning through design and code. I turn ideas into projects, using creativity to explore problems and build useful things.</p>
+      <p id="about-title" class="about-copy">Curiosity, understanding how things work, and learning through design and code. Turning ideas into projects, using creativity to explore problems and build useful things.</p>
     </section>
   </main>
   <footer class="site-footer"><span>© 2026</span><span>DESIGNED IN THE NETHERLANDS</span></footer>
