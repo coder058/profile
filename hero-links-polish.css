@@ -1,4 +1,4 @@
-.hero-main>.hero-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:38px;max-width:760px;width:100%}
+.hero-main>.hero-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:42px;max-width:700px;width:100%}
 .hero-main>.hero-links a{aspect-ratio:1.15;min-height:150px;padding:15px}
 .hero-main>.hero-links a strong{font-size:clamp(24px,2.1vw,34px)}
 @media(max-width:700px){.hero-main>.hero-links{gap:0;margin-top:30px}.hero-main>.hero-links a{min-height:116px;padding:10px}.hero-main>.hero-links a strong{font-size:20px}}

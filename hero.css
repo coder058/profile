@@ -5,7 +5,8 @@
 @media(max-width:700px){.hero-statement{margin:55px 0 0}}
 
 /* Keep the portrait secondary to the project headlines. */
-.hero-layout{grid-template-columns:minmax(0,1.55fr) minmax(320px,.45fr);min-height:650px}
-.hero-profile{grid-template-rows:minmax(320px,1fr) auto}
-.hero-portrait{min-height:320px}
-@media(max-width:700px){.hero-profile{grid-template-rows:320px auto}.hero-portrait{min-height:320px}}
+.hero-layout{grid-template-columns:minmax(0,1fr) 250px;min-height:610px}
+.hero-main h1{font-size:clamp(96px,10.5vw,166px);line-height:.74}
+.hero-profile{align-items:flex-end;display:flex;flex-direction:column;gap:28px}
+.hero-portrait{border-radius:50%;height:220px;min-height:0;width:220px}
+@media(max-width:700px){.hero-layout{min-height:auto}.hero-main h1{font-size:27vw}.hero-profile{align-items:flex-start;gap:24px}.hero-portrait{height:150px;width:150px}}
