@@ -4,9 +4,10 @@
 .hero-statement{margin:9vh 0 34px}
 @media(max-width:700px){.hero-statement{margin:55px 0 0}}
 
-/* Keep the portrait secondary to the project headlines. */
-.hero-layout{grid-template-columns:minmax(0,1fr) 250px;min-height:610px}
-.hero-main h1{font-size:clamp(96px,10.5vw,166px);line-height:.74}
-.hero-profile{align-items:flex-end;display:flex;flex-direction:column;gap:28px}
-.hero-portrait{border-radius:50%;height:220px;min-height:0;width:220px}
-@media(max-width:700px){.hero-layout{min-height:auto}.hero-main h1{font-size:27vw}.hero-profile{align-items:flex-start;gap:24px}.hero-portrait{height:150px;width:150px}}
+/* One centered composition: name + portrait, then three equally spaced links. */
+.hero-layout{align-items:center;grid-template-columns:minmax(0,1fr) 220px;grid-template-rows:auto auto;column-gap:64px;margin:0 auto;max-width:1320px;min-height:0;padding:64px 0 72px}
+.hero-main{display:contents}
+.hero-main h1{align-self:center;font-size:clamp(96px,10.5vw,166px);grid-column:1;grid-row:1;line-height:.74}
+.hero-profile{align-items:center;display:flex;grid-column:2;grid-row:1;justify-content:center}
+.hero-portrait{border-radius:50%;height:210px;min-height:0;width:210px}
+@media(max-width:700px){.hero-layout{display:grid;grid-template-columns:minmax(0,1fr) 118px;column-gap:18px;padding:42px 0 54px}.hero-main{display:contents}.hero-main h1{font-size:21vw;grid-column:1;grid-row:1}.hero-profile{grid-column:2;grid-row:1}.hero-portrait{height:112px;width:112px}}
