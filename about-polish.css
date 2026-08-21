@@ -1,2 +1,0 @@
-.about-copy{font-size:clamp(35px,5vw,78px);letter-spacing:-.06em;line-height:.92;margin:15vh 0 0;max-width:1180px}
-@media(max-width:700px){.about-copy{font-size:18px;line-height:1.25;max-width:92%}}
