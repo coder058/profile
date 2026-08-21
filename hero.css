@@ -3,3 +3,9 @@
 .hero-links a span{font-size:9px}
 .hero-statement{margin:9vh 0 34px}
 @media(max-width:700px){.hero-statement{margin:55px 0 0}}
+
+/* Keep the portrait secondary to the project headlines. */
+.hero-layout{grid-template-columns:minmax(0,1.55fr) minmax(320px,.45fr);min-height:650px}
+.hero-profile{grid-template-rows:minmax(320px,1fr) auto}
+.hero-portrait{min-height:320px}
+@media(max-width:700px){.hero-profile{grid-template-rows:320px auto}.hero-portrait{min-height:320px}}
