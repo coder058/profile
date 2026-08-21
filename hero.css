@@ -55,63 +55,6 @@
   z-index: 2;
 }
 
-/* The old pseudo-element orbit was not centered: its transform origin was
-   the element corner, so the marker drifted instead of circling the portrait. */
-.portrait-chart {
-  height: 280px;
-  left: 50%;
-  overflow: visible;
-  pointer-events: none;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 280px;
-  z-index: 1;
-}
-
-.portrait-chart__grid {
-  fill: none;
-  opacity: 0.18;
-  stroke: var(--section-ink);
-  stroke-dasharray: 1 5;
-  stroke-width: 0.8;
-}
-
-.portrait-chart__trace {
-  fill: none;
-  stroke: var(--section-ink);
-  stroke-dasharray: 260;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 1.8;
-  animation: portrait-trace 4.5s ease-out both;
-}
-
-.portrait-chart__point { fill: var(--section-ink); }
-
-.portrait-chart__point--active { fill: #8b5b29; }
-
-.portrait-chart__ticks {
-  fill: var(--section-ink);
-  font: 7px/1 var(--mono);
-  letter-spacing: 0.08em;
-}
-
-.portrait-chart__label {
-  bottom: -43px;
-  font: 8px/1 var(--mono);
-  left: 50%;
-  letter-spacing: 0.09em;
-  position: absolute;
-  transform: translateX(-50%);
-  white-space: nowrap;
-}
-
-@keyframes portrait-trace {
-  from { stroke-dashoffset: 260; }
-  to { stroke-dashoffset: 0; }
-}
-
 .hero-main > .hero-links {
   display: grid;
   gap: 18px;
@@ -138,7 +81,6 @@
   .hero-layout { column-gap: 36px; grid-template-columns: minmax(0, 1fr) 190px; }
   .hero-main h1 { font-size: clamp(88px, 10vw, 146px); }
   .hero-portrait { height: 164px; width: 164px; }
-  .portrait-chart { height: 250px; width: 250px; }
 }
 
 @media (max-width: 700px) {
@@ -151,14 +93,7 @@
   .hero-main h1 { font-size: 21vw; grid-column: 1; grid-row: 1; }
   .hero-profile { grid-column: 2; grid-row: 1; }
   .hero-portrait { height: 100px; width: 100px; }
-  .portrait-chart { height: 164px; width: 164px; }
-  .portrait-chart__label { bottom: -28px; font-size: 6px; }
-  .portrait-chart__ticks { font-size: 5px; }
   .hero-main > .hero-links { gap: 10px; margin-top: 34px; }
   .hero-main > .hero-links a { padding: 10px; }
   .hero-main > .hero-links a strong { font-size: 18px; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .portrait-chart__trace { animation: none; }
 }
