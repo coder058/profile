@@ -6,11 +6,11 @@ Ruby on Rails, Python, TypeScript & SQL | AI Products, Data Systems and Operatio
 
 - **Polybow Forensics** — anonymized, reproducible postmortem of 1,137 live prediction markets. No profitability claim is made.
 - **DispatchOps** — TypeScript/React playable logistics simulation with a deterministic shift engine and a human-in-the-loop assignment agent.
-- **VÆRN** — Rails 8 commerce and fulfilment system covering catalogue, payments, stock reservation and fulfilment.
+- **VÆRN** — Rails 8 commerce and fulfilment system covering catalogue, payments, stock reservations, and fulfilment.
 - **City Gardens** — team-built Ruby on Rails community-garden product with a public source repository.
-- **Video AI Digest** — a local-first workflow for converting video, audio, URLs and transcripts into searchable digests.
+- **Video AI Digest** — a local-first workflow for converting video, audio, URLs, and transcripts into searchable digests.
 - **Hyperliquid** — market microstructure research focused on execution cost and rejecting unsuitable strategies.
-- **Challenges** — a curated archive of Ruby, Rails, SQL and web-development exercises.
+- **Challenges** — a curated archive of Ruby, Rails, SQL, and web-development exercises.
 
 The interaction system uses scroll-linked palette changes, progressive reveals, a moving portrait chart and reduced-motion fallbacks. It takes inspiration from archival editorial websites without copying their branding or assets.
 
