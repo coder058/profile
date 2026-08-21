@@ -1,4 +1,196 @@
-.hero-v2{display:block;min-height:calc(100vh - 47px);padding:24px 28px 0}.hero-layout{display:grid;gap:42px;grid-template-columns:minmax(0,1.42fr) minmax(390px,.58fr);min-height:730px;padding-top:35px}.hero-main{display:flex;flex-direction:column;min-width:0}.hero-role{font:9px/1.3 var(--mono);letter-spacing:.08em;margin:2px 0 8vh}.hero-main h1{font-size:clamp(116px,13.6vw,215px);font-weight:700;letter-spacing:-.095em;line-height:.7;margin:0;white-space:normal}.hero-main h1 span{color:#8b5b29}.hero-statement{border-top:1px dotted var(--line);font-size:clamp(19px,1.65vw,27px);letter-spacing:-.04em;line-height:1.15;margin:auto 0 34px;max-width:650px;padding-top:14px}.hero-profile{align-content:start;display:grid;grid-template-rows:minmax(390px,1fr) auto;min-width:0}.hero-portrait{background:#c3b09a;margin:0;min-height:390px;overflow:hidden;position:relative}.hero-portrait img{filter:grayscale(.18) sepia(.08);height:100%;object-fit:cover;object-position:50% 24%;position:absolute;width:100%}.hero-portrait figcaption{background:#f6f1e0;bottom:0;font:8px/1 var(--mono);left:0;letter-spacing:.06em;padding:9px 11px;position:absolute}.hero-links{display:grid;grid-template-columns:1fr 1fr}.hero-links a{aspect-ratio:1.65;border-bottom:1px dotted var(--line);border-right:1px dotted var(--line);display:flex;flex-direction:column;justify-content:space-between;min-height:118px;padding:11px;position:relative}.hero-links a:nth-child(2n){border-right:0}.hero-links a span{font:7px/1 var(--mono);letter-spacing:.07em}.hero-links a strong{font-size:clamp(20px,1.65vw,27px);letter-spacing:-.055em}.hero-links a b{font:10px/1 var(--mono);position:absolute;right:11px;top:11px}.hero-links a:hover{background:#292824;color:#f6f1e0}.hero-marquee{border-top:1px dotted var(--line);font:8px/1 var(--mono);letter-spacing:.12em;overflow:hidden;padding:12px 0;white-space:nowrap}.hero-marquee span{animation:hero-ticker 26s linear infinite;display:block;width:max-content}@keyframes hero-ticker{to{transform:translateX(-50%)}}@media(max-width:1050px){.hero-layout{grid-template-columns:1.1fr .9fr}.hero-main h1{font-size:clamp(94px,13vw,150px)}.hero-links a{aspect-ratio:1.35}}@media(max-width:700px){.hero-v2{padding:20px 14px 0}.hero-layout{display:flex;min-height:auto;flex-direction:column;padding-top:25px}.hero-role{margin-bottom:45px}.hero-main h1{font-size:29vw;line-height:.72}.hero-statement{font-size:20px;margin:55px 0 0}.hero-profile{grid-template-rows:440px auto}.hero-portrait{min-height:440px}.hero-links a{aspect-ratio:1.25;min-height:0}.hero-links a strong{font-size:25px}.hero-marquee{margin-top:45px}}@media(prefers-reduced-motion:reduce){.hero-marquee span{animation:none}}
-.hero-links a{aspect-ratio:1}
-.hero-statement{margin:9vh 0 34px}
-@media(max-width:700px){.hero-statement{margin:55px 0 0}}
+.hero-v2 {
+  display: block;
+  min-height: calc(100vh - 47px);
+  padding: 24px 28px 0;
+}
+
+.hero-layout {
+  align-items: center;
+  column-gap: 64px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px;
+  grid-template-rows: auto auto;
+  margin: 0 auto;
+  max-width: 1320px;
+  min-height: 0;
+  padding: 64px 0 72px;
+}
+
+.hero-main { display: contents; }
+
+.hero-main h1 {
+  align-self: center;
+  font-size: clamp(96px, 10.5vw, 166px);
+  grid-column: 1;
+  grid-row: 1;
+  line-height: 0.74;
+}
+
+.hero-profile {
+  align-items: center;
+  display: flex;
+  grid-column: 2;
+  grid-row: 1;
+  justify-content: center;
+}
+
+.hero-portrait {
+  background: transparent;
+  border-radius: 50%;
+  height: 184px;
+  margin: 0;
+  overflow: visible;
+  position: relative;
+  width: 184px;
+}
+
+.hero-portrait img {
+  border-radius: 50%;
+  filter: grayscale(1) contrast(1.04);
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 24%;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+}
+
+/* The old pseudo-element orbit was not centered: its transform origin was
+   the element corner, so the marker drifted instead of circling the portrait. */
+.portrait-chart {
+  height: 280px;
+  left: 50%;
+  overflow: visible;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 280px;
+  z-index: 1;
+}
+
+.portrait-chart__orbit {
+  fill: none;
+  stroke: color-mix(in srgb, var(--section-ink) 45%, transparent);
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.portrait-chart__orbit-group {
+  animation: portrait-orbit 60s linear infinite;
+  transform-box: view-box;
+  transform-origin: center;
+}
+
+.portrait-chart__orbit--outer {
+  stroke-dasharray: 178 570;
+}
+
+.portrait-chart__orbit--inner {
+  opacity: 0.35;
+  stroke-dasharray: 2 9;
+}
+
+.portrait-chart__satellite {
+  fill: #8b5b29;
+  stroke: var(--section-bg);
+  stroke-width: 2;
+}
+
+.portrait-chart__grid {
+  fill: none;
+  opacity: 0.18;
+  stroke: var(--section-ink);
+  stroke-dasharray: 1 5;
+  stroke-width: 0.8;
+}
+
+.portrait-chart__trace {
+  fill: none;
+  stroke: var(--section-ink);
+  stroke-dasharray: 260;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+  animation: portrait-trace 4.5s ease-out both;
+}
+
+.portrait-chart__point { fill: var(--section-ink); }
+
+.portrait-chart__point--active { fill: #8b5b29; }
+
+.portrait-chart__ticks {
+  fill: var(--section-ink);
+  font: 7px/1 var(--mono);
+  letter-spacing: 0.08em;
+}
+
+.portrait-chart__label {
+  bottom: -43px;
+  font: 8px/1 var(--mono);
+  left: 50%;
+  letter-spacing: 0.09em;
+  position: absolute;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+@keyframes portrait-orbit { to { transform: rotate(360deg); } }
+
+@keyframes portrait-trace {
+  from { stroke-dashoffset: 260; }
+  to { stroke-dashoffset: 0; }
+}
+
+.hero-main > .hero-links {
+  display: grid;
+  gap: 18px;
+  grid-column: 1 / -1;
+  grid-row: 2;
+  grid-template-columns: repeat(3, minmax(0, 240px));
+  justify-content: center;
+  margin: 54px auto 0;
+  max-width: 780px;
+  width: 100%;
+}
+
+.hero-main > .hero-links a {
+  aspect-ratio: 1;
+  border: 1px dotted var(--line);
+  min-height: 0;
+  padding: 16px;
+}
+
+.hero-main > .hero-links a:nth-child(2n) { border-right: 1px dotted var(--line); }
+.hero-main > .hero-links a strong { font-size: clamp(24px, 2.1vw, 34px); }
+
+@media (max-width: 1050px) {
+  .hero-layout { column-gap: 36px; grid-template-columns: minmax(0, 1fr) 190px; }
+  .hero-main h1 { font-size: clamp(88px, 10vw, 146px); }
+  .hero-portrait { height: 164px; width: 164px; }
+  .portrait-chart { height: 250px; width: 250px; }
+}
+
+@media (max-width: 700px) {
+  .hero-v2 { padding: 20px 14px 0; }
+  .hero-layout {
+    column-gap: 18px;
+    grid-template-columns: minmax(0, 1fr) 112px;
+    padding: 42px 0 54px;
+  }
+  .hero-main h1 { font-size: 21vw; grid-column: 1; grid-row: 1; }
+  .hero-profile { grid-column: 2; grid-row: 1; }
+  .hero-portrait { height: 100px; width: 100px; }
+  .portrait-chart { height: 164px; width: 164px; }
+  .portrait-chart__label { bottom: -28px; font-size: 6px; }
+  .portrait-chart__ticks { font-size: 5px; }
+  .hero-main > .hero-links { gap: 10px; margin-top: 34px; }
+  .hero-main > .hero-links a { padding: 10px; }
+  .hero-main > .hero-links a strong { font-size: 18px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portrait-chart__orbit-group,
+  .portrait-chart__trace,
+  .portrait-chart__satellite { animation: none; }
+}

@@ -3,38 +3,57 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Jordi Lluis — software engineer building operational products, data systems and applied AI tools.">
-  <title>Jordi Lluis — Software Engineer</title>
+  <meta name="description" content="Jordi Lluis — projects and practice across design, code, operations, data and applied AI.">
+  <title>Jordi Lluis — Projects and Practice</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="enhancements.css">
   <link rel="stylesheet" href="hero.css">
+  <link rel="stylesheet" href="project-squares.css">
+  <link rel="stylesheet" href="header-polish.css">
+  <link rel="stylesheet" href="hero-links-polish.css">
+  <link rel="stylesheet" href="other-work.css">
   <script src="motion.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#work">Skip to work</a>
   <div class="page-progress" aria-hidden="true"><span></span></div>
   <header class="site-header">
-    <a class="wordmark" href="#top">JL / 26</a>
-    <nav aria-label="Primary navigation"><a href="#work">Work</a><a href="#about">About</a></nav>
-    <a href="assets/jordi-lluis-cv.pdf" target="_blank" rel="noreferrer">CV ↗</a>
+    <nav aria-label="Primary navigation"><a href="#work">Projects</a><a href="#about">About</a></nav>
   </header>
   <main id="top">
     <section class="hero hero-v2 palette-section" data-bg="#f6f1e0" data-ink="#292824">
-      <p class="technical-line">JORDI LLUIS · SOFTWARE ENGINEER · DORDRECHT / NETHERLANDS · 2023—2026</p>
       <div class="hero-layout">
         <div class="hero-main">
-          <p class="hero-role">RUBY ON RAILS, PYTHON, TYPESCRIPT &amp; SQL | AI PRODUCTS, DATA SYSTEMS AND OPERATIONAL TOOLS</p>
           <h1>JORDI<br>LLUIS<span>.</span></h1>
-          <p class="hero-statement">I turn operational experience and difficult data into software people can actually use.</p>
-        </div>
-        <div class="hero-profile">
-          <figure class="hero-portrait"><img src="assets/jordi-lluis.png" alt="Portrait of Jordi Lluis"><figcaption>JORDI LLUIS / SOFTWARE ENGINEER</figcaption></figure>
           <div class="hero-links" aria-label="Primary links">
             <a href="https://github.com/coder058" target="_blank" rel="noreferrer"><span>01 / SOURCE</span><strong>GitHub</strong><b>↗</b></a>
             <a href="assets/jordi-lluis-cv.pdf" target="_blank" rel="noreferrer"><span>02 / PROFILE</span><strong>Résumé</strong><b>↓</b></a>
             <a href="mailto:joord918@gmail.com"><span>03 / CONTACT</span><strong>Email</strong><b>↗</b></a>
-            <a href="https://www.linkedin.com/in/jordi-lluis-14228242a/" target="_blank" rel="noreferrer"><span>04 / PROFILE</span><strong>LinkedIn</strong><b>↗</b></a>
           </div>
+        </div>
+        <div class="hero-profile">
+          <figure class="hero-portrait">
+            <img src="assets/jordi-lluis.png" alt="Portrait of Jordi Lluis">
+            <svg class="portrait-chart" viewBox="0 0 280 280" role="img" aria-labelledby="portrait-chart-title portrait-chart-desc">
+              <title id="portrait-chart-title">Design process trace</title>
+              <desc id="portrait-chart-desc">A decorative line showing a cycle of questioning, building, testing and iteration around the portrait.</desc>
+              <g class="portrait-chart__orbit-group">
+                <circle class="portrait-chart__orbit portrait-chart__orbit--outer" cx="140" cy="140" r="119"></circle>
+                <circle class="portrait-chart__satellite" cx="272" cy="140" r="3.5"></circle>
+              </g>
+              <circle class="portrait-chart__orbit portrait-chart__orbit--inner" cx="140" cy="140" r="105"></circle>
+              <path class="portrait-chart__trace" d="M40 190L61 218L90 240L126 250L163 239L200 220L238 190"></path>
+              <circle class="portrait-chart__point" cx="90" cy="240" r="3"></circle>
+              <circle class="portrait-chart__point" cx="126" cy="250" r="3"></circle>
+              <circle class="portrait-chart__point" cx="200" cy="220" r="4"></circle>
+              <g class="portrait-chart__ticks" aria-hidden="true">
+                <text x="30" y="246">ASK</text>
+                <text x="111" y="246">BUILD</text>
+                <text x="207" y="246">TEST</text>
+              </g>
+            </svg>
+            <span class="portrait-chart__label" aria-hidden="true">PROCESS / TRACE</span>
+          </figure>
         </div>
       </div>
       <div class="hero-marquee" aria-hidden="true"><span>SOFTWARE / OPERATIONS / RESEARCH / SOFTWARE / OPERATIONS / RESEARCH /</span></div>
@@ -42,48 +61,57 @@
     <section id="work" class="work palette-section" data-bg="#c7bdaf" data-ink="#292824" aria-labelledby="work-title">
       <header class="work-header">
         <p>01 / SELECTED WORK</p>
-        <h2 id="work-title">Six projects.<br>One working archive.</h2>
-        <p class="work-note">Products, investigations and systems built to test what happens beyond the presentation.</p>
+        <h2 id="work-title">Projects</h2>
+        <span aria-hidden="true"></span>
       </header>
       <div class="project-grid">
         <article class="project-card card-sand reveal">
-          <a href="https://github.com/coder058" target="_blank" rel="noreferrer" aria-label="View Polybow Forensics source index">
-            <div class="project-image"><img src="assets/project-polybow.svg" alt="Polybow balance reconstruction and risk analysis graphic"></div>
-            <div class="project-copy"><p class="project-index">001 / LIVE SYSTEM FORENSICS</p><h3>Polybow</h3><p>An anonymized reconstruction of 1,137 live prediction markets: peak, drawdown and the controls that were missing.</p><footer><span>PYTHON · DATA · RISK</span><span>↗</span></footer></div>
+          <a href="https://polybow-archive.vercel.app" target="_blank" rel="noreferrer" aria-label="Open the Polybow live trading system archive">
+            <div class="project-copy"><p class="project-index">001 / LIVE SYSTEM FORENSICS</p><h3>Polybow</h3><p>A live Python trading bot for short-duration Polymarket markets, reconstructed from discovery, oracle data, execution and the full drawdown.</p><footer><span>PYTHON · APIS · PROBABILITY</span><span>ARCHIVE ↗</span></footer></div>
           </a>
         </article>
         <article class="project-card card-stone reveal">
-          <a href="https://github.com/coder058" target="_blank" rel="noreferrer" aria-label="View DispatchOps source index">
-            <div class="project-image"><img src="assets/project-dispatch.svg" alt="DispatchOps logistics control interface illustration"></div>
-            <div class="project-copy"><p class="project-index">002 / OPERATIONAL INTELLIGENCE</p><h3>DispatchOps</h3><p>A human-in-the-loop logistics control tower for assignments, capacity, exceptions and reviewable decisions.</p><footer><span>REACT · TYPESCRIPT · NODE</span><span>↗</span></footer></div>
+          <a href="https://dispatchops-xi.vercel.app" target="_blank" rel="noreferrer" aria-label="Play DispatchOps">
+            <div class="project-copy"><p class="project-index">002 / OPERATIONAL INTELLIGENCE</p><h3>DispatchOps</h3><p>A playable human-in-the-loop logistics shift for assignments, capacity, incidents and reviewable decisions.</p><footer><span>REACT · TYPESCRIPT · NODE</span><span>PLAY ↗</span></footer></div>
           </a>
         </article>
         <article class="project-card card-charcoal reveal">
-          <div class="project-image"><img src="assets/project-vaern.svg" alt="VÆRN technical apparel commerce interface illustration"></div>
-          <div class="project-copy"><p class="project-index">003 / COMMERCE SYSTEM</p><h3>VÆRN</h3><p>Technical-apparel commerce across catalogue, variants, payments, stock reservation and fulfilment.</p><footer><span>RAILS 8 · HOTWIRE · STRIPE</span><span>144 VERIFIED EXAMPLES</span></footer></div>
+          <a href="https://vaern.vercel.app" target="_blank" rel="noreferrer" aria-label="Open VÆRN website">
+            <div class="project-copy"><p class="project-index">003 / COMMERCE SYSTEM</p><h3>VÆRN</h3><p>Technical-apparel commerce across catalogue, variants, payments, stock reservation and fulfilment.</p><footer><span>RAILS 8 · HOTWIRE · STRIPE</span><span>LIVE ↗</span></footer></div>
+          </a>
         </article>
         <article class="project-card card-brown reveal">
           <a href="https://github.com/justdevelopin/CityGardens" target="_blank" rel="noreferrer" aria-label="View City Gardens source">
-            <div class="project-image"><img src="assets/project-gardens.svg" alt="City Gardens mapped community garden interface illustration"></div>
             <div class="project-copy"><p class="project-index">004 / TEAM PRODUCT</p><h3>City Gardens</h3><p>A collaborative platform connecting local gardens, events, parcels and reservations through a shared map.</p><footer><span>RAILS · POSTGRESQL · MAPBOX</span><span>↗</span></footer></div>
           </a>
         </article>
         <article class="project-card card-clay reveal">
-          <div class="project-image"><img src="assets/project-digest.svg" alt="Video AI Digest transcription and retrieval pipeline illustration"></div>
-          <div class="project-copy"><p class="project-index">005 / APPLIED AI</p><h3>Video AI Digest</h3><p>A local-first workflow turning video, audio, URLs and transcripts into searchable, exportable digests.</p><footer><span>NODE · PYTHON · WHISPER</span><span>49 TESTS</span></footer></div>
+          <a href="https://video-ai-digest.vercel.app" target="_blank" rel="noreferrer" aria-label="Open the Video AI Digest demo">
+            <div class="project-copy"><p class="project-index">005 / APPLIED AI</p><h3>Video AI Digest</h3><p>A local-first workflow turning video, audio, URLs and transcripts into searchable, exportable digests.</p><footer><span>NODE · PYTHON · WHISPER</span><span>WEB DEMO ↗</span></footer></div>
+          </a>
         </article>
         <article class="project-card card-ash reveal">
-          <div class="project-image"><img src="assets/project-hyper.svg" alt="Hyperliquid market microstructure research terminal illustration"></div>
-          <div class="project-copy"><p class="project-index">006 / MARKET RESEARCH</p><h3>Hyperliquid</h3><p>Short-horizon research that measured signal against execution cost and rejected unsuitable retail strategies.</p><footer><span>PYTHON · MICROSTRUCTURE · DATA</span><span>RESEARCH CLOSED</span></footer></div>
+          <a href="https://pattern-forge-five.vercel.app" target="_blank" rel="noreferrer" aria-label="Open the Hyperliquid Pattern Forge workstation">
+            <div class="project-copy"><p class="project-index">006 / MARKET RESEARCH</p><h3>Hyperliquid</h3><p>A multi-timeframe research workstation for inspecting causal patterns, market context and falsified trade plans.</p><footer><span>REACT · PYTHON · MARKET DATA</span><span>WORKSTATION ↗</span></footer></div>
+          </a>
+        </article>
+        <article class="project-card card-clay reveal">
+          <a href="https://atelier-z-two.vercel.app" target="_blank" rel="noreferrer" aria-label="Open Atelier Z website">
+            <div class="project-copy"><p class="project-index">007 / COMMERCE EXPERIENCE</p><h3>Atelier Z</h3><p>A European design commerce experience with editorial discovery, product systems and a considered shopping flow.</p><footer><span>VERCEL · COMMERCE · UX</span><span>LIVE ↗</span></footer></div>
+          </a>
+        </article>
+        <article class="project-card card-sand reveal">
+          <a href="https://github.com/coder058?tab=repositories" target="_blank" rel="noreferrer" aria-label="View Jordi's public learning repositories">
+            <div class="project-copy"><p class="project-index">008 / LE WAGON ARCHIVE</p><h3>Challenges</h3><p>A curated archive of Ruby, Rails, SQL and web-development exercises built while learning by doing.</p><footer><span>RUBY · RAILS · SQL</span><span>ARCHIVE ↗</span></footer></div>
+          </a>
         </article>
       </div>
     </section>
-    <section id="about" class="about palette-section" data-bg="#1d1d1d" data-ink="#f6f1e0">
-      <p>02 / CONTACT</p>
-      <h2>Ideas should<br>survive contact<br>with reality.</h2>
-      <div class="contact-grid"><a href="mailto:joord918@gmail.com">EMAIL ↗</a><a href="https://github.com/coder058" target="_blank" rel="noreferrer">GITHUB ↗</a><a href="https://www.linkedin.com/in/jordi-lluis-14228242a/" target="_blank" rel="noreferrer">LINKEDIN ↗</a><a href="assets/jordi-lluis-cv.pdf" target="_blank" rel="noreferrer">CURRICULUM VITAE ↓</a></div>
+    <section id="about" class="about-feature palette-section" data-bg="#d9cba0" data-ink="#292824" aria-labelledby="about-title">
+      <p>02 / ABOUT</p>
+      <p id="about-title" class="about-copy">Curiosity, understanding how things work, and learning through design and code. Turning ideas into projects, using creativity to explore problems and build useful things.</p>
     </section>
   </main>
-  <footer class="site-footer"><span>© 2026 JORDI LLUIS</span><span>DESIGNED + BUILT IN THE NETHERLANDS</span></footer>
+  <footer class="site-footer"><span>© 2026</span><span>DESIGNED IN THE NETHERLANDS</span></footer>
 </body>
 </html>

@@ -1,0 +1,5 @@
+.hero-main>.hero-links{display:grid;gap:18px;grid-column:1/-1;grid-row:2;grid-template-columns:repeat(3,minmax(0,240px));justify-content:center;margin:54px auto 0;max-width:780px;width:100%}
+.hero-main>.hero-links a{aspect-ratio:1;border:1px dotted var(--line);min-height:0;padding:16px}
+.hero-main>.hero-links a:nth-child(2n){border-right:1px dotted var(--line)}
+.hero-main>.hero-links a strong{font-size:clamp(24px,2.1vw,34px)}
+@media(max-width:700px){.hero-main>.hero-links{gap:10px;margin-top:34px}.hero-main>.hero-links a{padding:10px}.hero-main>.hero-links a strong{font-size:18px}}
