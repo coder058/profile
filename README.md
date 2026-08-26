@@ -5,6 +5,7 @@ Ruby on Rails, Python, TypeScript & SQL | AI Products, Data Systems and Operatio
 ## Selected work
 
 - **Polybow Forensics** — anonymized, reproducible postmortem of 1,137 live prediction markets. No profitability claim is made.
+- **Relay** — local MCP safety lab for policy decisions, human approval, secret redaction, replay, and observable traces. It uses safe fixtures and is not a production or persistent hosted system.
 - **DispatchOps** — TypeScript/React playable logistics simulation with a deterministic shift engine and a human-in-the-loop assignment agent.
 - **VÆRN** — Rails 8 commerce and fulfilment system covering catalogue, payments, stock reservations, and fulfilment.
 - **City Gardens** — team-built Ruby on Rails community-garden product with a public source repository.
