@@ -18,3 +18,12 @@ test('local styles, scripts, images and resume exist', () => {
     assert.ok(existsSync(new URL('../' + target.split('?')[0], import.meta.url)), target);
   }
 });
+
+test('AI-assisted development is backed by an engineering evidence link', () => {
+  assert.match(html, /Full-stack developer · AI-assisted delivery/);
+  assert.match(html, /AI coding agents for implementation, testing, debugging and refactoring/);
+  assert.ok(html.includes('https://github.com/coder058/coder058/blob/main/ENGINEERING.md'));
+  assert.match(html, /Independent development in Amsterdam, Netherlands/);
+  // SOURCE: preserve the narrower public product scope while describing AI-assisted development.
+  assert.match(html, /excerpt selection is manual, not AI-generated/);
+});
