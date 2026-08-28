@@ -1,12 +1,14 @@
 # Jordi Lluis — portfolio
 
-Software Engineer | AI Products & Data Systems.
+Backend and full-stack developer. Python, TypeScript and source-backed data workflows.
+
+Canonical portfolio: https://coder058.github.io/profile/
 
 ## Selected work
 
 - **Relay** — a public job-evidence workspace and real read-only MCP server. Search public listings, compare quoted text, retain changed duplicates and export a review. Historical fixture-based safety tools remain separate.
-- **Video AI Digest** — browser-local transcript/subtitle search, timestamped excerpts, user notes and portable exports. Media transcription and optional model processing belong to the separate local Node/Python app, not the hosted page.
-- **Hyperliquid / Pattern Forge** — public closed-candle snapshots for BTC, ETH and SOL with research overlays, source timestamps, JSON export and a separate saved BTC case. The public page does not poll localhost or execute trades.
+- **Transcript Desk** — browser-local transcript/subtitle search, manually selected timestamped excerpts, user notes and portable exports. No hosted media transcription or AI generation.
+- **Pattern Forge** — closed-candle Hyperliquid snapshots and prefix-only replay of recorded metals, index and crypto perpetual markets. The public page does not execute trades or predict returns.
 - **Polybow Forensics** — anonymized, reproducible postmortem of 1,137 live prediction markets. Full drawdown is part of the case; no profitability claim is made.
 
 The 2026-08-28 project audit removed VÆRN and Atelier Z from the featured selection because their hosted storefronts do not demonstrate the depth of the underlying systems. Their projects and existing deployments were not deleted. Course exercises remain outside the featured portfolio.

@@ -1,0 +1,13 @@
+/* SOURCE: editorial spacing choices, not measured performance constants. */
+.hero-summary{grid-column:1/-1;grid-row:2;margin:36px 0 0;font-size:clamp(20px,2.4vw,30px);line-height:1.4;max-width:760px}
+.hero-summary span{font-size:.7em}
+.hero-main>.hero-links{grid-row:3;max-width:none;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:28px}
+.hero-main>.hero-links a{aspect-ratio:auto;display:grid;grid-template-columns:1fr auto;gap:10px;min-width:0;padding:20px}
+.hero-main>.hero-links a span{grid-column:1/-1;display:block;font:10px/1.5 var(--mono)}
+.hero-main>.hero-links a strong{grid-column:1;font-size:clamp(18px,2.1vw,30px)}
+.hero-main>.hero-links a b{grid-column:2;align-self:center}
+.project-source{display:block;padding:14px 28px;border-top:1px dotted var(--line);font:12px/1.5 var(--mono);text-decoration:underline}
+.project-card{display:flex;flex-direction:column}
+.project-card>a:first-child{flex:1}
+.project-card>a.project-source{display:block;flex:none}
+@media(max-width:700px){.hero-main>.hero-links{gap:8px}.hero-main>.hero-links a{padding:12px}.hero-main>.hero-links a span{font-size:8px}.hero-summary{margin-top:28px}}
