@@ -7,9 +7,9 @@ Canonical portfolio: https://coder058.github.io/profile/
 ## Selected work
 
 - **Relay** — a public job-evidence workspace and real read-only MCP server. Search public listings, compare quoted text, retain changed duplicates and export a review. Historical fixture-based safety tools remain separate.
-- **Transcript Desk** — browser-local transcript/subtitle search, manually selected timestamped excerpts, user notes and portable exports. No hosted media transcription or AI generation.
+- **Polybow** — development history, archived execution timings and the full live-trading outcome, with reproducible market-ledger analysis. Not proof of a profitable strategy.
 - **Pattern Forge** — closed-candle Hyperliquid snapshots and prefix-only replay of recorded metals, index and crypto perpetual markets. The public page does not execute trades or predict returns.
-- **Polybow Forensics** — anonymized, reproducible postmortem of 1,137 live prediction markets. Full drawdown is part of the case; no profitability claim is made.
+- **Transcript Desk** — browser-local transcript/subtitle search, manually selected timestamped excerpts, user notes and portable exports. No hosted media transcription or AI generation.
 
 The 2026-08-28 project audit removed VÆRN and Atelier Z from the featured selection because their hosted storefronts do not demonstrate the depth of the underlying systems. Their projects and existing deployments were not deleted. Course exercises remain outside the featured portfolio.
 
