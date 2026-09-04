@@ -4,10 +4,10 @@
 .project-card>a,.project-card:not(:has(>a)){grid-template-rows:100%}
 .project-card .project-image{display:none}
 .project-copy{min-height:100%;padding:28px}
-.project-copy h3{font-size:clamp(32px,3vw,48px);margin:20px 0 14px}
-.project-copy>p:not(.project-index){font-size:15px;line-height:1.45;max-width:440px}
-.project-copy footer{font-size:9px;line-height:1.4;padding-top:12px;gap:12px}
+.project-copy h3{font-size:clamp(36px,3.6vw,56px);margin:0 0 18px}
+.project-copy>p{font-size:17px;line-height:1.5;max-width:460px}
+.project-copy footer{font-size:14px;line-height:1.5;padding-top:16px;letter-spacing:.025em}
 .work-header{display:block;text-align:center}
-.work-header h2{font-size:clamp(72px,8vw,120px);margin:38px auto 0}
-@media(max-width:700px){.project-grid{grid-template-columns:1fr;gap:12px}.project-card{min-height:280px}.project-copy{padding:22px}.project-copy>p:not(.project-index){font-size:14px}}
-@media(max-width:700px){.work-header h2{font-size:64px;margin-top:26px}}
+.work-header h2{font-size:clamp(62px,8vw,112px);margin:0 auto}
+@media(max-width:700px){.project-grid{grid-template-columns:1fr;gap:12px}.project-card{min-height:300px}.project-copy{padding:24px}.project-copy>p{font-size:16px}.project-copy footer{font-size:13px}}
+@media(max-width:700px){.work-header h2{font-size:56px}}
