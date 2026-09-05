@@ -24,4 +24,14 @@ test('portfolio copy is personal without duplicating the resume', () => {
   assert.match(html, /coding agents to explore possible answers/);
   assert.doesNotMatch(html, /open to relocation|Python, TypeScript (?:&amp;|and) SQL/i);
   assert.ok(html.indexOf('<h3>Polybow</h3>') < html.indexOf('<h3>Relay</h3>'));
+  assert.ok(html.indexOf('<h3>Pattern Forge</h3>') < html.indexOf('<h3>Relay</h3>'));
+  assert.match(html, /<h2 id="about-title">About<\/h2>/);
+});
+
+test('project content stays visible without an animation callback', () => {
+  const css = readFileSync(new URL('../application-ready.css', import.meta.url), 'utf8');
+  const script = readFileSync(new URL('../motion.js', import.meta.url), 'utf8');
+  assert.match(css, /\.reveal\{opacity:1;transform:none\}/);
+  assert.doesNotMatch(script, /IntersectionObserver/);
+  assert.match(css, /\.project-copy>p:not\(\.project-index\)\{font-size:1\.0625rem/);
 });

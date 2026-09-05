@@ -6,4 +6,11 @@
 .hero-main>.hero-links a strong{grid-column:1;font-size:clamp(18px,2.1vw,30px)}
 .hero-main>.hero-links a b{grid-column:2;align-self:center}
 .project-card{display:block}
+/* GUESS: UNCALIBRATED GUESS — editorial type sizes; verify readability in the browser. */
+.project-copy>p:not(.project-index){font-size:1.0625rem;line-height:1.5;max-width:460px}
+.project-card>a:focus-visible{outline-offset:-4px}
+.about-copy{font-size:clamp(1.25rem,2.5vw,2rem);line-height:1.45;letter-spacing:-.02em;max-width:960px}
+.site-footer{font-size:.875rem;line-height:1.5;color:#bdbdbd}
+/* SOURCE: project links must remain readable even if JavaScript fails or is disabled. */
+.reveal{opacity:1;transform:none}
 @media(max-width:700px){.hero-main>.hero-links{gap:8px}.hero-main>.hero-links a{padding:12px}.hero-summary{margin-top:28px}}
