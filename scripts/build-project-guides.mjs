@@ -18,8 +18,8 @@ for (const project of projects) {
 <link rel="canonical" href="https://coder058.github.io/profile/projects/${project.slug}.html"><link rel="stylesheet" href="guide.css"></head>
 <body><a class="skip" href="#project">Skip to project</a><header><a href="${home}">← Jordi Lluis / ${esc(homeLabel)}</a></header>
 <main id="project"><h1>${esc(project.name)}</h1><p class="lead">${esc(project.summary)}</p><p>${esc(project.stack)}</p>
-<nav aria-label="Project links">${project.demo ? `<a href="${project.demo}">Try ${esc(project.name)} ↗</a>` : ''}<a href="${project.code}">Read the code ↗</a><a href="${dataHref}">How the data was organised</a></nav>
-<section><h2>The problem</h2>${paragraphs(project.problem)}<h2>My contribution</h2>${paragraphs(project.contribution)}</section>
+<nav aria-label="Project links">${project.demo ? `<a href="${project.demo}">${esc(project.demoLabel || `Try ${project.name}`)} ↗</a>` : ''}<a href="${project.code}">Read the code ↗</a><a href="${dataHref}">How the data was organised</a></nav>
+<section><h2>The problem</h2>${paragraphs(project.problem)}${project.branches ? `<h2>Versions</h2>${table('Entry price and timing by branch', ['Branch','Entry','What changed'], project.branches, 'Strategy branches')}` : ''}<h2>My contribution</h2>${paragraphs(project.contribution)}</section>
 ${project.skills ? `<section><h2>Skills this work used</h2>${table('Tools and what they did in this project', ['Skill','Where it was used'], project.skills, 'Skills used in this project')}</section>` : ''}
 <section><h2>${project.demo ? 'Try it step by step' : 'The intended user journey'}</h2>${list(project.steps)}</section>
 <section id="${dependsId}"><h2>${esc(dependsTitle)}</h2>${table(dependsCaption, ['Component','Depends on','Responsibility'], project.dependencies, 'Project dependency table')}</section>

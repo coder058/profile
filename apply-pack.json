@@ -46,55 +46,120 @@
     ]
   },
   "pack_selection": [
-    {"if_title_or_role_contains": ["fullstack", "full-stack", "full stack", "backend", "front-end", "frontend", "product engineer", "product software"], "pack": "fullstack"},
-    {"if_title_or_role_contains": ["AI", "LLM", "MCP", "agent", "machine learning", "ML engineer"], "unless": "customer-facing FDE / Solutions Engineer title", "pack": "ai"},
-    {"if_title_or_role_contains": ["data engineer", "data analyst", "analytics engineer", "scientist"], "pack": "data"},
-    {"if_title_or_role_contains": ["forward deployed", "FDE", "solutions engineer"], "pack": "fde", "optional": true, "note": "Skip unless the posting is clearly junior. Do not print FDE as Jordi's job title."},
-    {"else": "software"}
+    {
+      "if_title_or_role_contains": [
+        "fullstack",
+        "full-stack",
+        "full stack",
+        "backend",
+        "front-end",
+        "frontend",
+        "product engineer",
+        "product software"
+      ],
+      "pack": "fullstack"
+    },
+    {
+      "if_title_or_role_contains": [
+        "AI",
+        "LLM",
+        "MCP",
+        "agent",
+        "machine learning",
+        "ML engineer"
+      ],
+      "unless": "customer-facing FDE / Solutions Engineer title",
+      "pack": "ai"
+    },
+    {
+      "if_title_or_role_contains": [
+        "data engineer",
+        "data analyst",
+        "analytics engineer",
+        "scientist"
+      ],
+      "pack": "data"
+    },
+    {
+      "if_title_or_role_contains": [
+        "forward deployed",
+        "FDE",
+        "solutions engineer"
+      ],
+      "pack": "fde",
+      "optional": true,
+      "note": "Skip unless the posting is clearly junior. Do not print FDE as Jordi's job title."
+    },
+    {
+      "else": "software"
+    }
   ],
-  "apply_order": ["fullstack", "ai", "software", "data"],
+  "apply_order": [
+    "fullstack",
+    "ai",
+    "software",
+    "data"
+  ],
   "packs": [
     {
       "id": "fullstack",
       "use_first": true,
-      "use_for": ["fullstack", "backend", "frontend", "product software"],
+      "use_for": [
+        "fullstack",
+        "backend",
+        "frontend",
+        "product software"
+      ],
       "designed": "https://coder058.github.io/profile/assets/jordi-lluis-fullstack-cv.pdf",
       "ats": "https://coder058.github.io/profile/assets/jordi-lluis-fullstack-cv-ats.pdf",
       "local_designed": "output/pdf/jordi-lluis-fullstack-cv.pdf",
       "local_ats": "output/pdf/jordi-lluis-fullstack-cv-ats.pdf",
-      "sha256_designed": "a9abfbbbd31586c10f7995293da724d9d8e95382e21948fcea88a9c6f9717e4d",
-      "sha256_ats": "b5febf492dda2c58ec608799b480d1240399dd17c8dff8368b030a7af05a4ce2",
+      "sha256_designed": "031adcc35d09d49a746355fb862ae99fe23d3172a61f8a29158c415074932922",
+      "sha256_ats": "2e76ecaadc2f48e28cdb43ea786f8ce393426ebcceb55f02637c7df930a34823",
       "pitch": "I build the interface and the API behind it: React and TypeScript on the front, Python or Rails on the back, with tests and Docker so a change has a check.",
       "letter_template": "Hi {company},\n\nI'm Jordi Lluis, a software developer in Amsterdam (EU citizen). I build the interface and the API behind it — React and TypeScript on the front, Python or Rails on the back — and I test how it fails.\n\nFor this {role}, the closest public work is {project}: {one_liner} Walkthrough: {walkthrough}\n\nOne-page CV (ATS): {ats}\nPortfolio: https://coder058.github.io/profile/\n\nJordi Lluis\n+31 6 1949 6593 · joord918@gmail.com"
     },
     {
       "id": "ai",
-      "use_for": ["AI", "LLM", "MCP", "agent tooling", "technical FDE-shaped titles"],
+      "use_for": [
+        "AI",
+        "LLM",
+        "MCP",
+        "agent tooling",
+        "technical FDE-shaped titles"
+      ],
       "designed": "https://coder058.github.io/profile/assets/jordi-lluis-ai-cv.pdf",
       "ats": "https://coder058.github.io/profile/assets/jordi-lluis-ai-cv-ats.pdf",
       "local_designed": "output/pdf/jordi-lluis-ai-cv.pdf",
       "local_ats": "output/pdf/jordi-lluis-ai-cv-ats.pdf",
-      "sha256_designed": "8f6268cfb42a43d446100e29ba60eb7b190c57ede551f47c83977df493716618",
-      "sha256_ats": "d7aa211f640e301626be9082bbe3eade18aa6a189dd5ca8b935b1d585977a76f",
+      "sha256_designed": "bf238ed7dd55462900c1a70bacdb5253d8766b7c7392300fa7e6e2137a879960",
+      "sha256_ats": "d4337f79f8d365f4e5ffdb08029210daead8eff91436325382fe1074497d761b",
       "pitch": "I build small agent-facing tools with a human still in the loop: MCP servers, quoted evidence, and tests on the protocol boundary. Not model training, not a production RAG platform.",
       "letter_template": "Hi {company},\n\nI'm Jordi Lluis, a software developer in Amsterdam (EU citizen). I build small agent-facing tools with a human still in the loop — MCP servers, quoted evidence, tests on the protocol boundary. I do not train models and I do not run a production RAG platform.\n\nFor this {role}, the closest public work is {project}: {one_liner} Walkthrough: {walkthrough}\n\nOne-page CV (ATS): {ats}\nPortfolio: https://coder058.github.io/profile/\n\nJordi Lluis\n+31 6 1949 6593 · joord918@gmail.com"
     },
     {
       "id": "data",
-      "use_for": ["data engineer", "analyst", "scientist-light"],
+      "use_for": [
+        "data engineer",
+        "analyst",
+        "scientist-light"
+      ],
       "designed": "https://coder058.github.io/profile/assets/jordi-lluis-data-cv.pdf",
       "ats": "https://coder058.github.io/profile/assets/jordi-lluis-data-cv-ats.pdf",
       "local_designed": "output/pdf/jordi-lluis-data-cv.pdf",
       "local_ats": "output/pdf/jordi-lluis-data-cv-ats.pdf",
-      "sha256_designed": "58ebb9dd5efb8cf2f28d7630064407d437d9de52c21bf454034789b414ed1dc6",
-      "sha256_ats": "82c8180a64e4b77b5a1a5e3984d708c3eb7cd70a0288e7973bd179552e35ff46",
+      "sha256_designed": "8163141b14414b2f396ecd6dc6b130eef96da9d3e5667a5aa495a443c01b4cb7",
+      "sha256_ats": "771e1d5cd44eb94d1604646503d4e944aa5ec209dab1cd990e8aa928096f789d",
       "pitch": "I work at data boundaries: validated APIs, time-series that cannot see the future, and files you can reopen after a live run. SQL and Python; not a research lab.",
       "letter_template": "Hi {company},\n\nI'm Jordi Lluis, a software developer in Amsterdam (EU citizen). I work at data boundaries: validated APIs, time-series that cannot see the future, and files you can reopen. SQL and Python; not a research lab.\n\nFor this {role}, the closest public work is {project}: {one_liner} Walkthrough: {walkthrough}\n\nOne-page CV (ATS): {ats}\nPortfolio: https://coder058.github.io/profile/\n\nJordi Lluis\n+31 6 1949 6593 · joord918@gmail.com"
     },
     {
       "id": "software",
       "default": true,
-      "use_for": ["software general", "unclassified software engineer"],
+      "use_for": [
+        "software general",
+        "unclassified software engineer"
+      ],
       "designed": "https://coder058.github.io/profile/assets/jordi-lluis-software-cv.pdf",
       "ats": "https://coder058.github.io/profile/assets/jordi-lluis-software-cv-ats.pdf",
       "local_designed": "output/pdf/jordi-lluis-software-cv.pdf",
@@ -102,36 +167,81 @@
       "unlabelled_copies": {
         "designed": "https://coder058.github.io/profile/assets/jordi-lluis-cv.pdf",
         "ats": "https://coder058.github.io/profile/assets/jordi-lluis-cv-ats.pdf",
-        "sha256_designed": "372f7f34082630f15d1bf1a7e0b58fbd9e11454500f4b95b13465068ece6809e",
-        "sha256_ats": "72ef10d0986160c804c44401f55bfca938df2ea59b9c3c380c3958a460082f3d"
+        "sha256_designed": "7851719c2ca3854b50c522418cf5a62e468708d08e22a45acd36dc5ba5dc5210",
+        "sha256_ats": "01a785606c899d978b7329430e741bd574dc682f030cbe214c5e9256b4ce73d8"
       },
-      "sha256_designed": "b8293e3c4b1b734984e6bc7c59cf887e4cce74ee062f267347978dcd735a1600",
-      "sha256_ats": "1870c01465f435670e78e23bc274f1b27f663891fafc983cb712f5fd67c6ff52",
+      "sha256_designed": "ab0812e1adc9ae39c52e2783e40823ec2fbbb34a7a31a42c8475aad010e2f25e",
+      "sha256_ats": "0939f7c7385f47cdfbc02f3ac615c052924c4e8cb141a2c478ec7f207e6beaa0",
       "pitch": "Junior/mid software developer: Python, TypeScript, APIs, tests. Same projects as the other packs; this file is the generic screen, not a specialist title.",
       "letter_template": "Hi {company},\n\nI'm Jordi Lluis, a software developer in Amsterdam (EU citizen). I build web interfaces and APIs, then test how they fail.\n\nFor this {role}, the closest public work is {project}: {one_liner} Walkthrough: {walkthrough}\n\nOne-page CV (ATS): {ats}\nPortfolio: https://coder058.github.io/profile/\n\nJordi Lluis\n+31 6 1949 6593 · joord918@gmail.com"
     },
     {
       "id": "fde",
       "optional": true,
-      "use_for": ["customer-facing FDE", "Solutions Engineer"],
+      "use_for": [
+        "customer-facing FDE",
+        "Solutions Engineer"
+      ],
       "designed": "https://coder058.github.io/profile/assets/jordi-lluis-fde-cv.pdf",
       "ats": "https://coder058.github.io/profile/assets/jordi-lluis-fde-cv-ats.pdf",
       "local_designed": "output/pdf/jordi-lluis-fde-cv.pdf",
       "local_ats": "output/pdf/jordi-lluis-fde-cv-ats.pdf",
-      "sha256_designed": "73e1679088baaf60fbc1e2a96eadedc221d611e9ccdb1c5582b1c420b650723e",
-      "sha256_ats": "e4b41859f8192fb0c9c4a256d8cdfa1c1611c465dd04aeb5ef2e4add3f670440",
+      "sha256_designed": "8e749754536880e7c943c6ca86a93ae9b6b4326080a4302e9cf2f3d38b88bdde",
+      "sha256_ats": "68e9e3450051aa382796532422070534be92a1d12d86904af862ec363949e48a",
       "pitch": "I sit between a messy problem and a working integration. Side projects and operations roles, not enterprise customer deployments. Do not print an FDE job title.",
       "letter_template": "Hi {company},\n\nI'm Jordi Lluis, a software developer in Amsterdam (EU citizen). I sit between a messy problem and a working integration. That is side-project and operations evidence, not an enterprise customer-deploy job.\n\nFor this {role}, the closest public work is {project}: {one_liner} Walkthrough: {walkthrough}\n\nOne-page CV (ATS): {ats}\nPortfolio: https://coder058.github.io/profile/\n\nJordi Lluis\n+31 6 1949 6593 · joord918@gmail.com"
     }
   ],
   "project_picker": {
-    "fullstack": { "project": "Pattern Forge", "one_liner": "Market-data API and replay that cannot use later prices.", "walkthrough": "https://coder058.github.io/profile/projects/pattern-forge.html", "data": "https://coder058.github.io/profile/projects/pattern-forge.html#data", "github": "https://github.com/coder058/pattern-forge" },
-    "frontend": { "project": "Pattern Forge", "one_liner": "React/TypeScript chart workspace with a validated candle API.", "walkthrough": "https://coder058.github.io/profile/projects/pattern-forge.html", "data": "https://coder058.github.io/profile/projects/pattern-forge.html#data", "github": "https://github.com/coder058/pattern-forge" },
-    "ai": { "project": "Relay", "one_liner": "One evidence service behind a web UI and MCP tools.", "walkthrough": "https://coder058.github.io/profile/projects/relay.html", "data": "https://coder058.github.io/profile/projects/relay.html#data", "github": "https://github.com/coder058/relay" },
-    "backend": { "project": "Relay", "one_liner": "Python/FastAPI review service shared by HTTP and MCP.", "walkthrough": "https://coder058.github.io/profile/projects/relay.html", "data": "https://coder058.github.io/profile/projects/relay.html#data", "github": "https://github.com/coder058/relay" },
-    "data": { "project": "Pattern Forge", "one_liner": "Validated candles and prefix-only replay, with PostgreSQL persistence in CI only.", "walkthrough": "https://coder058.github.io/profile/projects/pattern-forge.html", "data": "https://coder058.github.io/profile/projects/pattern-forge.html#data", "github": "https://github.com/coder058/pattern-forge" },
-    "markets": { "project": "Polybow", "one_liner": "Live Python system on AWS Lightsail, then ledger work after it stopped.", "walkthrough": "https://coder058.github.io/profile/projects/polybow.html", "data": "https://coder058.github.io/profile/projects/polybow.html#data", "github": "https://github.com/coder058/polybow-case-study" },
-    "fde": { "project": "Relay", "one_liner": "Inspectable quotes instead of a model deciding eligibility.", "walkthrough": "https://coder058.github.io/profile/projects/relay.html", "data": "https://coder058.github.io/profile/projects/relay.html#data", "github": "https://github.com/coder058/relay" }
+    "fullstack": {
+      "project": "Pattern Forge",
+      "one_liner": "Market-data API and replay that cannot use later prices.",
+      "walkthrough": "https://coder058.github.io/profile/projects/pattern-forge.html",
+      "data": "https://coder058.github.io/profile/projects/pattern-forge.html#data",
+      "github": "https://github.com/coder058/pattern-forge"
+    },
+    "frontend": {
+      "project": "Pattern Forge",
+      "one_liner": "React/TypeScript chart workspace with a validated candle API.",
+      "walkthrough": "https://coder058.github.io/profile/projects/pattern-forge.html",
+      "data": "https://coder058.github.io/profile/projects/pattern-forge.html#data",
+      "github": "https://github.com/coder058/pattern-forge"
+    },
+    "ai": {
+      "project": "Relay",
+      "one_liner": "One evidence service behind a web UI and MCP tools.",
+      "walkthrough": "https://coder058.github.io/profile/projects/relay.html",
+      "data": "https://coder058.github.io/profile/projects/relay.html#data",
+      "github": "https://github.com/coder058/relay"
+    },
+    "backend": {
+      "project": "Relay",
+      "one_liner": "Python/FastAPI review service shared by HTTP and MCP.",
+      "walkthrough": "https://coder058.github.io/profile/projects/relay.html",
+      "data": "https://coder058.github.io/profile/projects/relay.html#data",
+      "github": "https://github.com/coder058/relay"
+    },
+    "data": {
+      "project": "Pattern Forge",
+      "one_liner": "Validated candles and prefix-only replay, with PostgreSQL persistence in CI only.",
+      "walkthrough": "https://coder058.github.io/profile/projects/pattern-forge.html",
+      "data": "https://coder058.github.io/profile/projects/pattern-forge.html#data",
+      "github": "https://github.com/coder058/pattern-forge"
+    },
+    "markets": {
+      "project": "Polybow",
+      "one_liner": "Live Python system on AWS Lightsail, then ledger work after it stopped.",
+      "walkthrough": "https://coder058.github.io/profile/projects/polybow.html",
+      "data": "https://coder058.github.io/profile/projects/polybow.html#data",
+      "github": "https://github.com/coder058/polybow-case-study"
+    },
+    "fde": {
+      "project": "Relay",
+      "one_liner": "Inspectable quotes instead of a model deciding eligibility.",
+      "walkthrough": "https://coder058.github.io/profile/projects/relay.html",
+      "data": "https://coder058.github.io/profile/projects/relay.html#data",
+      "github": "https://github.com/coder058/relay"
+    }
   },
   "form_answers": {
     "full_name": "Jordi Lluis",
@@ -154,7 +264,8 @@
     "english": "C2",
     "spanish": "Native",
     "years_professional_software_employment": 0,
-    "years_building_software_since_bootcamp": "Le Wagon 2023, public projects 2024–present. If a form requires one number for software experience, use 1 or 2. Never 5+. Never count logistics years as software years.",
+    "years_building_software_since_bootcamp": "Le Wagon full-stack, 2023. Public projects 2024–present.",
+    "years_experience_on_forms": "Answer the field as written. Professional software employment is 0. Personal projects and a bootcamp do not become contracted years. Never write 1 or 2 as a substitute. If the form only accepts a number for professional years, use 0. If it is optional, leave it blank. Never count logistics years as software years.",
     "current_title": "Do not invent a software job title. Latest listed work is e-commerce dispatch at De Bommel (2025).",
     "notice_period": "Unknown. De Bommel has no confirmed end date. Do not write unemployed or available immediately as a fact. If the form requires a phrase, use To be confirmed.",
     "salary_expectation": "Not set. If optional, leave blank. If the field requires a number, skip the listing rather than invent one. Currency would be EUR.",
@@ -207,11 +318,35 @@
     }
   ],
   "education_for_forms": [
-    {"institution": "Anthropic and OpenAI online courses", "what": "Further learning", "dates": "2024–present", "note": "MCP is a skill, not a school. Do not list unfinished course names."},
-    {"institution": "Le Wagon, Barcelona", "what": "Full-stack development", "dates": "2023", "note": "Ruby, Rails, JavaScript, PostgreSQL, HTML/CSS, Git. City Gardens was a team project."},
-    {"institution": "Amplify Trading", "what": "Level 6 Diploma in Applied Finance", "dates": "June 2016", "grade": "Distinction"},
-    {"institution": "Instituto de Sonido de Caracas", "what": "Sound Engineering", "dates": "2015–2016"},
-    {"institution": "Madison School", "what": "Secondary Education", "dates": "2014", "note": "On the canonical resume; omitted from the one-page PDF for space."}
+    {
+      "institution": "Anthropic and OpenAI online courses",
+      "what": "Further learning",
+      "dates": "2024–present",
+      "note": "MCP is a skill, not a school. Do not list unfinished course names."
+    },
+    {
+      "institution": "Le Wagon, Barcelona",
+      "what": "Full-stack development",
+      "dates": "2023",
+      "note": "Ruby, Rails, JavaScript, PostgreSQL, HTML/CSS, Git. City Gardens was a team project."
+    },
+    {
+      "institution": "Amplify Trading",
+      "what": "Level 6 Diploma in Applied Finance",
+      "dates": "June 2016",
+      "grade": "Distinction"
+    },
+    {
+      "institution": "Instituto de Sonido de Caracas",
+      "what": "Sound Engineering",
+      "dates": "2015–2016"
+    },
+    {
+      "institution": "Madison School",
+      "what": "Secondary Education",
+      "dates": "2014",
+      "note": "On the canonical resume; omitted from the one-page PDF for space."
+    }
   ],
   "filters": {
     "seniority": "junior / entry / graduate / trainee / associate / clearly non-senior only",
@@ -237,9 +372,11 @@
     "Relay as eligibility scoring or an AI that decides hiring",
     "Polybow as a durable edge, profitability, or public bot code",
     "Private repo lewagon-api-lab as a public link",
-    "A numeric salary, notice period, or legal/passport name that is not in this file"
+    "A numeric salary, notice period, or legal/passport name that is not in this file",
+    "Professional software years other than 0; do not write 1 or 2 as a substitute"
   ],
   "linkedin_note": "LinkedIn may still show older employment wording (confidential logistics). The CV and this file are the source of truth for applications. Do not copy LinkedIn titles onto forms.",
+  "job_store_is_not_a_shortlist": "The 5k CSV is a discovery dump, not a verified apply list. Many descriptions are empty or truncated to 600 characters. Keyword scores are not a hiring filter. Open the original listing and check seniority, employment type, country, language and required years before applying. Do not treat a score of 100 as a fit.",
   "log_applications_to": "C:\\Users\\jamon\\Desktop\\job\\data\\applications.json",
   "log_only_after_confirmed_submit": true,
   "application_log_schema": {
@@ -258,7 +395,12 @@
     "notes": "",
     "next_action": "wait 7 days",
     "next_action_date": "YYYY-MM-DD",
-    "history": [{"date": "YYYY-MM-DD", "event": "applied via ..."}]
+    "history": [
+      {
+        "date": "YYYY-MM-DD",
+        "event": "applied via ..."
+      }
+    ]
   },
   "canonical_facts": "C:\\Users\\jamon\\Desktop\\job\\profile\\resume.md",
   "pack_guide": "C:\\Users\\jamon\\Desktop\\job\\profile\\cv-variants.md"

@@ -23,15 +23,18 @@ test('cards lead to readable project guides, without adding a fourth selected pr
   assert.ok(!html.includes('<h3>City Gardens</h3>'));
 });
 
-test('Polybow leads with the leftover-ask problem, not a balance chart', () => {
+test('Polybow walkthrough separates StratA prices from the early expensive tickets', () => {
   const html = readFileSync(new URL('../projects/polybow.html', import.meta.url), 'utf8');
   assert.match(html, /leftover cheap ask|last-second cheap asks/);
+  assert.match(html, /\$0\.40–\$0\.72|\$0.40–\$0.72/);
   assert.match(html, /AWS Lightsail/);
   assert.match(html, /ws_books_YYYYMMDD.jsonl/);
   assert.match(html, /How the data was organised/);
   assert.match(html, /Skills this work used/);
+  assert.match(html, /Read the case study/);
   assert.doesNotMatch(html, /\$18|\$220|converted a account/i);
   assert.doesNotMatch(html, /StratD/);
+  assert.doesNotMatch(html, /Early Polybow, StratA and StratB bought expensive/);
 });
 
 test('Relay and Pattern Forge walkthroughs include a skills table', () => {
@@ -41,14 +44,14 @@ test('Relay and Pattern Forge walkthroughs include a skills table', () => {
   }
 });
 
-test('résumé page lists the four apply packs and optional FDE, with files on disk', () => {
+test('résumé page offers one designed PDF and one ATS PDF', () => {
   const html = readFileSync(new URL('../resume.html', import.meta.url), 'utf8');
-  for (const heading of ['Full-stack / product', 'Applied AI', 'Data', 'Software general', 'Optional: FDE / Solutions']) {
-    assert.ok(html.includes(heading), heading);
-  }
-  assert.match(html, /github.com\/coder058/);
-  assert.match(html, /More challenges/);
-  assert.match(html, /apply-pack.json/);
+  assert.match(html, /<h1>Résumé<\/h1>/);
+  assert.match(html, /assets\/jordi-lluis-cv\.pdf/);
+  assert.match(html, /assets\/jordi-lluis-cv-ats\.pdf/);
+  assert.doesNotMatch(html, /volume pack|scientist-light|apply-pack\.json|FDE-shaped/i);
+  assert.ok(existsSync(new URL('../assets/jordi-lluis-cv.pdf', import.meta.url)));
+  assert.ok(existsSync(new URL('../assets/jordi-lluis-cv-ats.pdf', import.meta.url)));
   const pack = JSON.parse(readFileSync(new URL('../apply-pack.json', import.meta.url), 'utf8'));
   assert.equal(pack.ready_to_apply, true);
   assert.deepEqual(pack.packs.map((item) => item.id), ['fullstack', 'ai', 'data', 'software', 'fde']);

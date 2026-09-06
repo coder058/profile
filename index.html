@@ -45,7 +45,7 @@
     <section id="work" class="work palette-section" data-bg="#c7bdaf" data-ink="#292824" aria-labelledby="work-title">
       <header class="work-header">
         <h2 id="work-title">Selected projects</h2>
-        <p class="work-note">Each walkthrough has a table of what depends on what — tables, files or services, the same idea as the City Gardens schema.</p>
+        <p class="work-note">Each walkthrough has a table of components and how the data was stored.</p>
         <p class="stack-label">Tools I build with</p>
         <ul class="stack-strip">
           <li>React</li>
@@ -61,30 +61,30 @@
         </ul>
       </header>
       <div class="project-grid">
-        <article class="project-card card-stone reveal">
-          <a href="projects/polybow.html" aria-label="Read the Polybow project walkthrough">
-            <div class="project-copy"><h3>Polybow</h3><p>A live Polymarket system that looked for last-second cheap asks left on the book, reached them from a Dublin VPS, and kept investigating after trading stopped.</p><p class="project-proof">Lightsail · WebSockets · JSONL recordings · ledger and timing tests</p><footer>PYTHON · AWS · CLOB APIS</footer></div>
-          </a>
-          <a class="project-data" href="projects/polybow.html#data">How the data was organised</a>
-        </article>
         <article class="project-card card-ash reveal">
           <a href="projects/pattern-forge.html" aria-label="Read the Pattern Forge project walkthrough">
-            <div class="project-copy"><h3>Pattern Forge</h3><p>A market-data workspace with live crypto quotes and recorded-market replay. I built the chart interface and candle API, keeping future prices out of replay calculations.</p><p class="project-proof">44 tests · Docker image built and smoke-tested in CI · deployed</p><footer>REACT · TYPESCRIPT · REST APIS</footer></div>
+            <div class="project-copy"><h3>Pattern Forge</h3><p>A market-data workspace with live crypto quotes and recorded-market replay. I built the chart interface and candle API, keeping future prices out of replay calculations.</p><p class="project-proof">Tests, Docker image and PostgreSQL restart checked in CI</p><footer>REACT · TYPESCRIPT · REST APIS</footer></div>
           </a>
           <a class="project-data" href="projects/pattern-forge.html#data">How the data was organised</a>
         </article>
         <article class="project-card card-sand reveal">
           <a href="projects/relay.html" aria-label="Read the Relay project walkthrough">
-            <div class="project-copy"><h3>Relay</h3><p>An MCP server with a web interface for checking job requirements. I connected public listings to Python tools that preserve the original wording and export a review.</p><p class="project-proof">48 backend tests · one review service behind both HTTP and MCP · deployed</p><footer>MCP · PYTHON · TYPESCRIPT</footer></div>
+            <div class="project-copy"><h3>Relay</h3><p>A small review tool: a React interface and four MCP tools share one Python service so each mention stays next to the original wording.</p><p class="project-proof">pytest in CI · one review service behind HTTP and MCP</p><footer>MCP · PYTHON · TYPESCRIPT</footer></div>
           </a>
           <a class="project-data" href="projects/relay.html#data">How the data was organised</a>
+        </article>
+        <article class="project-card card-stone reveal">
+          <a href="projects/polybow.html" aria-label="Read the Polybow project walkthrough">
+            <div class="project-copy"><h3>Polybow</h3><p>A 2026 Polymarket experiment: leftover cheap asks, a Dublin VPS, then a public ledger after live trading stopped.</p><p class="project-proof">Lightsail · WebSockets · JSONL recordings · ledger and timing tests</p><footer>PYTHON · AWS · CLOB APIS</footer></div>
+          </a>
+          <a class="project-data" href="projects/polybow.html#data">How the data was organised</a>
         </article>
       </div>
     </section>
     <section id="more-challenges" class="challenges palette-section" data-bg="#e4dcc9" data-ink="#292824" aria-labelledby="challenges-title">
       <header class="challenges-header">
         <h2 id="challenges-title">More challenges</h2>
-        <p>Public GitHub exercises and other work, in a separate window from the three selected projects. Course labs and practice repos — not production products. I do not claim every Le Wagon Kitt challenge.</p>
+        <p>Selected course exercises and other public GitHub work, kept separate from the three selected projects. Course labs and practice repos — not production products.</p>
       </header>
       <div class="challenges-window" role="region" aria-label="GitHub challenges and other projects">
         <div class="challenges-group">
@@ -105,14 +105,14 @@
             <li>
               <a href="projects/city-gardens.html#data">
                 <strong>City Gardens</strong>
-                <span>Le Wagon team project, 2023: Rails and PostgreSQL for gardens, parcels and events. Shared work, not sole-authored, and not maintained since. Open the table of who depends on whom.</span>
+                <span>Le Wagon team project, 2023. My merged work included parcel reservations, event-index partials, search, logout and styling. Shared, not sole-authored, and not maintained since.</span>
               </a>
             </li>
           </ul>
         </div>
         <div class="challenges-group">
           <h3>API labs</h3>
-          <p>Seven public JavaScript browser exercises that call a REST API and handle loading, empty and error states.</p>
+          <p>Seven public JavaScript browser exercises that call a REST API.</p>
           <ul class="challenge-chips">
             <li><a href="https://github.com/coder058/js-geocoder" target="_blank" rel="noreferrer">Geocoder</a></li>
             <li><a href="https://github.com/coder058/js-fork-restaurants" target="_blank" rel="noreferrer">Restaurant search</a></li>
@@ -125,15 +125,13 @@
         </div>
         <div class="challenges-group">
           <h3>Rails exercises</h3>
-          <p>Public Le Wagon Rails labs from 2023. Finished exercises first; unfinished scaffolds are labelled as such.</p>
+          <p>Public Le Wagon Rails labs from 2023.</p>
           <ul class="challenge-chips">
             <li><a href="https://github.com/coder058/rails-stupid-coaching" target="_blank" rel="noreferrer">Stupid Coaching</a></li>
             <li><a href="https://github.com/coder058/rails-longest-word-game" target="_blank" rel="noreferrer">Longest Word Game</a></li>
             <li><a href="https://github.com/coder058/rails-task-manager" target="_blank" rel="noreferrer">Task Manager</a></li>
             <li><a href="https://github.com/coder058/rails-yelp-mvp" target="_blank" rel="noreferrer">Yelp MVP</a></li>
             <li><a href="https://github.com/coder058/rails-simple-airbnb" target="_blank" rel="noreferrer">Simple Airbnb</a></li>
-            <li><a href="https://github.com/coder058/rails-watch-list" target="_blank" rel="noreferrer">Watch list — unfinished scaffold</a></li>
-            <li><a href="https://github.com/coder058/rails-wikinimous" target="_blank" rel="noreferrer">Wiki — unfinished scaffold</a></li>
           </ul>
         </div>
       </div>

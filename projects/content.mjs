@@ -6,7 +6,9 @@ export const projects = [
     summary: 'A workspace for exploring public crypto prices and replaying recorded markets without seeing the future.',
     problem: 'When reviewing a market, it is easy to let later prices influence an earlier decision. I wanted to inspect what an indicator could actually have shown at a chosen point in time.',
     contribution: 'I built the market controls, data validation, replay calculations, candle API and connection handling. TradingView Lightweight Charts renders the chart; I did not build that charting library.',
-    demo: 'https://pattern-forge-five.vercel.app/', code: 'https://github.com/coder058/pattern-forge',
+    demo: 'https://pattern-forge-five.vercel.app/',
+    demoLabel: 'Open the demo',
+    code: 'https://github.com/coder058/pattern-forge',
     skills: [
       ['React and TypeScript', 'Workspace controls, loading and error states, replay slider and timeframe compare.'],
       ['Next.js candle API', 'Validates markets and closed candles before anything reaches the chart.'],
@@ -30,7 +32,7 @@ export const projects = [
       ['Python ingester (local/CI)', 'Validated public candles or a recorded fixture, psycopg and PostgreSQL', 'Writes closed candles; records each attempt and its fetch/write timing.']
     ],
     recordsTitle: 'How the data was organised',
-    recordsIntro: 'City Gardens stores related rows in PostgreSQL. Pattern Forge can do that locally and in CI. The public Vercel demo does not serve this database; it uses recording files and temporary process memory.',
+    recordsIntro: 'Closed candles and ingest runs can be stored in PostgreSQL locally and in CI. The public demo uses recording files and process memory; it does not serve that database.',
     recordsCaption: 'Stored records, keys and responsibility',
     records: [
       ['candles table', 'Primary key (symbol, interval, open_time)', 'Prevents duplicate rows on repeated ingestion; stores OHLCV values and ingestion time.'],
@@ -47,12 +49,12 @@ export const projects = [
     summary: 'A job-requirement review tool that keeps the original wording beside each skill mention.',
     problem: 'A job summary can lose important qualifications, exceptions or changes to a listing. I wanted the original text to remain inspectable instead of asking a model to decide whether someone qualifies.',
     contribution: 'I connected a React interface and MCP clients to the same Python review service. I implemented source normalization, token-aware matching, duplicate retention and portable exports. The MCP transport uses the official Python SDK.',
-    demo: 'https://relay-ten-zeta.vercel.app/', code: 'https://github.com/coder058/relay',
+    demo: 'https://relay-ten-zeta.vercel.app/', demoLabel: 'Open the demo', code: 'https://github.com/coder058/relay',
     skills: [
       ['Python and FastAPI', 'One evidence service: normalize text, match tokens, keep duplicate wording.'],
       ['MCP', 'Four read-only tools that call the same matcher as the web UI. Official Python SDK.'],
       ['React and TypeScript', 'Search, review queue, quoted lines and export. No eligibility score.'],
-      ['Tests', '48 backend tests for input validation, source retention and protocol behaviour.']
+      ['Tests', 'pytest in CI for API validation, duplicate wording and MCP transports.']
     ],
     steps: ['Search the public board by keyword and location, or paste a public job description.', 'Add a listing to the review queue. Enter the skills you want to look for.', 'Select Review evidence. Read each matching quotation in its original context: a mention is not necessarily a requirement.', 'Compare duplicate versions without discarding changed text.', 'Export the review or workspace JSON. Saving on this device is optional; do not paste a CV or private correspondence.'],
     dependencies: [
@@ -78,16 +80,22 @@ export const projects = [
   },
   {
     slug: 'polybow', name: 'Polybow', stack: 'Python · WebSockets · AWS Lightsail · CLOB APIs · JSONL recordings',
-    summary: 'A live Polymarket system: find last-second cheap asks left on the book, reach them from a Dublin VPS, then keep investigating after live trading stopped.',
+    summary: 'A 2026 Polymarket experiment: later versions looked for leftover cheap asks, ran from a Dublin VPS, then kept investigating after live trading stopped.',
     problem: [
-      'Early Polybow, StratA and StratB bought expensive contracts near expiry, often around $0.96–$0.99. Those tickets had little upside even when the direction was right. The useful problem appeared later: a cheap ask still sitting on the about-to-win side while the other side already looked decided.',
-      'That leftover cheap ask is a book condition, not a security hole. The work was to notice it, reach it before it disappeared, and later test whether it was still there after the venue changed. UC is the public name for that cheap-entry line.'
+      'The first version bought expensive contracts near expiry, often around $0.96–$0.99, so correct direction left little upside. Later branches changed the entry price and the timing window. They overlapped; they were not four isolated trials.',
+      'The later useful problem was a leftover cheap ask still sitting on the about-to-win side. That is a book condition, not a security hole. UC is the public name for that cheap-entry line.'
     ],
     contribution: [
       'I built and operated the live path: WebSocket books, order preparation, a new AWS Lightsail instance in Dublin, and a recording layout on the VPS. I then treated the live run as evidence to investigate, not as a finished proof.',
-      'After live trading stopped, recordings and later Hyperliquid captures continued. The public repository has the case study, the ledger script and the timing parser. The private bot, raw VPS files and unfinished later analysis are not on this site. Live trading ended; the investigation did not.'
+      'After live trading stopped, recordings continued. The public repository has the case study, the ledger script and the timing parser. The private bot and raw VPS files are not on this site.'
     ],
-    demo: 'https://polybow-archive.vercel.app/', code: 'https://github.com/coder058/polybow-case-study',
+    branches: [
+      ['Polybow (early)', 'Near expiry, often $0.96–$0.99', 'Little upside when the direction was right. Oracle updates were too coarse for a five-minute market.'],
+      ['StratA', '$0.40–$0.72 with 11–15 seconds remaining', 'More upside per winning trade; more time for the market to reverse.'],
+      ['StratB', 'Wider window and a larger gap versus the opening reference', 'Book updates could trigger a decision immediately. Dublin VPS and a warmed execution path. No controlled region comparison.'],
+      ['UC', '$0.01–$0.20 leftover cheap asks', 'Maker orders under the ask, later a taker leg. Live trading later stopped.']
+    ],
+    demo: 'https://polybow-archive.vercel.app/', demoLabel: 'Read the case study', code: 'https://github.com/coder058/polybow-case-study',
     skills: [
       ['Python', 'Bot loop, patches, ledger analysis and the timing parser.'],
       ['WebSockets', 'Book updates triggered evaluation instead of waiting for the next poll.'],
@@ -99,7 +107,7 @@ export const projects = [
     ],
     steps: [
       'Read the problem first: leftover cheap asks, not the balance chart.',
-      'Follow the branch table: expensive late tickets, then UC cheap entry.',
+      'Follow the branch table: early expensive tickets, StratA at $0.40–$0.72, then UC leftover cheap asks.',
       'Read the execution path: Lightsail, warm connection, metadata cache, defined timing window.',
       'Open the data table: how recordings were named and joined. The VPS copies were deleted; the layout is what can still be shown.',
       'Use analyze.py on the public CSV if you want the ledger math. Wallet cash and raw logs stay in the private archive.'
@@ -113,7 +121,7 @@ export const projects = [
       ['Public case study', 'Static site plus market_ledger.csv', 'The walkthrough a recruiter can open without the private bot.']
     ],
     recordsTitle: 'How the data was organised',
-    recordsIntro: 'City Gardens shows foreign keys in PostgreSQL. Here the live store was files on the VPS, keyed by market, time and file day. I deleted the VPS recordings. This table is the layout I used, not a download.',
+    recordsIntro: 'The live store was files on the VPS, keyed by market, time and file day. I deleted those copies. This table is the layout, not a download.',
     recordsCaption: 'Recording and research records, as operated on the VPS',
     records: [
       ['ws_books_YYYYMMDD.jsonl', 'BBO recorder on the Lightsail host', 'One file per UTC day: best bid and ask updates. Later gzip-compressed. No order sizes in the early BBO files.'],
@@ -124,8 +132,8 @@ export const projects = [
       ['Later Hyperliquid captures', 'Separate after live Polymarket trading stopped', 'Recorded for analysis that was not finished. Not a second live bot on this page.']
     ],
     build: [
-      'Write the expensive late-entry versions (Polybow, StratA, StratB) and record why upside was thin at $0.96–$0.99.',
-      'Add the cheap-entry line (UC): last-second asks, first as a maker under the ask, then with a taker leg.',
+      'Write the early expensive late-entry version (often $0.96–$0.99), then StratA at $0.40–$0.72 with 11–15 seconds remaining, then StratB’s wider window.',
+      'Add the cheap-entry line (UC): leftover last-second asks, first as a maker under the ask, then with a taker leg.',
       'Create a Lightsail instance in Dublin, warm the HTTP client, cache metadata and measure a named window: prepare then POST response.',
       'Record books to dated JSONL files and rotate them so a disk-full host could not silently stop the recorder.',
       'After the 28 April CLOB V2 venue change and the 2 May internal guard removal, keep recording and ask whether leftover cheap asks still existed. Later scans of June–July books did not find a durable stale-ask condition; order sizes were missing and August files were gone.',
@@ -133,7 +141,7 @@ export const projects = [
     ],
     run: 'python analyze.py\npython -m unittest discover -s tests\nnode --test tests/ledger-ui.test.cjs\npython -m http.server 8084 --bind 127.0.0.1',
     limits: [
-      'This was a live experiment, not a finished proof of an edge. Later book scans no longer showed durable leftover cheap asks; that is a later-market observation, not a courtroom link to one patch.',
+      'This was a live experiment, not a finished proof of an edge. Later book scans no longer showed durable leftover cheap asks; that later-market observation does not establish which change caused the result.',
       'Dublin was not compared with another region under the same clock. An API acknowledgement is not a fill. The public CSV is market-resolution accounting, not wallet cash.',
       'Raw recordings, private bot code and later Hyperliquid analysis are not in the public repository. The VPS files were deleted, so this page can show the schema, not replay those days.'
     ],
@@ -143,7 +151,7 @@ export const projects = [
     slug: 'city-gardens', name: 'City Gardens', stack: 'Ruby on Rails · PostgreSQL · Active Record · JavaScript',
     summary: 'A Le Wagon team project for finding community gardens, reserving parcels and joining garden events.',
     problem: 'A visitor needs to find a garden and understand which parcel or event they can join. Garden information, users and reservations need to refer to the same records.',
-    contribution: 'This was a shared Le Wagon project in 2023, not my sole-authored application. The repository and commit history are the evidence of the team’s work. This page explains the model and request flow found in that code; it does not claim that the old app is production-ready today.',
+    contribution: 'Shared Le Wagon team project, 2023. My merged work included parcel reservations (PR #37), the add-event button (#38), logout (#39), event-index partials, a search bar, Cloudinary for event photos, and styling (#47, #50). I did not build the whole schema alone, and the app is not maintained as a product.',
     code: 'https://github.com/justdevelopin/CityGardens',
     home: '../index.html#more-challenges',
     dependsTitle: 'How the data was organised',

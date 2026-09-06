@@ -24,9 +24,9 @@ test('portfolio copy is personal without duplicating the resume', () => {
   assert.match(html, /I’m curious about how things work/);
   assert.match(html, /coding agents to explore possible answers/);
   assert.doesNotMatch(html, /open to relocation|Python, TypeScript (?:&amp;|and) SQL/i);
-  // SOURCE: user direction 2026-09-06 — Polybow is the live-applied system, so it leads.
-  assert.ok(html.indexOf('<h3>Polybow</h3>') < html.indexOf('<h3>Pattern Forge</h3>'));
+  // SOURCE: recruiter review 6 Sep 2026 — Pattern Forge is the main demo.
   assert.ok(html.indexOf('<h3>Pattern Forge</h3>') < html.indexOf('<h3>Relay</h3>'));
+  assert.ok(html.indexOf('<h3>Relay</h3>') < html.indexOf('<h3>Polybow</h3>'));
   assert.match(html, /<h2 id="about-title">About<\/h2>/);
 });
 
@@ -35,8 +35,8 @@ test('a reader can scan the stack and the evidence behind each project', () => {
     assert.ok(html.includes(`<li>${tool}</li>`), tool);
   // SOURCE: counts and deployment checks recorded in the 5-6 September project audits.
   assert.equal((html.match(/class="project-proof"/g) || []).length, 3);
-  assert.match(html, /44 tests · Docker image built and smoke-tested in CI/);
-  assert.match(html, /48 backend tests/);
+  assert.match(html, /Tests, Docker image and PostgreSQL restart checked in CI/);
+  assert.match(html, /pytest in CI · one review service behind HTTP and MCP/);
   assert.match(html, /Lightsail · WebSockets · JSONL recordings/);
   assert.equal((html.match(/class="project-data"/g) || []).length, 3);
   for (const slug of ['polybow', 'pattern-forge', 'relay']) {
@@ -54,7 +54,7 @@ test('Le Wagon and other GitHub work sits in More challenges, not featured cards
   assert.match(html, /Transcript Desk/);
   assert.match(html, /js-geocoder/);
   assert.match(html, /rails-task-manager/);
-  assert.match(html, /unfinished scaffold/);
+  assert.doesNotMatch(html, /unfinished scaffold/);
   assert.doesNotMatch(html, /200 challenges|every Le Wagon Kitt challenge was completed/i);
   assert.doesNotMatch(html, /lewagon-api-lab/);
   assert.ok(html.indexOf('id="work"') < html.indexOf('id="more-challenges"'));
