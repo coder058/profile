@@ -7,6 +7,13 @@ export const projects = [
     problem: 'When reviewing a market, it is easy to let later prices influence an earlier decision. I wanted to inspect what an indicator could actually have shown at a chosen point in time.',
     contribution: 'I built the market controls, data validation, replay calculations, candle API and connection handling. TradingView Lightweight Charts renders the chart; I did not build that charting library.',
     demo: 'https://pattern-forge-five.vercel.app/', code: 'https://github.com/coder058/pattern-forge',
+    skills: [
+      ['React and TypeScript', 'Workspace controls, loading and error states, replay slider and timeframe compare.'],
+      ['Next.js candle API', 'Validates markets and closed candles before anything reaches the chart.'],
+      ['WebSockets', 'A separate live mid-price with heartbeat and reconnection. Not the replay source.'],
+      ['PostgreSQL', 'Local/CI persistence of closed candles and ingest runs. The public demo does not serve that database.'],
+      ['Docker and GitHub Actions', 'Image build, tests and a restart check that the stored rows survive.']
+    ],
     steps: [
       'Open the workspace. Bitcoin loads by default. The live mid-price changes automatically; the candle chart is a separate snapshot.',
       'Choose a timeframe or select a recorded market such as Gold. Recorded markets are labelled Historical recording.',
@@ -36,6 +43,12 @@ export const projects = [
     problem: 'A job summary can lose important qualifications, exceptions or changes to a listing. I wanted the original text to remain inspectable instead of asking a model to decide whether someone qualifies.',
     contribution: 'I connected a React interface and MCP clients to the same Python review service. I implemented source normalization, token-aware matching, duplicate retention and portable exports. The MCP transport uses the official Python SDK.',
     demo: 'https://relay-ten-zeta.vercel.app/', code: 'https://github.com/coder058/relay',
+    skills: [
+      ['Python and FastAPI', 'One evidence service: normalize text, match tokens, keep duplicate wording.'],
+      ['MCP', 'Four read-only tools that call the same matcher as the web UI. Official Python SDK.'],
+      ['React and TypeScript', 'Search, review queue, quoted lines and export. No eligibility score.'],
+      ['Tests', '48 backend tests for input validation, source retention and protocol behaviour.']
+    ],
     steps: ['Search the public board by keyword and location, or paste a public job description.', 'Add a listing to the review queue. Enter the skills you want to look for.', 'Select Review evidence. Read each matching quotation in its original context: a mention is not necessarily a requirement.', 'Compare duplicate versions without discarding changed text.', 'Export the review or workspace JSON. Saving on this device is optional; do not paste a CV or private correspondence.'],
     dependencies: [
       ['React interface', 'FastAPI JSON endpoints', 'Search, review queue, quote display and export.'],

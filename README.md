@@ -12,6 +12,8 @@ Canonical portfolio: https://coder058.github.io/profile/
 
 Each selected card opens a project walkthrough with the problem, contribution, usage steps, dependency table and limitations. [City Gardens](https://coder058.github.io/profile/projects/city-gardens.html) provides historical team-project and relational-database context; it is not a fourth featured application. DispatchOps is no longer featured; its repository and deployment have not been deleted.
 
+[Résumé packs](https://coder058.github.io/profile/resume.html) — four one-page files plus optional FDE. Same GitHub, same site; not one PDF per vacancy.
+
 The 2026-08-28 project audit removed VÆRN and Atelier Z from the featured selection because their hosted storefronts do not demonstrate the depth of the underlying systems. Their projects and existing deployments were not deleted. Course exercises remain outside the featured portfolio.
 
 The interaction system uses scroll-linked palette changes, progressive reveals and reduced-motion fallbacks. It takes inspiration from archival editorial websites without copying their branding or assets.

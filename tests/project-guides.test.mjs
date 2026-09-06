@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { projects } from '../projects/content.mjs';
 
 test('each project has a rendered journey, dependencies, contribution and limits', () => {
@@ -29,4 +29,23 @@ test('Polybow leads with the leftover-ask problem, not a balance chart', () => {
   assert.match(html, /Skills this work used/);
   assert.doesNotMatch(html, /\$18|\$220|converted a account/i);
   assert.doesNotMatch(html, /StratD/);
+});
+
+test('Relay and Pattern Forge walkthroughs include a skills table', () => {
+  for (const slug of ['relay', 'pattern-forge']) {
+    const html = readFileSync(new URL(`../projects/${slug}.html`, import.meta.url), 'utf8');
+    assert.match(html, /Skills this work used/);
+  }
+});
+
+test('résumé page lists the four apply packs and optional FDE, with files on disk', () => {
+  const html = readFileSync(new URL('../resume.html', import.meta.url), 'utf8');
+  for (const heading of ['Full-stack / product', 'Applied AI', 'Data', 'Software general', 'Optional: FDE / Solutions']) {
+    assert.ok(html.includes(heading), heading);
+  }
+  assert.match(html, /github.com\/coder058/);
+  for (const [, target] of html.matchAll(/(?:href|src)="([^"#]+)"/g)) {
+    if (/^(https?:|mailto:)/.test(target)) continue;
+    assert.ok(existsSync(new URL('../' + target.split('?')[0], import.meta.url)), target);
+  }
 });

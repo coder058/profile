@@ -35,12 +35,13 @@ test('a reader can scan the stack and the evidence behind each project', () => {
     assert.ok(html.includes(`<li>${tool}</li>`), tool);
   // SOURCE: counts and deployment checks recorded in the 5-6 September project audits.
   assert.equal((html.match(/class="project-proof"/g) || []).length, 3);
-  assert.match(html, /32 tests · Docker image built and smoke-tested in CI/);
+  assert.match(html, /44 tests · Docker image built and smoke-tested in CI/);
   assert.match(html, /48 backend tests/);
   assert.match(html, /Lightsail · WebSockets · JSONL recordings/);
 });
 
 test('Le Wagon work is shown as attributed training, not featured product work', () => {
+  assert.ok(html.includes('href="resume.html"'));
   assert.match(html, /<h2 id="training-title">Training work<\/h2>/);
   assert.match(html, /City Gardens/);
   assert.match(html, /API labs/);

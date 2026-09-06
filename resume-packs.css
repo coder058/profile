@@ -1,0 +1,13 @@
+/* SOURCE: same portfolio palette as training and about; editorial type sizes. */
+.resume-page{padding:74px 28px 90px;max-width:960px;margin:0 auto}
+.resume-intro h1{font-size:clamp(42px,5vw,72px);letter-spacing:-.055em;line-height:1;margin:0}
+.resume-intro p{font-size:18px;line-height:1.5;margin:22px 0 0;max-width:640px}
+.resume-list{list-style:none;margin:48px 0 0;padding:0;display:grid;gap:16px}
+.resume-list li,.resume-optional{border:1px dotted currentColor;padding:24px 28px}
+.resume-list h2,.resume-optional h2{font-size:24px;letter-spacing:-.02em;margin:0 0 10px}
+.resume-list p,.resume-optional p{font-size:16px;line-height:1.5;margin:0 0 10px;max-width:640px}
+.resume-pitch{opacity:.78;font-style:italic}
+.resume-files{margin:16px 0 0}
+.resume-files a{text-decoration:underline;text-underline-offset:4px}
+.resume-optional{margin-top:28px}
+@media(max-width:700px){.resume-page{padding:60px 18px 70px}.resume-list li,.resume-optional{padding:20px}}
