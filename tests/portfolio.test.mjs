@@ -19,15 +19,15 @@ test('local styles, scripts, images and resume exist', () => {
 });
 
 test('portfolio copy is personal without duplicating the resume', () => {
-  assert.match(html, /Software developer in Amsterdam/);
+  assert.doesNotMatch(html, /Software developer in Amsterdam/);
   assert.doesNotMatch(html, /Full-stack developer/i);
-  assert.match(html, /I’m curious about how things work/);
-  assert.match(html, /coding agents to explore possible answers/);
+  assert.doesNotMatch(html, /I’m curious about how things work/);
+  assert.doesNotMatch(html, /coding agents to explore possible answers/);
   assert.doesNotMatch(html, /open to relocation|Python, TypeScript (?:&amp;|and) SQL/i);
   // SOURCE: recruiter review 6 Sep 2026 — Pattern Forge is the main demo.
   assert.ok(html.indexOf('<h3>Pattern Forge</h3>') < html.indexOf('<h3>Relay</h3>'));
   assert.ok(html.indexOf('<h3>Relay</h3>') < html.indexOf('<h3>Python trading bot</h3>'));
-  assert.match(html, /<h2 id="about-title">About<\/h2>/);
+  assert.doesNotMatch(html, /id="about"|about-title|about-copy|about-note/);
 });
 
 test('a reader can scan the stack and the evidence behind each project', () => {
@@ -44,14 +44,12 @@ test('a reader can scan the stack and the evidence behind each project', () => {
   }
 });
 
-test('Le Wagon and other GitHub work sits in More challenges, not featured cards', () => {
-  assert.ok(html.includes('href="#more-challenges"'));
+test('Le Wagon labs sit in a More challenges window, not featured cards', () => {
+  assert.doesNotMatch(html, />Challenges</);
   assert.match(html, /<h2 id="challenges-title">More challenges<\/h2>/);
-  assert.match(html, /City Gardens/);
+  assert.match(html, /class="challenges-window"/);
+  assert.doesNotMatch(html, /Other projects|DispatchOps|Transcript Desk|City Gardens|not sole-authored|Selected course exercises/);
   assert.match(html, /API labs/);
-  assert.match(html, /not sole-authored/);
-  assert.match(html, /DispatchOps/);
-  assert.match(html, /Transcript Desk/);
   assert.match(html, /js-geocoder/);
   assert.match(html, /rails-task-manager/);
   assert.doesNotMatch(html, /unfinished scaffold/);
