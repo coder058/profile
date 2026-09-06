@@ -3,10 +3,10 @@ import assert from 'node:assert/strict';
 import { readFileSync, existsSync } from 'node:fs';
 const html = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
 test('selected projects are single-link cards with current names', () => {
-  for (const name of ['Relay', 'Pattern Forge', 'Polybow', 'DispatchOps']) assert.ok(html.includes(`<h3>${name}</h3>`));
-  assert.doesNotMatch(html, /Transcript Desk|Source &amp; tests|OPEN WORK|project-index/);
-  // SOURCE: the reviewed portfolio has four selected project cards.
-  assert.equal((html.match(/class="project-card /g) || []).length, 4);
+  for (const name of ['Relay', 'Pattern Forge', 'Polybow']) assert.ok(html.includes(`<h3>${name}</h3>`));
+  assert.doesNotMatch(html, /DispatchOps|Transcript Desk|Source &amp; tests|OPEN WORK|project-index/);
+  // SOURCE: user's September review removes the game from featured work.
+  assert.equal((html.match(/class="project-card /g) || []).length, 3);
   assert.equal((html.match(/class="project-source"/g) || []).length, 0);
   assert.match(html, /MCP · PYTHON · TYPESCRIPT/);
   assert.ok(html.includes('rel="canonical" href="https://coder058.github.io/profile/"'));
