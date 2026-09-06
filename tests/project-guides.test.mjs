@@ -48,6 +48,10 @@ test('résumé page lists the four apply packs and optional FDE, with files on d
   }
   assert.match(html, /github.com\/coder058/);
   assert.match(html, /More challenges/);
+  assert.match(html, /apply-pack.json/);
+  const pack = JSON.parse(readFileSync(new URL('../apply-pack.json', import.meta.url), 'utf8'));
+  assert.equal(pack.ready_to_apply, true);
+  assert.deepEqual(pack.packs.map((item) => item.id), ['fullstack', 'ai', 'data', 'software', 'fde']);
   for (const [, target] of html.matchAll(/(?:href|src)="([^"#]+)"/g)) {
     if (/^(https?:|mailto:)/.test(target)) continue;
     assert.ok(existsSync(new URL('../' + target.split('?')[0], import.meta.url)), target);
