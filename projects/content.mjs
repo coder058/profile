@@ -20,11 +20,15 @@ export const projects = [
       ['Live quote connection', 'Hyperliquid public WebSocket', 'A separate mid-price with receipt time, heartbeat and reconnection. No trading account.'],
       ['Recorded replay', 'Bundled OHLC JSON and the replay cursor', 'Only the selected prefix reaches indicators and timeframe aggregation.'],
       ['Chart rendering', 'TradingView Lightweight Charts', 'Candles, overlays and chart interaction.'],
-      ['Storage', 'Public recording files and temporary memory', 'No SQL database, user accounts or durable server-side workspace.']
+      ['Public demo storage', 'Recording files and temporary process memory', 'The Vercel demo does not serve stored candles or provide user accounts.'],
+      ['Python ingester (local/CI)', 'Validated public candles or a recorded fixture, psycopg and PostgreSQL', 'Writes closed candles; records each attempt and its fetch/write timing.'],
+      ['candles table', 'Primary key (symbol, interval, open_time)', 'Prevents duplicate rows on repeated ingestion; stores OHLCV values and ingestion time.'],
+      ['ingest_runs table', 'Each ingestion attempt', 'Stores source, row counts, timing and errors separately from candle data.'],
+      ['Stored-candle API (local/CI)', 'PostgreSQL through the pg client and DATABASE_URL', 'Reads saved candles into the existing chart. An empty store returns 404; an unavailable database returns 503.']
     ],
     build: ['Define a candle format with timestamps and OHLC values.', 'Reject malformed, conflicting and still-forming candles at the boundary.', 'Calculate indicators from the selected prefix, then render the result in React.', 'Keep the streaming mid-price separate from historical calculations.', 'Test malformed inputs, partial upstream failures, replay causality and connection cleanup; build and run the Docker image in CI.'],
     run: 'npm ci\nnpm test\nnpm run build\nnpm start',
-    limits: 'The quote timestamp is local receipt time, not an exchange-latency benchmark. Public candles update on Refresh. The oil and other archive datasets are recordings. This is a read-only analysis tool, not a trading terminal or a profitable strategy.'
+    limits: 'The quote timestamp is local receipt time, not an exchange-latency benchmark. Public candles update on Refresh. The oil and other archive datasets are recordings. The repository also includes PostgreSQL persistence for local Docker and CI; the public Vercel demo does not serve that database. The README explains ingestion, duplicate handling and restart checks. This is a read-only analysis tool, not a trading terminal or a profitable strategy.'
   },
   {
     slug: 'relay', name: 'Relay', stack: 'MCP · Python · FastAPI · React · TypeScript',
