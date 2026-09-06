@@ -17,9 +17,12 @@ test('each project has a rendered journey, dependencies, contribution and limits
     assert.equal((html.match(/<h1>/g)||[]).length,1);
   }
 });
-test('cards lead to readable project guides, without adding a fourth selected project', () => {
+test('cards lead to live demos, with walkthroughs one click away', () => {
   const html = readFileSync(new URL('../index.html',import.meta.url),'utf8');
-  for (const slug of ['polybow','pattern-forge','relay']) assert.ok(html.includes(`href="projects/${slug}.html"`));
+  assert.match(html, /href="https:\/\/pattern-forge-five\.vercel\.app\/"/);
+  assert.match(html, /href="https:\/\/relay-ten-zeta\.vercel\.app\/"/);
+  assert.match(html, /href="https:\/\/polybow-archive\.vercel\.app\/"/);
+  for (const slug of ['polybow','pattern-forge','relay']) assert.ok(html.includes(`href="projects/${slug}.html#data"`));
   assert.ok(!html.includes('<h3>City Gardens</h3>'));
 });
 

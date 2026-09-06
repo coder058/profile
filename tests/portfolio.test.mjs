@@ -19,6 +19,7 @@ test('local styles, scripts, images and resume exist', () => {
 });
 
 test('portfolio copy is personal without duplicating the resume', () => {
+  assert.match(html, /<p class="hero-summary">Market-data interfaces, HTTP APIs and small developer tools/);
   assert.doesNotMatch(html, /Software developer in Amsterdam/);
   assert.doesNotMatch(html, /Full-stack developer/i);
   assert.doesNotMatch(html, /I’m curious about how things work/);
@@ -38,6 +39,12 @@ test('a reader can scan the stack and the evidence behind each project', () => {
   assert.match(html, /Tests, Docker image and PostgreSQL restart checked in CI/);
   assert.match(html, /pytest in CI · one review service behind HTTP and MCP/);
   assert.match(html, /Lightsail · WebSockets · JSONL recordings/);
+  assert.match(html, /Open BTC 5m/);
+  assert.match(html, /Load the board/);
+  assert.match(html, /Open the ledger/);
+  assert.match(html, /pattern-forge-five\.vercel\.app/);
+  assert.match(html, /relay-ten-zeta\.vercel\.app/);
+  assert.match(html, /polybow-archive\.vercel\.app/);
   assert.equal((html.match(/class="project-data"/g) || []).length, 3);
   for (const slug of ['polybow', 'pattern-forge', 'relay']) {
     assert.ok(html.includes(`href="projects/${slug}.html#data"`), slug);
