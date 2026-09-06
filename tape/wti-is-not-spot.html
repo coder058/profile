@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="The WTI file in Pattern Forge is a Polymarket Perps hourly recording, not CME spot oil. First TAPE post, 6 September 2026.">
+  <link rel="canonical" href="https://coder058.github.io/profile/tape/wti-is-not-spot.html">
+  <title>“WTI” is not spot — TAPE</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/journal.css">
+</head>
+<body>
+  <a class="skip" href="#post">Skip to post</a>
+  <div class="crop">
+    <p class="tape"><span>01</span> Energy · Recording · Not a forecast</p>
+    <nav class="top" aria-label="Journal">
+      <a href="./">“TAPE”</a>
+      <a href="../host/">“HOST”</a>
+      <a href="../">Portfolio</a>
+    </nav>
+    <article class="post" id="post">
+      <p class="kicker"><b>Issue 01</b> · Energy</p>
+      <h1 class="post-title">“WTI” is not spot</h1>
+      <p class="meta"><span>06 September 2026</span><span>Amsterdam</span><span>Jordi Lluis</span></p>
+      <p>I am going to write about energy in this journal. The first honest sentence is about the file I actually have.</p>
+      <p>Pattern Forge ships a recorded market labelled WTI Oil. The catalog is explicit: it is a <em>Polymarket Perps</em> hourly series, not a CME futures settlement and not a cash WTI price. Missing hours are not filled. The last captured bar was omitted because it may still have been forming when the recording stopped.</p>
+      <h2>What the file contains</h2>
+      <table class="facts">
+        <caption class="skip">Statistics read from the committed recording</caption>
+        <tbody>
+          <tr><th>Symbol in the file</th><td>WTIOIL-USD</td></tr>
+          <tr><th>Venue</th><td>Polymarket Perps, 1-hour bars</td></tr>
+          <tr><th>UTC range</th><td>7 May 2026 10:00 → 22 August 2026 00:00</td></tr>
+          <tr><th>Closed bars</th><td>2,482</td></tr>
+          <tr><th>Gaps</th><td>42 hours not interpolated</td></tr>
+          <tr><th>First close → last close</th><td>90.0 → 86.7</td></tr>
+          <tr><th>Close range</th><td>67.229 – 104.5</td></tr>
+          <tr><th>Bar high / low extremes</th><td>109.2 / 60.0 — prints on this contract, not a CME range I am selling</td></tr>
+          <tr><th>Input hash</th><td>6733ae8ec1646133… (SHA-256 of the source parquet, recorded in the catalog)</td></tr>
+        </tbody>
+      </table>
+      <p>I read those numbers from the committed JSON on 6 September 2026. I did not rebuild the parquet. I did not splice a live oil feed on top.</p>
+      <h2>How Pattern Forge is allowed to use it</h2>
+      <p>Replay in that workspace only supplies candles up to the cursor. Later prices stay out of the indicator. Incomplete higher-timeframe groups are dropped rather than guessed. That is the point of the tool, and it is the method this journal will keep when a chart is attached to a sentence.</p>
+      <p>The public demo does not serve PostgreSQL. Locally and in CI, closed candles can be stored. That database is not this recording’s venue, and it is not a warehouse of official energy statistics.</p>
+      <div class="limit">Conclusion I will defend: an energy view that starts from this file is a view of a perpetual-contract recording with holes. It is not a view of physical barrels, OPEC, or a settled WTI future. If I write a later post that forgets that, the post is wrong.</div>
+      <p>What I will use the project for next: walk the same recording under replay, mark the 42 missing hours, and only then ask whether a move is even visible on complete bars. No direction, no target, no “oil is going to.”</p>
+      <p><a href="https://pattern-forge-five.vercel.app/">Open Pattern Forge</a> · <a href="https://github.com/coder058/pattern-forge/blob/main/public/recordings/catalog.json">Catalog</a> · <a href="../projects/pattern-forge.html">Walkthrough</a></p>
+      <a class="back" href="./">← “TAPE”</a>
+    </article>
+    <div class="frame-bottom" aria-hidden="true"></div>
+  </div>
+</body>
+</html>

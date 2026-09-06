@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="I created an AWS Lightsail instance in Dublin for Polybow. The archived timer measured prepare plus POST, not a fill. 6 September 2026.">
+  <link rel="canonical" href="https://coder058.github.io/profile/host/dublin-instance.html">
+  <title>The instance was in Dublin — HOST</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/journal.css">
+</head>
+<body class="host">
+  <a class="skip" href="#post">Skip to post</a>
+  <div class="crop">
+    <p class="tape"><span>01</span> AWS · Timing · Not a fill</p>
+    <nav class="top" aria-label="Journal">
+      <a href="../tape/">“TAPE”</a>
+      <a href="./">“HOST”</a>
+      <a href="../">Portfolio</a>
+    </nav>
+    <article class="post" id="post">
+      <p class="kicker"><b>Note 01</b> · Infrastructure</p>
+      <h1 class="post-title">The instance was in Dublin</h1>
+      <p class="meta"><span>06 September 2026</span><span>Amsterdam</span><span>Jordi Lluis</span></p>
+      <p>I created an AWS Lightsail instance in eu-west-1 (Dublin), Ubuntu, for the live Polybow path and later for daily recordings. That is a real host I paid for and operated. It is not a region benchmark. I did not run the same clock in a second city and compare.</p>
+      <h2>Why a new box</h2>
+      <p>The work on the submit path was to remove avoidable waits: a warmed HTTP/2 client, coincurve signatures, token metadata cached so it was not fetched on the hot path. Book updates could trigger an evaluation instead of waiting for the next poll. The per-market gate moved from 50 ms to 5 ms. That number is a throttle in code, not measured end-to-end latency.</p>
+      <h2>The statistic I still have</h2>
+      <p>The archived timer started at metadata preparation and stopped when the API answered. It is prepare + POST. It is not the earlier signal, not a confirmed fill, and not settlement.</p>
+      <table class="facts">
+        <caption class="skip">Complete LAT_DETAIL rows, 3 May 2026</caption>
+        <tbody>
+          <tr><th>StratB sample</th><td>52 complete records. Median 35.35 ms. p95 298.0 ms. 51 of 52 replies were resting, not immediately matched.</td></tr>
+          <tr><th>UC sample</th><td>22 complete records. Median 33.0 ms. p95 289.2 ms. All 22 resting.</td></tr>
+          <tr><th>What “p95” is here</th><td>The 95th percentile of that prepare-plus-response window in those files. It is not exchange latency and not fill latency.</td></tr>
+        </tbody>
+      </table>
+      <div class="limit">Conclusion I will defend: a fast acknowledgement from Dublin is not a fill. Creating the instance is evidence that I can stand up a VPS, run a process, and define a clock. It is not evidence that Dublin made the strategy better. I deleted the VPS recordings. The public repository keeps the ledger script and the timing parser, not those days.</div>
+      <p>If a recruiter only needs one sentence: I provisioned Lightsail, I defined the window I measured, and I kept the loss in the postmortem.</p>
+      <p><a href="https://polybow-archive.vercel.app/">Read the case study</a> · <a href="https://github.com/coder058/polybow-case-study/blob/main/EVIDENCE.md">Evidence map</a> · <a href="../projects/polybow.html">Walkthrough</a></p>
+      <a class="back" href="./">← “HOST”</a>
+    </article>
+    <div class="frame-bottom" aria-hidden="true"></div>
+  </div>
+</body>
+</html>
