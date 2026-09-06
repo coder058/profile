@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="1 August 2026 research sweep: Hyperliquid public candles and books for analysis. Not a second live Polymarket bot. Tested families were closed for retail deployment.">
+  <link rel="canonical" href="https://coder058.github.io/profile/host/hyperliquid-not-a-bot.html">
+  <title>Hyperliquid is a data venue — HOST</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/journal.css">
+</head>
+<body class="host">
+  <a class="skip" href="#post">Skip to post</a>
+  <div class="crop">
+    <p class="tape"><span>03</span> Hyperliquid · Public data · No retail edge</p>
+    <nav class="top" aria-label="Journal">
+      <a href="../tape/">“TAPE”</a>
+      <a href="../host/">“HOST”</a>
+      <a href="../">Portfolio</a>
+    </nav>
+    <article class="post" id="post">
+      <p class="kicker"><b>Note 03</b> · Hyperliquid</p>
+      <h1 class="post-title">Hyperliquid is a data venue</h1>
+      <p class="meta"><span>01 August 2026</span><span>Amsterdam</span><span>Jordi Lluis</span></p>
+      <p class="archive">Reconstructed 6 September 2026 from the 1 August research-sweep verdicts and the public Pattern Forge README.</p>
+      <p>The switch after live Polymarket trading was not “I now trade Hyperliquid.” It was: public perpetual data, a chart workspace, and a research harness that is allowed to reject its own ideas.</p>
+      <table class="facts">
+        <caption class="skip">What Hyperliquid is in the public work</caption>
+        <tbody>
+          <tr><th>Pattern Forge live mid</th><td>Hyperliquid public WebSocket <code>allMids</code>. Heartbeat, reconnect, no trading account.</td></tr>
+          <tr><th>Closed candles</th><td>Fixed public <code>candleSnapshot</code> endpoint, validated in the Next.js API.</td></tr>
+          <tr><th>Bundled BTC file</th><td>5,000 contiguous 5-minute mainnet candles, 11–28 July 2026, SHA-256 D040EEAD… — a scenario bank, not a performance report.</td></tr>
+          <tr><th>1 August sweeps</th><td>VPIN, vol-state momentum, oscillator divergence, vol-spike exits: closed as alpha or harmful. Price-rule families died to a momentum null or to a regime flip.</td></tr>
+        </tbody>
+      </table>
+      <p>A private Hyperliquid research tree separately records a live book recorder (one connection, hundreds of subscriptions) and a large historical bar store. Its own summary is that tested retail-scale strategies did not clear spread. I am not republishing that as a product, and I am not claiming a Hyperliquid desk.</p>
+      <div class="limit">Conclusion I will defend: Hyperliquid in the portfolio is market data I can fetch, cache, replay without lookahead, and falsify against. It is not a second live bot.</div>
+
+      <p><a href="https://pattern-forge-five.vercel.app/">Pattern Forge</a> · <a href="../projects/pattern-forge.html">Walkthrough</a></p>
+      <a class="back" href="./">← “HOST”</a>
+    </article>
+    <div class="frame-bottom" aria-hidden="true"></div>
+  </div>
+</body>
+</html>

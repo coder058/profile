@@ -23,6 +23,20 @@ test('energy post is a recording, not a spot forecast', () => {
   assert.doesNotMatch(html, /buy oil|price target|guaranteed/i);
 });
 
+test('journal archive is dated from April and does not brand the bot as Polybow', () => {
+  const tape = readFileSync(new URL('../tape/index.html', import.meta.url), 'utf8');
+  const host = readFileSync(new URL('../host/index.html', import.meta.url), 'utf8');
+  const walkthrough = readFileSync(new URL('../projects/polybow.html', import.meta.url), 'utf8');
+  assert.match(tape, /16 Apr 2026/);
+  assert.match(tape, /wallet-started.html/);
+  assert.match(tape, /leftover-ask-gone.html/);
+  assert.match(tape, /assembled here later/);
+  assert.match(host, /one-hundred-million.html/);
+  assert.match(host, /hyperliquid-not-a-bot.html/);
+  assert.match(walkthrough, /Python trading bot/);
+  assert.doesNotMatch(walkthrough, /<h1>Polybow<\/h1>/);
+});
+
 test('host post measures prepare plus POST, not a fill', () => {
   const html = readFileSync(new URL('../host/dublin-instance.html', import.meta.url), 'utf8');
   assert.match(html, /Lightsail/);

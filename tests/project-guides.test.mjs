@@ -23,7 +23,7 @@ test('cards lead to readable project guides, without adding a fourth selected pr
   assert.ok(!html.includes('<h3>City Gardens</h3>'));
 });
 
-test('Polybow walkthrough separates StratA prices from the early expensive tickets', () => {
+test('Python trading bot walkthrough separates StratA prices from the early expensive tickets', () => {
   const html = readFileSync(new URL('../projects/polybow.html', import.meta.url), 'utf8');
   assert.match(html, /leftover cheap ask|last-second cheap asks/);
   assert.match(html, /\$0\.40–\$0\.72|\$0.40–\$0.72/);
@@ -35,6 +35,8 @@ test('Polybow walkthrough separates StratA prices from the early expensive ticke
   assert.doesNotMatch(html, /\$18|\$220|converted a account/i);
   assert.doesNotMatch(html, /StratD/);
   assert.doesNotMatch(html, /Early Polybow, StratA and StratB bought expensive/);
+  assert.match(html, /Python trading bot/);
+  assert.doesNotMatch(html, /<h1>Polybow<\/h1>/);
 });
 
 test('Relay and Pattern Forge walkthroughs include a skills table', () => {

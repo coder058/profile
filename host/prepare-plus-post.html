@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Archived 3 May 2026 LAT_DETAIL rows: StratB median 35.35 ms, UC 33.0 ms. The timer is acknowledgement, not a fill.">
+  <link rel="canonical" href="https://coder058.github.io/profile/host/prepare-plus-post.html">
+  <title>Prepare plus POST — HOST</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/journal.css">
+</head>
+<body class="host">
+  <a class="skip" href="#post">Skip to post</a>
+  <div class="crop">
+    <p class="tape"><span>01</span> LAT_DETAIL · 3 May · Not a fill</p>
+    <nav class="top" aria-label="Journal">
+      <a href="../tape/">“TAPE”</a>
+      <a href="../host/">“HOST”</a>
+      <a href="../">Portfolio</a>
+    </nav>
+    <article class="post" id="post">
+      <p class="kicker"><b>Note 01</b> · Timing</p>
+      <h1 class="post-title">Prepare plus POST</h1>
+      <p class="meta"><span>03 May 2026</span><span>Amsterdam</span><span>Jordi Lluis</span></p>
+      <p class="archive">Reconstructed 6 September 2026 from complete LAT_DETAIL rows in the archived StratB and UC logs.</p>
+      <p>The Dublin host was already up. What I still have from this night is a named clock: metadata preparation, order build, POST, stop when the API answers.</p>
+      <table class="facts">
+        <caption class="skip">Complete LAT_DETAIL rows, 3 May 2026 UTC</caption>
+        <tbody>
+          <tr><th>StratB</th><td>52 rows, 00:44:50–04:54:53. Median 35.35 ms. p95 298.0 ms. Max 521.4 ms. 51 resting, 1 matched in the log.</td></tr>
+          <tr><th>UC</th><td>22 rows, 00:44:50–01:59:55. Median 33.0 ms. p95 289.2 ms. Max 293.0 ms. All 22 resting.</td></tr>
+          <tr><th>Inside the total</th><td>Build-order medians 1.7 ms / 1.9 ms. POST medians 32.85 ms / 29.45 ms. Component medians do not add to the median total.</td></tr>
+          <tr><th>Not in the total</th><td>Feed delay, earlier decision time, matching, settlement. The May 3 “matched” row was not verified as a fill through the Data API/RPC.</td></tr>
+        </tbody>
+      </table>
+      <p>The early bot report’s ~27-second oracle update is a different metric. It is not a before/after for these milliseconds. Hashes of the private logs sit in EVIDENCE.md. The raw files stay private because they contain order identifiers.</p>
+      <div class="limit">Conclusion I will defend: 35 ms is how long this stack took to hear back. It is not how long it took to get filled, and it is not why the wallet later lost money.</div>
+
+      <p><a href="dublin-instance.html">The instance was in Dublin</a> · <a href="https://github.com/coder058/polybow-case-study/blob/main/EVIDENCE.md">Evidence map</a></p>
+      <a class="back" href="./">← “HOST”</a>
+    </article>
+    <div class="frame-bottom" aria-hidden="true"></div>
+  </div>
+</body>
+</html>

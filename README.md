@@ -6,7 +6,7 @@ Canonical portfolio: https://coder058.github.io/profile/
 
 ## Selected work
 
-- **Polybow** — a live prediction-market system and evidence-led postmortem: development history, scoped API-response timings, wallet reconciliation and the full negative outcome. Not proof of a profitable strategy.
+- **Python trading bot** — a live prediction-market system and evidence-led postmortem: development history, scoped API-response timings, wallet reconciliation and the full negative outcome. Not proof of a profitable strategy.
 - **Relay** — a job-research workspace built around four read-only MCP tools. Search public listings, compare quoted text and export a review.
 - **Pattern Forge** — closed-candle Hyperliquid snapshots and prefix-only replay of recorded metals, index and crypto perpetual markets. The public page does not execute trades or predict returns.
 

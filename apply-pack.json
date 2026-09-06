@@ -229,7 +229,7 @@
       "github": "https://github.com/coder058/pattern-forge"
     },
     "markets": {
-      "project": "Polybow",
+      "project": "Python trading bot",
       "one_liner": "Live Python system on AWS Lightsail, then ledger work after it stopped.",
       "walkthrough": "https://coder058.github.io/profile/projects/polybow.html",
       "data": "https://coder058.github.io/profile/projects/polybow.html#data",
@@ -370,7 +370,7 @@
     "200 Le Wagon challenges, API labs as Education, StratD",
     "Pattern Forge public demo serving PostgreSQL",
     "Relay as eligibility scoring or an AI that decides hiring",
-    "Polybow as a durable edge, profitability, or public bot code",
+    "the Python trading bot as a durable edge, profitability, or public live-bot code",
     "Private repo lewagon-api-lab as a public link",
     "A numeric salary, notice period, or legal/passport name that is not in this file",
     "Professional software years other than 0; do not write 1 or 2 as a substitute"

@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { readFileSync, existsSync } from 'node:fs';
 const html = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
 test('selected projects are single-link cards with current names', () => {
-  for (const name of ['Relay', 'Pattern Forge', 'Polybow']) assert.ok(html.includes(`<h3>${name}</h3>`));
+  for (const name of ['Relay', 'Pattern Forge', 'Python trading bot']) assert.ok(html.includes(`<h3>${name}</h3>`));
   assert.doesNotMatch(html, /<h3>DispatchOps<\/h3>|<h3>Transcript Desk<\/h3>|Source &amp; tests|OPEN WORK|project-index/);
   // SOURCE: user's September review removes the game from featured work.
   assert.equal((html.match(/class="project-card /g) || []).length, 3);
@@ -26,7 +26,7 @@ test('portfolio copy is personal without duplicating the resume', () => {
   assert.doesNotMatch(html, /open to relocation|Python, TypeScript (?:&amp;|and) SQL/i);
   // SOURCE: recruiter review 6 Sep 2026 — Pattern Forge is the main demo.
   assert.ok(html.indexOf('<h3>Pattern Forge</h3>') < html.indexOf('<h3>Relay</h3>'));
-  assert.ok(html.indexOf('<h3>Relay</h3>') < html.indexOf('<h3>Polybow</h3>'));
+  assert.ok(html.indexOf('<h3>Relay</h3>') < html.indexOf('<h3>Python trading bot</h3>'));
   assert.match(html, /<h2 id="about-title">About<\/h2>/);
 });
 

@@ -79,7 +79,7 @@ export const projects = [
     limits: 'Coverage is one public board page plus descriptions supplied by the visitor. Matching is literal, not semantic understanding or proof that a vacancy is still open. An ordinary use of a word such as “react” can still require human interpretation.'
   },
   {
-    slug: 'polybow', name: 'Polybow', stack: 'Python · WebSockets · AWS Lightsail · CLOB APIs · JSONL recordings',
+    slug: 'polybow', name: 'Python trading bot', stack: 'Python · WebSockets · AWS Lightsail · CLOB APIs · JSONL recordings',
     summary: 'A 2026 Polymarket experiment: later versions looked for leftover cheap asks, ran from a Dublin VPS, then kept investigating after live trading stopped.',
     problem: [
       'The first version bought expensive contracts near expiry, often around $0.96–$0.99, so correct direction left little upside. Later branches changed the entry price and the timing window. They overlapped; they were not four isolated trials.',
@@ -90,7 +90,7 @@ export const projects = [
       'After live trading stopped, recordings continued. The public repository has the case study, the ledger script and the timing parser. The private bot and raw VPS files are not on this site.'
     ],
     branches: [
-      ['Polybow (early)', 'Near expiry, often $0.96–$0.99', 'Little upside when the direction was right. Oracle updates were too coarse for a five-minute market.'],
+      ['v1', 'Near expiry, often $0.96–$0.99', 'Little upside when the direction was right. Oracle updates were too coarse for a five-minute market.'],
       ['StratA', '$0.40–$0.72 with 11–15 seconds remaining', 'More upside per winning trade; more time for the market to reverse.'],
       ['StratB', 'Wider window and a larger gap versus the opening reference', 'Book updates could trigger a decision immediately. Dublin VPS and a warmed execution path. No controlled region comparison.'],
       ['UC', '$0.01–$0.20 leftover cheap asks', 'Maker orders under the ask, later a taker leg. Live trading later stopped.']

@@ -148,6 +148,14 @@ a:focus-visible { outline: 3px solid var(--mark); outline-offset: 4px; }
   color: var(--mute);
   font-size: 0.95rem;
 }
+.archive {
+  max-width: 38rem;
+  color: var(--mute);
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: -18px 0 32px;
+}
 
 article.post { max-width: 40rem; }
 .kicker {
