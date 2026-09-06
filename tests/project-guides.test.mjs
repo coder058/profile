@@ -42,6 +42,13 @@ test('Python trading bot walkthrough separates StratA prices from the early expe
   assert.doesNotMatch(html, /<h1>Polybow<\/h1>/);
 });
 
+test('Relay walkthrough is an evidence desk, not a job-search product', () => {
+  const html = readFileSync(new URL('../projects/relay.html', import.meta.url), 'utf8');
+  assert.match(html, /not a job-search product/);
+  assert.match(html, /Paste a public job description/);
+  assert.match(html, /not a hiring score/);
+});
+
 test('Relay and Pattern Forge walkthroughs include a skills table', () => {
   for (const slug of ['relay', 'pattern-forge']) {
     const html = readFileSync(new URL(`../projects/${slug}.html`, import.meta.url), 'utf8');

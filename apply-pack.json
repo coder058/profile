@@ -114,8 +114,8 @@
       "ats": "https://coder058.github.io/profile/assets/jordi-lluis-fullstack-cv-ats.pdf",
       "local_designed": "output/pdf/jordi-lluis-fullstack-cv.pdf",
       "local_ats": "output/pdf/jordi-lluis-fullstack-cv-ats.pdf",
-      "sha256_designed": "aecbb4beccb0526a0911ecfe9582e45d8b45a51b216803664b22663930a000e1",
-      "sha256_ats": "b5da1d75ce6954601681f0eb1a219e126788f8d3c522035f11298a11cb641493",
+      "sha256_designed": "a7c7ce2a0962bd18c13f9d21f1cd91a49faa1658f33f6b1b985dee669289dedf",
+      "sha256_ats": "0f9f8dde759c5f2c4623d95c27255b4141755cfb40fe526c01de4aaefd8ec9bc",
       "pitch": "I build the interface and the API behind it: React and TypeScript on the front, Python or Rails on the back, with tests and Docker so a change has a check.",
       "letter_template": "Hi {company},\n\nI'm Jordi Lluis, a software developer in Amsterdam (EU citizen). I build the interface and the API behind it \u2014 React and TypeScript on the front, Python or Rails on the back \u2014 and I test how it fails.\n\nFor this {role}, the closest public work is {project}: {one_liner} Walkthrough: {walkthrough}\n\nOne-page CV (ATS): {ats}\nPortfolio: https://coder058.github.io/profile/\n\nJordi Lluis\n+31 6 1949 6593 \u00b7 joord918@gmail.com"
     },
@@ -132,8 +132,8 @@
       "ats": "https://coder058.github.io/profile/assets/jordi-lluis-ai-cv-ats.pdf",
       "local_designed": "output/pdf/jordi-lluis-ai-cv.pdf",
       "local_ats": "output/pdf/jordi-lluis-ai-cv-ats.pdf",
-      "sha256_designed": "d7171be8282dc44bfdaf6cea19106cf448ed90ccd34b0fcc742ef6c4ba9e75fd",
-      "sha256_ats": "ffdd9737aef069fcba11424c4aed44852d6af3f618f05fd222531e31c94a4c92",
+      "sha256_designed": "3d5269ed29cac2b85a0b04f87334ba0304663a73fd16a39c6dbee50ebe698067",
+      "sha256_ats": "57ecc86bc12d93d22de596eb6ded95623b71934b2cea215b8d2b96c31e8ea0ed",
       "pitch": "I build small agent-facing tools with a human still in the loop: MCP servers, quoted evidence, and tests on the protocol boundary. Not model training, not a production RAG platform.",
       "letter_template": "Hi {company},\n\nI'm Jordi Lluis, a software developer in Amsterdam (EU citizen). I build small agent-facing tools with a human still in the loop \u2014 MCP servers, quoted evidence, tests on the protocol boundary. I do not train models and I do not run a production RAG platform.\n\nFor this {role}, the closest public work is {project}: {one_liner} Walkthrough: {walkthrough}\n\nOne-page CV (ATS): {ats}\nPortfolio: https://coder058.github.io/profile/\n\nJordi Lluis\n+31 6 1949 6593 \u00b7 joord918@gmail.com"
     },
@@ -148,8 +148,8 @@
       "ats": "https://coder058.github.io/profile/assets/jordi-lluis-data-cv-ats.pdf",
       "local_designed": "output/pdf/jordi-lluis-data-cv.pdf",
       "local_ats": "output/pdf/jordi-lluis-data-cv-ats.pdf",
-      "sha256_designed": "cf82521514675242cf098fa6e600664df25d3ea180a4eb202031e70b05b773ca",
-      "sha256_ats": "c0207b70e8779c11a810df8c66ea154f07648cdadfa0f8191e5084e190743a46",
+      "sha256_designed": "c2ff89e8b4589b61c7381a091408dcddd45b407120edb1a45e5847b46450db01",
+      "sha256_ats": "b2b5a80bfebb2a02b4c20d5dcbf0cf560896d23269471aaaa627995cc9568a9d",
       "pitch": "I work at data boundaries: validated APIs, time-series that cannot see the future, and files you can reopen after a live run. SQL and Python; not a research lab.",
       "letter_template": "Hi {company},\n\nI'm Jordi Lluis, a software developer in Amsterdam (EU citizen). I work at data boundaries: validated APIs, time-series that cannot see the future, and files you can reopen. SQL and Python; not a research lab.\n\nFor this {role}, the closest public work is {project}: {one_liner} Walkthrough: {walkthrough}\n\nOne-page CV (ATS): {ats}\nPortfolio: https://coder058.github.io/profile/\n\nJordi Lluis\n+31 6 1949 6593 \u00b7 joord918@gmail.com"
     },
@@ -167,11 +167,11 @@
       "unlabelled_copies": {
         "designed": "https://coder058.github.io/profile/assets/jordi-lluis-cv.pdf",
         "ats": "https://coder058.github.io/profile/assets/jordi-lluis-cv-ats.pdf",
-        "sha256_designed": "3d39a6552261c38cd6cc4c2b4de1b084721c70804a40643b1d429aca7c994244",
-        "sha256_ats": "76ea072edd018dabfcfa97d99de844149f73157b2e54e2fa15ff6f76ae07bfc9"
+        "sha256_designed": "4553d80db628ecb3a50e56a2e223dbec4c48167e9c775fe261e4a09dac0ee357",
+        "sha256_ats": "27fc184c3219857a0c70c118a787ca9a090dc8e59aa650ecfb0241340894c81d"
       },
-      "sha256_designed": "6faf5e8359e5ad52d458d62dc1cc9a7a69dd29e2101939e100fdda7d7f4b0161",
-      "sha256_ats": "f7b42b68ed5a5437003d91ab08c86c05c3ca52d1928811cc690d79b3d547b55a",
+      "sha256_designed": "dd57e17b33ecaf29fc52ac31afcc2b88ef22803fd992a6443c5f785945eb410a",
+      "sha256_ats": "ae83a10729e23a0eaed5b94dc0a88543daf83000c70c5298e264a93b665f1351",
       "pitch": "I like understanding how a system works, then turning that into software I can test. Market-data interfaces, HTTP APIs and small developer tools.",
       "letter_template": "Hi {company},\n\nI'm Jordi Lluis, a software developer in Amsterdam (EU citizen). I build web interfaces and APIs, then test how they fail.\n\nFor this {role}, the closest public work is {project}: {one_liner} Walkthrough: {walkthrough}\n\nOne-page CV (ATS): {ats}\nPortfolio: https://coder058.github.io/profile/\n\nJordi Lluis\n+31 6 1949 6593 \u00b7 joord918@gmail.com"
     },
@@ -186,8 +186,8 @@
       "ats": "https://coder058.github.io/profile/assets/jordi-lluis-fde-cv-ats.pdf",
       "local_designed": "output/pdf/jordi-lluis-fde-cv.pdf",
       "local_ats": "output/pdf/jordi-lluis-fde-cv-ats.pdf",
-      "sha256_designed": "065440ce1205364c886c6708252a8cca579f6286366ced9ba555d88ee091875f",
-      "sha256_ats": "d2941dc863e347323dbff308d1b36f959d92d92729d46cd37170b094c35b44bb",
+      "sha256_designed": "fc02d0691ec0d0d80e19ec7f34586bc7180238931eda78b8167d84a290c12b73",
+      "sha256_ats": "46d53be2401554377f121efe32a5c935ab9f2539d927e57a6744954b7783277a",
       "pitch": "I sit between a messy problem and a working integration. Side projects and operations roles, not enterprise customer deployments. Do not print an FDE job title.",
       "letter_template": "Hi {company},\n\nI'm Jordi Lluis, a software developer in Amsterdam (EU citizen). I sit between a messy problem and a working integration. That is side-project and operations evidence, not an enterprise customer-deploy job.\n\nFor this {role}, the closest public work is {project}: {one_liner} Walkthrough: {walkthrough}\n\nOne-page CV (ATS): {ats}\nPortfolio: https://coder058.github.io/profile/\n\nJordi Lluis\n+31 6 1949 6593 \u00b7 joord918@gmail.com"
     }
@@ -209,14 +209,14 @@
     },
     "ai": {
       "project": "Relay",
-      "one_liner": "One evidence service behind a web UI and MCP tools.",
+      "one_liner": "MCP tools that return quotes from a listing, not a hiring score.",
       "walkthrough": "https://coder058.github.io/profile/projects/relay.html",
       "data": "https://coder058.github.io/profile/projects/relay.html#data",
       "github": "https://github.com/coder058/relay"
     },
     "backend": {
       "project": "Relay",
-      "one_liner": "Python/FastAPI review service shared by HTTP and MCP.",
+      "one_liner": "Python/FastAPI matcher shared by HTTP and MCP; paste is the real input.",
       "walkthrough": "https://coder058.github.io/profile/projects/relay.html",
       "data": "https://coder058.github.io/profile/projects/relay.html#data",
       "github": "https://github.com/coder058/relay"
@@ -237,7 +237,7 @@
     },
     "fde": {
       "project": "Relay",
-      "one_liner": "Inspectable quotes instead of a model deciding eligibility.",
+      "one_liner": "Scoped a quote workflow, then exposed it as HTTP and MCP.",
       "walkthrough": "https://coder058.github.io/profile/projects/relay.html",
       "data": "https://coder058.github.io/profile/projects/relay.html#data",
       "github": "https://github.com/coder058/relay"

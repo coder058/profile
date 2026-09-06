@@ -46,17 +46,17 @@ export const projects = [
   },
   {
     slug: 'relay', name: 'Relay', stack: 'MCP · Python · FastAPI · React · TypeScript',
-    summary: 'A job-requirement review tool that keeps the original wording beside each skill mention.',
-    problem: 'A job summary can lose important qualifications, exceptions or changes to a listing. I wanted the original text to remain inspectable instead of asking a model to decide whether someone qualifies.',
-    contribution: 'I connected a React interface and MCP clients to the same Python review service. I implemented source normalization, token-aware matching, duplicate retention and portable exports. The MCP transport uses the official Python SDK.',
+    summary: 'An evidence desk: four MCP tools and a React UI share one matcher so each skill hit is a quote, not a hiring score.',
+    problem: 'An agent or a UI that cites a skill in a job text still needs the sentence it came from. I wanted that quote from one tested service, not a model deciding whether someone qualifies.',
+    contribution: 'I connected a React interface and MCP clients to the same Python review service. I implemented source normalization, token-aware matching, duplicate retention and portable exports. The MCP transport uses the official Python SDK. This is not a job-search product.',
     demo: 'https://relay-ten-zeta.vercel.app/', demoLabel: 'Open the demo', code: 'https://github.com/coder058/relay',
     skills: [
       ['Python and FastAPI', 'One evidence service: normalize text, match tokens, keep duplicate wording.'],
       ['MCP', 'Four read-only tools that call the same matcher as the web UI. Official Python SDK.'],
-      ['React and TypeScript', 'Search, review queue, quoted lines and export. No eligibility score.'],
+      ['React and TypeScript', 'Paste or sample-board review, quoted lines and export. No eligibility score.'],
       ['Tests', 'pytest in CI for API validation, duplicate wording and MCP transports.']
     ],
-    steps: ['Search the public board by keyword and location, or paste a public job description.', 'Add a listing to the review queue. Enter the skills you want to look for.', 'Select Review evidence. Read each matching quotation in its original context: a mention is not necessarily a requirement.', 'Compare duplicate versions without discarding changed text.', 'Export the review or workspace JSON. Saving on this device is optional; do not paste a CV or private correspondence.'],
+    steps: ['Paste a public job description, or load the sample Arbeitnow page to see the matcher work.', 'Add a listing to the review queue. Enter the skills you want to look for.', 'Select Review evidence. Read each matching quotation in its original context: a mention is not necessarily a requirement.', 'Compare duplicate versions without discarding changed text.', 'Export the review or workspace JSON. Saving on this device is optional; do not paste a CV or private correspondence.'],
     dependencies: [
       ['React interface', 'FastAPI JSON endpoints', 'Search, review queue, quote display and export.'],
       ['Public-board reader', 'Arbeitnow public API', 'A bounded latest-page snapshot, not a search of every employer.'],
@@ -76,7 +76,7 @@ export const projects = [
     ],
     build: ['Define the job, review and quoted-evidence data models.', 'Normalize input and validate URLs, sizes and fields before reviewing it.', 'Match whole tokens and explicit aliases; keep all changed duplicate descriptions.', 'Expose the same functions through HTTP and MCP instead of maintaining two implementations.', 'Test API validation, source retention, transport behaviour and search regressions; then exercise the browser workflow.'],
     run: '# Backend (inside backend, with a Python virtual environment)\npip install -r requirements.txt\npython -m pytest -q\npython -m uvicorn app.main:app --host 127.0.0.1 --port 8000\n\n# Frontend (inside frontend, in a second terminal)\nnpm ci\nnpm run dev',
-    limits: 'Coverage is one public board page plus descriptions supplied by the visitor. Matching is literal, not semantic understanding or proof that a vacancy is still open. An ordinary use of a word such as “react” can still require human interpretation.'
+    limits: 'This is not a job-search product and not a recruiter ATS. Arbeitnow is a bounded demo snapshot; paste is the path a reviewer will actually use. Matching is literal, not semantic recall: ordinary English such as “react” or “go” can still hit. An agent that calls these tools can still summarise; Relay does not score eligibility or prove a vacancy is open.'
   },
   {
     slug: 'polybow', name: 'Python trading bot', stack: 'Python · WebSockets · AWS Lightsail · CLOB APIs · JSONL recordings',
