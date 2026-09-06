@@ -7,7 +7,8 @@
 .hero-main>.hero-links a{aspect-ratio:auto;display:grid;grid-template-columns:1fr auto;gap:10px;min-width:0;padding:20px}
 .hero-main>.hero-links a strong{grid-column:1;font-size:clamp(18px,2.1vw,30px)}
 .hero-main>.hero-links a b{grid-column:2;align-self:center}
-.project-card{display:block}
+.project-card{display:flex;flex-direction:column}
+.project-card>a:not(.project-data){flex:1}
 /* SOURCE: three selected projects; the final card fills the remaining row. */
 .project-card:last-child{grid-column:1/-1}
 /* GUESS: UNCALIBRATED GUESS — editorial type sizes; verify readability in the browser. */

@@ -7,8 +7,11 @@ test('each project has a rendered journey, dependencies, contribution and limits
   for (const project of projects) {
     const html = readFileSync(new URL(`../projects/${project.slug}.html`, import.meta.url),'utf8');
     assert.ok(html.includes(project.name));
-    for (const text of ['My contribution','What depends on what','Implementation, step by step','Limits and unfinished work']) assert.ok(html.includes(text));
+    for (const text of ['My contribution','Implementation, step by step','Limits and unfinished work']) assert.ok(html.includes(text));
+    assert.ok(html.includes('What depends on what') || html.includes('How the data was organised'));
     assert.ok(html.includes('<table>'));
+    assert.ok(html.includes('id="data"'));
+    assert.match(html, /How the data was organised/);
     assert.ok(html.includes('scope="col"'));
     assert.ok(html.includes(project.code));
     assert.equal((html.match(/<h1>/g)||[]).length,1);

@@ -45,6 +45,7 @@
     <section id="work" class="work palette-section" data-bg="#c7bdaf" data-ink="#292824" aria-labelledby="work-title">
       <header class="work-header">
         <h2 id="work-title">Selected projects</h2>
+        <p class="work-note">Each walkthrough has a table of what depends on what — tables, files or services, the same idea as the City Gardens schema.</p>
         <p class="stack-label">Tools I build with</p>
         <ul class="stack-strip">
           <li>React</li>
@@ -64,16 +65,19 @@
           <a href="projects/polybow.html" aria-label="Read the Polybow project walkthrough">
             <div class="project-copy"><h3>Polybow</h3><p>A live Polymarket system that looked for last-second cheap asks left on the book, reached them from a Dublin VPS, and kept investigating after trading stopped.</p><p class="project-proof">Lightsail · WebSockets · JSONL recordings · ledger and timing tests</p><footer>PYTHON · AWS · CLOB APIS</footer></div>
           </a>
+          <a class="project-data" href="projects/polybow.html#data">How the data was organised</a>
         </article>
         <article class="project-card card-ash reveal">
           <a href="projects/pattern-forge.html" aria-label="Read the Pattern Forge project walkthrough">
             <div class="project-copy"><h3>Pattern Forge</h3><p>A market-data workspace with live crypto quotes and recorded-market replay. I built the chart interface and candle API, keeping future prices out of replay calculations.</p><p class="project-proof">44 tests · Docker image built and smoke-tested in CI · deployed</p><footer>REACT · TYPESCRIPT · REST APIS</footer></div>
           </a>
+          <a class="project-data" href="projects/pattern-forge.html#data">How the data was organised</a>
         </article>
         <article class="project-card card-sand reveal">
           <a href="projects/relay.html" aria-label="Read the Relay project walkthrough">
             <div class="project-copy"><h3>Relay</h3><p>An MCP server with a web interface for checking job requirements. I connected public listings to Python tools that preserve the original wording and export a review.</p><p class="project-proof">48 backend tests · one review service behind both HTTP and MCP · deployed</p><footer>MCP · PYTHON · TYPESCRIPT</footer></div>
           </a>
+          <a class="project-data" href="projects/relay.html#data">How the data was organised</a>
         </article>
       </div>
     </section>
@@ -99,9 +103,9 @@
               </a>
             </li>
             <li>
-              <a href="projects/city-gardens.html">
+              <a href="projects/city-gardens.html#data">
                 <strong>City Gardens</strong>
-                <span>Le Wagon team project, 2023: Rails and PostgreSQL for gardens, parcels and events. Shared work, not sole-authored, and not maintained since.</span>
+                <span>Le Wagon team project, 2023: Rails and PostgreSQL for gardens, parcels and events. Shared work, not sole-authored, and not maintained since. Open the table of who depends on whom.</span>
               </a>
             </li>
           </ul>

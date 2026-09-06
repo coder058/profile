@@ -1,5 +1,7 @@
 /* SOURCE: editorial choices for recruiter scanning; no measured performance claims. */
-.stack-label{font-size:14px;letter-spacing:.08em;text-transform:uppercase;margin:28px 0 12px;opacity:.75}
+.work-note{font-size:17px;line-height:1.5;margin:18px auto 0;max-width:640px}
+.project-data{border-top:1px dotted currentColor;color:inherit;display:block;font-size:14px;letter-spacing:.04em;padding:14px 28px 18px;text-decoration:none;text-transform:uppercase}
+.project-data:hover,.project-data:focus-visible{background:rgba(41,40,36,.06)}
 .stack-strip{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;list-style:none;margin:0 auto 8px;padding:0;max-width:900px}
 .stack-strip li{border:1px dotted currentColor;border-radius:999px;font-size:14px;letter-spacing:.02em;padding:6px 14px}
 /* SOURCE: verified test counts and deployment checks recorded in the project audits. */

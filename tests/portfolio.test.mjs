@@ -38,6 +38,10 @@ test('a reader can scan the stack and the evidence behind each project', () => {
   assert.match(html, /44 tests · Docker image built and smoke-tested in CI/);
   assert.match(html, /48 backend tests/);
   assert.match(html, /Lightsail · WebSockets · JSONL recordings/);
+  assert.equal((html.match(/class="project-data"/g) || []).length, 3);
+  for (const slug of ['polybow', 'pattern-forge', 'relay']) {
+    assert.ok(html.includes(`href="projects/${slug}.html#data"`), slug);
+  }
 });
 
 test('Le Wagon and other GitHub work sits in More challenges, not featured cards', () => {

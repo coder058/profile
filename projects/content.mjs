@@ -27,11 +27,16 @@ export const projects = [
       ['Live quote connection', 'Hyperliquid public WebSocket', 'A separate mid-price with receipt time, heartbeat and reconnection. No trading account.'],
       ['Recorded replay', 'Bundled OHLC JSON and the replay cursor', 'Only the selected prefix reaches indicators and timeframe aggregation.'],
       ['Chart rendering', 'TradingView Lightweight Charts', 'Candles, overlays and chart interaction.'],
-      ['Public demo storage', 'Recording files and temporary process memory', 'The Vercel demo does not serve stored candles or provide user accounts.'],
-      ['Python ingester (local/CI)', 'Validated public candles or a recorded fixture, psycopg and PostgreSQL', 'Writes closed candles; records each attempt and its fetch/write timing.'],
+      ['Python ingester (local/CI)', 'Validated public candles or a recorded fixture, psycopg and PostgreSQL', 'Writes closed candles; records each attempt and its fetch/write timing.']
+    ],
+    recordsTitle: 'How the data was organised',
+    recordsIntro: 'City Gardens stores related rows in PostgreSQL. Pattern Forge can do that locally and in CI. The public Vercel demo does not serve this database; it uses recording files and temporary process memory.',
+    recordsCaption: 'Stored records, keys and responsibility',
+    records: [
       ['candles table', 'Primary key (symbol, interval, open_time)', 'Prevents duplicate rows on repeated ingestion; stores OHLCV values and ingestion time.'],
       ['ingest_runs table', 'Each ingestion attempt', 'Stores source, row counts, timing and errors separately from candle data.'],
-      ['Stored-candle API (local/CI)', 'PostgreSQL through the pg client and DATABASE_URL', 'Reads saved candles into the existing chart. An empty store returns 404; an unavailable database returns 503.']
+      ['Stored-candle API (local/CI)', 'PostgreSQL through the pg client and DATABASE_URL', 'Reads saved candles into the existing chart. An empty store returns 404; an unavailable database returns 503.'],
+      ['Public demo storage', 'Recording files and temporary process memory', 'No user accounts and no hosted PostgreSQL on Vercel.']
     ],
     build: ['Define a candle format with timestamps and OHLC values.', 'Reject malformed, conflicting and still-forming candles at the boundary.', 'Calculate indicators from the selected prefix, then render the result in React.', 'Keep the streaming mid-price separate from historical calculations.', 'Test malformed inputs, partial upstream failures, replay causality and connection cleanup; build and run the Docker image in CI.'],
     run: 'npm ci\nnpm test\nnpm run build\nnpm start',
@@ -57,6 +62,15 @@ export const projects = [
       ['MCP tools', 'Official Python MCP SDK and the same evidence service', 'The browser workflow can also be called from an MCP client.'],
       ['Review state', 'Browser memory; optional device-local storage and JSON files', 'The job service does not persist reviews in a database.'],
       ['Historical safety lab', 'Separate SQLite-backed fixture workflow', 'An older synthetic experiment, not the storage layer for job reviews.']
+    ],
+    recordsTitle: 'How the data was organised',
+    recordsIntro: 'There is no job-review database on the public tool. Records live in the HTTP request and in the browser. SQLite belongs only to an older synthetic safety lab, not to these reviews.',
+    recordsCaption: 'Review records and where they live',
+    records: [
+      ['Job listing', 'Arbeitnow snapshot or pasted public text', 'The source description kept next to each mention.'],
+      ['Review', 'Chosen skills plus matched quotations', 'A working set in browser memory; saving on this device is optional.'],
+      ['Quoted evidence', 'Normalized text, aliases and a content hash', 'Keeps original wording and duplicate versions; not an eligibility score.'],
+      ['Export file', 'JSON written by the visitor', 'Portable copy. The job service does not persist reviews in PostgreSQL.']
     ],
     build: ['Define the job, review and quoted-evidence data models.', 'Normalize input and validate URLs, sizes and fields before reviewing it.', 'Match whole tokens and explicit aliases; keep all changed duplicate descriptions.', 'Expose the same functions through HTTP and MCP instead of maintaining two implementations.', 'Test API validation, source retention, transport behaviour and search regressions; then exercise the browser workflow.'],
     run: '# Backend (inside backend, with a Python virtual environment)\npip install -r requirements.txt\npython -m pytest -q\npython -m uvicorn app.main:app --host 127.0.0.1 --port 8000\n\n# Frontend (inside frontend, in a second terminal)\nnpm ci\nnpm run dev',
@@ -131,6 +145,9 @@ export const projects = [
     problem: 'A visitor needs to find a garden and understand which parcel or event they can join. Garden information, users and reservations need to refer to the same records.',
     contribution: 'This was a shared Le Wagon project in 2023, not my sole-authored application. The repository and commit history are the evidence of the team’s work. This page explains the model and request flow found in that code; it does not claim that the old app is production-ready today.',
     code: 'https://github.com/justdevelopin/CityGardens',
+    home: '../index.html#more-challenges',
+    dependsTitle: 'How the data was organised',
+    dependsCaption: 'PostgreSQL tables, foreign keys and responsibility',
     steps: ['The intended visitor flow starts by browsing or searching for a garden.', 'Open a garden to inspect its description, parcels and events.', 'Sign in through Devise before creating a reservation or event booking.', 'A controller associates the new record with the current user and the selected parcel or event.', 'The profile and garden views read those related records back from PostgreSQL. This is a code walkthrough, not a verified live demo.'],
     dependencies: [
       ['users', 'Devise authentication', 'Accounts referenced by gardens, bookings, bookmarks, reviews and parcel reservations.'],
