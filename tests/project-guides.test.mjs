@@ -44,6 +44,7 @@ test('résumé page lists the four apply packs and optional FDE, with files on d
     assert.ok(html.includes(heading), heading);
   }
   assert.match(html, /github.com\/coder058/);
+  assert.match(html, /More challenges/);
   for (const [, target] of html.matchAll(/(?:href|src)="([^"#]+)"/g)) {
     if (/^(https?:|mailto:)/.test(target)) continue;
     assert.ok(existsSync(new URL('../' + target.split('?')[0], import.meta.url)), target);

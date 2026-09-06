@@ -4,7 +4,7 @@ import { readFileSync, existsSync } from 'node:fs';
 const html = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
 test('selected projects are single-link cards with current names', () => {
   for (const name of ['Relay', 'Pattern Forge', 'Polybow']) assert.ok(html.includes(`<h3>${name}</h3>`));
-  assert.doesNotMatch(html, /DispatchOps|Transcript Desk|Source &amp; tests|OPEN WORK|project-index/);
+  assert.doesNotMatch(html, /<h3>DispatchOps<\/h3>|<h3>Transcript Desk<\/h3>|Source &amp; tests|OPEN WORK|project-index/);
   // SOURCE: user's September review removes the game from featured work.
   assert.equal((html.match(/class="project-card /g) || []).length, 3);
   assert.equal((html.match(/class="project-source"/g) || []).length, 0);
@@ -40,13 +40,21 @@ test('a reader can scan the stack and the evidence behind each project', () => {
   assert.match(html, /Lightsail · WebSockets · JSONL recordings/);
 });
 
-test('Le Wagon work is shown as attributed training, not featured product work', () => {
-  assert.ok(html.includes('href="resume.html"'));
-  assert.match(html, /<h2 id="training-title">Training work<\/h2>/);
+test('Le Wagon and other GitHub work sits in More challenges, not featured cards', () => {
+  assert.ok(html.includes('href="#more-challenges"'));
+  assert.match(html, /<h2 id="challenges-title">More challenges<\/h2>/);
   assert.match(html, /City Gardens/);
   assert.match(html, /API labs/);
   assert.match(html, /not sole-authored/);
-  assert.ok(html.indexOf('id="work"') < html.indexOf('id="training"'));
+  assert.match(html, /DispatchOps/);
+  assert.match(html, /Transcript Desk/);
+  assert.match(html, /js-geocoder/);
+  assert.match(html, /rails-task-manager/);
+  assert.match(html, /unfinished scaffold/);
+  assert.doesNotMatch(html, /200 challenges|every Le Wagon Kitt challenge was completed/i);
+  assert.doesNotMatch(html, /lewagon-api-lab/);
+  assert.ok(html.indexOf('id="work"') < html.indexOf('id="more-challenges"'));
+  assert.equal((html.match(/class="project-card /g) || []).length, 3);
 });
 
 test('project content stays visible without an animation callback', () => {

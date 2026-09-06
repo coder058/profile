@@ -10,7 +10,7 @@ Canonical portfolio: https://coder058.github.io/profile/
 - **Relay** — a job-research workspace built around four read-only MCP tools. Search public listings, compare quoted text and export a review.
 - **Pattern Forge** — closed-candle Hyperliquid snapshots and prefix-only replay of recorded metals, index and crypto perpetual markets. The public page does not execute trades or predict returns.
 
-Each selected card opens a project walkthrough with the problem, contribution, usage steps, dependency table and limitations. [City Gardens](https://coder058.github.io/profile/projects/city-gardens.html) provides historical team-project and relational-database context; it is not a fourth featured application. DispatchOps is no longer featured; its repository and deployment have not been deleted.
+Each selected card opens a project walkthrough with the problem, contribution, usage steps, dependency table and limitations. [More challenges](https://coder058.github.io/profile/#more-challenges) lists the other public GitHub work: DispatchOps, Transcript Desk, the City Gardens team project, seven API labs and the Rails exercises. Incomplete scaffolds are labelled as such. I do not claim every Le Wagon Kitt challenge.
 
 [Résumé packs](https://coder058.github.io/profile/resume.html) — four one-page files plus optional FDE. Same GitHub, same site; not one PDF per vacancy.
 
