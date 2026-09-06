@@ -1,0 +1,16 @@
+/* SOURCE: editorial choices for recruiter scanning; no measured performance claims. */
+.stack-label{font-size:14px;letter-spacing:.08em;text-transform:uppercase;margin:28px 0 12px;opacity:.75}
+.stack-strip{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;list-style:none;margin:0 auto 8px;padding:0;max-width:900px}
+.stack-strip li{border:1px dotted currentColor;border-radius:999px;font-size:14px;letter-spacing:.02em;padding:6px 14px}
+/* SOURCE: verified test counts and deployment checks recorded in the project audits. */
+.project-proof{font-family:var(--mono);font-size:13px;line-height:1.5;margin:22px 0 0;max-width:460px;opacity:.72}
+.about-note{font-size:17px;line-height:1.55;margin:32px 0 0;max-width:620px}
+.training{padding:74px 28px 90px}
+.training-header h2{font-size:clamp(34px,4vw,56px);letter-spacing:-.045em;line-height:1;margin:0}
+.training-header p{font-size:17px;line-height:1.5;margin:18px 0 0;max-width:620px}
+.training-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;list-style:none;margin:36px 0 0;padding:0;max-width:1200px}
+.training-list a{border:1px dotted currentColor;color:inherit;display:block;height:100%;padding:24px;text-decoration:none}
+.training-list a:hover,.training-list a:focus-visible{background:rgba(41,40,36,.06)}
+.training-list strong{display:block;font-size:24px;letter-spacing:-.02em;margin-bottom:10px}
+.training-list span{display:block;font-size:16px;line-height:1.5}
+@media(max-width:700px){.training{padding:60px 18px 70px}.training-list{grid-template-columns:1fr;gap:12px}.stack-strip li{font-size:13px;padding:5px 12px}}

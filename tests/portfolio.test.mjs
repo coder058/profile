@@ -19,13 +19,34 @@ test('local styles, scripts, images and resume exist', () => {
 });
 
 test('portfolio copy is personal without duplicating the resume', () => {
-  assert.match(html, /Full-stack developer/);
+  assert.match(html, /Software developer in Amsterdam/);
+  assert.doesNotMatch(html, /Full-stack developer/i);
   assert.match(html, /I’m curious about how things work/);
   assert.match(html, /coding agents to explore possible answers/);
   assert.doesNotMatch(html, /open to relocation|Python, TypeScript (?:&amp;|and) SQL/i);
-  assert.ok(html.indexOf('<h3>Polybow</h3>') < html.indexOf('<h3>Relay</h3>'));
+  // SOURCE: junior NL/ES listings are mostly general software work, so the working
+  // interface leads and the trading postmortem becomes the depth card.
   assert.ok(html.indexOf('<h3>Pattern Forge</h3>') < html.indexOf('<h3>Relay</h3>'));
+  assert.ok(html.indexOf('<h3>Relay</h3>') < html.indexOf('<h3>Polybow</h3>'));
   assert.match(html, /<h2 id="about-title">About<\/h2>/);
+});
+
+test('a reader can scan the stack and the evidence behind each project', () => {
+  for (const tool of ['React', 'TypeScript', 'Python', 'FastAPI', 'PostgreSQL', 'Docker'])
+    assert.ok(html.includes(`<li>${tool}</li>`), tool);
+  // SOURCE: counts and deployment checks recorded in the 5-6 September project audits.
+  assert.equal((html.match(/class="project-proof"/g) || []).length, 3);
+  assert.match(html, /32 tests · Docker image built and smoke-tested in CI/);
+  assert.match(html, /48 backend tests/);
+  assert.match(html, /6 tests · ledger reproducible from the public CSV/);
+});
+
+test('Le Wagon work is shown as attributed training, not featured product work', () => {
+  assert.match(html, /<h2 id="training-title">Training work<\/h2>/);
+  assert.match(html, /City Gardens/);
+  assert.match(html, /API labs/);
+  assert.match(html, /not sole-authored/);
+  assert.ok(html.indexOf('id="work"') < html.indexOf('id="training"'));
 });
 
 test('project content stays visible without an animation callback', () => {

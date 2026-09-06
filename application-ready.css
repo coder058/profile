@@ -1,4 +1,6 @@
 /* SOURCE: editorial spacing choices, not measured performance constants. */
+.hero-v2{min-height:0}
+.hero-layout{padding-top:48px;padding-bottom:48px}
 .hero-summary{grid-column:1/-1;grid-row:2;margin:36px 0 0;font-size:clamp(20px,2.4vw,30px);line-height:1.4;max-width:760px}
 .hero-summary span{font-size:.7em}
 .hero-main>.hero-links{grid-row:3;max-width:none;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:28px}

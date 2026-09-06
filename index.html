@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Jordi Lluis — a curious full-stack developer turning questions into useful software.">
+  <meta name="description" content="Jordi Lluis — software developer in Amsterdam. React, TypeScript, Python and FastAPI projects with tests, Docker and CI.">
   <link rel="canonical" href="https://coder058.github.io/profile/">
-  <title>Jordi Lluis — Full-stack Developer</title>
+  <title>Jordi Lluis — Software Developer</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="enhancements.css">
   <link rel="stylesheet" href="hero.css">
@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="hero-links-polish.css">
   <link rel="stylesheet" href="other-work.css">
   <link rel="stylesheet" href="application-ready.css">
+  <link rel="stylesheet" href="presentation.css">
   <script src="motion.js" defer></script>
 </head>
 <body>
@@ -27,7 +28,7 @@
       <div class="hero-layout">
         <div class="hero-main">
           <h1>JORDI<br>LLUIS<span>.</span></h1>
-          <p class="hero-summary">Full-stack developer.<br><span>Web applications, APIs and market data.</span></p>
+          <p class="hero-summary">Software developer in Amsterdam.<br><span>Web interfaces, APIs and market-data tools — built, tested, and honest about the limits.</span></p>
           <div class="hero-links" aria-label="Primary links">
             <a href="https://github.com/coder058" target="_blank" rel="noreferrer"><strong>GitHub</strong><b>↗</b></a>
             <a href="assets/jordi-lluis-cv.pdf" target="_blank" rel="noreferrer"><strong>Résumé</strong><b>↓</b></a>
@@ -40,33 +41,65 @@
           </figure>
         </div>
       </div>
-      <div class="hero-marquee" aria-hidden="true"><span>SOFTWARE / WEB / DATA / SOFTWARE / WEB / DATA /</span></div>
     </section>
     <section id="work" class="work palette-section" data-bg="#c7bdaf" data-ink="#292824" aria-labelledby="work-title">
       <header class="work-header">
         <h2 id="work-title">Selected projects</h2>
+        <p class="stack-label">Tools I build with</p>
+        <ul class="stack-strip">
+          <li>React</li>
+          <li>TypeScript</li>
+          <li>Next.js</li>
+          <li>Python</li>
+          <li>FastAPI</li>
+          <li>Ruby on Rails</li>
+          <li>PostgreSQL</li>
+          <li>Docker</li>
+          <li>CI</li>
+        </ul>
       </header>
       <div class="project-grid">
-        <article class="project-card card-stone reveal">
-          <a href="https://polybow-archive.vercel.app" target="_blank" rel="noreferrer" aria-label="Open the Polybow live trading postmortem">
-            <div class="project-copy"><h3>Polybow</h3><p>A Polymarket bot and its postmortem: how the signal, order path and strategy changed from Polybow to StratB and UC—and why faster acknowledgements did not create a durable edge.</p><footer>PYTHON · WEBSOCKETS · APIS</footer></div>
-          </a>
-        </article>
         <article class="project-card card-ash reveal">
-          <a href="https://pattern-forge-five.vercel.app" target="_blank" rel="noreferrer" aria-label="Open Pattern Forge market replay">
-            <div class="project-copy"><h3>Pattern Forge</h3><p>A market-data workspace with live crypto quotes and recorded-market replay. I built the chart interface and candle API, keeping future prices out of replay calculations.</p><footer>REACT · TYPESCRIPT · REST APIS</footer></div>
+          <a href="projects/pattern-forge.html" aria-label="Read the Pattern Forge project walkthrough">
+            <div class="project-copy"><h3>Pattern Forge</h3><p>A market-data workspace with live crypto quotes and recorded-market replay. I built the chart interface and candle API, keeping future prices out of replay calculations.</p><p class="project-proof">32 tests · Docker image built and smoke-tested in CI · deployed</p><footer>REACT · TYPESCRIPT · REST APIS</footer></div>
           </a>
         </article>
         <article class="project-card card-sand reveal">
-          <a href="https://relay-ten-zeta.vercel.app" target="_blank" rel="noreferrer" aria-label="Open Relay job evidence workspace">
-            <div class="project-copy"><h3>Relay</h3><p>An MCP server with a web interface for checking job requirements. I connected public listings to Python tools that preserve the original wording and export a review.</p><footer>MCP · PYTHON · TYPESCRIPT</footer></div>
+          <a href="projects/relay.html" aria-label="Read the Relay project walkthrough">
+            <div class="project-copy"><h3>Relay</h3><p>An MCP server with a web interface for checking job requirements. I connected public listings to Python tools that preserve the original wording and export a review.</p><p class="project-proof">48 backend tests · one review service behind both HTTP and MCP · deployed</p><footer>MCP · PYTHON · TYPESCRIPT</footer></div>
+          </a>
+        </article>
+        <article class="project-card card-stone reveal">
+          <a href="projects/polybow.html" aria-label="Read the Polybow project walkthrough">
+            <div class="project-copy"><h3>Polybow</h3><p>A Polymarket bot and its postmortem: how the signal, order path and strategy changed from Polybow to StratB and UC—and why faster acknowledgements did not create a durable edge.</p><p class="project-proof">6 tests · ledger reproducible from the public CSV · losses documented, not hidden</p><footer>PYTHON · WEBSOCKETS · APIS</footer></div>
           </a>
         </article>
       </div>
     </section>
+    <section id="training" class="training palette-section" data-bg="#e4dcc9" data-ink="#292824" aria-labelledby="training-title">
+      <header class="training-header">
+        <h2 id="training-title">Training work</h2>
+        <p>Le Wagon, 2023. Kept separate because it covers data modelling and accounts, which the projects above do not.</p>
+      </header>
+      <ul class="training-list">
+        <li>
+          <a href="projects/city-gardens.html">
+            <strong>City Gardens</strong>
+            <span>A Ruby on Rails team project: PostgreSQL schema, Devise accounts, parcel reservations and garden events. Shared work from the course, not sole-authored, and not maintained since.</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/coder058/lewagon-api-lab" target="_blank" rel="noreferrer">
+            <strong>API labs</strong>
+            <span>Seven small browser apps that call public REST APIs, each handling loading, empty and error states rather than only the successful response.</span>
+          </a>
+        </li>
+      </ul>
+    </section>
     <section id="about" class="about-feature palette-section" data-bg="#d9cba0" data-ink="#292824" aria-labelledby="about-title">
       <h2 id="about-title">About</h2>
       <p class="about-copy">I’m curious about how things work, so I ask a lot of questions. I use coding agents to explore possible answers, then check the code and test what happens. I like finding practical ways to make everyday tasks easier, whether that means organising data, connecting tools or fixing a slow process.</p>
+      <p class="about-note">Each project page lists what the work cannot do. I would rather show a tested limit than an unverified claim, and I can walk through any of this code and explain why it fails where it does.</p>
     </section>
   </main>
   <footer class="site-footer"><span>© 2026</span><a href="https://www.linkedin.com/in/jordi-lluis-14228242a/" target="_blank" rel="noreferrer">LinkedIn ↗</a></footer>
