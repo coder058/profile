@@ -24,21 +24,20 @@ test('portfolio copy is personal without duplicating the resume', () => {
   assert.match(html, /I’m curious about how things work/);
   assert.match(html, /coding agents to explore possible answers/);
   assert.doesNotMatch(html, /open to relocation|Python, TypeScript (?:&amp;|and) SQL/i);
-  // SOURCE: junior NL/ES listings are mostly general software work, so the working
-  // interface leads and the trading postmortem becomes the depth card.
+  // SOURCE: user direction 2026-09-06 — Polybow is the live-applied system, so it leads.
+  assert.ok(html.indexOf('<h3>Polybow</h3>') < html.indexOf('<h3>Pattern Forge</h3>'));
   assert.ok(html.indexOf('<h3>Pattern Forge</h3>') < html.indexOf('<h3>Relay</h3>'));
-  assert.ok(html.indexOf('<h3>Relay</h3>') < html.indexOf('<h3>Polybow</h3>'));
   assert.match(html, /<h2 id="about-title">About<\/h2>/);
 });
 
 test('a reader can scan the stack and the evidence behind each project', () => {
-  for (const tool of ['React', 'TypeScript', 'Python', 'FastAPI', 'PostgreSQL', 'Docker'])
+  for (const tool of ['React', 'TypeScript', 'Python', 'FastAPI', 'PostgreSQL', 'Docker', 'AWS'])
     assert.ok(html.includes(`<li>${tool}</li>`), tool);
   // SOURCE: counts and deployment checks recorded in the 5-6 September project audits.
   assert.equal((html.match(/class="project-proof"/g) || []).length, 3);
   assert.match(html, /32 tests · Docker image built and smoke-tested in CI/);
   assert.match(html, /48 backend tests/);
-  assert.match(html, /6 tests · ledger reproducible from the public CSV/);
+  assert.match(html, /Lightsail · WebSockets · JSONL recordings/);
 });
 
 test('Le Wagon work is shown as attributed training, not featured product work', () => {

@@ -50,23 +50,67 @@ export const projects = [
     limits: 'Coverage is one public board page plus descriptions supplied by the visitor. Matching is literal, not semantic understanding or proof that a vacancy is still open. An ordinary use of a word such as “react” can still require human interpretation.'
   },
   {
-    slug: 'polybow', name: 'Polybow', stack: 'Python · WebSockets · APIs · AWS Lightsail',
-    summary: 'A trading experiment and its postmortem: how the signal and execution path changed, and why faster responses did not establish a durable edge.',
-    problem: 'A short-lived disagreement between BTC direction and an outcome contract was only useful if the quote was real, enough shares were available and the order arrived in time.',
-    contribution: 'I worked on the signal and execution experiments and the later analysis. The public repository contains the case study, ledger calculations and a timing parser, not the private trading bot. It is an engineering investigation, not a deployable strategy.',
-    demo: 'https://polybow-archive.vercel.app/', code: 'https://github.com/coder058/polybow-case-study',
-    steps: ['Read the Polybow, StratA, StratB and UC branches and the problem each change addressed.', 'Follow the execution section: book events, warm connections, metadata preparation and order submission.', 'Read the timing definition before interpreting the numbers. An API response is not a confirmed fill.', 'Expand Inspect the trading record and compare the market ledger with the separately explained wallet cash result.', 'Use the public CSV and analysis script to reproduce the ledger calculation. Private input logs are needed to reproduce the archived timing statistics.'],
-    dependencies: [
-      ['Historical signal', 'BTC reference prices and outcome order books', 'Inputs to the private bot; not a feed running on this website.'],
-      ['Order preparation', 'Market metadata, signing and an HTTP client', 'Prepared requests for the CLOB API in the historical experiment.'],
-      ['Timing analysis', 'Archived log records and latency.py', 'Preparation-to-response statistics, not end-to-end fill latency. Raw logs are not public.'],
-      ['Public ledger analysis', 'Anonymized market_ledger.csv and analyze.py', 'Reproducible market-resolution accounting.'],
-      ['Browser case study', 'Static HTML, JavaScript and the public CSV', 'The explanation, ledger filters and chart.'],
-      ['Storage', 'Archived logs and CSV files', 'No live account, order endpoint or application database in the public site.']
+    slug: 'polybow', name: 'Polybow', stack: 'Python · WebSockets · AWS Lightsail · CLOB APIs · JSONL recordings',
+    summary: 'A live Polymarket system: find last-second cheap asks left on the book, reach them from a Dublin VPS, then keep investigating after live trading stopped.',
+    problem: [
+      'Early Polybow, StratA and StratB bought expensive contracts near expiry, often around $0.96–$0.99. Those tickets had little upside even when the direction was right. The useful problem appeared later: a cheap ask still sitting on the about-to-win side while the other side already looked decided.',
+      'That leftover cheap ask is a book condition, not a security hole. The work was to notice it, reach it before it disappeared, and later test whether it was still there after the venue changed. UC is the public name for that cheap-entry line.'
     ],
-    build: ['Define the signal hypothesis and record the inputs used by each branch.', 'Move evaluation to book events and reduce avoidable preparation work.', 'Measure a specifically defined timing window rather than comparing unrelated intervals.', 'Reconcile outcomes and retain losses, uncertainty and differences between accounting methods.', 'Publish the reproducible ledger analysis and label what cannot be independently reproduced from the public repository.'],
+    contribution: [
+      'I built and operated the live path: WebSocket books, order preparation, a new AWS Lightsail instance in Dublin, and a recording layout on the VPS. I then treated the live run as evidence to investigate, not as a finished proof.',
+      'After live trading stopped, recordings and later Hyperliquid captures continued. The public repository has the case study, the ledger script and the timing parser. The private bot, raw VPS files and unfinished later analysis are not on this site. Live trading ended; the investigation did not.'
+    ],
+    demo: 'https://polybow-archive.vercel.app/', code: 'https://github.com/coder058/polybow-case-study',
+    skills: [
+      ['Python', 'Bot loop, patches, ledger analysis and the timing parser.'],
+      ['WebSockets', 'Book updates triggered evaluation instead of waiting for the next poll.'],
+      ['AWS Lightsail (Dublin)', 'A new VPS instance for execution and later daily recordings. No controlled region comparison was run.'],
+      ['HTTP/2 and signing', 'A warmed client and coincurve signatures so less work sat on the submit path.'],
+      ['Polymarket CLOB API', 'Prepared and posted orders. An acknowledgement is not a fill.'],
+      ['JSONL recordings', 'Daily BBO and later L2 files, rotated and compressed on the VPS.'],
+      ['CSV ledger', 'The public anonymized market-resolution table and its tests.']
+    ],
+    steps: [
+      'Read the problem first: leftover cheap asks, not the balance chart.',
+      'Follow the branch table: expensive late tickets, then UC cheap entry.',
+      'Read the execution path: Lightsail, warm connection, metadata cache, defined timing window.',
+      'Open the data table: how recordings were named and joined. The VPS copies were deleted; the layout is what can still be shown.',
+      'Use analyze.py on the public CSV if you want the ledger math. Wallet cash and raw logs stay in the private archive.'
+    ],
+    dependencies: [
+      ['Price reference', 'Chainlink RTDS and, on some paths, Binance', 'Inputs to the historical signal. The archive is not one uniform feed.'],
+      ['Outcome books', 'Polymarket WebSocket book events', 'Showed whether a cheap ask was still resting.'],
+      ['Decision loop', 'Book callback plus a 5 ms gate (was 50 ms)', 'A throttle, not measured end-to-end latency.'],
+      ['Order client', 'HTTP/2, token metadata cache, coincurve', 'Built the signed CLOB request on the VPS.'],
+      ['Lightsail instance', 'Ubuntu in eu-west-1 (Dublin)', 'Ran the bot and later the recorders. Location alone is not a benchmark.'],
+      ['Public case study', 'Static site plus market_ledger.csv', 'The walkthrough a recruiter can open without the private bot.']
+    ],
+    recordsTitle: 'How the data was organised',
+    recordsIntro: 'City Gardens shows foreign keys in PostgreSQL. Here the live store was files on the VPS, keyed by market, time and file day. I deleted the VPS recordings. This table is the layout I used, not a download.',
+    recordsCaption: 'Recording and research records, as operated on the VPS',
+    records: [
+      ['ws_books_YYYYMMDD.jsonl', 'BBO recorder on the Lightsail host', 'One file per UTC day: best bid and ask updates. Later gzip-compressed. No order sizes in the early BBO files.'],
+      ['ws_books_l2_YYYYMMDD.jsonl', 'L2 recorder, started later', 'Depth at the ask, needed to ask whether a cheap ticket was actually fillable.'],
+      ['live.log', 'Bot process on the same host', 'LAT_DETAIL rows for preparation and API-response time. Identifiers stay private; hashes are in EVIDENCE.md.'],
+      ['market / window / side', 'Gamma market id plus the five-minute slot', 'The join key from a book event to an order attempt and later to a resolution.'],
+      ['market_ledger.csv', 'Anonymized resolution rows in the public repo', 'Reproducible market accounting. It is not the wallet cash series.'],
+      ['Later Hyperliquid captures', 'Separate after live Polymarket trading stopped', 'Recorded for analysis that was not finished. Not a second live bot on this page.']
+    ],
+    build: [
+      'Write the expensive late-entry versions (Polybow, StratA, StratB) and record why upside was thin at $0.96–$0.99.',
+      'Add the cheap-entry line (UC): last-second asks, first as a maker under the ask, then with a taker leg.',
+      'Create a Lightsail instance in Dublin, warm the HTTP client, cache metadata and measure a named window: prepare then POST response.',
+      'Record books to dated JSONL files and rotate them so a disk-full host could not silently stop the recorder.',
+      'After the 28 April CLOB V2 venue change and the 2 May internal guard removal, keep recording and ask whether leftover cheap asks still existed. Later scans of June–July books did not find a durable stale-ask condition; order sizes were missing and August files were gone.',
+      'Publish the ledger and timing parser. Label the deleted VPS files and the unfinished later analysis instead of pretending the case is closed.'
+    ],
     run: 'python analyze.py\npython -m unittest discover -s tests\nnode --test tests/ledger-ui.test.cjs\npython -m http.server 8084 --bind 127.0.0.1',
-    limits: 'The experiment did not establish durable profitability. Dublin was not evaluated with a controlled regional comparison. The public CSV is market-resolution accounting, not the wallet cash balance. Private bot code and raw latency logs are not included.'
+    limits: [
+      'This was a live experiment, not a finished proof of an edge. Later book scans no longer showed durable leftover cheap asks; that is a later-market observation, not a courtroom link to one patch.',
+      'Dublin was not compared with another region under the same clock. An API acknowledgement is not a fill. The public CSV is market-resolution accounting, not wallet cash.',
+      'Raw recordings, private bot code and later Hyperliquid analysis are not in the public repository. The VPS files were deleted, so this page can show the schema, not replay those days.'
+    ],
+    references: [['Evidence map', 'https://github.com/coder058/polybow-case-study/blob/main/EVIDENCE.md'], ['Public ledger', 'https://github.com/coder058/polybow-case-study'], ['CLOB V2 date', 'https://docs.polymarket.com/changelog/predictions']]
   },
   {
     slug: 'city-gardens', name: 'City Gardens', stack: 'Ruby on Rails · PostgreSQL · Active Record · JavaScript',
