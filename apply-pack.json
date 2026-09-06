@@ -11,7 +11,7 @@
       "https://coder058.github.io/profile/projects/relay.html#data",
       "https://coder058.github.io/profile/projects/city-gardens.html#data"
     ],
-    "note": "The 12 software apply PDFs match local output/pdf and the live GitHub Pages copies. CNC PDFs in output/pdf are a different track — never send them for software jobs."
+    "note": "The 12 software apply PDFs match local output/pdf and the live GitHub Pages copies. CNC PDFs in output/pdf are a different track \u2014 never send them for software jobs."
   },
   "person": {
     "name": "Jordi Lluis",
@@ -38,7 +38,7 @@
     "online_forms": "Use the ATS PDF (one column). Do not upload the Canva file.",
     "email_or_recruiter": "ATS PDF is enough. Designed PDF is optional.",
     "do_not_mint_a_new_cv_per_job": true,
-    "per_job": "Open the listing URL. Skip if it is gone, intern, senior, part-time, contract, Dutch-fluency, or visa-only outside the EU. Pick one pack below. Retouch 3–5 bullets only if the posting names a skill already on the CV. Fill forms from form_answers. Write a short letter from the pack letter_template. Then log the application.",
+    "per_job": "Open the listing URL. Skip if it is gone, intern, senior, part-time, contract, Dutch-fluency, or visa-only outside the EU. Pick one pack below. Retouch 3\u20135 bullets only if the posting names a skill already on the CV. Fill forms from form_answers. Write a short letter from the pack letter_template. Then log the application.",
     "never_send": [
       "Canva export or Canva link",
       "output/pdf/cv_cnc_nl.pdf or cv_cnc_nl_application.pdf",
@@ -114,10 +114,10 @@
       "ats": "https://coder058.github.io/profile/assets/jordi-lluis-fullstack-cv-ats.pdf",
       "local_designed": "output/pdf/jordi-lluis-fullstack-cv.pdf",
       "local_ats": "output/pdf/jordi-lluis-fullstack-cv-ats.pdf",
-      "sha256_designed": "031adcc35d09d49a746355fb862ae99fe23d3172a61f8a29158c415074932922",
-      "sha256_ats": "2e76ecaadc2f48e28cdb43ea786f8ce393426ebcceb55f02637c7df930a34823",
+      "sha256_designed": "aecbb4beccb0526a0911ecfe9582e45d8b45a51b216803664b22663930a000e1",
+      "sha256_ats": "b5da1d75ce6954601681f0eb1a219e126788f8d3c522035f11298a11cb641493",
       "pitch": "I build the interface and the API behind it: React and TypeScript on the front, Python or Rails on the back, with tests and Docker so a change has a check.",
-      "letter_template": "Hi {company},\n\nI'm Jordi Lluis, a software developer in Amsterdam (EU citizen). I build the interface and the API behind it — React and TypeScript on the front, Python or Rails on the back — and I test how it fails.\n\nFor this {role}, the closest public work is {project}: {one_liner} Walkthrough: {walkthrough}\n\nOne-page CV (ATS): {ats}\nPortfolio: https://coder058.github.io/profile/\n\nJordi Lluis\n+31 6 1949 6593 · joord918@gmail.com"
+      "letter_template": "Hi {company},\n\nI'm Jordi Lluis, a software developer in Amsterdam (EU citizen). I build the interface and the API behind it \u2014 React and TypeScript on the front, Python or Rails on the back \u2014 and I test how it fails.\n\nFor this {role}, the closest public work is {project}: {one_liner} Walkthrough: {walkthrough}\n\nOne-page CV (ATS): {ats}\nPortfolio: https://coder058.github.io/profile/\n\nJordi Lluis\n+31 6 1949 6593 \u00b7 joord918@gmail.com"
     },
     {
       "id": "ai",
@@ -132,10 +132,10 @@
       "ats": "https://coder058.github.io/profile/assets/jordi-lluis-ai-cv-ats.pdf",
       "local_designed": "output/pdf/jordi-lluis-ai-cv.pdf",
       "local_ats": "output/pdf/jordi-lluis-ai-cv-ats.pdf",
-      "sha256_designed": "bf238ed7dd55462900c1a70bacdb5253d8766b7c7392300fa7e6e2137a879960",
-      "sha256_ats": "d4337f79f8d365f4e5ffdb08029210daead8eff91436325382fe1074497d761b",
+      "sha256_designed": "d7171be8282dc44bfdaf6cea19106cf448ed90ccd34b0fcc742ef6c4ba9e75fd",
+      "sha256_ats": "ffdd9737aef069fcba11424c4aed44852d6af3f618f05fd222531e31c94a4c92",
       "pitch": "I build small agent-facing tools with a human still in the loop: MCP servers, quoted evidence, and tests on the protocol boundary. Not model training, not a production RAG platform.",
-      "letter_template": "Hi {company},\n\nI'm Jordi Lluis, a software developer in Amsterdam (EU citizen). I build small agent-facing tools with a human still in the loop — MCP servers, quoted evidence, tests on the protocol boundary. I do not train models and I do not run a production RAG platform.\n\nFor this {role}, the closest public work is {project}: {one_liner} Walkthrough: {walkthrough}\n\nOne-page CV (ATS): {ats}\nPortfolio: https://coder058.github.io/profile/\n\nJordi Lluis\n+31 6 1949 6593 · joord918@gmail.com"
+      "letter_template": "Hi {company},\n\nI'm Jordi Lluis, a software developer in Amsterdam (EU citizen). I build small agent-facing tools with a human still in the loop \u2014 MCP servers, quoted evidence, tests on the protocol boundary. I do not train models and I do not run a production RAG platform.\n\nFor this {role}, the closest public work is {project}: {one_liner} Walkthrough: {walkthrough}\n\nOne-page CV (ATS): {ats}\nPortfolio: https://coder058.github.io/profile/\n\nJordi Lluis\n+31 6 1949 6593 \u00b7 joord918@gmail.com"
     },
     {
       "id": "data",
@@ -148,10 +148,10 @@
       "ats": "https://coder058.github.io/profile/assets/jordi-lluis-data-cv-ats.pdf",
       "local_designed": "output/pdf/jordi-lluis-data-cv.pdf",
       "local_ats": "output/pdf/jordi-lluis-data-cv-ats.pdf",
-      "sha256_designed": "8163141b14414b2f396ecd6dc6b130eef96da9d3e5667a5aa495a443c01b4cb7",
-      "sha256_ats": "771e1d5cd44eb94d1604646503d4e944aa5ec209dab1cd990e8aa928096f789d",
+      "sha256_designed": "cf82521514675242cf098fa6e600664df25d3ea180a4eb202031e70b05b773ca",
+      "sha256_ats": "c0207b70e8779c11a810df8c66ea154f07648cdadfa0f8191e5084e190743a46",
       "pitch": "I work at data boundaries: validated APIs, time-series that cannot see the future, and files you can reopen after a live run. SQL and Python; not a research lab.",
-      "letter_template": "Hi {company},\n\nI'm Jordi Lluis, a software developer in Amsterdam (EU citizen). I work at data boundaries: validated APIs, time-series that cannot see the future, and files you can reopen. SQL and Python; not a research lab.\n\nFor this {role}, the closest public work is {project}: {one_liner} Walkthrough: {walkthrough}\n\nOne-page CV (ATS): {ats}\nPortfolio: https://coder058.github.io/profile/\n\nJordi Lluis\n+31 6 1949 6593 · joord918@gmail.com"
+      "letter_template": "Hi {company},\n\nI'm Jordi Lluis, a software developer in Amsterdam (EU citizen). I work at data boundaries: validated APIs, time-series that cannot see the future, and files you can reopen. SQL and Python; not a research lab.\n\nFor this {role}, the closest public work is {project}: {one_liner} Walkthrough: {walkthrough}\n\nOne-page CV (ATS): {ats}\nPortfolio: https://coder058.github.io/profile/\n\nJordi Lluis\n+31 6 1949 6593 \u00b7 joord918@gmail.com"
     },
     {
       "id": "software",
@@ -167,13 +167,13 @@
       "unlabelled_copies": {
         "designed": "https://coder058.github.io/profile/assets/jordi-lluis-cv.pdf",
         "ats": "https://coder058.github.io/profile/assets/jordi-lluis-cv-ats.pdf",
-        "sha256_designed": "7851719c2ca3854b50c522418cf5a62e468708d08e22a45acd36dc5ba5dc5210",
-        "sha256_ats": "01a785606c899d978b7329430e741bd574dc682f030cbe214c5e9256b4ce73d8"
+        "sha256_designed": "3d39a6552261c38cd6cc4c2b4de1b084721c70804a40643b1d429aca7c994244",
+        "sha256_ats": "76ea072edd018dabfcfa97d99de844149f73157b2e54e2fa15ff6f76ae07bfc9"
       },
-      "sha256_designed": "ab0812e1adc9ae39c52e2783e40823ec2fbbb34a7a31a42c8475aad010e2f25e",
-      "sha256_ats": "0939f7c7385f47cdfbc02f3ac615c052924c4e8cb141a2c478ec7f207e6beaa0",
-      "pitch": "Junior/mid software developer: Python, TypeScript, APIs, tests. Same projects as the other packs; this file is the generic screen, not a specialist title.",
-      "letter_template": "Hi {company},\n\nI'm Jordi Lluis, a software developer in Amsterdam (EU citizen). I build web interfaces and APIs, then test how they fail.\n\nFor this {role}, the closest public work is {project}: {one_liner} Walkthrough: {walkthrough}\n\nOne-page CV (ATS): {ats}\nPortfolio: https://coder058.github.io/profile/\n\nJordi Lluis\n+31 6 1949 6593 · joord918@gmail.com"
+      "sha256_designed": "6faf5e8359e5ad52d458d62dc1cc9a7a69dd29e2101939e100fdda7d7f4b0161",
+      "sha256_ats": "f7b42b68ed5a5437003d91ab08c86c05c3ca52d1928811cc690d79b3d547b55a",
+      "pitch": "I like understanding how a system works, then turning that into software I can test. Market-data interfaces, HTTP APIs and small developer tools.",
+      "letter_template": "Hi {company},\n\nI'm Jordi Lluis, a software developer in Amsterdam (EU citizen). I build web interfaces and APIs, then test how they fail.\n\nFor this {role}, the closest public work is {project}: {one_liner} Walkthrough: {walkthrough}\n\nOne-page CV (ATS): {ats}\nPortfolio: https://coder058.github.io/profile/\n\nJordi Lluis\n+31 6 1949 6593 \u00b7 joord918@gmail.com"
     },
     {
       "id": "fde",
@@ -186,10 +186,10 @@
       "ats": "https://coder058.github.io/profile/assets/jordi-lluis-fde-cv-ats.pdf",
       "local_designed": "output/pdf/jordi-lluis-fde-cv.pdf",
       "local_ats": "output/pdf/jordi-lluis-fde-cv-ats.pdf",
-      "sha256_designed": "8e749754536880e7c943c6ca86a93ae9b6b4326080a4302e9cf2f3d38b88bdde",
-      "sha256_ats": "68e9e3450051aa382796532422070534be92a1d12d86904af862ec363949e48a",
+      "sha256_designed": "065440ce1205364c886c6708252a8cca579f6286366ced9ba555d88ee091875f",
+      "sha256_ats": "d2941dc863e347323dbff308d1b36f959d92d92729d46cd37170b094c35b44bb",
       "pitch": "I sit between a messy problem and a working integration. Side projects and operations roles, not enterprise customer deployments. Do not print an FDE job title.",
-      "letter_template": "Hi {company},\n\nI'm Jordi Lluis, a software developer in Amsterdam (EU citizen). I sit between a messy problem and a working integration. That is side-project and operations evidence, not an enterprise customer-deploy job.\n\nFor this {role}, the closest public work is {project}: {one_liner} Walkthrough: {walkthrough}\n\nOne-page CV (ATS): {ats}\nPortfolio: https://coder058.github.io/profile/\n\nJordi Lluis\n+31 6 1949 6593 · joord918@gmail.com"
+      "letter_template": "Hi {company},\n\nI'm Jordi Lluis, a software developer in Amsterdam (EU citizen). I sit between a messy problem and a working integration. That is side-project and operations evidence, not an enterprise customer-deploy job.\n\nFor this {role}, the closest public work is {project}: {one_liner} Walkthrough: {walkthrough}\n\nOne-page CV (ATS): {ats}\nPortfolio: https://coder058.github.io/profile/\n\nJordi Lluis\n+31 6 1949 6593 \u00b7 joord918@gmail.com"
     }
   ],
   "project_picker": {
@@ -246,7 +246,7 @@
   "form_answers": {
     "full_name": "Jordi Lluis",
     "preferred_name": "Jordi",
-    "legal_name_if_different": "Unknown — do not guess. Public applications use Jordi Lluis. If a government/payroll form requires a passport name, stop and ask.",
+    "legal_name_if_different": "Unknown \u2014 do not guess. Public applications use Jordi Lluis. If a government/payroll form requires a passport name, stop and ask.",
     "city": "Amsterdam",
     "country": "Netherlands",
     "phone": "+31 6 1949 6593",
@@ -264,7 +264,7 @@
     "english": "C2",
     "spanish": "Native",
     "years_professional_software_employment": 0,
-    "years_building_software_since_bootcamp": "Le Wagon full-stack, 2023. Public projects 2024–present.",
+    "years_building_software_since_bootcamp": "Le Wagon full-stack, 2023. Public projects 2024\u2013present.",
     "years_experience_on_forms": "Answer the field as written. Professional software employment is 0. Personal projects and a bootcamp do not become contracted years. Never write 1 or 2 as a substitute. If the form only accepts a number for professional years, use 0. If it is optional, leave it blank. Never count logistics years as software years.",
     "current_title": "Do not invent a software job title. Latest listed work is e-commerce dispatch at De Bommel (2025).",
     "notice_period": "Unknown. De Bommel has no confirmed end date. Do not write unemployed or available immediately as a fact. If the form requires a phrase, use To be confirmed.",
@@ -285,12 +285,12 @@
       "summary": "Used Ceyenne software (WMS) for inbound/outbound furniture orders. Prepared DHL despatches. Booked inbound trucks. Signed transport documents. DHL is the carrier, not a WMS."
     },
     {
-      "employer": "IAS Handling — Barcelona–El Prat Airport",
+      "employer": "IAS Handling \u2014 Barcelona\u2013El Prat Airport",
       "title": "Air cargo operations",
       "location": "Barcelona, Spain",
-      "dates": "2019–2020",
+      "dates": "2019\u20132020",
       "software_job": false,
-      "summary": "Bonded warehouse, ramp offload, airside access. Used WMS software for customs permits and documents. Product name unknown — do not invent one."
+      "summary": "Bonded warehouse, ramp offload, airside access. Used WMS software for customs permits and documents. Product name unknown \u2014 do not invent one."
     },
     {
       "employer": "Transjunior Logistics",
@@ -304,7 +304,7 @@
       "employer": "Home Fundraiser Ltd",
       "title": "Route planner",
       "location": "London, United Kingdom",
-      "dates": "2016–2017",
+      "dates": "2016\u20132017",
       "software_job": false,
       "summary": "Planned daily area assignments and routes for field fundraising teams."
     },
@@ -321,7 +321,7 @@
     {
       "institution": "Anthropic and OpenAI online courses",
       "what": "Further learning",
-      "dates": "2024–present",
+      "dates": "2024\u2013present",
       "note": "MCP is a skill, not a school. Do not list unfinished course names."
     },
     {
@@ -339,7 +339,7 @@
     {
       "institution": "Instituto de Sonido de Caracas",
       "what": "Sound Engineering",
-      "dates": "2015–2016"
+      "dates": "2015\u20132016"
     },
     {
       "institution": "Madison Learning Center, Caracas, Venezuela",

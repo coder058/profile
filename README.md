@@ -7,7 +7,7 @@ Canonical portfolio: https://coder058.github.io/profile/
 ## Selected work
 
 - **Python trading bot** — a live prediction-market system and evidence-led postmortem: development history, scoped API-response timings, wallet reconciliation and the full negative outcome. Not proof of a profitable strategy.
-- **Relay** — a job-research workspace built around four read-only MCP tools. Search public listings, compare quoted text and export a review.
+- **Relay** — a review product: four read-only MCP tools and a React board share one Python evidence service. Mentions stay next to the original wording; tools do not score eligibility.
 - **Pattern Forge** — closed-candle Hyperliquid snapshots and prefix-only replay of recorded metals, index and crypto perpetual markets. The public page does not execute trades or predict returns.
 
 Each selected card opens a project walkthrough with the problem, contribution, usage steps, dependency table and limitations. [More challenges](https://coder058.github.io/profile/#more-challenges) lists the other public GitHub work: DispatchOps, Transcript Desk, the City Gardens team project, seven API labs and the Rails exercises. Incomplete scaffolds are labelled as such. I do not claim every Le Wagon Kitt challenge.

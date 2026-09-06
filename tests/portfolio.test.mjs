@@ -37,6 +37,7 @@ test('a reader can scan the stack and the evidence behind each project', () => {
   // SOURCE: counts and deployment checks recorded in the 5-6 September project audits.
   assert.equal((html.match(/class="project-proof"/g) || []).length, 3);
   assert.match(html, /Tests, Docker image and PostgreSQL restart checked in CI/);
+  assert.match(html, /A review product with four MCP tools on one Python service/);
   assert.match(html, /pytest in CI · one review service behind HTTP and MCP/);
   assert.match(html, /Lightsail · WebSockets · JSONL recordings/);
   assert.match(html, /Open BTC 5m/);
