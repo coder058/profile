@@ -12,7 +12,7 @@ Canonical portfolio: https://coder058.github.io/profile/
 
 Each selected card opens a project walkthrough with the problem, contribution, usage steps, dependency table and limitations. [More challenges](https://coder058.github.io/profile/#more-challenges) lists the other public GitHub work: DispatchOps, Transcript Desk, the City Gardens team project, seven API labs and the Rails exercises. Incomplete scaffolds are labelled as such. I do not claim every Le Wagon Kitt challenge.
 
-[Résumé packs](https://coder058.github.io/profile/resume.html) — four one-page files plus optional FDE. Same GitHub, same site; not one PDF per vacancy.
+[Résumé](https://coder058.github.io/profile/resume.html) — the curated one-page PDF. GitHub is for code, not a second résumé.
 
 The 2026-08-28 project audit removed VÆRN and Atelier Z from the featured selection because their hosted storefronts do not demonstrate the depth of the underlying systems. Their projects and existing deployments were not deleted. Course exercises remain outside the featured portfolio.
 

@@ -3,20 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
   <meta name="description" content="One-page résumé for Jordi Lluis.">
   <link rel="canonical" href="https://coder058.github.io/profile/resume.html">
   <title>Résumé — Jordi Lluis</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="enhancements.css">
   <link rel="stylesheet" href="header-polish.css">
-  <link rel="stylesheet" href="resume-packs.css">
+  <link rel="stylesheet" href="resume-packs.css?v=cv">
 </head>
-<body>
+<body class="resume-body">
   <a class="skip-link" href="#resume">Skip to résumé</a>
   <header class="site-header">
     <nav aria-label="Primary navigation">
       <a href="index.html#work">Projects</a>
-      <a href="resume.html" aria-current="page">Résumé</a>
+      <a href="resume.html?v=cv" aria-current="page">Résumé</a>
       <a href="tape/">Tape</a>
       <a href="host/">Host</a>
     </nav>
@@ -25,12 +27,11 @@
     <h1 class="visually-hidden">Résumé</h1>
     <p class="resume-actions">
       <a href="assets/jordi-lluis-cv.pdf">Download PDF</a>
-      <a href="assets/jordi-lluis-cv-ats.pdf">ATS copy</a>
     </p>
-    <figure class="resume-sheet">
-      <img src="assets/jordi-lluis-cv.png" width="1191" height="1684" alt="One-page résumé of Jordi Lluis: projects, experience, skills and education.">
-    </figure>
+    <object class="resume-frame" data="assets/jordi-lluis-cv.pdf#view=FitH" type="application/pdf">
+      <img src="assets/jordi-lluis-cv.png?v=madison" width="1191" height="1684" alt="One-page résumé of Jordi Lluis: projects, experience, skills and education.">
+    </object>
   </main>
-  <footer class="site-footer"><span>© 2026</span><a href="https://github.com/coder058" target="_blank" rel="noreferrer">GitHub ↗</a></footer>
+  <footer class="site-footer"><span>© 2026</span><a href="assets/jordi-lluis-cv-ats.pdf">ATS copy</a><a href="https://github.com/coder058" target="_blank" rel="noreferrer">GitHub ↗</a></footer>
 </body>
 </html>
