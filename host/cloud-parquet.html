@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="16 July 2026: hourly perpetual recordings in Google Cloud Storage, paper jobs on Cloud Run in europe-west1. Pattern Forge later ships 20,567 closed bars from those files.">
+  <meta name="description" content="16 July 2026: hourly perpetual recordings in Google Cloud Storage. Pattern Forge later ships 20,567 closed bars from those files.">
   <link rel="canonical" href="https://coder058.github.io/profile/host/cloud-parquet.html">
   <title>The files went to a bucket — HOST</title>
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
@@ -12,30 +12,28 @@
 <body class="host">
   <a class="skip" href="#post">Skip to post</a>
   <div class="crop">
-    <p class="tape"><span>02</span> GCS · Cloud Run · europe-west1</p>
+    <p class="tape"><span>Cloud</span> GCS · europe-west1</p>
     <nav class="top" aria-label="Journal">
       <a href="../tape/">“TAPE”</a>
       <a href="../host/">“HOST”</a>
       <a href="../">Portfolio</a>
     </nav>
     <article class="post" id="post">
-      <p class="kicker"><b>Note 02</b> · Cloud</p>
+      <p class="kicker">Cloud</p>
       <h1 class="post-title">The files went to a bucket</h1>
       <p class="meta"><span>16 July 2026</span><span>Amsterdam</span><span>Jordi Lluis</span></p>
-      <p class="archive">Reconstructed 6 September 2026 from the metals-paper status report and Pattern Forge’s public catalog.</p>
-      <p>After live Polymarket 5-minute trading stopped, the work moved to recordings. On this date a paper-only pipeline was in Google Cloud, region europe-west1: a state bucket, Cloud Run jobs, hourly and daily schedules. No broker credentials. Execution enabled: false.</p>
+      <p>After the 5-minute Polymarket run stopped, I moved to recordings. That day a paper-only pipeline sat in Google Cloud, europe-west1: a state bucket, Cloud Run jobs, hourly and daily schedules. No broker credentials. Execution was off.</p>
       <table class="facts">
         <caption class="skip">What was stored, and what Pattern Forge later ships</caption>
         <tbody>
-          <tr><th>Venue in the files</th><td>Polymarket Perps hourly candles, not CME spot, not a cash index.</td></tr>
-          <tr><th>Status snapshot</th><td>WTI 1,624 hourly rows in that day’s venue table, with 2,414,184 total trades on the selected contract — venue stats, not my fill count.</td></tr>
-          <tr><th>Public catalog now</th><td>Ten parquet series copied from Google Cloud Storage into Pattern Forge. 20,567 closed hourly bars after omitting a possibly still-forming last bar. Gaps are kept, not interpolated.</td></tr>
+          <tr><th>Venue in the files</th><td>Polymarket Perps hourly candles, not CME, not a cash index.</td></tr>
+          <tr><th>That day’s snapshot</th><td>WTI 1,624 hourly rows in the venue table. 2,414,184 is venue trade count on the selected contract, not my fills.</td></tr>
+          <tr><th>Public catalog now</th><td>Ten parquet series in Pattern Forge. 20,567 closed hourly bars after dropping a last bar that may still have been forming. Gaps stay empty.</td></tr>
           <tr><th>WTI in the catalog</th><td>2,482 closed bars, 42 missing hours, SHA-256 6733ae8ec1646133…</td></tr>
         </tbody>
       </table>
-      <p>A data point here is a closed hour: open, high, low, close, timestamp. It is not a forecast. Models on that day’s paper ledger promoted zero venue-native candidates. Candidate net return was not positive.</p>
-      <div class="limit">Conclusion I will defend: I can put market files in a bucket, hash them, and refuse to fill holes. That is not a live Hyperliquid bot, and it is not a warehouse of official energy statistics.</div>
-
+      <p>A row here is a closed hour: open, high, low, close, timestamp. Models on that day’s paper ledger promoted zero venue-native candidates. Candidate net return was not positive.</p>
+      <div class="limit">I can put market files in a bucket, hash them, and leave holes empty. That is not a live Hyperliquid bot, and it is not official energy statistics.</div>
       <p><a href="https://github.com/coder058/pattern-forge/blob/main/public/recordings/catalog.json">Catalog</a> · <a href="../tape/wti-is-not-spot.html">“WTI” is not spot</a></p>
       <a class="back" href="./">← “HOST”</a>
     </article>

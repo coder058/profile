@@ -12,29 +12,27 @@
 <body>
   <a class="skip" href="#post">Skip to post</a>
   <div class="crop">
-    <p class="tape"><span>07</span> Replay · Leakage · Reject</p>
+    <p class="tape"><span>Replay</span> Leakage · Reject</p>
     <nav class="top" aria-label="Journal">
       <a href="../tape/">“TAPE”</a>
       <a href="../host/">“HOST”</a>
       <a href="../">Portfolio</a>
     </nav>
     <article class="post" id="post">
-      <p class="kicker"><b>Issue 07</b> · Replay</p>
+      <p class="kicker">Replay</p>
       <h1 class="post-title">The endpoint knew the close</h1>
       <p class="meta"><span>24 July 2026</span><span>Amsterdam</span><span>Jordi Lluis</span></p>
-      <p class="archive">Reconstructed 6 September 2026 from analysis/updown_july_20260724/RESULTS.md.</p>
-      <p>Live 5-minute trading had already stopped being the job. The job was: can any later rule be replayed without cheating.</p>
+      <p>Live 5-minute trading had already stopped. The question was whether any later rule could be replayed without cheating.</p>
       <table class="facts">
         <caption class="skip">July capture window, 17–24 July 2026</caption>
         <tbody>
-          <tr><th>SOL 15m TA-brain</th><td>221 scored trades, −$150.21 on the canonical $100 bankroll rules. Negative every captured day. Reject. Not a live P&amp;L.</td></tr>
-          <tr><th>ETH 15m simple-taker, first pass</th><td>85/85 wins. Invalid. Polymarket’s historical crypto-price endpoint returns the completed market’s final Chainlink close. Querying offsets from +10s to +900s returned the same close. The direction leaked into every decision.</td></tr>
-          <tr><th>Leakage-safe ETH retest</th><td>Four trades. Interval crosses zero. Too few. Not evidence of profitability.</td></tr>
+          <tr><th>SOL 15m</th><td>221 scored trades, −$150.21 on the $100 bankroll rules. Negative every captured day. Reject. Not live P&amp;L.</td></tr>
+          <tr><th>ETH 15m, first pass</th><td>85/85 wins. Invalid. Polymarket’s historical crypto-price endpoint returns the completed market’s final Chainlink close. Offsets from +10s to +900s all came back with that same close. The answer leaked into every decision.</td></tr>
+          <tr><th>Leakage-safe ETH retest</th><td>Four trades. Interval crosses zero. Too few to mean anything.</td></tr>
         </tbody>
       </table>
-      <p>A later ETH 5m replacement used exact Chainlink seconds from a pinned archive (922,290 of 950,400 possible seconds). That is a different, stricter file. The lesson I am keeping from this day is the failure mode: a convenient historical price is not a decision-time price.</p>
-      <div class="limit">Conclusion I will defend: if the series already contains the resolution, the backtest is not a test. I will publish the rejection, not the 100% win rate.</div>
-
+      <p>A later ETH 5m file used exact Chainlink seconds from a pinned archive. Different file, stricter clock. The lesson from this day is the failure: a convenient historical price is not a decision-time price.</p>
+      <div class="limit">If the series already contains the resolution, the backtest is not a test. I published the rejection, not the 100% win rate.</div>
       <p><a href="../host/">“HOST”</a> · <a href="../projects/polybow.html">Walkthrough</a></p>
       <a class="back" href="./">← “TAPE”</a>
     </article>

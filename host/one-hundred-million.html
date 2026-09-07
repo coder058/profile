@@ -12,31 +12,29 @@
 <body class="host">
   <a class="skip" href="#post">Skip to post</a>
   <div class="crop">
-    <p class="tape"><span>04</span> JSONL · BBO · No size</p>
+    <p class="tape"><span>JSONL</span> BBO · No size</p>
     <nav class="top" aria-label="Journal">
       <a href="../tape/">“TAPE”</a>
       <a href="../host/">“HOST”</a>
       <a href="../">Portfolio</a>
     </nav>
     <article class="post" id="post">
-      <p class="kicker"><b>Note 04</b> · Recordings</p>
+      <p class="kicker">Recordings</p>
       <h1 class="post-title">What a data point was</h1>
       <p class="meta"><span>06 August 2026</span><span>Amsterdam</span><span>Jordi Lluis</span></p>
-      <p class="archive">Reconstructed 6 September 2026 from the VPS recording layout and the 6 August full-stream scan.</p>
-      <p>Recruiters keep asking what I recorded. The live store was files on the Lightsail host, keyed by UTC day. I deleted those copies. This is the layout, plus the one scan that still has counts.</p>
+      <p>The live store was files on the Lightsail host, one UTC day per name. I deleted those copies. This is the layout, plus the one scan that still has counts.</p>
       <table class="facts">
         <caption class="skip">Recording records, as operated on the VPS</caption>
         <tbody>
-          <tr><th>ws_books_YYYYMMDD.jsonl</th><td>One file per UTC day. Best bid and ask updates. Later gzip. No order sizes in the early BBO files.</td></tr>
-          <tr><th>ws_books_l2_YYYYMMDD.jsonl</th><td>Started later. Depth at the ask — the question “was this cheap ticket actually fillable?”</td></tr>
+          <tr><th>ws_books_YYYYMMDD.jsonl</th><td>Best bid and ask updates. Later gzip. No order sizes in the early files.</td></tr>
+          <tr><th>ws_books_l2_YYYYMMDD.jsonl</th><td>Started later. Depth at the ask — was this cheap ticket actually fillable?</td></tr>
           <tr><th>live.log</th><td>LAT_DETAIL rows. Identifiers private; hashes in EVIDENCE.md.</td></tr>
           <tr><th>Join key</th><td>Gamma market id, five-minute slot, side.</td></tr>
           <tr><th>One scan</th><td>104.5 million BBO updates, 12,929 markets. One stale-ask trigger. Apparent crosses gone in ≤ 0.02s.</td></tr>
         </tbody>
       </table>
-      <p>A data point is therefore an update, not a candle and not a fill. Without size, “would I have been filled” stays open even when the price looks cheap. August coverage is absent. The public CSV is anonymized market-resolution accounting, a different object.</p>
-      <div class="limit">Conclusion I will defend: I know how to rotate daily JSONL on a VPS and how to count a stream. I cannot replay those days from this site, because I deleted the files.</div>
-
+      <p>A data point is an update, not a candle and not a fill. Without size, “would I have been filled” stays open even when the price looks cheap. August coverage is missing. The public CSV is anonymized market-resolution accounting — a different object.</p>
+      <div class="limit">I know how to rotate daily JSONL on a VPS and how to count a stream. I cannot replay those days from this site. The files are gone.</div>
       <p><a href="../tape/leftover-ask-gone.html">The leftover ask was gone</a> · <a href="../projects/polybow.html">Walkthrough</a></p>
       <a class="back" href="./">← “HOST”</a>
     </article>

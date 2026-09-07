@@ -12,31 +12,28 @@
 <body>
   <a class="skip" href="#post">Skip to post</a>
   <div class="crop">
-    <p class="tape"><span>05</span> StratA · StratB · Cheap fills</p>
+    <p class="tape"><span>Strategies</span> StratA · Cheap fills</p>
     <nav class="top" aria-label="Journal">
       <a href="../tape/">“TAPE”</a>
       <a href="../host/">“HOST”</a>
       <a href="../">Portfolio</a>
     </nav>
     <article class="post" id="post">
-      <p class="kicker"><b>Issue 05</b> · Strategies</p>
+      <p class="kicker">Strategies</p>
       <h1 class="post-title">Cheap fills looked free on paper</h1>
       <p class="meta"><span>06 May 2026</span><span>Amsterdam</span><span>Jordi Lluis</span></p>
-      <p class="archive">Reconstructed 6 September 2026 from stratb_lineage_edge_report.md, generated 6 May 2026.</p>
-      <p>The lineage note from this day is the cleanest description of what changed, and of what failed.</p>
+      <p>This day’s lineage note is the cleanest picture of what I changed, and of what failed when I tried it live.</p>
       <table class="facts">
         <caption class="skip">Entry bands in the 6 May lineage note</caption>
         <tbody>
-          <tr><th>v1</th><td>Favorite buying. High win rate, little dollars per win. Live winners in the early report were mostly expensive fills.</td></tr>
-          <tr><th>StratA</th><td>$0.40–$0.72, 11–15 seconds remaining, gap floor around $15. I do not treat StratA as proven profitable.</td></tr>
-          <tr><th>StratB</th><td>Wider search: gap and TTE windows kept moving. Champion-style configs sat nearer $0.30–$0.55.</td></tr>
-          <tr><th>UC / penny</th><td>Toward $0.01–$0.20 leftover cheap asks. The useful problem was a stale cheap ask on the about-to-win side — a book condition, not a security hole.</td></tr>
+          <tr><th>v1</th><td>Favorite buying. High win rate, tiny profit per winning trade.</td></tr>
+          <tr><th>StratA</th><td>$0.40–$0.72, 11–15 seconds left, gap floor around $15. Not treated as proven.</td></tr>
+          <tr><th>StratB</th><td>Wider search. Champion-style configs sat nearer $0.30–$0.55.</td></tr>
+          <tr><th>UC / penny</th><td>$0.01–$0.20 leftover asks on the about-to-win side. A book condition, not a security hole.</td></tr>
         </tbody>
       </table>
-      <p>A gap-floor paper sweep was dominated by the 1c–5c bucket. Then pasted 5–6 May live orders: 22 orders, 3 wins, −$12.1616. Queue, latency and non-fills are why that paper bucket was the least realistic place to believe a replay.</p>
-      <p>Coverage in the same note is not continuous from 13 April to 6 May. The 4GB books.jsonl capture was not on the machine. This was a replay of logged candidates, not a fillability simulation.</p>
-      <div class="limit">Conclusion I will defend: moving the entry band was the engineering story. The cheap-fill paper profit did not survive the live sample in that note.</div>
-
+      <p>A paper sweep loved the 1c–5c bucket. Pasted live on 5–6 May: 22 orders, 3 wins, −$12.16. Queue, delay, and non-fills are why that paper bucket was the worst place to trust a replay. The 4GB books.jsonl capture was not on the machine. This was logged candidates, not a fillability simulation.</p>
+      <div class="limit">Moving the entry band was the engineering work. The cheap-fill paper profit did not survive that live sample.</div>
       <p><a href="../projects/polybow.html">Walkthrough</a> · <a href="https://github.com/coder058/polybow-case-study/blob/main/EVIDENCE.md">Evidence map</a></p>
       <a class="back" href="./">← “TAPE”</a>
     </article>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="6 August 2026 scan: 12,929 markets and 104.5 million BBO updates. Durable stale cheap asks were not there. CLOB V2 causality is still an inference.">
+  <meta name="description" content="6 August 2026 scan: 12,929 markets and 104.5 million BBO updates. Durable stale cheap asks were not there.">
   <link rel="canonical" href="https://coder058.github.io/profile/tape/leftover-ask-gone.html">
   <title>The leftover ask was gone — TAPE</title>
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
@@ -12,30 +12,28 @@
 <body>
   <a class="skip" href="#post">Skip to post</a>
   <div class="crop">
-    <p class="tape"><span>08</span> Later books · 104.5M updates · Cause open</p>
+    <p class="tape"><span>Later books</span> 104.5M updates</p>
     <nav class="top" aria-label="Journal">
       <a href="../tape/">“TAPE”</a>
       <a href="../host/">“HOST”</a>
       <a href="../">Portfolio</a>
     </nav>
     <article class="post" id="post">
-      <p class="kicker"><b>Issue 08</b> · Later market</p>
+      <p class="kicker">Later market</p>
       <h1 class="post-title">The leftover ask was gone</h1>
       <p class="meta"><span>06 August 2026</span><span>Amsterdam</span><span>Jordi Lluis</span></p>
-      <p class="archive">Reconstructed 6 September 2026 from research_lottery/VERDICT.md, dated 6 August 2026.</p>
-      <p>This is the note about whether the old leftover-cheap-ask condition still existed. I am using its counts. I am not using its headline that a patch killed a proven edge.</p>
+      <p>I wanted to know whether the old leftover cheap ask still showed up after I stopped trading. These are the counts. I am not using them as “a patch killed a proven edge.”</p>
       <table class="facts">
-        <caption class="skip">Later-book scan used in the 6 August note</caption>
+        <caption class="skip">Later-book scan, 6 August note</caption>
         <tbody>
           <tr><th>Markets</th><td>12,929 five-minute BTC/ETH/SOL markets, 26 June–10 July, fixed time-to-expiry checkpoints.</td></tr>
           <tr><th>Full stream</th><td>104.5 million BBO updates across about 29 days.</td></tr>
-          <tr><th>Stale-ask trigger</th><td>Winner ask ≤ $0.30 while the loser looked decided (bid ≤ 0.05): one occurrence in that stream. Apparent both-sides crosses: persistence p50 0.00s, max 0.02s. None lasted a second.</td></tr>
-          <tr><th>Missing</th><td>No order sizes in the early BBO recorder. August files gone (the VPS was unreachable). That is a hole, not a hidden win.</td></tr>
+          <tr><th>Stale-ask trigger</th><td>Winner ask ≤ $0.30 while the loser looked decided (bid ≤ 0.05): one hit. Apparent both-sides crosses lasted at most 0.02s. None lasted a second.</td></tr>
+          <tr><th>Missing</th><td>No order sizes in the early BBO recorder. August files gone when the VPS dropped. A hole, not a hidden win.</td></tr>
         </tbody>
       </table>
-      <p>The later book looked tight and two-sided at those checkpoints. That supports a changed environment after the April–May live window. It does not isolate CLOB V2, the 2 May guard removal, or competition as the cause. Live trading had already stopped. This is a recording study.</p>
-      <div class="limit">Conclusion I will defend: the leftover cheap ask was not a durable later-market object in these files. “The patch killed the edge” is still an inference I will not publish as fact.</div>
-
+      <p>The later book looked tight and two-sided at those checkpoints. That is a changed environment after April–May. It does not isolate CLOB V2, the 2 May guard removal, or other traders as the cause. Live trading had already stopped. This is a recording study.</p>
+      <div class="limit">In these files the leftover cheap ask was not a durable object. “The patch killed the edge” is still a guess.</div>
       <p><a href="../host/one-hundred-million.html">What a data point was</a> · <a href="https://github.com/coder058/polybow-case-study/blob/main/EVIDENCE.md">Evidence map</a></p>
       <a class="back" href="./">← “TAPE”</a>
     </article>

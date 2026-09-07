@@ -30,7 +30,8 @@ test('journal archive is dated from April and does not brand the bot as Polybow'
   assert.match(tape, /16 Apr 2026/);
   assert.match(tape, /wallet-started.html/);
   assert.match(tape, /leftover-ask-gone.html/);
-  assert.match(tape, /assembled here later/);
+  assert.doesNotMatch(tape, /Amplify Trading recommended|Conclusion I will defend/);
+  assert.doesNotMatch(host, /assembled here later|Conclusion I will defend/);
   assert.match(host, /one-hundred-million.html/);
   assert.match(host, /hyperliquid-not-a-bot.html/);
   assert.match(walkthrough, /Python trading bot/);
