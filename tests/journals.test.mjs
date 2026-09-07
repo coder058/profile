@@ -2,8 +2,9 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, existsSync } from 'node:fs';
 
-test('two public journals exist with today’s first posts', () => {
+test('one public blog lists the notes, old journal indexes redirect', () => {
   for (const path of [
+    '../blog/index.html',
     '../tape/index.html',
     '../tape/wti-is-not-spot.html',
     '../host/index.html',
@@ -12,6 +13,21 @@ test('two public journals exist with today’s first posts', () => {
   ]) {
     assert.ok(existsSync(new URL(path, import.meta.url)), path);
   }
+  const blog = readFileSync(new URL('../blog/index.html', import.meta.url), 'utf8');
+  const tapeIndex = readFileSync(new URL('../tape/index.html', import.meta.url), 'utf8');
+  const hostIndex = readFileSync(new URL('../host/index.html', import.meta.url), 'utf8');
+  const home = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
+  assert.match(blog, /16 Apr 2026/);
+  assert.match(blog, /wallet-started.html/);
+  assert.match(blog, /leftover-ask-gone.html/);
+  assert.match(blog, /one-hundred-million.html/);
+  assert.match(blog, /hyperliquid-not-a-bot.html/);
+  assert.match(blog, /dublin-instance.html/);
+  assert.doesNotMatch(blog, /Amplify Trading recommended|Conclusion I will defend|“TAPE”|“HOST”/);
+  assert.match(tapeIndex, /url=\.\.\/blog\//);
+  assert.match(hostIndex, /url=\.\.\/blog\//);
+  assert.match(home, /href="blog\/"/);
+  assert.doesNotMatch(home, /href="tape\/"|href="host\/"/);
 });
 
 test('energy post is a recording, not a spot forecast', () => {
@@ -21,19 +37,12 @@ test('energy post is a recording, not a spot forecast', () => {
   assert.match(html, /2,482/);
   assert.match(html, /not a forecast/i);
   assert.doesNotMatch(html, /buy oil|price target|guaranteed/i);
+  assert.match(html, /href="\.\.\/blog\/"/);
+  assert.doesNotMatch(html, /“TAPE”|“HOST”/);
 });
 
-test('journal archive is dated from April and does not brand the bot as Polybow', () => {
-  const tape = readFileSync(new URL('../tape/index.html', import.meta.url), 'utf8');
-  const host = readFileSync(new URL('../host/index.html', import.meta.url), 'utf8');
+test('blog notes do not brand the bot as Polybow', () => {
   const walkthrough = readFileSync(new URL('../projects/polybow.html', import.meta.url), 'utf8');
-  assert.match(tape, /16 Apr 2026/);
-  assert.match(tape, /wallet-started.html/);
-  assert.match(tape, /leftover-ask-gone.html/);
-  assert.doesNotMatch(tape, /Amplify Trading recommended|Conclusion I will defend/);
-  assert.doesNotMatch(host, /assembled here later|Conclusion I will defend/);
-  assert.match(host, /one-hundred-million.html/);
-  assert.match(host, /hyperliquid-not-a-bot.html/);
   assert.match(walkthrough, /Python trading bot/);
   assert.doesNotMatch(walkthrough, /<h1>Polybow<\/h1>/);
 });
