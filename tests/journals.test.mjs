@@ -27,7 +27,7 @@ test('one public blog lists the notes, old journal indexes redirect', () => {
   assert.match(blog, /hyperliquid-not-a-bot.html/);
   assert.match(blog, /dublin-instance.html/);
   assert.ok(blog.indexOf('wallet-started.html') < blog.indexOf('wti-is-not-spot.html'));
-  assert.doesNotMatch(blog, /hiring manager|how I looked|I lost money/);
+  assert.doesNotMatch(blog, /hiring manager|how I looked|I lost money|energy recordings|machines that held/);
   assert.doesNotMatch(blog, /Amplify Trading recommended|Conclusion I will defend|“TAPE”|“HOST”/);
   assert.match(tapeIndex, /url=\.\.\/blog\//);
   assert.match(hostIndex, /url=\.\.\/blog\//);
