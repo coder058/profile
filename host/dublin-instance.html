@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="AWS Lightsail in Dublin for the Python trading bot. The archived timer measured prepare plus POST, not a fill.">
   <link rel="canonical" href="https://coder058.github.io/profile/host/dublin-instance.html">
-  <title>The instance was in Dublin — Blog</title>
+  <title>Week 13 — Dublin instance — Blog</title>
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../enhancements.css">
   <link rel="stylesheet" href="../header-polish.css">
@@ -22,7 +22,7 @@
   </header>
   <article class="post" id="post">
       <p class="kicker">Infrastructure</p>
-      <h1 class="post-title">The instance was in Dublin</h1>
+      <h1 class="post-title">Week 13 — Dublin instance</h1>
       <p class="meta"><span>06 September 2026</span><span>Amsterdam</span><span>Jordi Lluis</span></p>
       <p>I ran the live bot on an AWS Lightsail box in eu-west-1 (Dublin), Ubuntu. I paid for it, logged into it, and later used it for daily recordings. I did not run the same clock in a second city, so this is not a region bake-off.</p>
       <p>On the submit path I removed waits I could name: a warmed HTTP/2 client, coincurve signatures, token metadata cached off the hot path. Book updates could trigger an evaluation instead of waiting for the next poll. The per-market gate in code went from 50 ms to 5 ms. That last number is a throttle, not measured end-to-end latency.</p>

@@ -17,12 +17,17 @@ test('one public blog lists the notes, old journal indexes redirect', () => {
   const tapeIndex = readFileSync(new URL('../tape/index.html', import.meta.url), 'utf8');
   const hostIndex = readFileSync(new URL('../host/index.html', import.meta.url), 'utf8');
   const home = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
+  assert.match(blog, /Weekly analysis of financial markets/);
+  assert.match(blog, /Week 1 — Wallet open at \$19\.98/);
+  assert.match(blog, /Week 14 — WTI is not spot oil/);
   assert.match(blog, /16 Apr 2026/);
   assert.match(blog, /wallet-started.html/);
   assert.match(blog, /leftover-ask-gone.html/);
   assert.match(blog, /one-hundred-million.html/);
   assert.match(blog, /hyperliquid-not-a-bot.html/);
   assert.match(blog, /dublin-instance.html/);
+  assert.ok(blog.indexOf('wallet-started.html') < blog.indexOf('wti-is-not-spot.html'));
+  assert.doesNotMatch(blog, /hiring manager|how I looked|I lost money/);
   assert.doesNotMatch(blog, /Amplify Trading recommended|Conclusion I will defend|“TAPE”|“HOST”/);
   assert.match(tapeIndex, /url=\.\.\/blog\//);
   assert.match(hostIndex, /url=\.\.\/blog\//);
