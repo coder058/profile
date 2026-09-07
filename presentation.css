@@ -7,13 +7,10 @@
 /* SOURCE: verified test counts and deployment checks recorded in the project audits. */
 .project-proof{font-family:var(--mono);font-size:13px;line-height:1.5;margin:22px 0 0;max-width:460px;opacity:.72}
 .about-note{font-size:17px;line-height:1.55;margin:32px 0 0;max-width:620px}
-.challenges{padding:28px}
-.challenges-window{border:1px dotted currentColor;box-sizing:border-box;margin:0 auto;max-width:none;min-height:calc(100vh - 47px);padding:48px 40px 40px}
-.challenges-window h2{font-size:clamp(34px,4vw,56px);letter-spacing:-.045em;line-height:1;margin:0 0 48px}
-.challenges-group{margin:0 0 40px}
-.challenges-group:last-child{margin-bottom:0}
-.challenges-group h3{font-size:13px;letter-spacing:.12em;margin:0 0 14px;text-transform:uppercase}
-.challenge-chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
-.challenge-chips a{border:1px dotted currentColor;border-radius:999px;color:inherit;display:inline-block;font-size:14px;padding:7px 14px;text-decoration:none}
+.challenges{padding:16px 28px 24px}
+.challenges-window{border:1px dotted currentColor;box-sizing:border-box;margin:0 auto;max-width:920px;min-height:0;padding:16px 20px 18px}
+.challenges-window h2{font-size:13px;letter-spacing:.12em;line-height:1;margin:0 0 12px;text-transform:uppercase}
+.challenge-chips{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:0;padding:0}
+.challenge-chips a{border:1px dotted currentColor;border-radius:999px;color:inherit;display:inline-block;font-size:13px;padding:5px 12px;text-decoration:none}
 .challenge-chips a:hover,.challenge-chips a:focus-visible{background:rgba(41,40,36,.06)}
-@media(max-width:700px){.challenges{padding:16px}.challenges-window{min-height:calc(100vh - 47px);padding:28px 18px}}
+@media(max-width:700px){.challenges{padding:12px 16px 18px}.challenges-window{padding:14px 14px 16px}}

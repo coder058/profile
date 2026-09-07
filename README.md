@@ -10,7 +10,7 @@ Canonical portfolio: https://coder058.github.io/profile/
 - **Relay** — four read-only MCP tools and a React UI share one matcher. Paste a listing; each hit is a quote, not a hiring score. Arbeitnow is a demo snapshot.
 - **Pattern Forge** — replay without look-ahead; CI runs tests, Docker and a PostgreSQL restart. The public demo does not serve that database.
 
-Each selected card opens a project walkthrough with the problem, contribution, usage steps, dependency table and limitations. [More challenges](https://coder058.github.io/profile/#more-challenges) lists the other public GitHub work: DispatchOps, Transcript Desk, the City Gardens team project, seven API labs and the Rails exercises, including Wikinimous. I do not claim every Le Wagon Kitt challenge.
+Each selected card opens a project walkthrough with the problem, contribution, usage steps, dependency table and limitations. [More challenges](https://coder058.github.io/profile/#more-challenges) lists the other public GitHub work: seven API labs and the Rails exercises, including Wikinimous. I do not claim every Le Wagon Kitt challenge.
 
 [Résumé](https://coder058.github.io/profile/resume.html) — the curated one-page PDF. GitHub is for code, not a second résumé.
 

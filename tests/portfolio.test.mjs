@@ -19,7 +19,8 @@ test('local styles, scripts, images and resume exist', () => {
 });
 
 test('portfolio copy is personal without duplicating the resume', () => {
-  assert.match(html, /<p class="hero-summary">Market-data interfaces, HTTP APIs and small developer tools/);
+  assert.match(html, /<p class="hero-summary">I build small products a person can open, and AI tools that share the same path/);
+  assert.doesNotMatch(html, /enterprise customer|FDE|model training|Market-data interfaces/);
   assert.doesNotMatch(html, /Software developer in Amsterdam/);
   assert.doesNotMatch(html, /Full-stack developer/i);
   assert.doesNotMatch(html, /I’m curious about how things work/);
@@ -58,7 +59,9 @@ test('Le Wagon labs sit in a More challenges window, not featured cards', () => 
   assert.match(html, /<h2 id="challenges-title">More challenges<\/h2>/);
   assert.match(html, /class="challenges-window"/);
   assert.doesNotMatch(html, /Other projects|DispatchOps|Transcript Desk|City Gardens|not sole-authored|Selected course exercises/);
-  assert.match(html, /API labs/);
+  assert.doesNotMatch(html, /API labs|Rails exercises/);
+  const css = readFileSync(new URL('../presentation.css', import.meta.url), 'utf8');
+  assert.doesNotMatch(css, /challenges-window\{[^}]*min-height:calc\(100vh/);
   assert.match(html, /js-geocoder/);
   assert.match(html, /rails-task-manager/);
   assert.match(html, /rails-wikinimous/);
