@@ -114,8 +114,8 @@
       "ats": "https://coder058.github.io/profile/assets/jordi-lluis-fullstack-cv-ats.pdf",
       "local_designed": "output/pdf/jordi-lluis-fullstack-cv.pdf",
       "local_ats": "output/pdf/jordi-lluis-fullstack-cv-ats.pdf",
-      "sha256_designed": "b243b9bb29aeb03ed926310368e56b9d210ec1f64dd5f59941e4b6c132adcbff",
-      "sha256_ats": "6d02f71989813b4679b55733ea2da54b9d10643cd1cd4acf65ee143b99767854",
+      "sha256_designed": "55212e4d5c65249923d320eced6167043c283cfe4876cd6d4b5d90aca9bab59a",
+      "sha256_ats": "902b7d0284ea245e883672e5207fba8744aa0bf672f5c0fb7381debc2bbd8099",
       "pitch": "I build the interface and the API behind it: React and TypeScript on the front, Python or Rails on the back, with tests and Docker. Pattern Forge, Relay and the trading-bot ledger are on the portfolio.",
       "letter_template": "Hi {company},\n\nI'm Jordi Lluis, a software developer in Amsterdam (EU citizen). I build the interface and the API behind it — React and TypeScript on the front, Python or Rails on the back — and I test how it fails.\n\nFor this {role}, the closest public work is {project}: {one_liner} Walkthrough: {walkthrough}\n\nOne-page CV (ATS): {ats}\nPortfolio: https://coder058.github.io/profile/\n\nJordi Lluis\n+31 6 1949 6593 · joord918@gmail.com"
     },
@@ -132,8 +132,8 @@
       "ats": "https://coder058.github.io/profile/assets/jordi-lluis-ai-cv-ats.pdf",
       "local_designed": "output/pdf/jordi-lluis-ai-cv.pdf",
       "local_ats": "output/pdf/jordi-lluis-ai-cv-ats.pdf",
-      "sha256_designed": "339ba7e48628ab8724c199613116616e29568792dc9ab56d719a80e81957885a",
-      "sha256_ats": "7c1281a05c3e68822dced5f4d5c54a0b3a6d0e16b403f5f9dc9712f6b1e50456",
+      "sha256_designed": "093759117a762392c0fbc48dcd9d492aa75e6444227707ccf43abb6cb27fba09",
+      "sha256_ats": "c238b381cdfeb82d4789b69a90ea9fe00bc68bafe79236175e0dc20c149f5c4e",
       "pitch": "I build small agent-facing tools with a human still in the loop: MCP servers, quoted evidence, tests on the protocol boundary. Relay and Pattern Forge are on the portfolio. Not model training, not a production RAG platform.",
       "letter_template": "Hi {company},\n\nI'm Jordi Lluis, a software developer in Amsterdam (EU citizen). I build small agent-facing tools with a human still in the loop — MCP servers, quoted evidence, tests on the protocol boundary. I do not train models and I do not run a production RAG platform.\n\nFor this {role}, the closest public work is {project}: {one_liner} Walkthrough: {walkthrough}\n\nOne-page CV (ATS): {ats}\nPortfolio: https://coder058.github.io/profile/\n\nJordi Lluis\n+31 6 1949 6593 · joord918@gmail.com"
     },
@@ -148,8 +148,8 @@
       "ats": "https://coder058.github.io/profile/assets/jordi-lluis-data-cv-ats.pdf",
       "local_designed": "output/pdf/jordi-lluis-data-cv.pdf",
       "local_ats": "output/pdf/jordi-lluis-data-cv-ats.pdf",
-      "sha256_designed": "4a89d8428fe3c47734afac8d5a605a8b753f68427b559e1d6a7a6e555377fc06",
-      "sha256_ats": "6f033834a31d28e484e13bb920456ca84a6be4be7fdb61e57f05848357987498",
+      "sha256_designed": "63ca57ddaf7406f8802ffe7918714b92632edb7b156e1fcda77f4273bf58e385",
+      "sha256_ats": "42fa076dc85aa9d54a4954010fd9996d217c2c18d31580e7887e4ad5d867b24a",
       "pitch": "I work at data boundaries: validated APIs, time-series that cannot see the future, and files you can reopen. Pattern Forge replay and the bot ledger are on the portfolio.",
       "letter_template": "Hi {company},\n\nI'm Jordi Lluis, a software developer in Amsterdam (EU citizen). I work at data boundaries: validated APIs, time-series that cannot see the future, and files you can reopen. SQL and Python; not a research lab.\n\nFor this {role}, the closest public work is {project}: {one_liner} Walkthrough: {walkthrough}\n\nOne-page CV (ATS): {ats}\nPortfolio: https://coder058.github.io/profile/\n\nJordi Lluis\n+31 6 1949 6593 · joord918@gmail.com"
     },
@@ -167,11 +167,11 @@
       "unlabelled_copies": {
         "designed": "https://coder058.github.io/profile/assets/jordi-lluis-cv.pdf",
         "ats": "https://coder058.github.io/profile/assets/jordi-lluis-cv-ats.pdf",
-        "sha256_designed": "6c03452fbab40442c1c08029ae771f92ea571683c0085bb3b56f6890fc44e1ef",
-        "sha256_ats": "0b9eeffdca9ad044ebfba9117d21cb79b8720f3adcb651f2a91bdf9330a1c4a9"
+        "sha256_designed": "c88c928c9f0c299ceb8672a0af81231009497cf9f61b8c69c5fa93ae9a3992c6",
+        "sha256_ats": "cfcc5d1911950e819a49d4888c31a35f2ddfe8a32eade633678b7dfaac5aa718"
       },
-      "sha256_designed": "628842abf7c208d3f59b27c51d8143a308f6d5fb010698025f29f1539a108bf3",
-      "sha256_ats": "06bb2e59c4cd5c601124757f1c1c015254e544028ff0d548ebc5a41d5e6b4913",
+      "sha256_designed": "2c79fd15a72702dc99c40a61701c242e32919153086ad9777fce2915e5335b1b",
+      "sha256_ats": "996fe1353fa4e241e56bf5b483a7189d19e73ea969f326979b1ca9fe87120f75",
       "pitch": "I study how complex systems break down, then build lean, testable software. Modern tools, real bottlenecks, numbers I can name.",
       "letter_template": "Hi {company},\n\nI'm Jordi Lluis, a software developer in Amsterdam (EU citizen). I build web interfaces and APIs, then test how they fail.\n\nFor this {role}, the closest public work is {project}: {one_liner} Walkthrough: {walkthrough}\n\nOne-page CV (ATS): {ats}\nPortfolio: https://coder058.github.io/profile/\n\nJordi Lluis\n+31 6 1949 6593 · joord918@gmail.com"
     },
@@ -186,8 +186,8 @@
       "ats": "https://coder058.github.io/profile/assets/jordi-lluis-fde-cv-ats.pdf",
       "local_designed": "output/pdf/jordi-lluis-fde-cv.pdf",
       "local_ats": "output/pdf/jordi-lluis-fde-cv-ats.pdf",
-      "sha256_designed": "a87348e4ae84d29f4bd1ee3f04ffcaa78cb00a4b99b5b0124221811111c0fe09",
-      "sha256_ats": "c5a8f4483c5e899074a074afd75b60c2c0cea5290f4b1a5b157c358804434e65",
+      "sha256_designed": "7a89ad5c162ca00c879378931ce12f0bb57e2016c70a3938abb8e71469f2f8b3",
+      "sha256_ats": "9132bd5c46bc6f438f256a88b492c7eaafbe23578f43cf5d299d5b85e21c16a2",
       "pitch": "I sit between a messy problem and a working integration: HTTP and MCP, a chart product that cannot see later prices. Demos on the portfolio. Do not print an FDE job title.",
       "letter_template": "Hi {company},\n\nI'm Jordi Lluis, a software developer in Amsterdam (EU citizen). I sit between a messy problem and a working integration. That is side-project and operations evidence, not an enterprise customer-deploy job.\n\nFor this {role}, the closest public work is {project}: {one_liner} Walkthrough: {walkthrough}\n\nOne-page CV (ATS): {ats}\nPortfolio: https://coder058.github.io/profile/\n\nJordi Lluis\n+31 6 1949 6593 · joord918@gmail.com"
     }
@@ -286,27 +286,27 @@
     },
     {
       "employer": "IAS Handling — Barcelona–El Prat Airport",
-      "title": "Air cargo operations",
+      "title": "Inbound Manager Assistant",
       "location": "Barcelona, Spain",
       "dates": "2019–2020",
       "software_job": false,
-      "summary": "Bonded warehouse, ramp offload, airside access. Used WMS software for customs permits and documents. Product name unknown — do not invent one."
+      "summary": "Inbound air cargo in a bonded warehouse: arriving shipments, customs documentation and WMS records. Not Inbound Manager. Product name unknown — do not invent one. Do not write outbound cargo."
     },
     {
       "employer": "Transjunior Logistics",
-      "title": "Road-freight office",
+      "title": "Team Leader",
       "location": "Spain",
       "dates": "2018",
       "software_job": false,
-      "summary": "Used WMS software for orders and truck movements. Product name unknown. Not a CRM."
+      "summary": "Warehouse team leader: shifts, order processing, rotating stock and inventory in the WMS. Product name unknown. Not a CRM. Not a programming job."
     },
     {
       "employer": "Home Fundraiser Ltd",
-      "title": "Route planner",
+      "title": "Planner",
       "location": "London, United Kingdom",
       "dates": "2016–2017",
       "software_job": false,
-      "summary": "Planned daily area assignments and routes for field fundraising teams."
+      "summary": "Planner: daily routes and field-team organisation with the team leader. Do not title this role Team Leader."
     },
     {
       "employer": "Amplify Trading",
@@ -314,7 +314,7 @@
       "location": "United Kingdom",
       "dates": "2016",
       "software_job": false,
-      "summary": "Traded futures on an Amplify live account after the programme. Technical, fundamental and order-flow. Do not state account size, P&L, internship, or diploma duration."
+      "summary": "Traded Gold and Dow Jones futures on an Amplify live account after the programme. Order flow plus technical and fundamental views. Do not state account size, P&L, internship, or diploma duration."
     }
   ],
   "education_for_forms": [
@@ -366,6 +366,9 @@
     "Programming jobs at De Bommel, IAS Handling, Transjunior, Home Fundraiser or Amplify",
     "A named WMS/CRM product except Ceyenne (Diract IT WMS) at De Bommel",
     "DHL as a second WMS; DHL is the carrier",
+    "Inbound Manager at IAS; the title is Inbound Manager Assistant",
+    "Team Leader at Home Fundraiser; that role is Planner working with the team leader",
+    "Outbound cargo at IAS; the user described arriving shipments and documents",
     "Amplify account size, P&L, internship, or diploma duration",
     "City Gardens as sole-authored or a fourth featured product",
     "200 Le Wagon challenges, API labs as Education, StratD",
