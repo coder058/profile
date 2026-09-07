@@ -36,7 +36,8 @@ test('a reader can scan the stack and the evidence behind each project', () => {
     assert.ok(html.includes(`<li>${tool}</li>`), tool);
   // SOURCE: counts and deployment checks recorded in the 5-6 September project audits.
   assert.equal((html.match(/class="project-proof"/g) || []).length, 3);
-  assert.match(html, /Tests, Docker image and PostgreSQL restart checked in CI/);
+  assert.match(html, /No look-ahead · CI Docker \/ Postgres restart/);
+  assert.match(html, /The public demo does not serve that database/);
   assert.match(html, /Four MCP tools and a React UI share one matcher/);
   assert.match(html, /pytest in CI · one review service behind HTTP and MCP/);
   assert.match(html, /Lightsail · WebSockets · JSONL recordings/);

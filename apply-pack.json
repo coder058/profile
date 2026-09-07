@@ -114,8 +114,8 @@
       "ats": "https://coder058.github.io/profile/assets/jordi-lluis-fullstack-cv-ats.pdf",
       "local_designed": "output/pdf/jordi-lluis-fullstack-cv.pdf",
       "local_ats": "output/pdf/jordi-lluis-fullstack-cv-ats.pdf",
-      "sha256_designed": "a7c7ce2a0962bd18c13f9d21f1cd91a49faa1658f33f6b1b985dee669289dedf",
-      "sha256_ats": "0f9f8dde759c5f2c4623d95c27255b4141755cfb40fe526c01de4aaefd8ec9bc",
+      "sha256_designed": "5c557eb883048fabcc5020443544faa8a162644c50313d853910d9c237e5295a",
+      "sha256_ats": "b18cf2fcb7af8c1ebe011c1626cd1a264db13990cddd40271302929a8aad8fa9",
       "pitch": "I build the interface and the API behind it: React and TypeScript on the front, Python or Rails on the back, with tests and Docker so a change has a check.",
       "letter_template": "Hi {company},\n\nI'm Jordi Lluis, a software developer in Amsterdam (EU citizen). I build the interface and the API behind it \u2014 React and TypeScript on the front, Python or Rails on the back \u2014 and I test how it fails.\n\nFor this {role}, the closest public work is {project}: {one_liner} Walkthrough: {walkthrough}\n\nOne-page CV (ATS): {ats}\nPortfolio: https://coder058.github.io/profile/\n\nJordi Lluis\n+31 6 1949 6593 \u00b7 joord918@gmail.com"
     },
@@ -132,8 +132,8 @@
       "ats": "https://coder058.github.io/profile/assets/jordi-lluis-ai-cv-ats.pdf",
       "local_designed": "output/pdf/jordi-lluis-ai-cv.pdf",
       "local_ats": "output/pdf/jordi-lluis-ai-cv-ats.pdf",
-      "sha256_designed": "3d5269ed29cac2b85a0b04f87334ba0304663a73fd16a39c6dbee50ebe698067",
-      "sha256_ats": "57ecc86bc12d93d22de596eb6ded95623b71934b2cea215b8d2b96c31e8ea0ed",
+      "sha256_designed": "de354f8ba648440a73d4fbfee3c5c5b69a513e1a0d673d64442e58c67cfe0b63",
+      "sha256_ats": "d695ea0c8167595399e43b6dfa6f0622401b401af057a017eae3cc7afa735016",
       "pitch": "I build small agent-facing tools with a human still in the loop: MCP servers, quoted evidence, and tests on the protocol boundary. Not model training, not a production RAG platform.",
       "letter_template": "Hi {company},\n\nI'm Jordi Lluis, a software developer in Amsterdam (EU citizen). I build small agent-facing tools with a human still in the loop \u2014 MCP servers, quoted evidence, tests on the protocol boundary. I do not train models and I do not run a production RAG platform.\n\nFor this {role}, the closest public work is {project}: {one_liner} Walkthrough: {walkthrough}\n\nOne-page CV (ATS): {ats}\nPortfolio: https://coder058.github.io/profile/\n\nJordi Lluis\n+31 6 1949 6593 \u00b7 joord918@gmail.com"
     },
@@ -148,8 +148,8 @@
       "ats": "https://coder058.github.io/profile/assets/jordi-lluis-data-cv-ats.pdf",
       "local_designed": "output/pdf/jordi-lluis-data-cv.pdf",
       "local_ats": "output/pdf/jordi-lluis-data-cv-ats.pdf",
-      "sha256_designed": "c2ff89e8b4589b61c7381a091408dcddd45b407120edb1a45e5847b46450db01",
-      "sha256_ats": "b2b5a80bfebb2a02b4c20d5dcbf0cf560896d23269471aaaa627995cc9568a9d",
+      "sha256_designed": "5a47e145ca2b326ef4f7d7ef51e509734793c6a3ed3280e9802514164f8a5059",
+      "sha256_ats": "1f707b7ef9e3bb62842c1acbecae5c998e0c88b306e88c4592721e6ca8cb83f0",
       "pitch": "I work at data boundaries: validated APIs, time-series that cannot see the future, and files you can reopen after a live run. SQL and Python; not a research lab.",
       "letter_template": "Hi {company},\n\nI'm Jordi Lluis, a software developer in Amsterdam (EU citizen). I work at data boundaries: validated APIs, time-series that cannot see the future, and files you can reopen. SQL and Python; not a research lab.\n\nFor this {role}, the closest public work is {project}: {one_liner} Walkthrough: {walkthrough}\n\nOne-page CV (ATS): {ats}\nPortfolio: https://coder058.github.io/profile/\n\nJordi Lluis\n+31 6 1949 6593 \u00b7 joord918@gmail.com"
     },
@@ -167,11 +167,11 @@
       "unlabelled_copies": {
         "designed": "https://coder058.github.io/profile/assets/jordi-lluis-cv.pdf",
         "ats": "https://coder058.github.io/profile/assets/jordi-lluis-cv-ats.pdf",
-        "sha256_designed": "4553d80db628ecb3a50e56a2e223dbec4c48167e9c775fe261e4a09dac0ee357",
-        "sha256_ats": "27fc184c3219857a0c70c118a787ca9a090dc8e59aa650ecfb0241340894c81d"
+        "sha256_designed": "d17b1aaf92a5eaaa668bb49a56fd0b3855b1d0a3a3f1c6eeb7be038134858e73",
+        "sha256_ats": "a43af3c2978c075a173cb5c61351abb785153f6d88197f34b6307b81895c36b5"
       },
-      "sha256_designed": "dd57e17b33ecaf29fc52ac31afcc2b88ef22803fd992a6443c5f785945eb410a",
-      "sha256_ats": "ae83a10729e23a0eaed5b94dc0a88543daf83000c70c5298e264a93b665f1351",
+      "sha256_designed": "65afd98122b6c0353a787fa05c4175e30cd6d478fa2ca4357e845c63f440eb7d",
+      "sha256_ats": "42f8fcf0975cf0220743c9b6659331e932c6585814580dd7abd301440694810d",
       "pitch": "I like understanding how a system works, then turning that into software I can test. Market-data interfaces, HTTP APIs and small developer tools.",
       "letter_template": "Hi {company},\n\nI'm Jordi Lluis, a software developer in Amsterdam (EU citizen). I build web interfaces and APIs, then test how they fail.\n\nFor this {role}, the closest public work is {project}: {one_liner} Walkthrough: {walkthrough}\n\nOne-page CV (ATS): {ats}\nPortfolio: https://coder058.github.io/profile/\n\nJordi Lluis\n+31 6 1949 6593 \u00b7 joord918@gmail.com"
     },
@@ -186,8 +186,8 @@
       "ats": "https://coder058.github.io/profile/assets/jordi-lluis-fde-cv-ats.pdf",
       "local_designed": "output/pdf/jordi-lluis-fde-cv.pdf",
       "local_ats": "output/pdf/jordi-lluis-fde-cv-ats.pdf",
-      "sha256_designed": "fc02d0691ec0d0d80e19ec7f34586bc7180238931eda78b8167d84a290c12b73",
-      "sha256_ats": "46d53be2401554377f121efe32a5c935ab9f2539d927e57a6744954b7783277a",
+      "sha256_designed": "a10590af5701e91949efe26ecb227a676dc9599f2431a61f77b3577c1a5d392a",
+      "sha256_ats": "6f1f6a5de48e919edff372efe78ab3f7f7eb2866691a639cd58b45ba5b7c40ea",
       "pitch": "I sit between a messy problem and a working integration. Side projects and operations roles, not enterprise customer deployments. Do not print an FDE job title.",
       "letter_template": "Hi {company},\n\nI'm Jordi Lluis, a software developer in Amsterdam (EU citizen). I sit between a messy problem and a working integration. That is side-project and operations evidence, not an enterprise customer-deploy job.\n\nFor this {role}, the closest public work is {project}: {one_liner} Walkthrough: {walkthrough}\n\nOne-page CV (ATS): {ats}\nPortfolio: https://coder058.github.io/profile/\n\nJordi Lluis\n+31 6 1949 6593 \u00b7 joord918@gmail.com"
     }
@@ -195,14 +195,14 @@
   "project_picker": {
     "fullstack": {
       "project": "Pattern Forge",
-      "one_liner": "Market-data API and replay that cannot use later prices.",
+      "one_liner": "Replay without look-ahead; CI runs tests, Docker and a PostgreSQL restart.",
       "walkthrough": "https://coder058.github.io/profile/projects/pattern-forge.html",
       "data": "https://coder058.github.io/profile/projects/pattern-forge.html#data",
       "github": "https://github.com/coder058/pattern-forge"
     },
     "frontend": {
       "project": "Pattern Forge",
-      "one_liner": "React/TypeScript chart workspace with a validated candle API.",
+      "one_liner": "React/TypeScript charts; replay without look-ahead; CI Docker/Postgres.",
       "walkthrough": "https://coder058.github.io/profile/projects/pattern-forge.html",
       "data": "https://coder058.github.io/profile/projects/pattern-forge.html#data",
       "github": "https://github.com/coder058/pattern-forge"
@@ -223,7 +223,7 @@
     },
     "data": {
       "project": "Pattern Forge",
-      "one_liner": "Validated candles and prefix-only replay, with PostgreSQL persistence in CI only.",
+      "one_liner": "Prefix-only replay without look-ahead; PostgreSQL persistence in CI only.",
       "walkthrough": "https://coder058.github.io/profile/projects/pattern-forge.html",
       "data": "https://coder058.github.io/profile/projects/pattern-forge.html#data",
       "github": "https://github.com/coder058/pattern-forge"

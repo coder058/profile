@@ -3,7 +3,7 @@
 export const projects = [
   {
     slug: 'pattern-forge', name: 'Pattern Forge', stack: 'React · TypeScript · Next.js · WebSockets',
-    summary: 'A workspace for exploring public crypto prices and replaying recorded markets without seeing the future.',
+    summary: 'Replay without look-ahead: later candles stay out of the indicators. CI runs tests, Docker and a PostgreSQL restart. The public demo does not serve that database.',
     problem: 'When reviewing a market, it is easy to let later prices influence an earlier decision. I wanted to inspect what an indicator could actually have shown at a chosen point in time.',
     contribution: 'I built the market controls, data validation, replay calculations, candle API and connection handling. TradingView Lightweight Charts renders the chart; I did not build that charting library.',
     demo: 'https://pattern-forge-five.vercel.app/',
