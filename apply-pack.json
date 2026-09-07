@@ -1,8 +1,8 @@
 {
-  "version": "2026-09-06",
+  "version": "2026-09-07",
   "ready_to_apply": true,
   "materials_verified": {
-    "date": "2026-09-06",
+    "date": "2026-09-07",
     "cv_pages": 1,
     "local_site_live_pdfs_match": true,
     "website_data_tables": [
@@ -11,7 +11,7 @@
       "https://coder058.github.io/profile/projects/relay.html#data",
       "https://coder058.github.io/profile/projects/city-gardens.html#data"
     ],
-    "note": "The 12 software apply PDFs match local output/pdf and the live GitHub Pages copies. CNC PDFs in output/pdf are a different track \u2014 never send them for software jobs."
+    "note": "The 12 software apply PDFs match local output/pdf and the live GitHub Pages copies. They have no Projects section; demos live on the portfolio. CNC PDFs in output/pdf are a different track — never send them for software jobs."
   },
   "person": {
     "name": "Jordi Lluis",
@@ -36,9 +36,9 @@
   },
   "how_to_submit": {
     "online_forms": "Use the ATS PDF (one column). Do not upload the Canva file.",
-    "email_or_recruiter": "ATS PDF is enough. Designed PDF is optional.",
+    "email_or_recruiter": "ATS PDF is enough. Designed PDF is optional. Canva is a visual draft only — never send it to an ATS form.",
     "do_not_mint_a_new_cv_per_job": true,
-    "per_job": "Open the listing URL. Skip if it is gone, intern, senior, part-time, contract, Dutch-fluency, or visa-only outside the EU. Pick one pack below. Retouch 3\u20135 bullets only if the posting names a skill already on the CV. Fill forms from form_answers. Write a short letter from the pack letter_template. Then log the application.",
+    "per_job": "Open the listing URL. Skip if it is gone, intern, senior, part-time, contract, Dutch-fluency, or visa-only outside the EU. Pick one pack below. Retouch 3–5 bullets only if the posting names a skill already on the CV. Fill forms from form_answers. Write a short letter from the pack letter_template, naming one website walkthrough. Then log the application.",
     "never_send": [
       "Canva export or Canva link",
       "output/pdf/cv_cnc_nl.pdf or cv_cnc_nl_application.pdf",
@@ -114,10 +114,10 @@
       "ats": "https://coder058.github.io/profile/assets/jordi-lluis-fullstack-cv-ats.pdf",
       "local_designed": "output/pdf/jordi-lluis-fullstack-cv.pdf",
       "local_ats": "output/pdf/jordi-lluis-fullstack-cv-ats.pdf",
-      "sha256_designed": "5c557eb883048fabcc5020443544faa8a162644c50313d853910d9c237e5295a",
-      "sha256_ats": "b18cf2fcb7af8c1ebe011c1626cd1a264db13990cddd40271302929a8aad8fa9",
-      "pitch": "I build the interface and the API behind it: React and TypeScript on the front, Python or Rails on the back, with tests and Docker so a change has a check.",
-      "letter_template": "Hi {company},\n\nI'm Jordi Lluis, a software developer in Amsterdam (EU citizen). I build the interface and the API behind it \u2014 React and TypeScript on the front, Python or Rails on the back \u2014 and I test how it fails.\n\nFor this {role}, the closest public work is {project}: {one_liner} Walkthrough: {walkthrough}\n\nOne-page CV (ATS): {ats}\nPortfolio: https://coder058.github.io/profile/\n\nJordi Lluis\n+31 6 1949 6593 \u00b7 joord918@gmail.com"
+      "sha256_designed": "35e1c309637ee58869eb488b77ab5e2016e23c5bf32dd1da13f3c2bf687704d9",
+      "sha256_ats": "78e7074365f1e70061cb4a7d76413eec5fd8e236e10bba2bf42acdcd441f4f16",
+      "pitch": "I build the interface and the API behind it: React and TypeScript on the front, Python or Rails on the back, with tests and Docker. Pattern Forge, Relay and the trading-bot ledger are on the portfolio.",
+      "letter_template": "Hi {company},\n\nI'm Jordi Lluis, a software developer in Amsterdam (EU citizen). I build the interface and the API behind it — React and TypeScript on the front, Python or Rails on the back — and I test how it fails.\n\nFor this {role}, the closest public work is {project}: {one_liner} Walkthrough: {walkthrough}\n\nOne-page CV (ATS): {ats}\nPortfolio: https://coder058.github.io/profile/\n\nJordi Lluis\n+31 6 1949 6593 · joord918@gmail.com"
     },
     {
       "id": "ai",
@@ -132,10 +132,10 @@
       "ats": "https://coder058.github.io/profile/assets/jordi-lluis-ai-cv-ats.pdf",
       "local_designed": "output/pdf/jordi-lluis-ai-cv.pdf",
       "local_ats": "output/pdf/jordi-lluis-ai-cv-ats.pdf",
-      "sha256_designed": "de354f8ba648440a73d4fbfee3c5c5b69a513e1a0d673d64442e58c67cfe0b63",
-      "sha256_ats": "d695ea0c8167595399e43b6dfa6f0622401b401af057a017eae3cc7afa735016",
-      "pitch": "I build small agent-facing tools with a human still in the loop: MCP servers, quoted evidence, and tests on the protocol boundary. Not model training, not a production RAG platform.",
-      "letter_template": "Hi {company},\n\nI'm Jordi Lluis, a software developer in Amsterdam (EU citizen). I build small agent-facing tools with a human still in the loop \u2014 MCP servers, quoted evidence, tests on the protocol boundary. I do not train models and I do not run a production RAG platform.\n\nFor this {role}, the closest public work is {project}: {one_liner} Walkthrough: {walkthrough}\n\nOne-page CV (ATS): {ats}\nPortfolio: https://coder058.github.io/profile/\n\nJordi Lluis\n+31 6 1949 6593 \u00b7 joord918@gmail.com"
+      "sha256_designed": "f94d8a2a35f95f388f2afeea79b3fc379f03e46d2524641d5349291033f34c2c",
+      "sha256_ats": "f44440dc9ce102f7f46471b028a72f9fcf4ba35aab9c8cd6d05c968b2a776bc5",
+      "pitch": "I build small agent-facing tools with a human still in the loop: MCP servers, quoted evidence, tests on the protocol boundary. Relay and Pattern Forge are on the portfolio. Not model training, not a production RAG platform.",
+      "letter_template": "Hi {company},\n\nI'm Jordi Lluis, a software developer in Amsterdam (EU citizen). I build small agent-facing tools with a human still in the loop — MCP servers, quoted evidence, tests on the protocol boundary. I do not train models and I do not run a production RAG platform.\n\nFor this {role}, the closest public work is {project}: {one_liner} Walkthrough: {walkthrough}\n\nOne-page CV (ATS): {ats}\nPortfolio: https://coder058.github.io/profile/\n\nJordi Lluis\n+31 6 1949 6593 · joord918@gmail.com"
     },
     {
       "id": "data",
@@ -148,10 +148,10 @@
       "ats": "https://coder058.github.io/profile/assets/jordi-lluis-data-cv-ats.pdf",
       "local_designed": "output/pdf/jordi-lluis-data-cv.pdf",
       "local_ats": "output/pdf/jordi-lluis-data-cv-ats.pdf",
-      "sha256_designed": "5a47e145ca2b326ef4f7d7ef51e509734793c6a3ed3280e9802514164f8a5059",
-      "sha256_ats": "1f707b7ef9e3bb62842c1acbecae5c998e0c88b306e88c4592721e6ca8cb83f0",
-      "pitch": "I work at data boundaries: validated APIs, time-series that cannot see the future, and files you can reopen after a live run. SQL and Python; not a research lab.",
-      "letter_template": "Hi {company},\n\nI'm Jordi Lluis, a software developer in Amsterdam (EU citizen). I work at data boundaries: validated APIs, time-series that cannot see the future, and files you can reopen. SQL and Python; not a research lab.\n\nFor this {role}, the closest public work is {project}: {one_liner} Walkthrough: {walkthrough}\n\nOne-page CV (ATS): {ats}\nPortfolio: https://coder058.github.io/profile/\n\nJordi Lluis\n+31 6 1949 6593 \u00b7 joord918@gmail.com"
+      "sha256_designed": "1cf4f0b218f24d0a09fc1808f0cb6703489390de3df7ec0c01d4716a09a11464",
+      "sha256_ats": "cca6ee73c80853629a3f8c5bb612ecfe4ebffaa5b045797b85065d535e91dcc8",
+      "pitch": "I work at data boundaries: validated APIs, time-series that cannot see the future, and files you can reopen. Pattern Forge replay and the bot ledger are on the portfolio.",
+      "letter_template": "Hi {company},\n\nI'm Jordi Lluis, a software developer in Amsterdam (EU citizen). I work at data boundaries: validated APIs, time-series that cannot see the future, and files you can reopen. SQL and Python; not a research lab.\n\nFor this {role}, the closest public work is {project}: {one_liner} Walkthrough: {walkthrough}\n\nOne-page CV (ATS): {ats}\nPortfolio: https://coder058.github.io/profile/\n\nJordi Lluis\n+31 6 1949 6593 · joord918@gmail.com"
     },
     {
       "id": "software",
@@ -167,13 +167,13 @@
       "unlabelled_copies": {
         "designed": "https://coder058.github.io/profile/assets/jordi-lluis-cv.pdf",
         "ats": "https://coder058.github.io/profile/assets/jordi-lluis-cv-ats.pdf",
-        "sha256_designed": "d17b1aaf92a5eaaa668bb49a56fd0b3855b1d0a3a3f1c6eeb7be038134858e73",
-        "sha256_ats": "a43af3c2978c075a173cb5c61351abb785153f6d88197f34b6307b81895c36b5"
+        "sha256_designed": "709b8e9bc7041341d04f778b16df0a3b5f3299d9cea113d794723f383d8ba976",
+        "sha256_ats": "3c96d575217d289c9577efcf64f9ec1fcc2c1fef13de4c2f6df458c188e03410"
       },
-      "sha256_designed": "65afd98122b6c0353a787fa05c4175e30cd6d478fa2ca4357e845c63f440eb7d",
-      "sha256_ats": "42f8fcf0975cf0220743c9b6659331e932c6585814580dd7abd301440694810d",
-      "pitch": "I like understanding how a system works, then turning that into software I can test. Market-data interfaces, HTTP APIs and small developer tools.",
-      "letter_template": "Hi {company},\n\nI'm Jordi Lluis, a software developer in Amsterdam (EU citizen). I build web interfaces and APIs, then test how they fail.\n\nFor this {role}, the closest public work is {project}: {one_liner} Walkthrough: {walkthrough}\n\nOne-page CV (ATS): {ats}\nPortfolio: https://coder058.github.io/profile/\n\nJordi Lluis\n+31 6 1949 6593 \u00b7 joord918@gmail.com"
+      "sha256_designed": "973658b910e8809535aae222f33e69c598625f03ff186171b165308d687f9ae7",
+      "sha256_ats": "93873bd35c1447254c318e706a3b5755f7f37bbc00f907e0d090fdef0157662a",
+      "pitch": "I like understanding how a system works, then turning that into software I can test. Demos on the portfolio: Pattern Forge, Relay, Python trading-bot ledger.",
+      "letter_template": "Hi {company},\n\nI'm Jordi Lluis, a software developer in Amsterdam (EU citizen). I build web interfaces and APIs, then test how they fail.\n\nFor this {role}, the closest public work is {project}: {one_liner} Walkthrough: {walkthrough}\n\nOne-page CV (ATS): {ats}\nPortfolio: https://coder058.github.io/profile/\n\nJordi Lluis\n+31 6 1949 6593 · joord918@gmail.com"
     },
     {
       "id": "fde",
@@ -186,10 +186,10 @@
       "ats": "https://coder058.github.io/profile/assets/jordi-lluis-fde-cv-ats.pdf",
       "local_designed": "output/pdf/jordi-lluis-fde-cv.pdf",
       "local_ats": "output/pdf/jordi-lluis-fde-cv-ats.pdf",
-      "sha256_designed": "a10590af5701e91949efe26ecb227a676dc9599f2431a61f77b3577c1a5d392a",
-      "sha256_ats": "6f1f6a5de48e919edff372efe78ab3f7f7eb2866691a639cd58b45ba5b7c40ea",
-      "pitch": "I sit between a messy problem and a working integration. Side projects and operations roles, not enterprise customer deployments. Do not print an FDE job title.",
-      "letter_template": "Hi {company},\n\nI'm Jordi Lluis, a software developer in Amsterdam (EU citizen). I sit between a messy problem and a working integration. That is side-project and operations evidence, not an enterprise customer-deploy job.\n\nFor this {role}, the closest public work is {project}: {one_liner} Walkthrough: {walkthrough}\n\nOne-page CV (ATS): {ats}\nPortfolio: https://coder058.github.io/profile/\n\nJordi Lluis\n+31 6 1949 6593 \u00b7 joord918@gmail.com"
+      "sha256_designed": "0028d32f36445d5517a8a9c56f688132380555172a3d69c6de476daa318f3778",
+      "sha256_ats": "ad6d6dc3b6006a2d728d3a4df9c7da58ec60f144bd73b19aee5d341e32d756f1",
+      "pitch": "I sit between a messy problem and a working integration: HTTP and MCP, a chart product that cannot see later prices. Demos on the portfolio. Do not print an FDE job title.",
+      "letter_template": "Hi {company},\n\nI'm Jordi Lluis, a software developer in Amsterdam (EU citizen). I sit between a messy problem and a working integration. That is side-project and operations evidence, not an enterprise customer-deploy job.\n\nFor this {role}, the closest public work is {project}: {one_liner} Walkthrough: {walkthrough}\n\nOne-page CV (ATS): {ats}\nPortfolio: https://coder058.github.io/profile/\n\nJordi Lluis\n+31 6 1949 6593 · joord918@gmail.com"
     }
   ],
   "project_picker": {
@@ -246,7 +246,7 @@
   "form_answers": {
     "full_name": "Jordi Lluis",
     "preferred_name": "Jordi",
-    "legal_name_if_different": "Unknown \u2014 do not guess. Public applications use Jordi Lluis. If a government/payroll form requires a passport name, stop and ask.",
+    "legal_name_if_different": "Unknown — do not guess. Public applications use Jordi Lluis. If a government/payroll form requires a passport name, stop and ask.",
     "city": "Amsterdam",
     "country": "Netherlands",
     "phone": "+31 6 1949 6593",
@@ -264,7 +264,7 @@
     "english": "C2",
     "spanish": "Native",
     "years_professional_software_employment": 0,
-    "years_building_software_since_bootcamp": "Le Wagon full-stack, 2023. Public projects 2024\u2013present.",
+    "years_building_software_since_bootcamp": "Le Wagon full-stack, 2023. Public projects 2024–present.",
     "years_experience_on_forms": "Answer the field as written. Professional software employment is 0. Personal projects and a bootcamp do not become contracted years. Never write 1 or 2 as a substitute. If the form only accepts a number for professional years, use 0. If it is optional, leave it blank. Never count logistics years as software years.",
     "current_title": "Do not invent a software job title. Latest listed work is e-commerce dispatch at De Bommel (2025).",
     "notice_period": "Unknown. De Bommel has no confirmed end date. Do not write unemployed or available immediately as a fact. If the form requires a phrase, use To be confirmed.",
@@ -285,12 +285,12 @@
       "summary": "Used Ceyenne software (WMS) for inbound/outbound furniture orders. Prepared DHL despatches. Booked inbound trucks. Signed transport documents. DHL is the carrier, not a WMS."
     },
     {
-      "employer": "IAS Handling \u2014 Barcelona\u2013El Prat Airport",
+      "employer": "IAS Handling — Barcelona–El Prat Airport",
       "title": "Air cargo operations",
       "location": "Barcelona, Spain",
-      "dates": "2019\u20132020",
+      "dates": "2019–2020",
       "software_job": false,
-      "summary": "Bonded warehouse, ramp offload, airside access. Used WMS software for customs permits and documents. Product name unknown \u2014 do not invent one."
+      "summary": "Bonded warehouse, ramp offload, airside access. Used WMS software for customs permits and documents. Product name unknown — do not invent one."
     },
     {
       "employer": "Transjunior Logistics",
@@ -304,7 +304,7 @@
       "employer": "Home Fundraiser Ltd",
       "title": "Route planner",
       "location": "London, United Kingdom",
-      "dates": "2016\u20132017",
+      "dates": "2016–2017",
       "software_job": false,
       "summary": "Planned daily area assignments and routes for field fundraising teams."
     },
@@ -321,7 +321,7 @@
     {
       "institution": "Anthropic and OpenAI online courses",
       "what": "Further learning",
-      "dates": "2024\u2013present",
+      "dates": "2024–present",
       "note": "MCP is a skill, not a school. Do not list unfinished course names."
     },
     {
@@ -339,7 +339,7 @@
     {
       "institution": "Instituto de Sonido de Caracas",
       "what": "Sound Engineering",
-      "dates": "2015\u20132016"
+      "dates": "2015–2016"
     },
     {
       "institution": "Madison Learning Center, Caracas, Venezuela",
