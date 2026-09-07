@@ -19,7 +19,8 @@ test('local styles, scripts, images and resume exist', () => {
 });
 
 test('portfolio copy is personal without duplicating the resume', () => {
-  assert.match(html, /<p class="hero-summary">I build small products a person can open, and AI tools that share the same path/);
+  assert.match(html, /<p class="hero-summary">I like tackling everyday problems that used to take too long/);
+  assert.doesNotMatch(html, /An agent can call them|AI tools that share the same path|I like understanding how a system works/);
   assert.doesNotMatch(html, /enterprise customer|FDE|model training|Market-data interfaces/);
   assert.doesNotMatch(html, /Software developer in Amsterdam/);
   assert.doesNotMatch(html, /Full-stack developer/i);

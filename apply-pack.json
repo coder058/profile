@@ -114,8 +114,8 @@
       "ats": "https://coder058.github.io/profile/assets/jordi-lluis-fullstack-cv-ats.pdf",
       "local_designed": "output/pdf/jordi-lluis-fullstack-cv.pdf",
       "local_ats": "output/pdf/jordi-lluis-fullstack-cv-ats.pdf",
-      "sha256_designed": "35e1c309637ee58869eb488b77ab5e2016e23c5bf32dd1da13f3c2bf687704d9",
-      "sha256_ats": "78e7074365f1e70061cb4a7d76413eec5fd8e236e10bba2bf42acdcd441f4f16",
+      "sha256_designed": "be4a157f3fcf4f8b7c49f7252f9bcae92ae080ec22acf88cfba92e2069ffacdf",
+      "sha256_ats": "f8ef398a2cd841ffe828bc5f67933b22339872a5bb05c88def3049ee961e00c9",
       "pitch": "I build the interface and the API behind it: React and TypeScript on the front, Python or Rails on the back, with tests and Docker. Pattern Forge, Relay and the trading-bot ledger are on the portfolio.",
       "letter_template": "Hi {company},\n\nI'm Jordi Lluis, a software developer in Amsterdam (EU citizen). I build the interface and the API behind it — React and TypeScript on the front, Python or Rails on the back — and I test how it fails.\n\nFor this {role}, the closest public work is {project}: {one_liner} Walkthrough: {walkthrough}\n\nOne-page CV (ATS): {ats}\nPortfolio: https://coder058.github.io/profile/\n\nJordi Lluis\n+31 6 1949 6593 · joord918@gmail.com"
     },
@@ -132,8 +132,8 @@
       "ats": "https://coder058.github.io/profile/assets/jordi-lluis-ai-cv-ats.pdf",
       "local_designed": "output/pdf/jordi-lluis-ai-cv.pdf",
       "local_ats": "output/pdf/jordi-lluis-ai-cv-ats.pdf",
-      "sha256_designed": "f94d8a2a35f95f388f2afeea79b3fc379f03e46d2524641d5349291033f34c2c",
-      "sha256_ats": "f44440dc9ce102f7f46471b028a72f9fcf4ba35aab9c8cd6d05c968b2a776bc5",
+      "sha256_designed": "0df55b1db5fc651b8a7e18e11a77c7aa696d5621ce377e7b569bed4177ac0a66",
+      "sha256_ats": "8f995331f6d3776e8af95764c0ff5d6fae96ee0376b01204761076fc3f438ce8",
       "pitch": "I build small agent-facing tools with a human still in the loop: MCP servers, quoted evidence, tests on the protocol boundary. Relay and Pattern Forge are on the portfolio. Not model training, not a production RAG platform.",
       "letter_template": "Hi {company},\n\nI'm Jordi Lluis, a software developer in Amsterdam (EU citizen). I build small agent-facing tools with a human still in the loop — MCP servers, quoted evidence, tests on the protocol boundary. I do not train models and I do not run a production RAG platform.\n\nFor this {role}, the closest public work is {project}: {one_liner} Walkthrough: {walkthrough}\n\nOne-page CV (ATS): {ats}\nPortfolio: https://coder058.github.io/profile/\n\nJordi Lluis\n+31 6 1949 6593 · joord918@gmail.com"
     },
@@ -148,8 +148,8 @@
       "ats": "https://coder058.github.io/profile/assets/jordi-lluis-data-cv-ats.pdf",
       "local_designed": "output/pdf/jordi-lluis-data-cv.pdf",
       "local_ats": "output/pdf/jordi-lluis-data-cv-ats.pdf",
-      "sha256_designed": "1cf4f0b218f24d0a09fc1808f0cb6703489390de3df7ec0c01d4716a09a11464",
-      "sha256_ats": "cca6ee73c80853629a3f8c5bb612ecfe4ebffaa5b045797b85065d535e91dcc8",
+      "sha256_designed": "b37155adb8a88caa503901708427c1a16229015c2eecb920de9f0cf207e708d1",
+      "sha256_ats": "9a19dfee9eade69a52cf8edce345ed78ab6c0aef7b98c1b73c988999baa8237f",
       "pitch": "I work at data boundaries: validated APIs, time-series that cannot see the future, and files you can reopen. Pattern Forge replay and the bot ledger are on the portfolio.",
       "letter_template": "Hi {company},\n\nI'm Jordi Lluis, a software developer in Amsterdam (EU citizen). I work at data boundaries: validated APIs, time-series that cannot see the future, and files you can reopen. SQL and Python; not a research lab.\n\nFor this {role}, the closest public work is {project}: {one_liner} Walkthrough: {walkthrough}\n\nOne-page CV (ATS): {ats}\nPortfolio: https://coder058.github.io/profile/\n\nJordi Lluis\n+31 6 1949 6593 · joord918@gmail.com"
     },
@@ -167,11 +167,11 @@
       "unlabelled_copies": {
         "designed": "https://coder058.github.io/profile/assets/jordi-lluis-cv.pdf",
         "ats": "https://coder058.github.io/profile/assets/jordi-lluis-cv-ats.pdf",
-        "sha256_designed": "709b8e9bc7041341d04f778b16df0a3b5f3299d9cea113d794723f383d8ba976",
-        "sha256_ats": "3c96d575217d289c9577efcf64f9ec1fcc2c1fef13de4c2f6df458c188e03410"
+        "sha256_designed": "17338ce8557a1bb9686ed97a3e5a946330b47700569a6a8550067a513b67b7b7",
+        "sha256_ats": "de6284b6d9f38b5cdb4689b029d5fa0161898f03eb0244f9f8997faa0e5fbaba"
       },
-      "sha256_designed": "973658b910e8809535aae222f33e69c598625f03ff186171b165308d687f9ae7",
-      "sha256_ats": "93873bd35c1447254c318e706a3b5755f7f37bbc00f907e0d090fdef0157662a",
+      "sha256_designed": "5f725f86fde02dee21d24158ed3c0d9bd4c23e5e106e2d8526f415c5e4fdb8ea",
+      "sha256_ats": "700954bb92ebac0a0f1b955b68e05469e5f9a65c525719922596c5e5469151ff",
       "pitch": "I like understanding how a system works, then turning that into software I can test. Demos on the portfolio: Pattern Forge, Relay, Python trading-bot ledger.",
       "letter_template": "Hi {company},\n\nI'm Jordi Lluis, a software developer in Amsterdam (EU citizen). I build web interfaces and APIs, then test how they fail.\n\nFor this {role}, the closest public work is {project}: {one_liner} Walkthrough: {walkthrough}\n\nOne-page CV (ATS): {ats}\nPortfolio: https://coder058.github.io/profile/\n\nJordi Lluis\n+31 6 1949 6593 · joord918@gmail.com"
     },
@@ -186,8 +186,8 @@
       "ats": "https://coder058.github.io/profile/assets/jordi-lluis-fde-cv-ats.pdf",
       "local_designed": "output/pdf/jordi-lluis-fde-cv.pdf",
       "local_ats": "output/pdf/jordi-lluis-fde-cv-ats.pdf",
-      "sha256_designed": "0028d32f36445d5517a8a9c56f688132380555172a3d69c6de476daa318f3778",
-      "sha256_ats": "ad6d6dc3b6006a2d728d3a4df9c7da58ec60f144bd73b19aee5d341e32d756f1",
+      "sha256_designed": "7fe0a73177e55c15201898962f787820450df6658a93faab4e21884b86bdbf9d",
+      "sha256_ats": "fc51a990d2c3e04acbac51f5e5f524971c9e1526fd35a7b75c1e127ef9474553",
       "pitch": "I sit between a messy problem and a working integration: HTTP and MCP, a chart product that cannot see later prices. Demos on the portfolio. Do not print an FDE job title.",
       "letter_template": "Hi {company},\n\nI'm Jordi Lluis, a software developer in Amsterdam (EU citizen). I sit between a messy problem and a working integration. That is side-project and operations evidence, not an enterprise customer-deploy job.\n\nFor this {role}, the closest public work is {project}: {one_liner} Walkthrough: {walkthrough}\n\nOne-page CV (ATS): {ats}\nPortfolio: https://coder058.github.io/profile/\n\nJordi Lluis\n+31 6 1949 6593 · joord918@gmail.com"
     }
@@ -361,6 +361,7 @@
   },
   "never_claim": [
     "Sentry, RAG in production, model training, fine-tuning, MLOps, vector databases",
+    "LangChain essentials as a production LangChain/RAG app or an agent platform",
     "FDE / Solutions Engineer as a job title or enterprise customer deployments",
     "Programming jobs at De Bommel, IAS Handling, Transjunior, Home Fundraiser or Amplify",
     "A named WMS/CRM product except Ceyenne (Diract IT WMS) at De Bommel",
