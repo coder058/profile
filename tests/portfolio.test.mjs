@@ -60,6 +60,7 @@ test('Le Wagon labs sit in a More challenges window, not featured cards', () => 
   assert.match(html, /API labs/);
   assert.match(html, /js-geocoder/);
   assert.match(html, /rails-task-manager/);
+  assert.match(html, /rails-wikinimous/);
   assert.doesNotMatch(html, /unfinished scaffold/);
   assert.doesNotMatch(html, /200 challenges|every Le Wagon Kitt challenge was completed/i);
   assert.doesNotMatch(html, /lewagon-api-lab/);
