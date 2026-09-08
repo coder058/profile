@@ -46,51 +46,52 @@ export const projects = [
   },
   {
     slug: 'info-desk', name: 'Info Desk', stack: 'Python · FastAPI · SQLite · limited tools',
-    summary: 'A source batch in, a draft out. Compare figures, quote the URL, wait for a human. Demo and evals, not a newsroom in production.',
-    problem: 'A model that “summarises the news” can pick a number, skip a second source, or follow an instruction hidden in the page. I wanted a desk that extracts, compares, and refuses to write until a person approves.',
-    contribution: 'I built the tool loop (fetch_source, lookup_license, search_prior_notes), Python extractors for barrels/dates/licenses, SQLite so only approve() inserts a note, and a five-case harness that scores the database. Ollama is optional. The model cannot invent a license or publish.',
+    summary: 'OFAC licenses, the White House oil fact sheet, and AP quotes on one claims table. Demo and evals, not a newsroom in production.',
+    problem: 'A model that “summarises the news” can treat an OFAC license list as the same document as a White House fact sheet, pick a ranking, or treat “this page does not name 17 fields” as confirmation. I wanted a desk that compares what each public recording actually says, and refuses to write until a person approves.',
+    contribution: 'I stored dated recordings of the OFAC Venezuela page, the 31 August 2026 fact sheet, and AP quotes (not the full article). Python builds a claims table: stated, absent, denied, or attributed. Named extractors keep 65 billion field barrels separate from 46 billion U.S. territorial barrels. lookup_license(99Z) is empty. SQLite inserts a note only when a human approves publish_draft. The six-case harness scores the database.',
     demo: 'https://coder058.github.io/info-desk/',
-    demoLabel: 'Open a case',
+    demoLabel: 'Open the oil desk',
     code: 'https://github.com/coder058/info-desk',
     skills: [
-      ['Python', 'Extract figures, dates and licenses; validate the proposal schema.'],
+      ['Python', 'Claims table, named quantities, OFAC license parse, negation so “does not name” is not a claim.'],
       ['Limited tools', 'fetch_source, lookup_license, search_prior_notes. No free-form write.'],
       ['SQLite', 'Drafts stay pending. A note row exists only after a human approves publish_draft.'],
-      ['Eval harness', 'Five Inspect-style cases. CI reads SQLite, not a model saying done.'],
+      ['Eval harness', 'Six Inspect-style cases on the same three recordings. CI reads SQLite, not a model saying done.'],
       ['Optional Ollama', 'Local LLM may draft JSON. Python still checks numbers. Off in CI.']
     ],
     steps: [
-      'Read the instruction: compare the batch, mark what is not verifiable, do not publish without approval.',
-      'Open Two sources, different barrels. The desk must flag a conflict and must not pick 500,000 or 1.2 million.',
-      'Open No second source. Action is verify_first. Approve still writes zero notes.',
-      'Open the jailbreak page. Policy does not change. No note.',
-      'If you run it locally, reject the White House/AP draft and check SQLite: approved writes stay 0.'
+      'Open the desk. You should see three public URLs: OFAC, White House, AP — not toy pages.',
+      'Read the claims table. OFAC denies NABEP / 17 fields; White House and AP state them. $200bn royalties sit on the fact sheet only.',
+      'Check the ranking row: “second-largest private producer” vs “second largest operator, behind Chevron.” The desk must not pick one.',
+      'Read the OFAC license table (46D, 50C, 52B). A license list is not the fact-sheet deal.',
+      'If you run it locally, reject the draft and check SQLite: approved writes stay 0. Approve is refused unless the action is publish_draft.'
     ],
     dependencies: [
       ['Desk loop', 'Three tools plus extractors', 'Fetch, license lookup, prior notes. No other writes.'],
-      ['Heuristic interpreter', 'Extracted quantities and policy hits', 'CI path. Same actions as the regex baseline.'],
+      ['Claims table', 'The three dated recordings', 'Stated / absent / denied / attributed. Not a model summary.'],
+      ['Heuristic interpreter', 'Extracted quantities, ranking, scope, attribution', 'CI path. Same actions as the regex baseline.'],
       ['Ollama (optional)', 'Local generate API', 'May propose JSON. Dropped if the host is down.'],
-      ['Validator', 'Known licenses and conflict rules', 'Rejects invented licenses and publish_draft on a conflict.'],
       ['Store', 'SQLite', 'approve() is the only insert into notes.']
     ],
     recordsTitle: 'How the data was organised',
-    recordsIntro: 'The public GitHub Pages view is the last harness report. Local FastAPI uses a SQLite file. There is no hosted news database.',
+    recordsIntro: 'The public GitHub Pages view is the last claims table (case.json). Local FastAPI uses SQLite. There is no hosted news database and no live OFAC scrape in CI.',
     recordsCaption: 'Records, keys and who may write',
     records: [
-      ['sources / fetches', 'Allowlisted fixture id', 'Each fetch stores status and time, including a 429 before retry.'],
+      ['recordings/', 'Public URL plus fetch date', 'OFAC and White House as text. AP as quotes only, not a republication.'],
+      ['sources / fetches', 'Allowlisted recording id', 'Each fetch stores status and time, including a 429 before retry.'],
       ['drafts', 'case_id plus body hash', 'Pending proposal. Duplicate body hash does not insert a second row.'],
       ['notes', 'draft_id, unique', 'Created only by approve() on action publish_draft.'],
       ['approvals', 'draft_id plus decision', 'Human approve or reject. Reject writes zero notes.']
     ],
     build: [
       'Pin the tools. Anything else, including the model, cannot write.',
-      'Extract quantities in Python so two barrel figures can be compared without a prompt.',
+      'Compare the three recordings in Python: licenses, named quantities, ranking phrases, and negated sentences.',
       'Score the SQLite snapshot in the harness: notes, approved writes, fetch statuses.',
-      'Keep SYNTHETIC and PUBLIC_SOURCE labels on every page.',
+      'Label every page PUBLIC_RECORDING. Do not invent barrel figures.',
       'Run pytest in CI. Do not call a hosted LLM there.'
     ],
     run: 'python -m pip install -e ".[dev]"\npython -m pytest\npython -m infodesk.harness\npython -m infodesk.app',
-    limits: 'Demo and evals, not a shipped newsroom. CI uses fixtures, not a live OFAC scrape. Ollama is optional and off in CI. Venezuela oil/sanctions is the example rail, not official access. The public page does not host SQLite.'
+    limits: 'Demo and evals, not a shipped newsroom. CI uses dated recordings, not a live OFAC scrape. Ollama is optional and off in CI. A fact sheet is not signed contracts. AP quotes are not the full article. Venezuela oil/sanctions is the example rail, not official access. The public page does not host SQLite.'
   },
   {
     slug: 'relay', name: 'Relay', stack: 'MCP · Python · FastAPI · React · TypeScript',

@@ -50,7 +50,7 @@ test('a reader can scan the stack and the evidence behind each project', () => {
   assert.match(html, /pattern-forge-five\.vercel\.app/);
   assert.match(html, /relay-ten-zeta\.vercel\.app/);
   assert.match(html, /polybow-archive\.vercel\.app/);
-  assert.match(html, /5-case harness/);
+  assert.match(html, /Claims table · SQLite write only on approve/);
   assert.match(html, /coder058\.github\.io\/info-desk/);
   assert.equal((html.match(/class="project-data"/g) || []).length, 4);
   for (const slug of ['polybow', 'pattern-forge', 'relay', 'info-desk']) {

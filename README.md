@@ -7,9 +7,8 @@ Canonical portfolio: https://coder058.github.io/profile/
 ## Selected work
 
 - **Python trading bot** — a live prediction-market system and evidence-led postmortem: development history, scoped API-response timings, wallet reconciliation and the full negative outcome. Not proof of a profitable strategy.
-- **Relay** — four read-only MCP tools and a React UI share one matcher. Paste a listing; each hit is a quote, not a hiring score. Arbeitnow is a demo snapshot.
 - **Pattern Forge** — replay without look-ahead; CI runs tests, Docker and a PostgreSQL restart. The public demo does not serve that database.
-- **Info Desk** — compare a source batch, quote the URL, wait for a human. Demo and evals, not a newsroom in production.
+- **Info Desk** — OFAC licenses, White House fact sheet, AP quotes on one claims table. Demo and evals, not a newsroom in production.
 - **Relay** — four read-only MCP tools and a React UI share one matcher. Paste a listing; each hit is a quote, not a hiring score. Arbeitnow is a demo snapshot.
 
 Each selected card opens a project walkthrough with the problem, contribution, usage steps, dependency table and limitations. [More challenges](https://coder058.github.io/profile/#more-challenges) lists the other public GitHub work: seven API labs and the Rails exercises, including Wikinimous. I do not claim every Le Wagon Kitt challenge.
