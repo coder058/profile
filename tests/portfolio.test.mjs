@@ -3,10 +3,10 @@ import assert from 'node:assert/strict';
 import { readFileSync, existsSync } from 'node:fs';
 const html = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
 test('selected projects are single-link cards with current names', () => {
-  for (const name of ['Relay', 'Pattern Forge', 'Python trading bot']) assert.ok(html.includes(`<h3>${name}</h3>`));
+  for (const name of ['Relay', 'Pattern Forge', 'Info Desk', 'Python trading bot']) assert.ok(html.includes(`<h3>${name}</h3>`));
   assert.doesNotMatch(html, /<h3>DispatchOps<\/h3>|<h3>Transcript Desk<\/h3>|Source &amp; tests|OPEN WORK|project-index/);
   // SOURCE: user's September review removes the game from featured work.
-  assert.equal((html.match(/class="project-card /g) || []).length, 3);
+  assert.equal((html.match(/class="project-card /g) || []).length, 4);
   assert.equal((html.match(/class="project-source"/g) || []).length, 0);
   assert.match(html, /MCP · PYTHON · TYPESCRIPT/);
   assert.ok(html.includes('rel="canonical" href="https://coder058.github.io/profile/"'));
@@ -28,7 +28,8 @@ test('portfolio copy is personal without duplicating the resume', () => {
   assert.doesNotMatch(html, /coding agents to explore possible answers/);
   assert.doesNotMatch(html, /open to relocation|Python, TypeScript (?:&amp;|and) SQL/i);
   // SOURCE: recruiter review 6 Sep 2026 — Pattern Forge is the main demo.
-  assert.ok(html.indexOf('<h3>Pattern Forge</h3>') < html.indexOf('<h3>Relay</h3>'));
+  assert.ok(html.indexOf('<h3>Pattern Forge</h3>') < html.indexOf('<h3>Info Desk</h3>'));
+  assert.ok(html.indexOf('<h3>Info Desk</h3>') < html.indexOf('<h3>Relay</h3>'));
   assert.ok(html.indexOf('<h3>Relay</h3>') < html.indexOf('<h3>Python trading bot</h3>'));
   assert.doesNotMatch(html, /id="about"|about-title|about-copy|about-note/);
 });
@@ -37,7 +38,7 @@ test('a reader can scan the stack and the evidence behind each project', () => {
   for (const tool of ['React', 'TypeScript', 'Python', 'FastAPI', 'PostgreSQL', 'Docker', 'AWS'])
     assert.ok(html.includes(`<li>${tool}</li>`), tool);
   // SOURCE: counts and deployment checks recorded in the 5-6 September project audits.
-  assert.equal((html.match(/class="project-proof"/g) || []).length, 3);
+  assert.equal((html.match(/class="project-proof"/g) || []).length, 4);
   assert.match(html, /No look-ahead · CI Docker \/ Postgres restart/);
   assert.match(html, /The public demo does not serve that database/);
   assert.match(html, /Four MCP tools and a React UI share one matcher/);
@@ -49,8 +50,10 @@ test('a reader can scan the stack and the evidence behind each project', () => {
   assert.match(html, /pattern-forge-five\.vercel\.app/);
   assert.match(html, /relay-ten-zeta\.vercel\.app/);
   assert.match(html, /polybow-archive\.vercel\.app/);
-  assert.equal((html.match(/class="project-data"/g) || []).length, 3);
-  for (const slug of ['polybow', 'pattern-forge', 'relay']) {
+  assert.match(html, /5-case harness/);
+  assert.match(html, /coder058\.github\.io\/info-desk/);
+  assert.equal((html.match(/class="project-data"/g) || []).length, 4);
+  for (const slug of ['polybow', 'pattern-forge', 'relay', 'info-desk']) {
     assert.ok(html.includes(`href="projects/${slug}.html#data"`), slug);
   }
 });
@@ -70,7 +73,7 @@ test('Le Wagon labs sit in a More challenges window, not featured cards', () => 
   assert.doesNotMatch(html, /200 challenges|every Le Wagon Kitt challenge was completed/i);
   assert.doesNotMatch(html, /lewagon-api-lab/);
   assert.ok(html.indexOf('id="work"') < html.indexOf('id="more-challenges"'));
-  assert.equal((html.match(/class="project-card /g) || []).length, 3);
+  assert.equal((html.match(/class="project-card /g) || []).length, 4);
 });
 
 test('project content stays visible without an animation callback', () => {

@@ -45,6 +45,54 @@ export const projects = [
     limits: 'The quote timestamp is local receipt time, not an exchange-latency benchmark. Public candles update on Refresh. The oil and other archive datasets are recordings. The repository also includes PostgreSQL persistence for local Docker and CI; the public Vercel demo does not serve that database. The README explains ingestion, duplicate handling and restart checks. This is a read-only analysis tool, not a trading terminal or a profitable strategy.'
   },
   {
+    slug: 'info-desk', name: 'Info Desk', stack: 'Python · FastAPI · SQLite · limited tools',
+    summary: 'A source batch in, a draft out. Compare figures, quote the URL, wait for a human. Demo and evals, not a newsroom in production.',
+    problem: 'A model that “summarises the news” can pick a number, skip a second source, or follow an instruction hidden in the page. I wanted a desk that extracts, compares, and refuses to write until a person approves.',
+    contribution: 'I built the tool loop (fetch_source, lookup_license, search_prior_notes), Python extractors for barrels/dates/licenses, SQLite so only approve() inserts a note, and a five-case harness that scores the database. Ollama is optional. The model cannot invent a license or publish.',
+    demo: 'https://coder058.github.io/info-desk/',
+    demoLabel: 'Open a case',
+    code: 'https://github.com/coder058/info-desk',
+    skills: [
+      ['Python', 'Extract figures, dates and licenses; validate the proposal schema.'],
+      ['Limited tools', 'fetch_source, lookup_license, search_prior_notes. No free-form write.'],
+      ['SQLite', 'Drafts stay pending. A note row exists only after a human approves publish_draft.'],
+      ['Eval harness', 'Five Inspect-style cases. CI reads SQLite, not a model saying done.'],
+      ['Optional Ollama', 'Local LLM may draft JSON. Python still checks numbers. Off in CI.']
+    ],
+    steps: [
+      'Read the instruction: compare the batch, mark what is not verifiable, do not publish without approval.',
+      'Open Two sources, different barrels. The desk must flag a conflict and must not pick 500,000 or 1.2 million.',
+      'Open No second source. Action is verify_first. Approve still writes zero notes.',
+      'Open the jailbreak page. Policy does not change. No note.',
+      'If you run it locally, reject the White House/AP draft and check SQLite: approved writes stay 0.'
+    ],
+    dependencies: [
+      ['Desk loop', 'Three tools plus extractors', 'Fetch, license lookup, prior notes. No other writes.'],
+      ['Heuristic interpreter', 'Extracted quantities and policy hits', 'CI path. Same actions as the regex baseline.'],
+      ['Ollama (optional)', 'Local generate API', 'May propose JSON. Dropped if the host is down.'],
+      ['Validator', 'Known licenses and conflict rules', 'Rejects invented licenses and publish_draft on a conflict.'],
+      ['Store', 'SQLite', 'approve() is the only insert into notes.']
+    ],
+    recordsTitle: 'How the data was organised',
+    recordsIntro: 'The public GitHub Pages view is the last harness report. Local FastAPI uses a SQLite file. There is no hosted news database.',
+    recordsCaption: 'Records, keys and who may write',
+    records: [
+      ['sources / fetches', 'Allowlisted fixture id', 'Each fetch stores status and time, including a 429 before retry.'],
+      ['drafts', 'case_id plus body hash', 'Pending proposal. Duplicate body hash does not insert a second row.'],
+      ['notes', 'draft_id, unique', 'Created only by approve() on action publish_draft.'],
+      ['approvals', 'draft_id plus decision', 'Human approve or reject. Reject writes zero notes.']
+    ],
+    build: [
+      'Pin the tools. Anything else, including the model, cannot write.',
+      'Extract quantities in Python so two barrel figures can be compared without a prompt.',
+      'Score the SQLite snapshot in the harness: notes, approved writes, fetch statuses.',
+      'Keep SYNTHETIC and PUBLIC_SOURCE labels on every page.',
+      'Run pytest in CI. Do not call a hosted LLM there.'
+    ],
+    run: 'python -m pip install -e ".[dev]"\npython -m pytest\npython -m infodesk.harness\npython -m infodesk.app',
+    limits: 'Demo and evals, not a shipped newsroom. CI uses fixtures, not a live OFAC scrape. Ollama is optional and off in CI. Venezuela oil/sanctions is the example rail, not official access. The public page does not host SQLite.'
+  },
+  {
     slug: 'relay', name: 'Relay', stack: 'MCP · Python · FastAPI · React · TypeScript',
     summary: 'An evidence desk: four MCP tools and a React UI share one matcher so each skill hit is a quote, not a hiring score.',
     problem: 'An agent or a UI that cites a skill in a job text still needs the sentence it came from. I wanted that quote from one tested service, not a model deciding whether someone qualifies.',

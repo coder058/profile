@@ -22,7 +22,8 @@ test('cards lead to live demos, with walkthroughs one click away', () => {
   assert.match(html, /href="https:\/\/pattern-forge-five\.vercel\.app\/"/);
   assert.match(html, /href="https:\/\/relay-ten-zeta\.vercel\.app\/"/);
   assert.match(html, /href="https:\/\/polybow-archive\.vercel\.app\/"/);
-  for (const slug of ['polybow','pattern-forge','relay']) assert.ok(html.includes(`href="projects/${slug}.html#data"`));
+  assert.match(html, /href="https:\/\/coder058\.github\.io\/info-desk\/"/);
+  for (const slug of ['polybow','pattern-forge','relay','info-desk']) assert.ok(html.includes(`href="projects/${slug}.html#data"`));
   assert.ok(!html.includes('<h3>City Gardens</h3>'));
 });
 
@@ -50,7 +51,7 @@ test('Relay walkthrough is an evidence desk, not a job-search product', () => {
 });
 
 test('Relay and Pattern Forge walkthroughs include a skills table', () => {
-  for (const slug of ['relay', 'pattern-forge']) {
+  for (const slug of ['relay', 'pattern-forge', 'info-desk']) {
     const html = readFileSync(new URL(`../projects/${slug}.html`, import.meta.url), 'utf8');
     assert.match(html, /Skills this work used/);
   }
