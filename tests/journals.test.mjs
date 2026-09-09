@@ -46,6 +46,17 @@ test('energy post is a recording, not a spot forecast', () => {
   assert.doesNotMatch(html, /“TAPE”|“HOST”/);
 });
 
+// SOURCE: recomputed from pattern-forge/public/recordings/WTIOILUSD.json on 10 Sep 2026 —
+// 2,482 unique hourly timestamps, 42 interruptions, 76 absent hourly bars, worst gap 9 hours.
+// A count of gaps is not a count of missing hours.
+test('the WTI posts separate the number of gaps from the missing hours', () => {
+  for (const path of ['../tape/wti-is-not-spot.html', '../host/cloud-parquet.html']) {
+    const html = readFileSync(new URL(path, import.meta.url), 'utf8');
+    assert.match(html, /42 gaps covering 76 missing hourly bars/, path);
+    assert.doesNotMatch(html, /42 missing hours|42 hours, left empty/, path);
+  }
+});
+
 test('blog notes do not brand the bot as Polybow', () => {
   const walkthrough = readFileSync(new URL('../projects/polybow.html', import.meta.url), 'utf8');
   assert.match(walkthrough, /Python trading bot/);

@@ -34,7 +34,7 @@
           <tr><th>Venue</th><td>Polymarket Perps, 1-hour bars</td></tr>
           <tr><th>UTC range</th><td>7 May 2026 10:00 → 22 August 2026 00:00</td></tr>
           <tr><th>Closed bars</th><td>2,482</td></tr>
-          <tr><th>Gaps</th><td>42 hours, left empty</td></tr>
+          <tr><th>Gaps</th><td>42 gaps covering 76 missing hourly bars, left empty</td></tr>
           <tr><th>First close → last close</th><td>90.0 → 86.7</td></tr>
           <tr><th>Close range</th><td>67.229 – 104.5</td></tr>
           <tr><th>Bar high / low</th><td>109.2 / 60.0 on this contract</td></tr>
@@ -43,7 +43,7 @@
       </table>
       <p>Replay only uses candles up to the cursor. Later prices stay out of the indicators. Incomplete higher-timeframe groups are dropped. The public demo has no PostgreSQL; storage in CI is a different path, not this file’s venue.</p>
       <div class="limit">This is a perpetual-contract tape with holes. It is not a forecast, and it is not physical oil.</div>
-      <p>Next: walk the same file under replay, mark the 42 missing hours, and only then talk about a move on complete bars.</p>
+      <p>Next: walk the same file under replay, mark the 42 gaps and 76 missing hourly bars, and only then talk about a move on complete bars.</p>
       <p><a href="https://pattern-forge-five.vercel.app/">Open Pattern Forge</a> · <a href="https://github.com/coder058/pattern-forge/blob/main/public/recordings/catalog.json">Catalog</a> · <a href="../projects/pattern-forge.html">Walkthrough</a></p>
       <a class="back" href="../blog/">← Blog</a>
     </article>

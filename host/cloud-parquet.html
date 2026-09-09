@@ -31,7 +31,7 @@
           <tr><th>Venue in the files</th><td>Polymarket Perps hourly candles, not CME, not a cash index.</td></tr>
           <tr><th>That day’s snapshot</th><td>WTI 1,624 hourly rows in the venue table. 2,414,184 is venue trade count on the selected contract, not my fills.</td></tr>
           <tr><th>Public catalog now</th><td>Ten parquet series in Pattern Forge. 20,567 closed hourly bars after dropping a last bar that may still have been forming. Gaps stay empty.</td></tr>
-          <tr><th>WTI in the catalog</th><td>2,482 closed bars, 42 missing hours, SHA-256 6733ae8ec1646133…</td></tr>
+          <tr><th>WTI in the catalog</th><td>2,482 closed bars, 42 gaps covering 76 missing hourly bars, SHA-256 6733ae8ec1646133…</td></tr>
         </tbody>
       </table>
       <p>A row here is a closed hour: open, high, low, close, timestamp. Models on that day’s paper ledger promoted zero venue-native candidates. Candidate net return was not positive.</p>

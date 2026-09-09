@@ -1,23 +1,9 @@
 {
-  "version": "2026-09-07",
-  "ready_to_apply": true,
-  "materials_verified": {
-    "date": "2026-09-07",
-    "cv_pages": 1,
-    "local_site_live_pdfs_match": true,
-    "website_data_tables": [
-      "https://coder058.github.io/profile/projects/polybow.html#data",
-      "https://coder058.github.io/profile/projects/pattern-forge.html#data",
-      "https://coder058.github.io/profile/projects/relay.html#data",
-      "https://coder058.github.io/profile/projects/city-gardens.html#data"
-    ],
-    "note": "The 12 software apply PDFs match local output/pdf and the live GitHub Pages copies. They have no Projects section; demos live on the portfolio. CNC PDFs in output/pdf are a different track — never send them for software jobs."
-  },
+  "$comment": "Public CV manifest. One page per pack, same facts, different emphasis. The ATS file is single-column and text-selectable.",
   "person": {
     "name": "Jordi Lluis",
-    "email": "joord918@gmail.com",
-    "phone": "+31 6 1949 6593",
     "location": "Amsterdam, Netherlands",
+    "email": "joord918@gmail.com",
     "work_authorization": "EU citizen; no sponsorship needed in the EU",
     "languages": {
       "Spanish": "Native",
@@ -26,387 +12,59 @@
       "Dutch": "A1"
     }
   },
-  "urls": {
+  "links": {
     "portfolio": "https://coder058.github.io/profile/",
-    "more_challenges": "https://coder058.github.io/profile/#more-challenges",
-    "resume_packs": "https://coder058.github.io/profile/resume.html",
+    "resume": "https://coder058.github.io/profile/resume.html",
     "github": "https://github.com/coder058",
-    "linkedin": "https://www.linkedin.com/in/jordi-lluis-14228242a/",
-    "this_file": "https://coder058.github.io/profile/apply-pack.json"
+    "linkedin": "https://www.linkedin.com/in/jordi-lluis-14228242a/"
   },
-  "how_to_submit": {
-    "online_forms": "Use the ATS PDF (one column). Do not upload the Canva file.",
-    "email_or_recruiter": "ATS PDF is enough. Designed PDF is optional. Canva is a visual draft only — never send it to an ATS form.",
-    "do_not_mint_a_new_cv_per_job": true,
-    "per_job": "Open the listing URL. Skip if it is gone, intern, senior, part-time, contract, Dutch-fluency, or visa-only outside the EU. Pick one pack below. Retouch 3–5 bullets only if the posting names a skill already on the CV. Fill forms from form_answers. Write a short letter from the pack letter_template, naming one website walkthrough. Then log the application.",
-    "never_send": [
-      "Canva export or Canva link",
-      "output/pdf/cv_cnc_nl.pdf or cv_cnc_nl_application.pdf",
-      "A newly generated per-job PDF"
-    ]
+  "default_pack": "software",
+  "default_pdf": {
+    "designed": "https://coder058.github.io/profile/assets/jordi-lluis-cv.pdf",
+    "ats": "https://coder058.github.io/profile/assets/jordi-lluis-cv-ats.pdf",
+    "sha256_designed": "2ee70d308119be769c62ed6e28dbe4472f143ac24089a6efa92f267fad3a7419",
+    "sha256_ats": "9f24ef8fe501a02abdf400b12ef459a3f32bd6aea03deb1ccc6174f27b961bf3"
   },
-  "pack_selection": [
-    {
-      "if_title_or_role_contains": [
-        "fullstack",
-        "full-stack",
-        "full stack",
-        "backend",
-        "front-end",
-        "frontend",
-        "product engineer",
-        "product software"
-      ],
-      "pack": "fullstack"
-    },
-    {
-      "if_title_or_role_contains": [
-        "AI",
-        "LLM",
-        "MCP",
-        "agent",
-        "machine learning",
-        "ML engineer"
-      ],
-      "unless": "customer-facing FDE / Solutions Engineer title",
-      "pack": "ai"
-    },
-    {
-      "if_title_or_role_contains": [
-        "data engineer",
-        "data analyst",
-        "analytics engineer",
-        "scientist"
-      ],
-      "pack": "data"
-    },
-    {
-      "if_title_or_role_contains": [
-        "forward deployed",
-        "FDE",
-        "solutions engineer"
-      ],
-      "pack": "fde",
-      "optional": true,
-      "note": "Skip unless the posting is clearly junior. Do not print FDE as Jordi's job title."
-    },
-    {
-      "else": "software"
-    }
-  ],
-  "apply_order": [
-    "fullstack",
-    "ai",
-    "software",
-    "data"
-  ],
   "packs": [
     {
       "id": "fullstack",
-      "use_first": true,
-      "use_for": [
-        "fullstack",
-        "backend",
-        "frontend",
-        "product software"
-      ],
-      "designed": "https://coder058.github.io/profile/assets/jordi-lluis-fullstack-cv.pdf",
-      "ats": "https://coder058.github.io/profile/assets/jordi-lluis-fullstack-cv-ats.pdf",
-      "local_designed": "output/pdf/jordi-lluis-fullstack-cv.pdf",
-      "local_ats": "output/pdf/jordi-lluis-fullstack-cv-ats.pdf",
-      "sha256_designed": "bb5d464b1d2622dc7fde0690f3c073a1c9c7b6a1927fe60d168dda8685a03dec",
-      "sha256_ats": "dd6845e656c5878b159a52cfe147204ec2f5037b60b4e7ff50f95dcb8f874f44",
-      "pitch": "I build the interface and the API behind it: React and TypeScript on the front, Python or Rails on the back, with tests and Docker. Pattern Forge, Relay and the trading-bot ledger are on the portfolio.",
-      "letter_template": "Hi {company},\n\nI'm Jordi Lluis, a software developer in Amsterdam (EU citizen). I build the interface and the API behind it — React and TypeScript on the front, Python or Rails on the back — and I test how it fails.\n\nFor this {role}, the closest public work is {project}: {one_liner} Walkthrough: {walkthrough}\n\nOne-page CV (ATS): {ats}\nPortfolio: https://coder058.github.io/profile/\n\nJordi Lluis\n+31 6 1949 6593 · joord918@gmail.com"
+      "use_for": "Fullstack, backend, frontend and product engineering",
+      "designed_pdf": "https://coder058.github.io/profile/assets/jordi-lluis-fullstack-cv.pdf",
+      "ats_pdf": "https://coder058.github.io/profile/assets/jordi-lluis-fullstack-cv-ats.pdf",
+      "sha256_designed": "23df05dfec111a72c9c79fd5c174e8e6cee8ce0833ce34e44d2697f901a130ba",
+      "sha256_ats": "4d94d7c91d32c02aaeb8301c5e0d47ae4bb4bdad1cdb5e1470e81638b09fe5e5"
     },
     {
       "id": "ai",
-      "use_for": [
-        "AI",
-        "LLM",
-        "MCP",
-        "agent tooling",
-        "technical FDE-shaped titles"
-      ],
-      "designed": "https://coder058.github.io/profile/assets/jordi-lluis-ai-cv.pdf",
-      "ats": "https://coder058.github.io/profile/assets/jordi-lluis-ai-cv-ats.pdf",
-      "local_designed": "output/pdf/jordi-lluis-ai-cv.pdf",
-      "local_ats": "output/pdf/jordi-lluis-ai-cv-ats.pdf",
-      "sha256_designed": "81c6def08a52b5889c7fca2b3d911591fc5637b47df94be9f76a1a2f74a6533d",
-      "sha256_ats": "77e90e99aeb7afff97024ca3dbc0ad40792515c18c7079351a2a7b819169219b",
-      "pitch": "I build small agent-facing tools with a human still in the loop: MCP servers, quoted evidence, tests on the protocol boundary. Relay and Pattern Forge are on the portfolio. Not model training, not a production RAG platform.",
-      "letter_template": "Hi {company},\n\nI'm Jordi Lluis, a software developer in Amsterdam (EU citizen). I build small agent-facing tools with a human still in the loop — MCP servers, quoted evidence, tests on the protocol boundary. I do not train models and I do not run a production RAG platform.\n\nFor this {role}, the closest public work is {project}: {one_liner} Walkthrough: {walkthrough}\n\nOne-page CV (ATS): {ats}\nPortfolio: https://coder058.github.io/profile/\n\nJordi Lluis\n+31 6 1949 6593 · joord918@gmail.com"
+      "use_for": "AI, LLM, MCP and agent tooling",
+      "designed_pdf": "https://coder058.github.io/profile/assets/jordi-lluis-ai-cv.pdf",
+      "ats_pdf": "https://coder058.github.io/profile/assets/jordi-lluis-ai-cv-ats.pdf",
+      "sha256_designed": "ece0d47e0e519b18a6bf2d89092d1dfe837d9ca51166656c9874dbd1c551044d",
+      "sha256_ats": "7a9a3c73b6d9b82ec36d492f3b0e1d3e6bf026ae3e5bcbaaa2e598bbabc78f57"
     },
     {
       "id": "data",
-      "use_for": [
-        "data engineer",
-        "analyst",
-        "scientist-light"
-      ],
-      "designed": "https://coder058.github.io/profile/assets/jordi-lluis-data-cv.pdf",
-      "ats": "https://coder058.github.io/profile/assets/jordi-lluis-data-cv-ats.pdf",
-      "local_designed": "output/pdf/jordi-lluis-data-cv.pdf",
-      "local_ats": "output/pdf/jordi-lluis-data-cv-ats.pdf",
-      "sha256_designed": "8e3a10649ce0572453b0aa258e7f12ecd611bd0595c871d0d8bb55862a4f1ff4",
-      "sha256_ats": "82287867b9eb2dbba8bd1f71a2cdaef3fc5a6d99468d843aa3e308e1133fb7f2",
-      "pitch": "I work at data boundaries: validated APIs, time-series that cannot see the future, and files you can reopen. Pattern Forge replay and the bot ledger are on the portfolio.",
-      "letter_template": "Hi {company},\n\nI'm Jordi Lluis, a software developer in Amsterdam (EU citizen). I work at data boundaries: validated APIs, time-series that cannot see the future, and files you can reopen. SQL and Python; not a research lab.\n\nFor this {role}, the closest public work is {project}: {one_liner} Walkthrough: {walkthrough}\n\nOne-page CV (ATS): {ats}\nPortfolio: https://coder058.github.io/profile/\n\nJordi Lluis\n+31 6 1949 6593 · joord918@gmail.com"
+      "use_for": "Data engineering and analytics",
+      "designed_pdf": "https://coder058.github.io/profile/assets/jordi-lluis-data-cv.pdf",
+      "ats_pdf": "https://coder058.github.io/profile/assets/jordi-lluis-data-cv-ats.pdf",
+      "sha256_designed": "d3194209eb4b99ca23a045c78049d1cd544ff10c247284029da083e2bb765a8d",
+      "sha256_ats": "3e7c807e47c19cdda9b99f146c1e86186b5ff042277b954421850df45be8b868"
     },
     {
       "id": "software",
-      "default": true,
-      "use_for": [
-        "software general",
-        "unclassified software engineer"
-      ],
-      "designed": "https://coder058.github.io/profile/assets/jordi-lluis-software-cv.pdf",
-      "ats": "https://coder058.github.io/profile/assets/jordi-lluis-software-cv-ats.pdf",
-      "local_designed": "output/pdf/jordi-lluis-software-cv.pdf",
-      "local_ats": "output/pdf/jordi-lluis-software-cv-ats.pdf",
-      "unlabelled_copies": {
-        "designed": "https://coder058.github.io/profile/assets/jordi-lluis-cv.pdf",
-        "ats": "https://coder058.github.io/profile/assets/jordi-lluis-cv-ats.pdf",
-        "sha256_designed": "b29defe86096796aa267c581467774e47d2d49f54cbfadf114a4968aa4e78f62",
-        "sha256_ats": "8c7ee555be84bfe25e5d3a04d2d582a2fce5c49dddb717691e0e7fa12c4fa35e"
-      },
-      "sha256_designed": "316ebbc6b5927215b341b9bfe26ccb81e130f991f9f8cd93047fe8210506c350",
-      "sha256_ats": "5a56fe1df956e0691faa9a0fba5898796ce2a1c65b1d1a0ae0f7da5b2c1677c4",
-      "pitch": "I study how complex systems break down, then build lean, testable software. Modern tools, real bottlenecks, numbers I can name.",
-      "letter_template": "Hi {company},\n\nI'm Jordi Lluis, a software developer in Amsterdam (EU citizen). I build web interfaces and APIs, then test how they fail.\n\nFor this {role}, the closest public work is {project}: {one_liner} Walkthrough: {walkthrough}\n\nOne-page CV (ATS): {ats}\nPortfolio: https://coder058.github.io/profile/\n\nJordi Lluis\n+31 6 1949 6593 · joord918@gmail.com"
+      "use_for": "General software engineering",
+      "designed_pdf": "https://coder058.github.io/profile/assets/jordi-lluis-software-cv.pdf",
+      "ats_pdf": "https://coder058.github.io/profile/assets/jordi-lluis-software-cv-ats.pdf",
+      "sha256_designed": "521430b664339f38be0f80951262f1f98cc8b674f91559c0a9808bdb265a5e6d",
+      "sha256_ats": "5fa6116b6aea3df9b18e3c407c00f9e97e53eb3371f6c2b90c76955cb556e78b"
     },
     {
       "id": "fde",
-      "optional": true,
-      "use_for": [
-        "customer-facing FDE",
-        "Solutions Engineer"
-      ],
-      "designed": "https://coder058.github.io/profile/assets/jordi-lluis-fde-cv.pdf",
-      "ats": "https://coder058.github.io/profile/assets/jordi-lluis-fde-cv-ats.pdf",
-      "local_designed": "output/pdf/jordi-lluis-fde-cv.pdf",
-      "local_ats": "output/pdf/jordi-lluis-fde-cv-ats.pdf",
-      "sha256_designed": "1ebd128fe150c99829c22478ccb5957e282c911a865739fef15ace7817d93214",
-      "sha256_ats": "93158118d4d98524a0bee98a4d95a723f58705ce7d3c65567864c5b68fa51d55",
-      "pitch": "I sit between a messy problem and a working integration: HTTP and MCP, a chart product that cannot see later prices. Demos on the portfolio. Do not print an FDE job title.",
-      "letter_template": "Hi {company},\n\nI'm Jordi Lluis, a software developer in Amsterdam (EU citizen). I sit between a messy problem and a working integration. That is side-project and operations evidence, not an enterprise customer-deploy job.\n\nFor this {role}, the closest public work is {project}: {one_liner} Walkthrough: {walkthrough}\n\nOne-page CV (ATS): {ats}\nPortfolio: https://coder058.github.io/profile/\n\nJordi Lluis\n+31 6 1949 6593 · joord918@gmail.com"
+      "use_for": "Forward-deployed and solutions engineering",
+      "designed_pdf": "https://coder058.github.io/profile/assets/jordi-lluis-fde-cv.pdf",
+      "ats_pdf": "https://coder058.github.io/profile/assets/jordi-lluis-fde-cv-ats.pdf",
+      "sha256_designed": "b52ceb80de0dfd6ee3105f02d51f731a32750940c1c4a07befa681330df0e384",
+      "sha256_ats": "3a3f7d8c45b288fe297702ed66b1cbe72d60cbd6977be4a640c389cf09cde9f5"
     }
-  ],
-  "project_picker": {
-    "fullstack": {
-      "project": "Pattern Forge",
-      "one_liner": "Replay without look-ahead; CI runs tests, Docker and a PostgreSQL restart.",
-      "walkthrough": "https://coder058.github.io/profile/projects/pattern-forge.html",
-      "data": "https://coder058.github.io/profile/projects/pattern-forge.html#data",
-      "github": "https://github.com/coder058/pattern-forge"
-    },
-    "frontend": {
-      "project": "Pattern Forge",
-      "one_liner": "React/TypeScript charts; replay without look-ahead; CI Docker/Postgres.",
-      "walkthrough": "https://coder058.github.io/profile/projects/pattern-forge.html",
-      "data": "https://coder058.github.io/profile/projects/pattern-forge.html#data",
-      "github": "https://github.com/coder058/pattern-forge"
-    },
-    "ai": {
-      "project": "Relay",
-      "one_liner": "MCP tools that return quotes from a listing, not a hiring score.",
-      "walkthrough": "https://coder058.github.io/profile/projects/relay.html",
-      "data": "https://coder058.github.io/profile/projects/relay.html#data",
-      "github": "https://github.com/coder058/relay"
-    },
-    "backend": {
-      "project": "Relay",
-      "one_liner": "Python/FastAPI matcher shared by HTTP and MCP; paste is the real input.",
-      "walkthrough": "https://coder058.github.io/profile/projects/relay.html",
-      "data": "https://coder058.github.io/profile/projects/relay.html#data",
-      "github": "https://github.com/coder058/relay"
-    },
-    "data": {
-      "project": "Pattern Forge",
-      "one_liner": "Prefix-only replay without look-ahead; PostgreSQL persistence in CI only.",
-      "walkthrough": "https://coder058.github.io/profile/projects/pattern-forge.html",
-      "data": "https://coder058.github.io/profile/projects/pattern-forge.html#data",
-      "github": "https://github.com/coder058/pattern-forge"
-    },
-    "markets": {
-      "project": "Python trading bot",
-      "one_liner": "Live Python system on AWS Lightsail, then ledger work after it stopped.",
-      "walkthrough": "https://coder058.github.io/profile/projects/polybow.html",
-      "data": "https://coder058.github.io/profile/projects/polybow.html#data",
-      "github": "https://github.com/coder058/polybow-case-study"
-    },
-    "fde": {
-      "project": "Relay",
-      "one_liner": "Scoped a quote workflow, then exposed it as HTTP and MCP.",
-      "walkthrough": "https://coder058.github.io/profile/projects/relay.html",
-      "data": "https://coder058.github.io/profile/projects/relay.html#data",
-      "github": "https://github.com/coder058/relay"
-    }
-  },
-  "form_answers": {
-    "full_name": "Jordi Lluis",
-    "preferred_name": "Jordi",
-    "legal_name_if_different": "Unknown — do not guess. Public applications use Jordi Lluis. If a government/payroll form requires a passport name, stop and ask.",
-    "city": "Amsterdam",
-    "country": "Netherlands",
-    "phone": "+31 6 1949 6593",
-    "email": "joord918@gmail.com",
-    "website": "https://coder058.github.io/profile/",
-    "github": "https://github.com/coder058",
-    "linkedin": "https://www.linkedin.com/in/jordi-lluis-14228242a/",
-    "work_authorization_eu": "Yes. EU citizen. No sponsorship needed in the EU.",
-    "need_visa_eu": "No",
-    "need_visa_us_uk": "Yes, unless the employer relocates and sponsors. Do not apply to US/UK citizenship-only roles.",
-    "willing_to_relocate": "Yes, EU first",
-    "remote_ok": "Yes",
-    "hybrid_ok": "Yes, if office days are in Spain or the Netherlands",
-    "dutch_fluent": "No. Dutch is A1. Skip roles that require Dutch fluency.",
-    "english": "C2",
-    "spanish": "Native",
-    "years_professional_software_employment": 0,
-    "years_building_software_since_bootcamp": "Le Wagon full-stack, 2023. Public projects 2024–present.",
-    "years_experience_on_forms": "Answer the field as written. Professional software employment is 0. Personal projects and a bootcamp do not become contracted years. Never write 1 or 2 as a substitute. If the form only accepts a number for professional years, use 0. If it is optional, leave it blank. Never count logistics years as software years.",
-    "current_title": "Do not invent a software job title. Latest listed work is e-commerce dispatch at De Bommel (2025).",
-    "notice_period": "Unknown. De Bommel has no confirmed end date. Do not write unemployed or available immediately as a fact. If the form requires a phrase, use To be confirmed.",
-    "salary_expectation": "Not set. If optional, leave blank. If the field requires a number, skip the listing rather than invent one. Currency would be EUR.",
-    "highest_education": "Level 6 Diploma in Applied Finance, Distinction, June 2016 (Amplify Trading). Also Le Wagon full-stack 2023. Do not call the diploma a university degree.",
-    "gender_pronouns_etc": "Leave blank unless required.",
-    "disability_veteran_eeo": "Leave blank / decline to self-identify unless Jordi has given an answer.",
-    "how_did_you_hear": "Company careers page / job board. Do not invent a referral name."
-  },
-  "employment_for_forms": [
-    {
-      "employer": "De Bommel",
-      "title": "E-commerce dispatch",
-      "location": "Netherlands",
-      "dates": "2025",
-      "end_date_confirmed": false,
-      "software_job": false,
-      "summary": "Processed 700+ inbound/outbound furniture orders a day in Ceyenne (WMS). Prepared DHL despatches. Booked inbound trucks. Signed transport documents. DHL is the carrier, not a WMS. Do not round 700+ up or call it parcels unless the user says so."
-    },
-    {
-      "employer": "IAS Handling — Barcelona–El Prat Airport",
-      "title": "Inbound Manager Assistant",
-      "location": "Barcelona, Spain",
-      "dates": "2019–2020",
-      "software_job": false,
-      "summary": "Inbound air cargo in a bonded warehouse: arriving shipments, customs documentation and WMS records. Not Inbound Manager. Product name unknown — do not invent one. Do not write outbound cargo."
-    },
-    {
-      "employer": "Transjunior Logistics",
-      "title": "Team Leader",
-      "location": "Spain",
-      "dates": "2018",
-      "software_job": false,
-      "summary": "Warehouse team leader: shifts, order processing, rotating stock and inventory in the WMS. Product name unknown. Not a CRM. Not a programming job."
-    },
-    {
-      "employer": "Home Fundraiser Ltd",
-      "title": "Planner",
-      "location": "London, United Kingdom",
-      "dates": "2016–2017",
-      "software_job": false,
-      "summary": "Planner: daily routes and field-team organisation with the team leader. Do not title this role Team Leader."
-    },
-    {
-      "employer": "Amplify Trading",
-      "title": "Futures trading (after training)",
-      "location": "United Kingdom",
-      "dates": "2016",
-      "software_job": false,
-      "summary": "Traded Gold and Dow Jones futures on an Amplify live account after the programme. Order flow plus technical and fundamental views. Do not state account size, P&L, internship, or diploma duration."
-    }
-  ],
-  "education_for_forms": [
-    {
-      "institution": "Anthropic and OpenAI online courses",
-      "what": "Further learning",
-      "dates": "2024–present",
-      "note": "MCP is a skill, not a school. Do not list unfinished course names."
-    },
-    {
-      "institution": "Le Wagon, Barcelona",
-      "what": "Full-stack development",
-      "dates": "2023",
-      "note": "Ruby, Rails, JavaScript, PostgreSQL, HTML/CSS, Git. City Gardens was a team project."
-    },
-    {
-      "institution": "Amplify Trading",
-      "what": "Level 6 Diploma in Applied Finance",
-      "dates": "June 2016",
-      "grade": "Distinction"
-    },
-    {
-      "institution": "Instituto de Sonido de Caracas",
-      "what": "Sound Engineering",
-      "dates": "2015–2016"
-    },
-    {
-      "institution": "Madison Learning Center, Caracas, Venezuela",
-      "what": "High school",
-      "dates": "2014",
-      "note": "On the canonical resume and the one-page PDF."
-    }
-  ],
-  "filters": {
-    "seniority": "junior / entry / graduate / trainee / associate / clearly non-senior only",
-    "employment": "full-time only. If employment type is unwritten (tier C), confirm full-time before applying.",
-    "geo": "ES, NL, remote-EU first; broader Europe / remote / US only if the listing is otherwise a fit",
-    "skip": [
-      "internship, working-student, apprenticeship, part-time, freelance, contract, temporary",
-      "senior, staff, principal, lead, manager, head, director",
-      "Dutch fluency required (Dutch is A1)",
-      "US/UK citizenship-only or visa-required outside the EU without an explicit reloc offer"
-    ]
-  },
-  "never_claim": [
-    "Sentry, RAG in production, model training, fine-tuning, MLOps, vector databases",
-    "LangChain essentials as a production LangChain/RAG app or an agent platform",
-    "FDE / Solutions Engineer as a job title or enterprise customer deployments",
-    "Programming jobs at De Bommel, IAS Handling, Transjunior, Home Fundraiser or Amplify",
-    "A named WMS/CRM product except Ceyenne (Diract IT WMS) at De Bommel",
-    "DHL as a second WMS; DHL is the carrier",
-    "Inbound Manager at IAS; the title is Inbound Manager Assistant",
-    "Team Leader at Home Fundraiser; that role is Planner working with the team leader",
-    "Outbound cargo at IAS; the user described arriving shipments and documents",
-    "Amplify account size, P&L, internship, or diploma duration",
-    "City Gardens as sole-authored or a featured product",
-    "Info Desk as a production newsroom, live OFAC feed, RAG in production, or auto-publish",
-    "200 Le Wagon challenges, API labs as Education, StratD",
-    "Pattern Forge public demo serving PostgreSQL",
-    "Relay as eligibility scoring or an AI that decides hiring",
-    "the Python trading bot as a durable edge, profitability, or public live-bot code",
-    "Private repo lewagon-api-lab as a public link",
-    "A numeric salary, notice period, or legal/passport name that is not in this file",
-    "Professional software years other than 0; do not write 1 or 2 as a substitute"
-  ],
-  "linkedin_note": "LinkedIn may still show older employment wording (confidential logistics). The CV and this file are the source of truth for applications. Do not copy LinkedIn titles onto forms.",
-  "job_store_is_not_a_shortlist": "The 5k CSV is a discovery dump, not a verified apply list. Many descriptions are empty or truncated to 600 characters. Keyword scores are not a hiring filter. Open the original listing and check seniority, employment type, country, language and required years before applying. Do not treat a score of 100 as a fit.",
-  "log_applications_to": "C:\\Users\\jamon\\Desktop\\job\\data\\applications.json",
-  "log_only_after_confirmed_submit": true,
-  "application_log_schema": {
-    "id": "short id",
-    "company": "",
-    "role": "",
-    "url": "",
-    "location": "",
-    "comp_range": null,
-    "applied_date": "YYYY-MM-DD",
-    "status": "applied",
-    "source": "",
-    "pack_used": "fullstack | ai | data | software | fde",
-    "cv_file": "ATS URL uploaded",
-    "match_score": null,
-    "notes": "",
-    "next_action": "wait 7 days",
-    "next_action_date": "YYYY-MM-DD",
-    "history": [
-      {
-        "date": "YYYY-MM-DD",
-        "event": "applied via ..."
-      }
-    ]
-  },
-  "canonical_facts": "C:\\Users\\jamon\\Desktop\\job\\profile\\resume.md",
-  "pack_guide": "C:\\Users\\jamon\\Desktop\\job\\profile\\cv-variants.md"
+  ]
 }

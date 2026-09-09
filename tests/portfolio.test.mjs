@@ -50,30 +50,75 @@ test('a reader can scan the stack and the evidence behind each project', () => {
   assert.match(html, /pattern-forge-five\.vercel\.app/);
   assert.match(html, /relay-ten-zeta\.vercel\.app/);
   assert.match(html, /polybow-archive\.vercel\.app/);
-  assert.match(html, /Claims table · SQLite write only on approve/);
+  assert.match(html, /Cited claims · approval ledger · regression harness/);
   assert.match(html, /coder058\.github\.io\/info-desk/);
+  // SOURCE: 10 Sep 2026 audit — the public URL serves a recorded case, not the local live workspace.
+  assert.match(html, /A recorded evidence case/);
+  assert.match(html, /local live-research workspace/);
   assert.equal((html.match(/class="project-data"/g) || []).length, 4);
   for (const slug of ['polybow', 'pattern-forge', 'relay', 'info-desk']) {
     assert.ok(html.includes(`href="projects/${slug}.html#data"`), slug);
   }
 });
 
-test('Le Wagon labs sit in a More challenges window, not featured cards', () => {
+test('training work links only to destinations that are actually public', () => {
   assert.doesNotMatch(html, />Challenges</);
-  assert.match(html, /<h2 id="challenges-title">More challenges<\/h2>/);
+  assert.match(html, /<h2 id="challenges-title">Training work<\/h2>/);
   assert.match(html, /class="challenges-window"/);
-  assert.doesNotMatch(html, /Other projects|DispatchOps|Transcript Desk|City Gardens|not sole-authored|Selected course exercises/);
-  assert.doesNotMatch(html, /API labs|Rails exercises/);
+  assert.doesNotMatch(html, /Other projects|DispatchOps|Transcript Desk|not sole-authored|Selected course exercises/);
   const css = readFileSync(new URL('../presentation.css', import.meta.url), 'utf8');
   assert.doesNotMatch(css, /challenges-window\{[^}]*min-height:calc\(100vh/);
-  assert.match(html, /js-geocoder/);
+  // SOURCE: 10 Sep 2026 link check — the seven js-* repositories are private and returned 404.
+  for (const dead of ['js-geocoder', 'js-fork-restaurants', 'js-weather', 'js-ask-an-ai',
+    'js-ajax-autocomplete', 'js-anonymous-chat', 'js-ajax-search', 'q=js-']) {
+    assert.doesNotMatch(html, new RegExp(dead.replace('=', '=')), dead);
+  }
   assert.match(html, /rails-task-manager/);
   assert.match(html, /rails-wikinimous/);
+  assert.match(html, /City Gardens \(team\)/);
   assert.doesNotMatch(html, /unfinished scaffold/);
   assert.doesNotMatch(html, /200 challenges|every Le Wagon Kitt challenge was completed/i);
   assert.doesNotMatch(html, /lewagon-api-lab/);
   assert.ok(html.indexOf('id="work"') < html.indexOf('id="more-challenges"'));
   assert.equal((html.match(/class="project-card /g) || []).length, 4);
+});
+
+test('four cards fill a two-column grid without a stretched last row', () => {
+  const squares = readFileSync(new URL('../project-squares.css', import.meta.url), 'utf8');
+  const ready = readFileSync(new URL('../application-ready.css', import.meta.url), 'utf8');
+  assert.match(squares, /\.project-grid\{grid-template-columns:repeat\(2,minmax\(0,1fr\)\)/);
+  // SOURCE: 10 Sep 2026 audit — the last card used to span the full row and left a gap.
+  assert.doesNotMatch(ready, /\.project-card:last-child\{grid-column:1\/-1\}/);
+});
+
+test('the resume page offers selectable text and the ATS file, not only an image', () => {
+  const resume = readFileSync(new URL('../resume.html', import.meta.url), 'utf8');
+  const css = readFileSync(new URL('../resume-packs.css', import.meta.url), 'utf8');
+  assert.match(resume, /class="resume-mobile-copy"/);
+  assert.match(resume, /ATS PDF \(text-selectable\)/);
+  assert.match(resume, /Haystack #12635/);
+  // SOURCE: 10 Sep 2026 audit — at 390px the CV image text was too small to read.
+  assert.match(css, /\.resume-mobile-copy\{display:none\}/);
+  const narrow = css.slice(css.indexOf('@media(max-width:700px)'));
+  assert.match(narrow, /\.resume-sheet\{display:none\}/);
+  assert.match(narrow, /\.resume-mobile-copy\{[^}]*display:block/);
+});
+
+test('the published apply-pack is a CV manifest with no internal instructions', () => {
+  const raw = readFileSync(new URL('../apply-pack.json', import.meta.url), 'utf8');
+  const pack = JSON.parse(raw);
+  assert.deepEqual(pack.packs.map((item) => item.id), ['fullstack', 'ai', 'data', 'software', 'fde']);
+  assert.equal(pack.default_pack, 'software');
+  // SOURCE: 10 Sep 2026 audit — the public URL exposed local paths and prepared answers.
+  for (const leak of ['form_answers', 'how_to_submit', 'pack_selection', 'never_claim',
+    'log_applications_to', 'letter_template', 'ready_to_apply', 'salary', 'notice_period',
+    'C:\\\\Users', 'output/pdf']) {
+    assert.ok(!raw.includes(leak), leak);
+  }
+  for (const entry of pack.packs) {
+    assert.match(entry.sha256_ats, /^[0-9a-f]{64}$/);
+    assert.match(entry.ats_pdf, /^https:\/\/coder058\.github\.io\/profile\/assets\//);
+  }
 });
 
 test('project content stays visible without an animation callback', () => {

@@ -71,7 +71,6 @@ test('résumé page shows the one-page CV', () => {
   assert.ok(existsSync(new URL('../assets/jordi-lluis-cv.png', import.meta.url)));
   assert.ok(existsSync(new URL('../assets/jordi-lluis-cv-ats.pdf', import.meta.url)));
   const pack = JSON.parse(readFileSync(new URL('../apply-pack.json', import.meta.url), 'utf8'));
-  assert.equal(pack.ready_to_apply, true);
   assert.deepEqual(pack.packs.map((item) => item.id), ['fullstack', 'ai', 'data', 'software', 'fde']);
   for (const [, target] of html.matchAll(/(?:href|src)="([^"#]+)"/g)) {
     if (/^(https?:|mailto:)/.test(target)) continue;

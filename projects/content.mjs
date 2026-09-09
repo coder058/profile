@@ -46,9 +46,9 @@ export const projects = [
   },
   {
     slug: 'info-desk', name: 'Info Desk', stack: 'Python · FastAPI · SQLite · limited tools',
-    summary: 'OFAC licenses, the White House oil fact sheet, and AP quotes on one claims table. Demo and evals, not a newsroom in production.',
-    problem: 'A model that “summarises the news” can treat an OFAC license list as the same document as a White House fact sheet, pick a ranking, or treat “this page does not name 17 fields” as confirmation. I wanted a desk that compares what each public recording actually says, and refuses to write until a person approves.',
-    contribution: 'I stored dated recordings of the OFAC Venezuela page, the 31 August 2026 fact sheet, and AP quotes (not the full article). Python builds a claims table: stated, absent, denied, or attributed. Named extractors keep 65 billion field barrels separate from 46 billion U.S. territorial barrels. lookup_license(99Z) is empty. SQLite inserts a note only when a human approves publish_draft. The six-case harness scores the database.',
+    summary: 'A recorded evidence case: OFAC licenses, a White House oil fact sheet and AP quotes compared in one claims table. The repository also includes a local live-research workspace.',
+    problem: 'A model that “summarises the news” can flatten an OFAC license list and a White House fact sheet into one answer, pick a ranking, or confuse an absent mention with confirmation. I wanted a desk that preserves what each source actually says and keeps publication approval separate from drafting.',
+    contribution: 'The public case stores dated recordings of the OFAC Venezuela page, the 31 August 2026 fact sheet and AP quotes (not the full article). Python builds a claims table: stated, absent, denied or attributed. Named extractors keep 65 billion field barrels separate from 46 billion U.S. territorial barrels. SQLite inserts a note only when a human approves publish_draft. The repository also includes a local-only live workspace with allowlisted EIA, Federal Register and OFAC connectors, versioned captures and cited retrieval.',
     demo: 'https://coder058.github.io/info-desk/',
     demoLabel: 'Open the oil desk',
     code: 'https://github.com/coder058/info-desk',
@@ -61,7 +61,7 @@ export const projects = [
     ],
     steps: [
       'Open the desk. You should see three public URLs: OFAC, White House, AP — not toy pages.',
-      'Read the claims table. OFAC denies NABEP / 17 fields; White House and AP state them. $200bn royalties sit on the fact sheet only.',
+      'Read the claims table. The OFAC recording does not name NABEP / 17 fields; White House and AP state them. $200bn royalties sit on the fact sheet only.',
       'Check the ranking row: “second-largest private producer” vs “second largest operator, behind Chevron.” The desk must not pick one.',
       'Read the OFAC license table (46D, 50C, 52B). A license list is not the fact-sheet deal.',
       'If you run it locally, reject the draft and check SQLite: approved writes stay 0. Approve is refused unless the action is publish_draft.'
@@ -74,7 +74,7 @@ export const projects = [
       ['Store', 'SQLite', 'approve() is the only insert into notes.']
     ],
     recordsTitle: 'How the data was organised',
-    recordsIntro: 'The public GitHub Pages view is the last claims table (case.json). Local FastAPI uses SQLite. There is no hosted news database and no live OFAC scrape in CI.',
+    recordsIntro: 'The public GitHub Pages view is the recorded claims table (case.json). The repository also has a local FastAPI live workspace with versioned SQLite captures. It is not publicly hosted, so the public card remains an inspectable recorded case rather than a live service.',
     recordsCaption: 'Records, keys and who may write',
     records: [
       ['recordings/', 'Public URL plus fetch date', 'OFAC and White House as text. AP as quotes only, not a republication.'],
@@ -91,7 +91,7 @@ export const projects = [
       'Run pytest in CI. Do not call a hosted LLM there.'
     ],
     run: 'python -m pip install -e ".[dev]"\npython -m pytest\npython -m infodesk.harness\npython -m infodesk.app',
-    limits: 'Demo and evals, not a shipped newsroom. CI uses dated recordings, not a live OFAC scrape. Ollama is optional and off in CI. A fact sheet is not signed contracts. AP quotes are not the full article. Venezuela oil/sanctions is the example rail, not official access. The public page does not host SQLite.'
+    limits: 'The public page is a recorded case. The live workspace runs locally and requires an appropriate hosted backend, access controls, persistent storage and an inference configuration before it can be offered as a public service. CI uses dated recordings. A fact sheet is not signed contracts, and AP quotes are not the full article.'
   },
   {
     slug: 'relay', name: 'Relay', stack: 'MCP · Python · FastAPI · React · TypeScript',
