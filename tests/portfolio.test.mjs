@@ -94,14 +94,16 @@ test('four cards fill a two-column grid without a stretched last row', () => {
 test('the resume page offers selectable text and the ATS file, not only an image', () => {
   const resume = readFileSync(new URL('../resume.html', import.meta.url), 'utf8');
   const css = readFileSync(new URL('../resume-packs.css', import.meta.url), 'utf8');
-  assert.match(resume, /class="resume-mobile-copy"/);
+  assert.match(resume, /class="resume-text"/);
   assert.match(resume, /ATS PDF \(text-selectable\)/);
   assert.match(resume, /Haystack #12635/);
-  // SOURCE: 10 Sep 2026 audit — at 390px the CV image text was too small to read.
-  assert.match(css, /\.resume-mobile-copy\{display:none\}/);
-  const narrow = css.slice(css.indexOf('@media(max-width:700px)'));
-  assert.match(narrow, /\.resume-sheet\{display:none\}/);
-  assert.match(narrow, /\.resume-mobile-copy\{[^}]*display:block/);
+  // SOURCE: full résumé text is now generated from the same data as the PDFs.
+  assert.match(resume, /<h2>Experience<\/h2>/);
+  assert.match(resume, /<h2>Education &amp; training<\/h2>/);
+  assert.match(resume, /De Bommel/);
+  assert.match(resume, /Info Desk/);
+  assert.match(resume, /<details class="resume-preview">/);
+  assert.doesNotMatch(css, /\.resume-text\{[^}]*display:none/);
 });
 
 test('the published apply-pack is a CV manifest with no internal instructions', () => {

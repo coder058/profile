@@ -60,13 +60,13 @@ test('Relay and Pattern Forge walkthroughs include a skills table', () => {
 test('résumé page shows the one-page CV', () => {
   const html = readFileSync(new URL('../resume.html', import.meta.url), 'utf8');
   const index = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
-  assert.match(html, /<h1 class="visually-hidden">Résumé<\/h1>/);
+  assert.match(html, /<h1>Jordi Lluis<\/h1>/);
   assert.match(html, /assets\/jordi-lluis-cv\.png/);
   assert.match(html, /<figure class="resume-sheet">/);
   assert.match(html, /assets\/jordi-lluis-cv\.pdf/);
   assert.match(html, /assets\/jordi-lluis-cv-ats\.pdf/);
   assert.match(index, /href="resume\.html\?v=cv"/);
-  assert.doesNotMatch(html, /One page\. The designed file|volume pack|scientist-light|apply-pack\.json|FDE-shaped|Designed PDF/i);
+  assert.doesNotMatch(html, /One page\. The designed file|volume pack|scientist-light|apply-pack\.json|FDE-shaped/i);
   assert.ok(existsSync(new URL('../assets/jordi-lluis-cv.pdf', import.meta.url)));
   assert.ok(existsSync(new URL('../assets/jordi-lluis-cv.png', import.meta.url)));
   assert.ok(existsSync(new URL('../assets/jordi-lluis-cv-ats.pdf', import.meta.url)));

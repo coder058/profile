@@ -22,8 +22,8 @@
   "default_pdf": {
     "designed": "https://coder058.github.io/profile/assets/jordi-lluis-cv.pdf",
     "ats": "https://coder058.github.io/profile/assets/jordi-lluis-cv-ats.pdf",
-    "sha256_designed": "2ee70d308119be769c62ed6e28dbe4472f143ac24089a6efa92f267fad3a7419",
-    "sha256_ats": "9f24ef8fe501a02abdf400b12ef459a3f32bd6aea03deb1ccc6174f27b961bf3"
+    "sha256_designed": "ae65f9bfd431946b6f99fbd9c1a9af957498278a74fef800891ace27607542d6",
+    "sha256_ats": "4c3275d702e9f1079e9dc81dcf0ded7a066b32705444b957e82cae5e37fb7f90"
   },
   "packs": [
     {
@@ -31,40 +31,40 @@
       "use_for": "Fullstack, backend, frontend and product engineering",
       "designed_pdf": "https://coder058.github.io/profile/assets/jordi-lluis-fullstack-cv.pdf",
       "ats_pdf": "https://coder058.github.io/profile/assets/jordi-lluis-fullstack-cv-ats.pdf",
-      "sha256_designed": "23df05dfec111a72c9c79fd5c174e8e6cee8ce0833ce34e44d2697f901a130ba",
-      "sha256_ats": "4d94d7c91d32c02aaeb8301c5e0d47ae4bb4bdad1cdb5e1470e81638b09fe5e5"
+      "sha256_designed": "5518ddacff61cc9415c3d3c3210cded03136bc52a88c3c748d3bbf321946522f",
+      "sha256_ats": "30b8b9d9d7eb47143e6de23698babdcc17330785571ca9f0d4276638c92af64f"
     },
     {
       "id": "ai",
       "use_for": "AI, LLM, MCP and agent tooling",
       "designed_pdf": "https://coder058.github.io/profile/assets/jordi-lluis-ai-cv.pdf",
       "ats_pdf": "https://coder058.github.io/profile/assets/jordi-lluis-ai-cv-ats.pdf",
-      "sha256_designed": "ece0d47e0e519b18a6bf2d89092d1dfe837d9ca51166656c9874dbd1c551044d",
-      "sha256_ats": "7a9a3c73b6d9b82ec36d492f3b0e1d3e6bf026ae3e5bcbaaa2e598bbabc78f57"
+      "sha256_designed": "b689973552bcf65c01127ed768be05b73d33c6bccfc20c55c294567904758185",
+      "sha256_ats": "77e1b4e95939d7670d217d260b7368f0da097ad19b7adfd69f7700126f37b70e"
     },
     {
       "id": "data",
       "use_for": "Data engineering and analytics",
       "designed_pdf": "https://coder058.github.io/profile/assets/jordi-lluis-data-cv.pdf",
       "ats_pdf": "https://coder058.github.io/profile/assets/jordi-lluis-data-cv-ats.pdf",
-      "sha256_designed": "d3194209eb4b99ca23a045c78049d1cd544ff10c247284029da083e2bb765a8d",
-      "sha256_ats": "3e7c807e47c19cdda9b99f146c1e86186b5ff042277b954421850df45be8b868"
+      "sha256_designed": "5141b4cf1fba8d8c65adae129c059aab9a21c7827e303203f41d5d52cf68a38f",
+      "sha256_ats": "a5bc182212bf3fdb2a5a4014e8a65989b9f7f30d7f32d96d76a24dddcb5c4c30"
     },
     {
       "id": "software",
       "use_for": "General software engineering",
       "designed_pdf": "https://coder058.github.io/profile/assets/jordi-lluis-software-cv.pdf",
       "ats_pdf": "https://coder058.github.io/profile/assets/jordi-lluis-software-cv-ats.pdf",
-      "sha256_designed": "521430b664339f38be0f80951262f1f98cc8b674f91559c0a9808bdb265a5e6d",
-      "sha256_ats": "5fa6116b6aea3df9b18e3c407c00f9e97e53eb3371f6c2b90c76955cb556e78b"
+      "sha256_designed": "23ae4800c642a2c4626cb537f3fc7bba7541f244acfb26ce78ab1d2ce5ca774c",
+      "sha256_ats": "a5671e0408a7a38c3f5c4f4f85b6e79b83c45db740de3293c271be898a1f7640"
     },
     {
       "id": "fde",
       "use_for": "Forward-deployed and solutions engineering",
       "designed_pdf": "https://coder058.github.io/profile/assets/jordi-lluis-fde-cv.pdf",
       "ats_pdf": "https://coder058.github.io/profile/assets/jordi-lluis-fde-cv-ats.pdf",
-      "sha256_designed": "b52ceb80de0dfd6ee3105f02d51f731a32750940c1c4a07befa681330df0e384",
-      "sha256_ats": "3a3f7d8c45b288fe297702ed66b1cbe72d60cbd6977be4a640c389cf09cde9f5"
+      "sha256_designed": "4948808bc3cb3eacead2f1bc1af7f828c38dcb77a8db8e08c866c3af5382f330",
+      "sha256_ats": "0693f8e322b5221d998fe27c0b352ea8b707f1e365eede0b4d67fe568ebec241"
     }
   ]
 }
