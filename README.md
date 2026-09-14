@@ -1,45 +1,30 @@
-# Jordi Lluis — portfolio
+# Jordi Lluis — Python & data software
 
-A small portfolio of interactive systems and the questions behind them.
+[Portfolio](https://coder058.github.io/profile/) · [Résumé](https://coder058.github.io/profile/resume.html)
 
-Canonical portfolio: https://coder058.github.io/profile/
+Independent engineering projects and open-source work, with a background in logistics operations and applied finance. The website does not claim employed software seniority.
 
-## Selected work
+## Featured evidence
 
-- **Pattern Forge** — replay without look-ahead; CI runs tests, Docker and a PostgreSQL restart. The public demo does not serve that database.
-- **Info Desk** — a recorded claims table with source quotes, plus a local live-research workspace with versioned captures and human-approved notes.
-- **Relay** — four read-only MCP tools and a React UI share one matcher. Paste a listing; each hit is a quote, not a hiring score. Arbeitnow is a demo snapshot.
-- **Python trading bot** — a historical prediction-market system and evidence-led postmortem: development history, scoped API-response timings, wallet reconciliation and the full negative outcome. Not proof of a profitable strategy.
+- Polybow: independently operated Python execution and recording, then reconciliation and a public postmortem. Private bot code and raw recordings are not published. No durable-profitability claim.
+- Pattern Forge: interactive replay without look-ahead. Python/PostgreSQL ingestion and restart checks run locally/in CI; the public demo does not serve that database.
+- Info Desk: a recorded evidence case. The live research workspace requires local setup; evaluation limitations are linked.
+- Haystack: a focused merged validation fix, with regression test and maintainer review.
 
-Each selected card links to its demo and a separate project walkthrough with the problem, contribution, usage steps, dependency table and limitations. Training work links to the team City Gardens project and public Rails exercises. Private or unavailable exercises are not linked as public evidence.
+Relay remains available as a repository walkthrough, labelled as having an unavailable public backend. Training work is separate. No projects or deployments were deleted.
 
-[Résumé](https://coder058.github.io/profile/resume.html) — the curated one-page PDF. GitHub is for code, not a second résumé.
+## Build and verify
 
-The 2026-08-28 project audit removed VÆRN and Atelier Z from the featured selection because their hosted storefronts do not demonstrate the depth of the underlying systems. Their projects and existing deployments were not deleted. Course exercises remain outside the featured portfolio.
+No package installation is required for the static site.
 
-The interaction system uses scroll-linked palette changes, progressive reveals and reduced-motion fallbacks. It takes inspiration from archival editorial websites without copying their branding or assets.
-
-## Run locally
-
-No package installation is required. The committed HTML works directly. After editing `projects/content.mjs`, regenerate and check the guides:
-
-```bash
+```sh
 node scripts/build-project-guides.mjs
 node --test tests/*.test.mjs
+python -m http.server 8765 --bind 127.0.0.1
 ```
 
-Serve the directory locally:
+Edit project guides through projects/content.mjs. The résumé HTML, PDFs and public manifest are generated from the private workspace's canonical profile; never publish its internal application instructions. The public manifest exposes only the backend and market-data packs, public contact information and checksums.
 
-```bash
-python -m http.server 8765
-```
+## Publication and privacy
 
-Then visit <http://127.0.0.1:8765/>.
-
-## Deployment
-
-The repository is configured around the `gh-pages` branch and can be published with GitHub Pages after the content, résumé and links receive a final review. Publication is intentionally separate from local development.
-
-## Assets and privacy
-
-The portrait and résumé in `assets/` are personal data intended for the public portfolio. Review them before publishing. Do not add secrets, private trading data, API keys or wallet information to this repository.
+GitHub Pages serves gh-pages. Review text, PDF renders, links and tests before publishing. Do not add credentials, private trading logs, wallet identifiers, prepared application answers or local filesystem paths to this repository.

@@ -17,13 +17,13 @@ test('each project has a rendered journey, dependencies, contribution and limits
     assert.equal((html.match(/<h1>/g)||[]).length,1);
   }
 });
-test('cards lead to live demos, with walkthroughs one click away', () => {
+test('cards distinguish interactive demos, recorded cases and external review', () => {
   const html = readFileSync(new URL('../index.html',import.meta.url),'utf8');
   assert.match(html, /href="https:\/\/pattern-forge-five\.vercel\.app\/"/);
-  assert.match(html, /href="https:\/\/relay-ten-zeta\.vercel\.app\/"/);
-  assert.match(html, /href="https:\/\/polybow-archive\.vercel\.app\/"/);
+  assert.match(html, /href="projects\/polybow\.html"/);
+  assert.match(html, /href="https:\/\/github.com\/deepset-ai\/haystack\/pull\/12635"/);
   assert.match(html, /href="https:\/\/coder058\.github\.io\/info-desk\/"/);
-  for (const slug of ['polybow','pattern-forge','relay','info-desk']) assert.ok(html.includes(`href="projects/${slug}.html#data"`));
+  for (const slug of ['polybow','pattern-forge','info-desk']) assert.ok(html.includes(`href="projects/${slug}.html#data"`));
   assert.ok(!html.includes('<h3>City Gardens</h3>'));
 });
 
@@ -71,7 +71,7 @@ test('résumé page shows the one-page CV', () => {
   assert.ok(existsSync(new URL('../assets/jordi-lluis-cv.png', import.meta.url)));
   assert.ok(existsSync(new URL('../assets/jordi-lluis-cv-ats.pdf', import.meta.url)));
   const pack = JSON.parse(readFileSync(new URL('../apply-pack.json', import.meta.url), 'utf8'));
-  assert.deepEqual(pack.packs.map((item) => item.id), ['fullstack', 'ai', 'data', 'software', 'fde']);
+  assert.deepEqual(pack.packs.map((item) => item.id), ['software', 'data']);
   for (const [, target] of html.matchAll(/(?:href|src)="([^"#]+)"/g)) {
     if (/^(https?:|mailto:)/.test(target)) continue;
     assert.ok(existsSync(new URL('../' + target.split('?')[0], import.meta.url)), target);

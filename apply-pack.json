@@ -22,49 +22,25 @@
   "default_pdf": {
     "designed": "https://coder058.github.io/profile/assets/jordi-lluis-cv.pdf",
     "ats": "https://coder058.github.io/profile/assets/jordi-lluis-cv-ats.pdf",
-    "sha256_designed": "ae65f9bfd431946b6f99fbd9c1a9af957498278a74fef800891ace27607542d6",
-    "sha256_ats": "4c3275d702e9f1079e9dc81dcf0ded7a066b32705444b957e82cae5e37fb7f90"
+    "sha256_designed": "b379bc8ba3d9e9ae678affa1d07094285df8122fcb639e6658680ce88c13b0bd",
+    "sha256_ats": "7734379add08c72c4da62cc85576500c2fe9b12a6684c8ef2d8c80078c479f84"
   },
   "packs": [
     {
-      "id": "fullstack",
-      "use_for": "Fullstack, backend, frontend and product engineering",
-      "designed_pdf": "https://coder058.github.io/profile/assets/jordi-lluis-fullstack-cv.pdf",
-      "ats_pdf": "https://coder058.github.io/profile/assets/jordi-lluis-fullstack-cv-ats.pdf",
-      "sha256_designed": "5518ddacff61cc9415c3d3c3210cded03136bc52a88c3c748d3bbf321946522f",
-      "sha256_ats": "30b8b9d9d7eb47143e6de23698babdcc17330785571ca9f0d4276638c92af64f"
-    },
-    {
-      "id": "ai",
-      "use_for": "AI, LLM, MCP and agent tooling",
-      "designed_pdf": "https://coder058.github.io/profile/assets/jordi-lluis-ai-cv.pdf",
-      "ats_pdf": "https://coder058.github.io/profile/assets/jordi-lluis-ai-cv-ats.pdf",
-      "sha256_designed": "b689973552bcf65c01127ed768be05b73d33c6bccfc20c55c294567904758185",
-      "sha256_ats": "77e1b4e95939d7670d217d260b7368f0da097ad19b7adfd69f7700126f37b70e"
+      "id": "software",
+      "use_for": "Python backend and operations software",
+      "designed_pdf": "https://coder058.github.io/profile/assets/jordi-lluis-software-cv.pdf",
+      "ats_pdf": "https://coder058.github.io/profile/assets/jordi-lluis-software-cv-ats.pdf",
+      "sha256_designed": "bacd21030221d7d224a4a47df379b501e62120a54ef14abd15a9ca0aa65cef7c",
+      "sha256_ats": "a86624aa220fb34cd50db443f5c74cd077948ec72517c563a7f3d0c56c2ed831"
     },
     {
       "id": "data",
-      "use_for": "Data engineering and analytics",
+      "use_for": "Market-data software and financial data platforms",
       "designed_pdf": "https://coder058.github.io/profile/assets/jordi-lluis-data-cv.pdf",
       "ats_pdf": "https://coder058.github.io/profile/assets/jordi-lluis-data-cv-ats.pdf",
-      "sha256_designed": "5141b4cf1fba8d8c65adae129c059aab9a21c7827e303203f41d5d52cf68a38f",
-      "sha256_ats": "a5bc182212bf3fdb2a5a4014e8a65989b9f7f30d7f32d96d76a24dddcb5c4c30"
-    },
-    {
-      "id": "software",
-      "use_for": "General software engineering",
-      "designed_pdf": "https://coder058.github.io/profile/assets/jordi-lluis-software-cv.pdf",
-      "ats_pdf": "https://coder058.github.io/profile/assets/jordi-lluis-software-cv-ats.pdf",
-      "sha256_designed": "23ae4800c642a2c4626cb537f3fc7bba7541f244acfb26ce78ab1d2ce5ca774c",
-      "sha256_ats": "a5671e0408a7a38c3f5c4f4f85b6e79b83c45db740de3293c271be898a1f7640"
-    },
-    {
-      "id": "fde",
-      "use_for": "Forward-deployed and solutions engineering",
-      "designed_pdf": "https://coder058.github.io/profile/assets/jordi-lluis-fde-cv.pdf",
-      "ats_pdf": "https://coder058.github.io/profile/assets/jordi-lluis-fde-cv-ats.pdf",
-      "sha256_designed": "4948808bc3cb3eacead2f1bc1af7f828c38dcb77a8db8e08c866c3af5382f330",
-      "sha256_ats": "0693f8e322b5221d998fe27c0b352ea8b707f1e365eede0b4d67fe568ebec241"
+      "sha256_designed": "8ec173b10e495c95d26160b0709d09410788d280d3256c7815f3ae74ef2ae9a8",
+      "sha256_ats": "04eecfce21704c7dbbcaf27718f832d83df78a6559c67bf19fff8860f1092f67"
     }
   ]
 }

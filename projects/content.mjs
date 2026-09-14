@@ -128,14 +128,15 @@ export const projects = [
     limits: 'This is not a job-search product and not a recruiter ATS. Arbeitnow is a bounded demo snapshot; paste is the path a reviewer will actually use. Matching is literal, not semantic recall: ordinary English such as “react” or “go” can still hit. An agent that calls these tools can still summarise; Relay does not score eligibility or prove a vacancy is open.'
   },
   {
-    slug: 'polybow', name: 'Python trading bot', stack: 'Python · WebSockets · AWS Lightsail · CLOB APIs · JSONL recordings',
-    summary: 'A 2026 Polymarket experiment: later versions looked for leftover cheap asks, ran from a Dublin VPS, then kept investigating after live trading stopped.',
+    slug: 'polybow', name: 'Polybow — Python trading bot', stack: 'Python · WebSockets · AWS Lightsail · CLOB APIs · JSONL recordings',
+    summary: 'An independently operated Python system for market-data capture and order execution, followed by reconciliation and a public postmortem. Live trading stopped; the outcome does not establish durable profitability.',
     problem: [
+      'Engineering question: how do book events, signed order requests and later account activity fit together when an API acknowledgement is not proof of execution? The useful evidence is the recording schema, failure analysis and explicitly limited accounting.',
       'The first version bought expensive contracts near expiry, often around $0.96–$0.99, so correct direction left little upside. Later branches changed the entry price and the timing window. They overlapped; they were not four isolated trials.',
       'The later useful problem was a leftover cheap ask still sitting on the about-to-win side. That is a book condition, not a security hole. UC is the public name for that cheap-entry line.'
     ],
     contribution: [
-      'I built and operated the live path: WebSocket books, order preparation, a new AWS Lightsail instance in Dublin, and a recording layout on the VPS. I then treated the live run as evidence to investigate, not as a finished proof.',
+      'I built and operated the live path: WebSocket books, signed CLOB requests, cached market metadata, an AWS Lightsail instance in Dublin, and daily recordings. I investigated differences between bot records and account activity after the run. This was independent engineering, not employment at a trading firm.',
       'After live trading stopped, recordings continued. The public repository has the case study, the ledger script and the timing parser. The private bot and raw VPS files are not on this site.'
     ],
     branches: [
@@ -190,6 +191,7 @@ export const projects = [
     ],
     run: 'python analyze.py\npython -m unittest discover -s tests\nnode --test tests/ledger-ui.test.cjs\npython -m http.server 8084 --bind 127.0.0.1',
     limits: [
+      'Bot attribution is incomplete: finding related account activity does not prove which strategy caused a fill. Some archived branches had disabled risk guards. This is a postmortem, not a claim that every branch was production-safe.',
       'This was a live experiment, not a finished proof of an edge. Later book scans no longer showed durable leftover cheap asks; that later-market observation does not establish which change caused the result.',
       'Dublin was not compared with another region under the same clock. An API acknowledgement is not a fill. The public CSV is market-resolution accounting, not wallet cash.',
       'Raw recordings, private bot code and later Hyperliquid analysis are not in the public repository. The VPS files were deleted, so this page can show the schema, not replay those days.'

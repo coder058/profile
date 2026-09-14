@@ -1,0 +1,25 @@
+/* SOURCE: editorial layout values, not measured recruiting or performance metrics. */
+.career-hero{display:grid;grid-template-columns:minmax(0,1fr) 240px;gap:64px;align-items:center;max-width:1320px;margin:auto;padding:80px 40px 72px}
+.eyebrow,.project-kind{font-family:var(--mono);font-size:.8rem;letter-spacing:.09em;text-transform:uppercase}
+.career-hero h1{font-size:clamp(2.8rem,5.4vw,5.2rem);line-height:1.04;letter-spacing:-.055em;margin:24px 0;max-width:900px}
+.career-summary{font-size:1.25rem;line-height:1.5;max-width:650px;margin:0 0 14px}
+.career-context,.career-location{font-size:1rem;line-height:1.6;max-width:640px}
+.career-location{font-weight:600;margin-top:24px}
+.career-actions{display:flex;align-items:center;flex-wrap:wrap;gap:16px 24px;margin-top:28px}
+.career-actions a{color:inherit;text-decoration-thickness:1px;text-underline-offset:5px;padding:12px 0}
+.career-actions .primary-action{background:#292824;color:#f6f1e0;padding:16px 22px;text-decoration:none;border-radius:4px}
+.career-portrait{margin:0;align-self:center}
+.career-portrait img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover;border-radius:50%;filter:grayscale(1)}
+.career-portrait figcaption{font-size:.875rem;line-height:1.5;margin-top:20px;text-align:center}
+.work-header .work-note{display:block;margin-bottom:24px}.work-header .eyebrow{margin-bottom:20px}
+.work-header h2{font-size:clamp(2rem,4.5vw,4rem);line-height:1.1;letter-spacing:-.035em}
+.project-copy .project-kind{font-size:.75rem!important;line-height:1.5;margin:0 0 18px;max-width:none}
+.project-card .project-copy{padding-top:32px}.project-card .project-copy h3{font-size:clamp(2rem,3vw,3rem)}
+.project-copy .project-proof{opacity:1;font-size:.875rem!important}.project-copy footer{line-height:1.6}
+.career-background{padding:56px 40px;max-width:100%;border-top:1px dotted currentColor}
+.career-background h2,.career-background p,.career-background>a{display:block;max-width:850px;margin-left:auto;margin-right:auto}
+.career-background h2{font-size:2rem;letter-spacing:-.03em;line-height:1.2;margin-bottom:20px}
+.career-background p{font-size:1.125rem;line-height:1.65}.career-background>a{color:inherit;text-underline-offset:5px;margin-top:24px}
+a:focus-visible{outline:3px solid currentColor;outline-offset:5px}.site-footer{flex-wrap:wrap;gap:16px}
+@media(max-width:850px){.career-hero{grid-template-columns:minmax(0,1fr) 150px;gap:24px;padding:48px 24px}.career-hero h1{font-size:clamp(2.6rem,6vw,4rem)}.desktop-break{display:none}}
+@media(max-width:600px){.career-hero{display:block;padding:36px 20px 44px}.career-hero h1{font-size:2.7rem}.career-portrait{display:none}.career-summary{font-size:1.125rem}.career-actions{gap:8px 20px}.career-actions .primary-action{width:100%;text-align:center}.career-background{padding:36px 20px}.career-background h2{font-size:1.75rem}.work-header h2{font-size:2rem}.challenges{padding-left:20px;padding-right:20px}.project-data{padding:16px 20px}}
