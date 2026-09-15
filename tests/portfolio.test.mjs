@@ -50,7 +50,8 @@ test('demo and historical evidence boundaries stay explicit', () => {
   assert.match(html, /local live-research workspace/);
   assert.match(html, /cross-language misses/);
   assert.match(html, /public backend unavailable/);
-  for (const slug of ['polybow', 'pattern-forge', 'info-desk']) assert.ok(html.includes('href="projects/' + slug + '.html#data"'));
+  assert.match(html, /href="projects\/polybow\.html#depends"/);
+  for (const slug of ['pattern-forge', 'info-desk']) assert.ok(html.includes('href="projects/' + slug + '.html#data"'));
 });
 
 test('earlier team work stays separate and private exercises are not linked', () => {

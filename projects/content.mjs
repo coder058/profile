@@ -128,76 +128,73 @@ export const projects = [
     limits: 'This is not a job-search product and not a recruiter ATS. Arbeitnow is a bounded demo snapshot; paste is the path a reviewer will actually use. Matching is literal, not semantic recall: ordinary English such as “react” or “go” can still hit. An agent that calls these tools can still summarise; Relay does not score eligibility or prove a vacancy is open.'
   },
   {
-    slug: 'polybow', name: 'Polybow — Python trading bot', stack: 'Python · WebSockets · AWS Lightsail · CLOB APIs · JSONL recordings',
-    summary: 'An independently operated Python system for market-data capture and order execution, followed by reconciliation and a public postmortem. Live trading stopped; the outcome does not establish durable profitability.',
+    slug: 'polybow',
+    name: 'Polybow — Python trading bot',
+    pageClass: 'polybow-case',
+    featuredStory: true,
+    hideNav: true,
+    summary: 'An independently operated Python system for live market-data capture and signed order execution on five-minute prediction markets—followed by a postmortem when the setup stopped finding durable opportunities.',
     problem: [
-      'Engineering question: how do book events, signed order requests and later account activity fit together when an API acknowledgement is not proof of execution? The useful evidence is the recording schema, failure analysis and explicitly limited accounting.',
-      'The first version bought expensive contracts near expiry, often around $0.96–$0.99, so correct direction left little upside. Later branches changed the entry price and the timing window. They overlapped; they were not four isolated trials.',
-      'The later useful problem was a leftover cheap ask still sitting on the about-to-win side. That is a book condition, not a security hole. UC is the public name for that cheap-entry line.'
-    ],
-    contribution: [
-      'I built and operated the live path: WebSocket books, signed CLOB requests, cached market metadata, an AWS Lightsail instance in Dublin, and daily recordings. I investigated differences between bot records and account activity after the run. This was independent engineering, not employment at a trading firm.',
-      'After live trading stopped, recordings continued. The public repository has the case study, the ledger script and the timing parser. The private bot and raw VPS files are not on this site.',
-      'Separately, I added a public reconciliation demonstrator with atomic PostgreSQL imports and a read-only FastAPI report. It tests duplicate delivery, conflicting IDs, partial fills and database restart recovery. Its inputs are explicitly synthetic: it does not reconstruct the private account or retroactively change the historical system.'
+      'Five-minute crypto markets compress the entire execution problem into seconds. Polybow had to identify the correct asset, time window and outcome token; compare the live price reference with the opening level; watch both outcome books; and submit an order before the quoted liquidity changed.',
+      'The candidate edge was not “predict whether Bitcoin goes up.” It was narrower: a very cheap ask could remain on the side that was close to resolving as the winner. The opportunity only existed if that ask was real, large enough and still present after detection, signing and submission.',
+      'Three records could tell different stories. A reference feed described direction, a WebSocket event described the visible book, and the CLOB account described orders and fills. An API acknowledgement was therefore not proof of execution, and a market name alone could not identify which bot branch placed an order.'
     ],
     branches: [
-      ['v1', 'Near expiry, often $0.96–$0.99', 'Little upside when the direction was right. Oracle updates were too coarse for a five-minute market.'],
-      ['StratA', '$0.40–$0.72 with 11–15 seconds remaining', 'More upside per winning trade; more time for the market to reverse.'],
-      ['StratB', 'Wider window and a larger gap versus the opening reference', 'Book updates could trigger a decision immediately. Dublin VPS and a warmed execution path. No controlled region comparison.'],
-      ['UC', '$0.01–$0.20 leftover cheap asks', 'Maker orders under the ask, later a taker leg. Live trading later stopped.']
+      ['v1', 'Near expiry, often $0.96–$0.99', 'Entered the apparent winner late. Correct direction left little upside, while a reversal could lose almost the full ticket.'],
+      ['StratA', '$0.40–$0.72 with 11–15 seconds remaining', 'Moved entry earlier and lower to improve payoff, accepting more time for the underlying market to reverse.'],
+      ['StratB', 'A wider timing window plus a larger gap from the opening reference', 'Made book updates event-driven, cached market metadata and warmed the signed HTTP/2 submission path.'],
+      ['UC', '$0.01–$0.20 leftover asks', 'Targeted cheap residual liquidity with a maker order below the ask and, later, a taker leg when the quote remained available.']
     ],
-    demo: 'https://coder058.github.io/profile/projects/reconciliation/', demoLabel: 'Open reconciliation lab (synthetic data)', code: 'https://github.com/coder058/polybow-case-study',
-    skills: [
-      ['Python', 'Bot loop, patches, ledger analysis and the timing parser.'],
-      ['WebSockets', 'Book updates triggered evaluation instead of waiting for the next poll.'],
-      ['AWS Lightsail (Dublin)', 'A new VPS instance for execution and later daily recordings. No controlled region comparison was run.'],
-      ['HTTP/2 and signing', 'A warmed client and coincurve signatures so less work sat on the submit path.'],
-      ['Polymarket CLOB API', 'Prepared and posted orders. An acknowledgement is not a fill.'],
-      ['JSONL recordings', 'Daily BBO and later L2 files, rotated and compressed on the VPS.'],
-      ['CSV ledger', 'The public anonymized market-resolution table and its tests.']
+    contribution: [
+      'I designed, built and operated the end-to-end path: market discovery, outcome-token mapping, reference-price handling, WebSocket book ingestion, decision logic, signed CLOB orders and the Ubuntu service running on AWS Lightsail.',
+      'I moved evaluation into the book callback, reduced the decision gate from 50 ms to 5 ms, cached market metadata, kept an HTTP/2 client warm and used coincurve signing to remove avoidable work from the submit path. Timing logs separated preparation from API response instead of treating either as fill latency.',
+      'I also built the evidence path around the bot: daily BBO and L2 JSONL recorders, rotation and compression, structured timing logs, a market-resolution ledger and parsers used for the postmortem. That made it possible to distinguish a visible quote, an order acknowledgement and later account activity.',
+      'This was an independent project. I owned the system design, implementation, deployment, operation and investigation.'
     ],
-    steps: [
-      'Open the reconciliation lab. The banner labels its inputs as synthetic and distinguishes it from the historical system.',
-      'Filter Requires review, then Unconfirmed. Inspect the source event IDs; missing attribution is not guessed from market or time.',
-      'Download the input and computed report. Run the file-report command from the repository to reproduce it in Python.',
-      'Inspect the linked PostgreSQL workflow and its before/after restart artifacts. The public lab is a static export, not a hosted database API.',
-      'For the historical system, read the branch and recording tables below or open Historical archive. Its public CSV is market-resolution accounting, not wallet cash; private captures are not downloadable.'
-    ],
+    code: 'https://github.com/coder058/polybow-case-study',
+    dependencyMap: true,
+    dependsTitle: 'How the system fits together',
+    dependenciesIntro: 'The live path moved left to right. Identity and reference data selected the contract; book events triggered a decision; the order client signed and submitted it; the evidence layer recorded what each stage actually knew.',
     dependencies: [
-      ['Price reference', 'Chainlink RTDS and, on some paths, Binance', 'Inputs to the historical signal. The archive is not one uniform feed.'],
-      ['Outcome books', 'Polymarket WebSocket book events', 'Showed whether a cheap ask was still resting.'],
-      ['Decision loop', 'Book callback plus a 5 ms gate (was 50 ms)', 'A throttle, not measured end-to-end latency.'],
-      ['Order client', 'HTTP/2, token metadata cache, coincurve', 'Built the signed CLOB request on the VPS.'],
-      ['Lightsail instance', 'Ubuntu in eu-west-1 (Dublin)', 'Ran the bot and later the recorders. Location alone is not a benchmark.'],
-      ['Public case study', 'Static site plus market_ledger.csv', 'The walkthrough a recruiter can open without the private bot.']
+      ['Market identity', 'Gamma market metadata + five-minute window', 'Asset, window, condition ID and outcome-token IDs.'],
+      ['Price reference', 'Chainlink RTDS; Binance on some branches', 'Opening level, latest price and candidate direction.'],
+      ['Outcome books', 'Polymarket WebSocket events', 'Best bids and asks for both outcome tokens.'],
+      ['Decision loop', 'Identity + reference + book + timing and price guards', 'A prepared order candidate—or no action.'],
+      ['Order client', 'Cached metadata + HTTP/2 + CLOB authentication + coincurve', 'A signed order request and named response timings.'],
+      ['Runtime', 'Ubuntu on AWS Lightsail in Dublin', 'The bot process, restart path and daily recorder jobs.'],
+      ['Evidence layer', 'Book events + timing logs + account and resolution records', 'A traceable postmortem instead of a success claim based on acknowledgements.']
     ],
-    recordsTitle: 'How the data was organised',
-    recordsIntro: 'The live store was files on the VPS, keyed by market, time and file day. I deleted those copies. This table is the layout, not a download.',
-    recordsCaption: 'Recording and research records, as operated on the VPS',
+    recordMap: true,
+    recordsTitle: 'How the data connects',
+    recordsIntro: 'The common join was market + five-minute window + outcome side. Each record answered a different question, so no single file was treated as the complete truth.',
     records: [
-      ['ws_books_YYYYMMDD.jsonl', 'BBO recorder on the Lightsail host', 'One file per UTC day: best bid and ask updates. Later gzip-compressed. No order sizes in the early BBO files.'],
-      ['ws_books_l2_YYYYMMDD.jsonl', 'L2 recorder, started later', 'Depth at the ask, needed to ask whether a cheap ticket was actually fillable.'],
-      ['live.log', 'Bot process on the same host', 'LAT_DETAIL rows for preparation and API-response time. Identifiers stay private; hashes are in EVIDENCE.md.'],
-      ['market / window / side', 'Gamma market id plus the five-minute slot', 'The join key from a book event to an order attempt and later to a resolution.'],
-      ['market_ledger.csv', 'Anonymized resolution rows in the public repo', 'Reproducible market accounting. It is not the wallet cash series.'],
-      ['Later Hyperliquid captures', 'Separate after live Polymarket trading stopped', 'Recorded for analysis that was not finished. Not a second live bot on this page.']
+      ['market / window / side', 'Gamma identifiers and outcome-token mapping', 'The key connecting a quote, order attempt, account event and resolution.'],
+      ['ws_books_YYYYMMDD.jsonl', 'Daily best-bid / best-ask WebSocket events', 'What price was visible and when it reached the recorder.'],
+      ['ws_books_l2_YYYYMMDD.jsonl', 'Later depth snapshots', 'Whether cheap quoted liquidity had enough visible size to matter.'],
+      ['live.log', 'Decision and submission instrumentation', 'Separate preparation and API-response timings for each attempt.'],
+      ['market_ledger.csv', 'Public anonymized market-resolution rows', 'Reproducible outcome accounting for the historical case.'],
+      ['Public wallet activity', 'Polymarket profile + Polygon transaction history', 'Externally visible account activity that can be inspected independently.']
     ],
-    build: [
-      'Write the early expensive late-entry version (often $0.96–$0.99), then StratA at $0.40–$0.72 with 11–15 seconds remaining, then StratB’s wider window.',
-      'Add the cheap-entry line (UC): leftover last-second asks, first as a maker under the ask, then with a taker leg.',
-      'Create a Lightsail instance in Dublin, warm the HTTP client, cache metadata and measure a named window: prepare then POST response.',
-      'Record books to dated JSONL files and rotate them so a disk-full host could not silently stop the recorder.',
-      'After the 28 April CLOB V2 venue change and the 2 May internal guard removal, keep recording and ask whether leftover cheap asks still existed. Later scans of June–July books did not find a durable stale-ask condition; order sizes were missing and August files were gone.',
-      'Publish the ledger and timing parser. Label the deleted VPS files and the unfinished later analysis instead of pretending the case is closed.'
+    endingTitle: 'Why the opportunity stopped working',
+    ending: [
+      'UC depended on persistence: a low-priced ask had to remain in the winning-side book long enough to detect, sign and fill. On 28 April the venue moved to CLOB V2; on 2 May I also changed internal bot guards. Those changes overlapped, so the evidence cannot isolate one patch as the cause.',
+      'What the later data does establish is that the executable condition was no longer durable. A June–July scan covered 12,929 markets and 104.5 million best-book updates. It found one trigger, while apparent crosses disappeared within 0.02 seconds—too quickly for the earlier detect-and-submit path to rely on.',
+      'The defensible conclusion is that the residual-ask setup stopped appearing as a repeatable opportunity in the later books. Saying that one specific patch killed a proven edge would go beyond the evidence.',
+      'After live Polymarket trading stopped, I shifted the research workflow to capturing and replaying Hyperliquid public market data. That was a new data-research direction, not a claim that a second live bot was operated.'
     ],
-    run: 'python -m reconciliation file-report reconciliation/fixtures/synthetic.json\npython -m pip install -r reconciliation/requirements.txt\npython -m unittest discover -s tests\npython -m reconciliation.build_demo --check',
-    limits: [
-      'Bot attribution is incomplete: finding related account activity does not prove which strategy caused a fill. Some archived branches had disabled risk guards. This is a postmortem, not a claim that every branch was production-safe.',
-      'This was a live experiment, not a finished proof of an edge. Later book scans no longer showed durable leftover cheap asks; that later-market observation does not establish which change caused the result.',
-      'Dublin was not compared with another region under the same clock. An API acknowledgement is not a fill. The public CSV is market-resolution accounting, not wallet cash.',
-      'Raw recordings, private bot code and later Hyperliquid analysis are not in the public repository. The VPS files were deleted, so this page can show the schema, not replay those days.'
+    accountTitle: 'Inspect the real public activity',
+    accountIntro: 'These links expose the account and historical ledger directly. They are evidence of activity and resolved outcomes; they are not presented as proof of durable profitability.',
+    accountLinks: [
+      ['Polymarket profile', 'https://polymarket.com/profile/0x0022C02Dda115a6E0307007881a6e19394883DB0', 'Public profile for 0x0022…3DB0'],
+      ['Polygon wallet', 'https://polygonscan.com/address/0x0022C02Dda115a6E0307007881a6e19394883DB0', 'Independent on-chain transaction history'],
+      ['Resolution ledger', 'https://github.com/coder058/polybow-case-study/blob/main/data/market_ledger.csv', 'Public CSV used by the historical case study']
     ],
-    references: [['Reconciliation source and contract', 'https://github.com/coder058/polybow-case-study/tree/main/reconciliation'], ['Verified PostgreSQL restart run', 'https://github.com/coder058/polybow-case-study/actions/runs/34887365171'], ['Historical archive', 'https://polybow-archive.vercel.app/'], ['Evidence map', 'https://github.com/coder058/polybow-case-study/blob/main/EVIDENCE.md'], ['Public ledger', 'https://github.com/coder058/polybow-case-study'], ['CLOB V2 date', 'https://docs.polymarket.com/changelog/predictions']]
+    labCoda: {
+      title: 'Reconciliation lab',
+      text: 'A separate synthetic backend exercise about duplicate delivery, partial fills and conflicting records. It comes after the historical case so its generated inputs cannot be mistaken for Polybow’s live activity.',
+      url: 'https://coder058.github.io/profile/projects/reconciliation/',
+      label: 'Open the separate technical lab'
+    }
   },
   {
     slug: 'city-gardens', name: 'City Gardens', stack: 'Ruby on Rails · PostgreSQL · Active Record · JavaScript',
