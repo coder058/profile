@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "dataset": "synthetic-execution",
+  "provenance": "synthetic",
+  "scope": "Imported assertions, not independently verified exchange receipts. Gross notional excludes fees; no wallet P&L or profitability claim.",
+  "event_count": 14,
+  "orders": [
+    {
+      "order_id": "order-currency",
+      "order_events": [
+        "intent-currency"
+      ],
+      "fill_events": [
+        "fill-currency"
+      ],
+      "state": "review_required",
+      "issues": [
+        "currency_mismatch"
+      ],
+      "requested_quantity": "1",
+      "matched_quantity": "0",
+      "gross_notional": "0",
+      "currency": "USDC"
+    },
+    {
+      "order_id": "order-full",
+      "order_events": [
+        "intent-full"
+      ],
+      "fill_events": [
+        "fill-full-a",
+        "fill-full-b"
+      ],
+      "state": "filled",
+      "issues": [],
+      "requested_quantity": "3",
+      "matched_quantity": "3",
+      "gross_notional": "1.18",
+      "currency": "USDC"
+    },
+    {
+      "order_id": "order-overfilled",
+      "order_events": [
+        "intent-overfilled"
+      ],
+      "fill_events": [
+        "fill-overfilled"
+      ],
+      "state": "review_required",
+      "issues": [
+        "overfill"
+      ],
+      "requested_quantity": "1",
+      "matched_quantity": "2",
+      "gross_notional": "0.8",
+      "currency": "USDC"
+    },
+    {
+      "order_id": "order-partial",
+      "order_events": [
+        "intent-partial"
+      ],
+      "fill_events": [
+        "fill-partial"
+      ],
+      "state": "partial",
+      "issues": [],
+      "requested_quantity": "3",
+      "matched_quantity": "1",
+      "gross_notional": "0.49",
+      "currency": "USDC"
+    },
+    {
+      "order_id": "order-rejected",
+      "order_events": [
+        "intent-rejected"
+      ],
+      "fill_events": [
+        "fill-rejected"
+      ],
+      "state": "review_required",
+      "issues": [
+        "fill_for_rejected_order"
+      ],
+      "requested_quantity": "2",
+      "matched_quantity": "1",
+      "gross_notional": "0.4",
+      "currency": "USDC"
+    },
+    {
+      "order_id": "order-unconfirmed",
+      "order_events": [
+        "intent-unconfirmed"
+      ],
+      "fill_events": [],
+      "state": "unconfirmed",
+      "issues": [],
+      "requested_quantity": "2",
+      "matched_quantity": "0",
+      "gross_notional": "0",
+      "currency": "USDC"
+    }
+  ],
+  "unattributed_fills": [
+    {
+      "event_id": "fill-no-order",
+      "order_id": null,
+      "reason": "missing_order_id"
+    },
+    {
+      "event_id": "fill-unknown-order",
+      "order_id": "missing-order",
+      "reason": "unknown_order_id"
+    }
+  ],
+  "states": {
+    "filled": 1,
+    "partial": 1,
+    "review_required": 3,
+    "unconfirmed": 1
+  }
+}

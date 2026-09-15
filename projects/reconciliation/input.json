@@ -1,0 +1,178 @@
+{
+  "schema_version": 1,
+  "dataset": "synthetic-execution",
+  "provenance": "synthetic",
+  "events": [
+    {
+      "kind": "order",
+      "event_id": "intent-full",
+      "order_id": "order-full",
+      "instrument": "demo-YES",
+      "currency": "USDC",
+      "side": "BUY",
+      "quantity": "3",
+      "price": "0.4",
+      "occurred_at": "2026-01-01T00:00:00Z",
+      "status": "acknowledged"
+    },
+    {
+      "kind": "order",
+      "event_id": "intent-partial",
+      "order_id": "order-partial",
+      "instrument": "demo-YES",
+      "currency": "USDC",
+      "side": "BUY",
+      "quantity": "3",
+      "price": "0.5",
+      "occurred_at": "2026-01-01T00:00:00Z",
+      "status": "acknowledged"
+    },
+    {
+      "kind": "order",
+      "event_id": "intent-unconfirmed",
+      "order_id": "order-unconfirmed",
+      "instrument": "demo-YES",
+      "currency": "USDC",
+      "side": "BUY",
+      "quantity": "2",
+      "price": "0.6",
+      "occurred_at": "2026-01-01T00:00:00Z",
+      "status": "acknowledged"
+    },
+    {
+      "kind": "order",
+      "event_id": "intent-overfilled",
+      "order_id": "order-overfilled",
+      "instrument": "demo-YES",
+      "currency": "USDC",
+      "side": "BUY",
+      "quantity": "1",
+      "price": "0.5",
+      "occurred_at": "2026-01-01T00:00:00Z",
+      "status": "acknowledged"
+    },
+    {
+      "kind": "order",
+      "event_id": "intent-currency",
+      "order_id": "order-currency",
+      "instrument": "demo-YES",
+      "currency": "USDC",
+      "side": "BUY",
+      "quantity": "1",
+      "price": "0.5",
+      "occurred_at": "2026-01-01T00:00:00Z",
+      "status": "acknowledged"
+    },
+    {
+      "kind": "order",
+      "event_id": "intent-rejected",
+      "order_id": "order-rejected",
+      "instrument": "demo-YES",
+      "currency": "USDC",
+      "side": "BUY",
+      "quantity": "2",
+      "price": "0.5",
+      "occurred_at": "2026-01-01T00:00:00Z",
+      "status": "rejected"
+    },
+    {
+      "kind": "fill",
+      "event_id": "fill-full-a",
+      "order_id": "order-full",
+      "instrument": "demo-YES",
+      "currency": "USDC",
+      "side": "BUY",
+      "quantity": "1",
+      "price": "0.4",
+      "occurred_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "kind": "fill",
+      "event_id": "fill-full-b",
+      "order_id": "order-full",
+      "instrument": "demo-YES",
+      "currency": "USDC",
+      "side": "BUY",
+      "quantity": "2",
+      "price": "0.39",
+      "occurred_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "kind": "fill",
+      "event_id": "fill-partial",
+      "order_id": "order-partial",
+      "instrument": "demo-YES",
+      "currency": "USDC",
+      "side": "BUY",
+      "quantity": "1",
+      "price": "0.49",
+      "occurred_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "kind": "fill",
+      "event_id": "fill-overfilled",
+      "order_id": "order-overfilled",
+      "instrument": "demo-YES",
+      "currency": "USDC",
+      "side": "BUY",
+      "quantity": "2",
+      "price": "0.4",
+      "occurred_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "kind": "fill",
+      "event_id": "fill-currency",
+      "order_id": "order-currency",
+      "instrument": "demo-YES",
+      "currency": "USD",
+      "side": "BUY",
+      "quantity": "1",
+      "price": "0.4",
+      "occurred_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "kind": "fill",
+      "event_id": "fill-rejected",
+      "order_id": "order-rejected",
+      "instrument": "demo-YES",
+      "currency": "USDC",
+      "side": "BUY",
+      "quantity": "1",
+      "price": "0.4",
+      "occurred_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "kind": "fill",
+      "event_id": "fill-no-order",
+      "order_id": null,
+      "instrument": "demo-YES",
+      "currency": "USDC",
+      "side": "BUY",
+      "quantity": "1",
+      "price": "0.4",
+      "occurred_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "kind": "fill",
+      "event_id": "fill-unknown-order",
+      "order_id": "missing-order",
+      "instrument": "demo-YES",
+      "currency": "USDC",
+      "side": "BUY",
+      "quantity": "1",
+      "price": "0.4",
+      "occurred_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "kind": "fill",
+      "event_id": "fill-full-a",
+      "order_id": "order-full",
+      "instrument": "demo-YES",
+      "currency": "USDC",
+      "side": "BUY",
+      "quantity": "1",
+      "price": "0.4",
+      "occurred_at": "2026-01-01T00:00:00Z"
+    }
+  ]
+}

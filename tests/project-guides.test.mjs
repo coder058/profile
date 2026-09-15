@@ -20,7 +20,7 @@ test('each project has a rendered journey, dependencies, contribution and limits
 test('cards distinguish interactive demos, recorded cases and external review', () => {
   const html = readFileSync(new URL('../index.html',import.meta.url),'utf8');
   assert.match(html, /href="https:\/\/pattern-forge-five\.vercel\.app\/"/);
-  assert.match(html, /href="projects\/polybow\.html"/);
+  assert.match(html, /href="projects\/reconciliation\/"/);
   assert.match(html, /href="https:\/\/github.com\/deepset-ai\/haystack\/pull\/12635"/);
   assert.match(html, /href="https:\/\/coder058\.github\.io\/info-desk\/"/);
   for (const slug of ['polybow','pattern-forge','info-desk']) assert.ok(html.includes(`href="projects/${slug}.html#data"`));
@@ -35,7 +35,7 @@ test('Python trading bot walkthrough separates StratA prices from the early expe
   assert.match(html, /ws_books_YYYYMMDD.jsonl/);
   assert.match(html, /How the data was organised/);
   assert.match(html, /Skills this work used/);
-  assert.match(html, /Read the case study/);
+  assert.match(html, /Open reconciliation lab \(synthetic data\)/);
   assert.doesNotMatch(html, /\$18|\$220|converted a account/i);
   assert.doesNotMatch(html, /StratD/);
   assert.doesNotMatch(html, /Early Polybow, StratA and StratB bought expensive/);

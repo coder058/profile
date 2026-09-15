@@ -137,7 +137,8 @@ export const projects = [
     ],
     contribution: [
       'I built and operated the live path: WebSocket books, signed CLOB requests, cached market metadata, an AWS Lightsail instance in Dublin, and daily recordings. I investigated differences between bot records and account activity after the run. This was independent engineering, not employment at a trading firm.',
-      'After live trading stopped, recordings continued. The public repository has the case study, the ledger script and the timing parser. The private bot and raw VPS files are not on this site.'
+      'After live trading stopped, recordings continued. The public repository has the case study, the ledger script and the timing parser. The private bot and raw VPS files are not on this site.',
+      'Separately, I added a public reconciliation demonstrator with atomic PostgreSQL imports and a read-only FastAPI report. It tests duplicate delivery, conflicting IDs, partial fills and database restart recovery. Its inputs are explicitly synthetic: it does not reconstruct the private account or retroactively change the historical system.'
     ],
     branches: [
       ['v1', 'Near expiry, often $0.96–$0.99', 'Little upside when the direction was right. Oracle updates were too coarse for a five-minute market.'],
@@ -145,7 +146,7 @@ export const projects = [
       ['StratB', 'Wider window and a larger gap versus the opening reference', 'Book updates could trigger a decision immediately. Dublin VPS and a warmed execution path. No controlled region comparison.'],
       ['UC', '$0.01–$0.20 leftover cheap asks', 'Maker orders under the ask, later a taker leg. Live trading later stopped.']
     ],
-    demo: 'https://polybow-archive.vercel.app/', demoLabel: 'Read the case study', code: 'https://github.com/coder058/polybow-case-study',
+    demo: 'https://coder058.github.io/profile/projects/reconciliation/', demoLabel: 'Open reconciliation lab (synthetic data)', code: 'https://github.com/coder058/polybow-case-study',
     skills: [
       ['Python', 'Bot loop, patches, ledger analysis and the timing parser.'],
       ['WebSockets', 'Book updates triggered evaluation instead of waiting for the next poll.'],
@@ -156,11 +157,11 @@ export const projects = [
       ['CSV ledger', 'The public anonymized market-resolution table and its tests.']
     ],
     steps: [
-      'Read the problem first: leftover cheap asks, not the balance chart.',
-      'Follow the branch table: early expensive tickets, StratA at $0.40–$0.72, then UC leftover cheap asks.',
-      'Read the execution path: Lightsail, warm connection, metadata cache, defined timing window.',
-      'Open the data table: how recordings were named and joined. The VPS copies were deleted; the layout is what can still be shown.',
-      'Use analyze.py on the public CSV if you want the ledger math. Wallet cash and raw logs stay in the private archive.'
+      'Open the reconciliation lab. The banner labels its inputs as synthetic and distinguishes it from the historical system.',
+      'Filter Requires review, then Unconfirmed. Inspect the source event IDs; missing attribution is not guessed from market or time.',
+      'Download the input and computed report. Run the file-report command from the repository to reproduce it in Python.',
+      'Inspect the linked PostgreSQL workflow and its before/after restart artifacts. The public lab is a static export, not a hosted database API.',
+      'For the historical system, read the branch and recording tables below or open Historical archive. Its public CSV is market-resolution accounting, not wallet cash; private captures are not downloadable.'
     ],
     dependencies: [
       ['Price reference', 'Chainlink RTDS and, on some paths, Binance', 'Inputs to the historical signal. The archive is not one uniform feed.'],
@@ -189,14 +190,14 @@ export const projects = [
       'After the 28 April CLOB V2 venue change and the 2 May internal guard removal, keep recording and ask whether leftover cheap asks still existed. Later scans of June–July books did not find a durable stale-ask condition; order sizes were missing and August files were gone.',
       'Publish the ledger and timing parser. Label the deleted VPS files and the unfinished later analysis instead of pretending the case is closed.'
     ],
-    run: 'python analyze.py\npython -m unittest discover -s tests\nnode --test tests/ledger-ui.test.cjs\npython -m http.server 8084 --bind 127.0.0.1',
+    run: 'python -m reconciliation file-report reconciliation/fixtures/synthetic.json\npython -m pip install -r reconciliation/requirements.txt\npython -m unittest discover -s tests\npython -m reconciliation.build_demo --check',
     limits: [
       'Bot attribution is incomplete: finding related account activity does not prove which strategy caused a fill. Some archived branches had disabled risk guards. This is a postmortem, not a claim that every branch was production-safe.',
       'This was a live experiment, not a finished proof of an edge. Later book scans no longer showed durable leftover cheap asks; that later-market observation does not establish which change caused the result.',
       'Dublin was not compared with another region under the same clock. An API acknowledgement is not a fill. The public CSV is market-resolution accounting, not wallet cash.',
       'Raw recordings, private bot code and later Hyperliquid analysis are not in the public repository. The VPS files were deleted, so this page can show the schema, not replay those days.'
     ],
-    references: [['Evidence map', 'https://github.com/coder058/polybow-case-study/blob/main/EVIDENCE.md'], ['Public ledger', 'https://github.com/coder058/polybow-case-study'], ['CLOB V2 date', 'https://docs.polymarket.com/changelog/predictions']]
+    references: [['Reconciliation source and contract', 'https://github.com/coder058/polybow-case-study/tree/main/reconciliation'], ['Verified PostgreSQL restart run', 'https://github.com/coder058/polybow-case-study/actions/runs/34887365171'], ['Historical archive', 'https://polybow-archive.vercel.app/'], ['Evidence map', 'https://github.com/coder058/polybow-case-study/blob/main/EVIDENCE.md'], ['Public ledger', 'https://github.com/coder058/polybow-case-study'], ['CLOB V2 date', 'https://docs.polymarket.com/changelog/predictions']]
   },
   {
     slug: 'city-gardens', name: 'City Gardens', stack: 'Ruby on Rails · PostgreSQL · Active Record · JavaScript',

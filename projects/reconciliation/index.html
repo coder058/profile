@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Reproducible Python reconciliation: exact decimals, idempotent imports, conflict rollback and explicit unknowns. Synthetic data, not trading results.">
+<title>Reconciliation lab — Jordi Lluis</title><link rel="stylesheet" href="style.css?v=lab-20260915"><script src="filters.js" defer></script></head>
+<body><a class="skip" href="#results">Skip to results</a><header><a href="https://coder058.github.io/profile/">Jordi Lluis / Python &amp; data</a><a href="https://github.com/coder058/polybow-case-study/tree/main/reconciliation">Source &amp; run instructions ↗</a></header>
+<main><section class="intro"><p class="eyebrow">Synthetic input · Reproducible Python output · No live trading</p><h1>An acknowledgement<br>is not a fill.</h1>
+<p class="lead">A reconciliation lab for order records and execution assertions. It preserves uncertainty instead of guessing which order a trade belongs to.</p>
+<p>This is a new demonstrator inspired by the Polybow postmortem, <strong>not the historical bot or its real account data</strong>. All identifiers, dates, quantities and prices in this example are constructed test inputs.</p>
+<div class="actions"><a href="input.json" download>Download synthetic input</a><a href="report.json" download>Download computed report</a><a href="https://github.com/coder058/polybow-case-study/actions/workflows/reconciliation.yml">PostgreSQL / restart checks ↗</a></div></section>
+<section class="pipeline" aria-label="Implementation"><ol><li>Validate and normalize<br><small>Strict fields · exact decimals · UTC</small></li><li>Persist atomically<br><small>PostgreSQL · duplicate/conflict contract</small></li><li>Reconcile explicit IDs<br><small>Partial fills · contradictions · unknowns</small></li><li>Serve a read-only report<br><small>Local FastAPI · this page is a static export</small></li></ol></section>
+<section id="results"><div class="section-title"><h2>Inspect the result</h2><p>6 order assertions · 14 unique events · 1 duplicate delivery in the input</p></div>
+<p class="scope">Imported assertions, not independently verified exchange receipts. Gross notional excludes fees; no wallet P&amp;L or profitability claim.</p>
+<div class="filters" role="group" aria-label="Filter orders"><button data-filter="all" aria-pressed="true">All orders</button><button data-filter="review_required" aria-pressed="false">Requires review</button><button data-filter="unconfirmed" aria-pressed="false">Unconfirmed</button></div><p id="visible-count" role="status">Showing all orders.</p>
+<div class="table-scroll" role="region" aria-label="Order reconciliation results" tabindex="0"><table><caption>Quantities are shares/units; gross notional is quantity × price, not profit.</caption><thead><tr><th scope="col">Order</th><th scope="col">State</th><th scope="col">Requested</th><th scope="col">Matched</th><th scope="col">Gross notional</th><th scope="col">Reason &amp; evidence</th></tr></thead><tbody><tr data-state="review_required"><td>order-currency</td><td>review_required</td><td>1</td><td>0</td><td>0 USDC</td><td>currency_mismatch<details><summary>Source event IDs</summary><pre>{
+  &quot;order_events&quot;: [
+    &quot;intent-currency&quot;
+  ],
+  &quot;fill_events&quot;: [
+    &quot;fill-currency&quot;
+  ]
+}</pre></details></td></tr><tr data-state="filled"><td>order-full</td><td>filled</td><td>3</td><td>3</td><td>1.18 USDC</td><td>Reported executions equal requested quantity; fees and receipt authenticity are outside scope.<details><summary>Source event IDs</summary><pre>{
+  &quot;order_events&quot;: [
+    &quot;intent-full&quot;
+  ],
+  &quot;fill_events&quot;: [
+    &quot;fill-full-a&quot;,
+    &quot;fill-full-b&quot;
+  ]
+}</pre></details></td></tr><tr data-state="review_required"><td>order-overfilled</td><td>review_required</td><td>1</td><td>2</td><td>0.8 USDC</td><td>overfill<details><summary>Source event IDs</summary><pre>{
+  &quot;order_events&quot;: [
+    &quot;intent-overfilled&quot;
+  ],
+  &quot;fill_events&quot;: [
+    &quot;fill-overfilled&quot;
+  ]
+}</pre></details></td></tr><tr data-state="partial"><td>order-partial</td><td>partial</td><td>3</td><td>1</td><td>0.49 USDC</td><td>Only part of the requested quantity has a matching execution assertion.<details><summary>Source event IDs</summary><pre>{
+  &quot;order_events&quot;: [
+    &quot;intent-partial&quot;
+  ],
+  &quot;fill_events&quot;: [
+    &quot;fill-partial&quot;
+  ]
+}</pre></details></td></tr><tr data-state="review_required"><td>order-rejected</td><td>review_required</td><td>2</td><td>1</td><td>0.4 USDC</td><td>fill_for_rejected_order<details><summary>Source event IDs</summary><pre>{
+  &quot;order_events&quot;: [
+    &quot;intent-rejected&quot;
+  ],
+  &quot;fill_events&quot;: [
+    &quot;fill-rejected&quot;
+  ]
+}</pre></details></td></tr><tr data-state="unconfirmed"><td>order-unconfirmed</td><td>unconfirmed</td><td>2</td><td>0</td><td>0 USDC</td><td>Acknowledgement without a matching execution. This is not proof of no execution.<details><summary>Source event IDs</summary><pre>{
+  &quot;order_events&quot;: [
+    &quot;intent-unconfirmed&quot;
+  ],
+  &quot;fill_events&quot;: []
+}</pre></details></td></tr></tbody></table></div>
+</section><section class="split"><article><h2>Unattributed executions</h2><ul><li><code>fill-no-order</code> — missing_order_id</li><li><code>fill-unknown-order</code> — unknown_order_id</li></ul><p>No fallback to market, price or timestamp. These records remain unresolved.</p></article><article><h2>What the checks exercise</h2><p>Exact decimal arithmetic, duplicate delivery, out-of-order input, conflicting IDs, ambiguous orders and mismatched currencies. PostgreSQL checks cover atomic rollback, simultaneous redelivery and a database restart.</p><p>The linked CI run is the evidence for persistence. This static page does not connect to a hosted database or a trading account.</p></article></section>
+<section><h2>Reproduce, then inspect the limits</h2><pre>python -m reconciliation file-report reconciliation/fixtures/synthetic.json</pre><p>The file report uses the Python standard library. The repository documents PostgreSQL setup and the local read-only API. Import writes are CLI-only, with an explicit database configuration.</p>
+<details><summary>Input and output SHA-256</summary><p>Input file</p><code class="hash">93343287f2aa8a6a2dafb56db304ab11a5d4ec1a9d678a452104dd0e6ec617e7</code><p>Computed report</p><code class="hash">b840661d1fff68f7ba5b17110abdd92a3371f71ddb595a7bb207bafb4184df0b</code></details>
+<p class="scope">Limitations: no exchange connector, receipt authentication, fee reconciliation, cash settlement, cancellation lifecycle or production load test. A matching record is an imported assertion, not independent proof of a trade. Correcting a conflicting event requires investigation; the importer will not silently overwrite it.</p></section>
+</main><footer><a href="https://coder058.github.io/profile/projects/polybow.html">Historical Polybow case ↗</a><a href="https://github.com/coder058/polybow-case-study/tree/main/tests">Tests ↗</a></footer></body></html>

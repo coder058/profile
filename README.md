@@ -7,6 +7,7 @@ Independent engineering projects and open-source work, with a background in logi
 ## Featured evidence
 
 - Polybow: independently operated Python execution and recording, then reconciliation and a public postmortem. Private bot code and raw recordings are not published. No durable-profitability claim.
+- New, separate reconciliation lab: generated Python output on synthetic fixtures, atomic PostgreSQL imports and a local read-only FastAPI API. The homepage opens the lab; the historical recording schema remains one click away. Database recovery is checked in the linked CI run, not performed by the static page.
 - Pattern Forge: interactive replay without look-ahead. Python/PostgreSQL ingestion and restart checks run locally/in CI; the public demo does not serve that database.
 - Info Desk: a recorded evidence case. The live research workspace requires local setup; evaluation limitations are linked.
 - Haystack: a focused merged validation fix, with regression test and maintainer review.
