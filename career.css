@@ -1,19 +1,41 @@
-/* SOURCE: editorial layout values, not measured recruiting or performance metrics. */
-.career-hero{display:grid;grid-template-columns:minmax(0,1fr) 240px;gap:64px;align-items:center;max-width:1320px;margin:auto;padding:80px 40px 72px}
+/* GUESS: editorial proportions for recruiter scanning; visually verified at desktop and mobile sizes. */
+.career-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(210px,280px);gap:clamp(32px,6vw,92px);align-items:center;max-width:1320px;margin:auto;padding:clamp(64px,9vw,124px) 40px clamp(72px,10vw,136px);position:relative}
+.career-hero::before{content:"PROFILE / 01";position:absolute;top:24px;left:40px;font:11px/1 var(--mono);letter-spacing:.12em}
 .eyebrow,.project-kind{font-family:var(--mono);font-size:.8rem;letter-spacing:.09em;text-transform:uppercase}
-.career-name{font-size:clamp(1.2rem,1.7vw,1.5rem);line-height:1.25;letter-spacing:-.02em;font-weight:600;margin:0}
-.career-hero h1{font-size:clamp(2.8rem,5.4vw,5.2rem);line-height:1.04;letter-spacing:-.055em;margin:12px 0 24px;max-width:900px}
-.career-summary{font-size:1.25rem;line-height:1.5;max-width:650px;margin:0 0 14px}
+.career-name{font-size:clamp(2.35rem,4vw,4.5rem);line-height:.92;letter-spacing:-.065em;font-weight:700;margin:0 0 clamp(26px,4vw,54px)}
+.career-hero h1{font-size:clamp(3.1rem,6.3vw,6.7rem);line-height:.94;letter-spacing:-.065em;margin:0 0 30px;max-width:980px}
+.career-hero h1 span{display:inline-block;font-size:.72em;letter-spacing:-.055em;max-width:900px}
+.career-summary{font-size:clamp(1.15rem,1.8vw,1.45rem);line-height:1.42;max-width:650px;margin:0 0 28px}
 .career-context,.career-location{font-size:1rem;line-height:1.6;max-width:640px}
-.career-location{font-weight:600;margin-top:24px}
+.career-location{display:flex;flex-wrap:wrap;gap:10px 22px;font:12px/1.4 var(--mono);font-weight:700;letter-spacing:.09em;margin:0;text-transform:uppercase}
+.career-location span+span::before{content:"/";margin-right:22px}
 .career-actions{display:flex;align-items:center;flex-wrap:wrap;gap:16px 24px;margin-top:28px}
 .career-actions a{color:inherit;text-decoration-thickness:1px;text-underline-offset:5px;padding:12px 0}
 .career-actions .primary-action{background:#292824;color:#f6f1e0;padding:16px 22px;text-decoration:none;border-radius:4px}
-.career-portrait{margin:0;align-self:center}
-.career-portrait img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover;border-radius:50%;filter:grayscale(1)}
+.career-portrait{margin:0;align-self:center;position:relative}
+.career-portrait::before,.career-portrait::after{border:1px dotted currentColor;border-radius:50%;content:"";inset:-18px;position:absolute;opacity:.55}
+.career-portrait::after{inset:-38px;opacity:.2}
+.career-portrait img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover;object-position:50% 22%;border-radius:50%;filter:grayscale(1) contrast(1.04);position:relative;z-index:1}
 .career-portrait figcaption{font-size:.875rem;line-height:1.5;margin-top:20px;text-align:center}
-.work-header .work-note{display:block;margin:12px 0 24px}.work-header h2{margin-top:0}
-.work-header h2{font-size:clamp(2rem,4.5vw,4rem);line-height:1.1;letter-spacing:-.035em}
+.work-header{max-width:1320px;margin:0 auto;padding-bottom:72px}
+.work-header h2{font-size:clamp(3.2rem,7.3vw,7.2rem);line-height:.86;letter-spacing:-.068em;margin:0 auto clamp(62px,9vw,112px);max-width:1120px}
+.work-header h2 span{display:block;font-size:.56em;letter-spacing:-.045em;margin-top:14px}
+.skills-heading{align-items:end;display:grid;grid-template-columns:1fr auto;gap:24px;border-top:1px dotted currentColor;padding-top:14px;text-align:left}
+.skills-heading p{font:11px/1.35 var(--mono);letter-spacing:.1em;margin:0;text-transform:uppercase}
+.skills-heading h3{font-size:clamp(4rem,9vw,9rem);letter-spacing:-.075em;line-height:.72;margin:0}
+/* GUESS: circle sizes create emphasis and rhythm; they are not proficiency ratings. */
+.skill-orbit{align-items:center;display:flex;flex-wrap:wrap;gap:clamp(8px,1.25vw,18px);justify-content:center;list-style:none;margin:54px auto 0;max-width:1180px;padding:0}
+.skill{align-items:center;background:rgba(246,241,224,.25);border:1px dotted currentColor;border-radius:50%;display:flex;font-size:clamp(.78rem,1.1vw,1rem);font-weight:600;height:var(--skill-size);justify-content:center;letter-spacing:-.02em;line-height:1.1;padding:14px;text-align:center;width:var(--skill-size);transition:transform .22s ease,background-color .22s ease}
+.skill:nth-child(3n+1){transform:translateY(-12px)}
+.skill:nth-child(4n){transform:translateY(14px)}
+.skill:hover{transform:translateY(-5px);background:#f6f1e0}
+.skill-xl{--skill-size:clamp(132px,13vw,174px);font-size:clamp(.95rem,1.35vw,1.2rem)}
+.skill-lg{--skill-size:clamp(112px,11vw,148px)}
+.skill-md{--skill-size:clamp(96px,9.3vw,126px)}
+.skill-sm{--skill-size:clamp(80px,7.5vw,104px);font-size:clamp(.72rem,.9vw,.88rem)}
+.skill-dark{background:#292824;color:#f6f1e0;border-style:solid}
+.skill-rust{background:#876241;color:#f6f1e0;border-style:solid}
+.skill-pale{background:#e4dcc9;border-style:solid}
 .project-copy .project-kind{font-size:.75rem!important;line-height:1.5;margin:0 0 18px;max-width:none}
 .project-card .project-copy{padding-top:32px}.project-card .project-copy h3{font-size:clamp(2rem,3vw,3rem)}
 .project-copy .project-proof{opacity:1;font-size:.875rem!important}.project-copy footer{line-height:1.6}
@@ -22,5 +44,6 @@
 .career-background h2{font-size:2rem;letter-spacing:-.03em;line-height:1.2;margin-bottom:20px}
 .career-background p{font-size:1.125rem;line-height:1.65}.career-background>a{color:inherit;text-underline-offset:5px;margin-top:24px}
 a:focus-visible{outline:3px solid currentColor;outline-offset:5px}.site-footer{flex-wrap:wrap;gap:16px}
-@media(max-width:850px){.career-hero{grid-template-columns:minmax(0,1fr) 150px;gap:24px;padding:48px 24px}.career-hero h1{font-size:clamp(2.6rem,6vw,4rem)}.desktop-break{display:none}}
-@media(max-width:600px){.career-hero{display:block;padding:36px 20px 44px}.career-hero h1{font-size:2.7rem}.career-portrait{display:none}.career-summary{font-size:1.125rem}.career-actions{gap:8px 20px}.career-actions .primary-action{width:100%;text-align:center}.career-background{padding:36px 20px}.career-background h2{font-size:1.75rem}.work-header h2{font-size:2rem}.challenges{padding-left:20px;padding-right:20px}.project-data{padding:16px 20px}}
+@media(max-width:850px){.career-hero{grid-template-columns:minmax(0,1fr) 190px;gap:32px;padding:76px 24px 74px}.career-hero::before{left:24px}.career-hero h1{font-size:clamp(3.05rem,7vw,4.35rem)}.desktop-break{display:none}.work-header{padding-bottom:54px}.skills-heading{grid-template-columns:1fr}.skills-heading h3{justify-self:end}.skill-orbit{margin-top:40px}}
+@media(max-width:600px){.career-hero{grid-template-columns:1fr 104px;gap:24px;padding:68px 20px 58px}.career-hero::before{left:20px;top:20px}.career-intro{display:contents}.career-name{grid-column:1/-1;font-size:2.8rem;margin:0 0 34px}.career-hero h1{grid-column:1/-1;font-size:2.75rem;margin-bottom:24px}.career-summary{font-size:1.08rem;grid-column:1;max-width:330px;margin:0}.career-location{align-self:end;display:block;font-size:10px;grid-column:2;margin:0}.career-location span{display:block}.career-location span+span{margin-top:8px}.career-location span+span::before{content:none}.career-portrait{grid-column:2;grid-row:3;width:104px;margin-top:-6px}.career-portrait::before{inset:-9px}.career-portrait::after{display:none}.career-actions{gap:8px 20px}.career-actions .primary-action{width:100%;text-align:center}.career-background{padding:36px 20px}.career-background h2{font-size:1.75rem}.work-header h2{font-size:3.2rem;margin-bottom:58px}.skills-heading h3{font-size:4.7rem}.skill-orbit{gap:7px;margin-top:32px}.skill-xl{--skill-size:126px}.skill-lg{--skill-size:108px}.skill-md{--skill-size:92px}.skill-sm{--skill-size:78px}.skill{font-size:.75rem;padding:10px}.skill:nth-child(n){transform:none}.challenges{padding-left:20px;padding-right:20px}.project-data{padding:16px 20px}}
+@media(prefers-reduced-motion:reduce){.skill{transition:none}}

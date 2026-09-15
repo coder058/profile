@@ -6,9 +6,9 @@ const read = name => readFileSync(new URL('../' + name, import.meta.url), 'utf8'
 const html = read('index.html');
 
 test('featured selection leads with independent Polybow and includes external review', () => {
-  const titles = [...html.matchAll(/<h3>([^<]+)<\/h3>/g)].map(x => x[1]);
+  const titles = [...html.matchAll(/<article class="project-card[^>]*>[\s\S]*?<h3>([^<]+)<\/h3>/g)].map(x => x[1]);
   assert.deepEqual(titles, ['Polybow', 'Pattern Forge', 'Info Desk', 'Haystack']);
-  assert.match(html, /Independent projects &amp; open source/);
+  assert.match(html, /Independent projects\s*<span>&amp; open source<\/span>/);
   assert.match(html, /href="https:\/\/github.com\/deepset-ai\/haystack\/pull\/12635"/);
   assert.doesNotMatch(html, /relay-ten-zeta|<h3>DispatchOps|enterprise customer|years of professional/);
 });
@@ -30,13 +30,16 @@ test('hero names the person, the AI brief, and Amsterdam', () => {
   assert.match(html, /<p class="career-name">Jordi Lluis<\/p>/);
   assert.match(html, /Using agentic AI/);
   assert.match(html, /Building market-data and operational tools for financial-market analysis/);
-  assert.match(html, /<p class="career-location">Amsterdam<\/p>/);
+  assert.match(html, /AMS \/ NETHERLANDS/);
   assert.match(html, />Work<\/a>/);
   assert.match(html, />Resume<\/a>/);
   assert.match(html, /separate from my independent software work/);
   assert.doesNotMatch(html, /Engineering work|Résumé|Software Engineer|I build|replaying what was known|Code\. Decisions\. Evidence|Explore the engineering|Get in touch/);
   assert.doesNotMatch(html, /I like tackling everyday problems|Full-stack developer|AI engineer/);
-  for (const tool of ['Python', 'SQL', 'FastAPI', 'PostgreSQL', 'WebSockets', 'Docker']) assert.ok(html.includes('<li>' + tool + '</li>'));
+  for (const tool of ['Ruby on Rails', 'Python', 'PostgreSQL', 'JavaScript', 'React', 'Docker', 'AWS VPS', 'FastAPI', 'Git', 'HTML / CSS', 'MCP', 'Retrieval + evals', 'WebSockets']) {
+    assert.match(html, new RegExp('<li class="[^"]*">' + tool.replace(/[+]/g, '\\+') + '<\\/li>'));
+  }
+  assert.doesNotMatch(html, /Recorded cases are labelled; source and checks are linked/);
 });
 
 test('demo and historical evidence boundaries stay explicit', () => {
