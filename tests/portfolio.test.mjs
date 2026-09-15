@@ -26,11 +26,15 @@ test('local assets and fragment destinations resolve', () => {
   }
 });
 
-test('positioning is specific and employment authorization is visible', () => {
-  assert.match(html, /Python &amp; data/);
-  assert.match(html, /Amsterdam · EU citizen · No EU sponsorship needed/);
-  assert.match(html, /logistics operations and applied finance/);
+test('hero names the person, the AI brief, and Amsterdam', () => {
+  assert.match(html, /<p class="career-name">Jordi Lluis<\/p>/);
+  assert.match(html, /Using agentic AI/);
+  assert.match(html, /Building market-data and operational tools for financial-market analysis/);
+  assert.match(html, /<p class="career-location">Amsterdam<\/p>/);
+  assert.match(html, />Work<\/a>/);
+  assert.match(html, />Resume<\/a>/);
   assert.match(html, /separate from my independent software work/);
+  assert.doesNotMatch(html, /Engineering work|Résumé|Software Engineer|I build|replaying what was known|Code\. Decisions\. Evidence|Explore the engineering|Get in touch/);
   assert.doesNotMatch(html, /I like tackling everyday problems|Full-stack developer|AI engineer/);
   for (const tool of ['Python', 'SQL', 'FastAPI', 'PostgreSQL', 'WebSockets', 'Docker']) assert.ok(html.includes('<li>' + tool + '</li>'));
 });

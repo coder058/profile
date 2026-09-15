@@ -1,7 +1,8 @@
 /* SOURCE: editorial layout values, not measured recruiting or performance metrics. */
 .career-hero{display:grid;grid-template-columns:minmax(0,1fr) 240px;gap:64px;align-items:center;max-width:1320px;margin:auto;padding:80px 40px 72px}
 .eyebrow,.project-kind{font-family:var(--mono);font-size:.8rem;letter-spacing:.09em;text-transform:uppercase}
-.career-hero h1{font-size:clamp(2.8rem,5.4vw,5.2rem);line-height:1.04;letter-spacing:-.055em;margin:24px 0;max-width:900px}
+.career-name{font-size:clamp(1.2rem,1.7vw,1.5rem);line-height:1.25;letter-spacing:-.02em;font-weight:600;margin:0}
+.career-hero h1{font-size:clamp(2.8rem,5.4vw,5.2rem);line-height:1.04;letter-spacing:-.055em;margin:12px 0 24px;max-width:900px}
 .career-summary{font-size:1.25rem;line-height:1.5;max-width:650px;margin:0 0 14px}
 .career-context,.career-location{font-size:1rem;line-height:1.6;max-width:640px}
 .career-location{font-weight:600;margin-top:24px}
@@ -11,7 +12,7 @@
 .career-portrait{margin:0;align-self:center}
 .career-portrait img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover;border-radius:50%;filter:grayscale(1)}
 .career-portrait figcaption{font-size:.875rem;line-height:1.5;margin-top:20px;text-align:center}
-.work-header .work-note{display:block;margin-bottom:24px}.work-header .eyebrow{margin-bottom:20px}
+.work-header .work-note{display:block;margin:12px 0 24px}.work-header h2{margin-top:0}
 .work-header h2{font-size:clamp(2rem,4.5vw,4rem);line-height:1.1;letter-spacing:-.035em}
 .project-copy .project-kind{font-size:.75rem!important;line-height:1.5;margin:0 0 18px;max-width:none}
 .project-card .project-copy{padding-top:32px}.project-card .project-copy h3{font-size:clamp(2rem,3vw,3rem)}
