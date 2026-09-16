@@ -28,14 +28,16 @@ test('local assets and fragment destinations resolve', () => {
 
 test('hero names the person, the AI brief, and Amsterdam', () => {
   assert.match(html, /<p class="career-name">Jordi Lluis<\/p>/);
-  assert.match(html, /Domain-specific agents/);
-  assert.match(html, /They belong to the work/);
-  assert.match(html, /Market data\. Operational tools\. Financial analysis/);
+  assert.match(html, /Take a step back/);
+  assert.match(html, /AI is not just a model/);
+  assert.match(html, /First of all, the model is a start/);
+  assert.match(html, /The reason for that is simple/);
+  assert.match(html, /I still go back to the data/);
   assert.match(html, /AMSTERDAM/);
   assert.match(html, />Work<\/a>/);
   assert.match(html, />Resume<\/a>/);
-  assert.match(html, /The software is independent of it/);
-  assert.doesNotMatch(html, /Engineering work|Résumé|Software Engineer|I build|replaying what was known|Code\. Decisions\. Evidence|Explore the engineering|Get in touch|Using agentic AI|My logistics work/);
+  assert.match(html, /what did the system actually know/);
+  assert.doesNotMatch(html, /Engineering work|Résumé|Software Engineer|replaying what was known|Code\. Decisions\. Evidence|Explore the engineering|Get in touch|Using agentic AI|Domain-specific agents|My logistics work|It is a system sitting on the data/);
   assert.doesNotMatch(html, /I like tackling everyday problems|Full-stack developer|AI engineer/);
   for (const tool of ['Ruby on Rails', 'Python', 'PostgreSQL', 'JavaScript', 'React', 'Docker', 'AWS VPS', 'FastAPI', 'Git', 'HTML / CSS', 'MCP', 'Retrieval + evals', 'WebSockets']) {
     assert.match(html, new RegExp('<li class="[^"]*">' + tool.replace(/[+]/g, '\\+') + '<\\/li>'));
@@ -47,7 +49,7 @@ test('demo and historical evidence boundaries stay explicit', () => {
   assert.match(html, /An acknowledgement is not a fill/);
   assert.match(html, /Not proof of profitability/);
   assert.match(html, /The public demo does not serve that database/);
-  assert.match(html, /A recorded evidence case/);
+  assert.match(html, /recorded evidence case/);
   assert.match(html, /local live-research workspace/);
   assert.match(html, /cross-language misses/);
   assert.match(html, /public backend unavailable/);
