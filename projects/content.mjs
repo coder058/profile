@@ -165,8 +165,9 @@ export const projects = [
       'Keep the next work honest: navigation is deferred until hardware or a reproducible simulator exists; the small continual-learning/architecture track is queued for a separately authorized protocol.'
     ],
     dependenciesIntro: 'The research path moves from frozen data to a controlled testbed, then through liveness gates into versioned evidence. The queue is infrastructure for auditability, not another scientific result.',
-    dependencyMap: true,
+    dependencyMap: false,
     dependsTitle: 'How the research architecture fits together',
+    dependsCaption: 'Architecture dependencies and responsibilities',
     dependencies: [
       ['Frozen source lock', 'MaleCNS v1.0 source files and source.lock.json', 'Defines the object of study and protects raw provenance.'],
       ['Derived sparse graph', 'Read-only CSR/CSC/COO archives plus graph metadata', 'Provides the graph representation used by controlled runs.'],
@@ -176,8 +177,9 @@ export const projects = [
       ['Experiment record', 'Preregistered protocol plus append-only JSON results', 'Preserves what was run, what was measured and what was withheld.'],
       ['Control plane', 'Ledger, claims, portfolio and bounded local queue', 'Makes status, provenance and task boundaries inspectable; it does not execute agents.']
     ],
-    recordMap: true,
+    recordMap: false,
     recordsTitle: 'How the data and evidence connect',
+    recordsCaption: 'Data records, dependencies and responsibilities',
     recordsIntro: 'The same distinction runs through every file: source data, simulated activity, validity status and interpretation are separate records. A missing checkpoint is not a negative scientific score.',
     records: [
       ['source.lock.json', 'Frozen source paths and hashes', 'Anchors MaleCNS v1.0 provenance before any simulation.'],

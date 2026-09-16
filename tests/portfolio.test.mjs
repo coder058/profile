@@ -67,6 +67,11 @@ test('Fly Brain leads the work grid and exposes progress without overclaiming', 
   assert.match(fly, /Research path, step by step/);
   assert.match(fly, /How the research architecture fits together/);
   assert.match(fly, /How the data and evidence connect/);
+  assert.match(fly, /Architecture dependencies and responsibilities/);
+  assert.match(fly, /Data records, dependencies and responsibilities/);
+  assert.equal((fly.match(/<table>/g) || []).length, 2);
+  assert.match(fly, /Component.*Depends on.*Responsibility/);
+  assert.match(fly, /Record.*Depends on.*Responsibility/);
   assert.match(fly, /Progress is real\. The result is not finished/);
   assert.match(fly, /no eligible connectome\/DP delay/);
   assert.match(fly, /claim about biological intelligence/);
