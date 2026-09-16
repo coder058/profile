@@ -67,6 +67,7 @@ test('Fly Brain leads the work grid and exposes progress without overclaiming', 
   assert.match(fly, /Research path, step by step/);
   assert.match(fly, /How the research architecture fits together/);
   assert.match(fly, /How the data and evidence connect/);
+  assert.match(fly, /https:\/\/github\.com\/coder058\/fly-brain/);
   assert.match(fly, /Architecture dependencies and responsibilities/);
   assert.match(fly, /Data records, dependencies and responsibilities/);
   assert.equal((fly.match(/<table>/g) || []).length, 3);

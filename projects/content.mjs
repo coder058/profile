@@ -134,6 +134,7 @@ export const projects = [
     featuredStory: true,
     summary: 'A CPU-only research lab that turns a frozen MaleCNS v1.0 connectome into auditable simulation checkpoints. Progress is recorded; unfinished gates stay visible.',
     stack: 'PYTHON · SPARSE GRAPHS · CPU RESEARCH · REPRODUCIBLE EXPERIMENTS',
+    code: 'https://github.com/coder058/fly-brain',
     problem: [
       'A connectome is a wiring map, not automatically a working neural system. The real engineering problem was to turn a frozen MaleCNS v1.0 graph into a testable instrument without hiding dead runs, rate mismatch or unsupported biological claims.',
       'The lab therefore separates the object of study from the task around it: the graph is real frozen data, while the cue, probes and simulated dynamics are a controlled testbed. A passing script is not the same thing as a valid memory or topology result.',
