@@ -7,9 +7,10 @@ const html = read('index.html');
 
 test('featured selection leads with independent Polybow and includes external review', () => {
   const titles = [...html.matchAll(/<article class="project-card[^>]*>[\s\S]*?<h3>([^<]+)<\/h3>/g)].map(x => x[1]);
-  assert.deepEqual(titles, ['Polybow', 'Pattern Forge', 'Info Desk', 'Haystack']);
+  assert.deepEqual(titles, ['Fly Brain', 'Polybow', 'Pattern Forge', 'Info Desk', 'Haystack']);
   assert.match(html, /Independent projects\s*<span>&amp; open source<\/span>/);
   assert.match(html, /href="https:\/\/github.com\/deepset-ai\/haystack\/pull\/12635"/);
+  assert.match(html, /href="projects\/fly-brain\.html"/);
   assert.doesNotMatch(html, /relay-ten-zeta|<h3>DispatchOps|enterprise customer|years of professional/);
 });
 
@@ -55,6 +56,21 @@ test('demo and historical evidence boundaries stay explicit', () => {
   assert.match(html, /public backend unavailable/);
   assert.match(html, /href="projects\/polybow\.html#depends"/);
   for (const slug of ['pattern-forge', 'info-desk']) assert.ok(html.includes('href="projects/' + slug + '.html#data"'));
+});
+
+test('Fly Brain leads the work grid and exposes progress without overclaiming', () => {
+  const fly = read('projects/fly-brain.html');
+  assert.ok(html.indexOf('href="projects/fly-brain.html"') < html.indexOf('href="projects/polybow.html"'));
+  assert.match(fly, /The real problem/);
+  assert.match(fly, /165122 neurons/);
+  assert.match(fly, /25563197 edges/);
+  assert.match(fly, /Research path, step by step/);
+  assert.match(fly, /How the research architecture fits together/);
+  assert.match(fly, /How the data and evidence connect/);
+  assert.match(fly, /Progress is real\. The result is not finished/);
+  assert.match(fly, /no eligible connectome\/DP delay/);
+  assert.match(fly, /claim about biological intelligence/);
+  assert.doesNotMatch(fly, /is a living-fly simulation|demonstrates biological intelligence|proves topology/);
 });
 
 test('earlier team work stays separate and private exercises are not linked', () => {
