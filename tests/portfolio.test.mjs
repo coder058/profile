@@ -28,13 +28,14 @@ test('local assets and fragment destinations resolve', () => {
 
 test('hero names the person, the AI brief, and Amsterdam', () => {
   assert.match(html, /<p class="career-name">Jordi Lluis<\/p>/);
-  assert.match(html, /Using agentic AI/);
-  assert.match(html, /Building market-data and operational tools for financial-market analysis/);
-  assert.match(html, /AMS \/ NETHERLANDS/);
+  assert.match(html, /Domain-specific agents/);
+  assert.match(html, /They belong to the work/);
+  assert.match(html, /Market data\. Operational tools\. Financial analysis/);
+  assert.match(html, /AMSTERDAM/);
   assert.match(html, />Work<\/a>/);
   assert.match(html, />Resume<\/a>/);
-  assert.match(html, /separate from my independent software work/);
-  assert.doesNotMatch(html, /Engineering work|Résumé|Software Engineer|I build|replaying what was known|Code\. Decisions\. Evidence|Explore the engineering|Get in touch/);
+  assert.match(html, /The software is independent of it/);
+  assert.doesNotMatch(html, /Engineering work|Résumé|Software Engineer|I build|replaying what was known|Code\. Decisions\. Evidence|Explore the engineering|Get in touch|Using agentic AI|My logistics work/);
   assert.doesNotMatch(html, /I like tackling everyday problems|Full-stack developer|AI engineer/);
   for (const tool of ['Ruby on Rails', 'Python', 'PostgreSQL', 'JavaScript', 'React', 'Docker', 'AWS VPS', 'FastAPI', 'Git', 'HTML / CSS', 'MCP', 'Retrieval + evals', 'WebSockets']) {
     assert.match(html, new RegExp('<li class="[^"]*">' + tool.replace(/[+]/g, '\\+') + '<\\/li>'));
