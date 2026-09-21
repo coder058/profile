@@ -22,8 +22,8 @@
   "default_pdf": {
     "designed": "https://coder058.github.io/profile/assets/jordi-lluis-cv.pdf",
     "ats": "https://coder058.github.io/profile/assets/jordi-lluis-cv-ats.pdf",
-    "sha256_designed": "b379bc8ba3d9e9ae678affa1d07094285df8122fcb639e6658680ce88c13b0bd",
-    "sha256_ats": "7734379add08c72c4da62cc85576500c2fe9b12a6684c8ef2d8c80078c479f84"
+    "sha256_designed": "b9a56dbfff7094d1b18eaa599861bc35b8af21de4290e455356aadd51ffc9ebd",
+    "sha256_ats": "c488f26a44b499f58e9268f8a56ab24e8804f2943fb857cd781deb755d22ca4a"
   },
   "packs": [
     {
@@ -31,16 +31,16 @@
       "use_for": "Python backend and operations software",
       "designed_pdf": "https://coder058.github.io/profile/assets/jordi-lluis-software-cv.pdf",
       "ats_pdf": "https://coder058.github.io/profile/assets/jordi-lluis-software-cv-ats.pdf",
-      "sha256_designed": "bacd21030221d7d224a4a47df379b501e62120a54ef14abd15a9ca0aa65cef7c",
-      "sha256_ats": "a86624aa220fb34cd50db443f5c74cd077948ec72517c563a7f3d0c56c2ed831"
+      "sha256_designed": "92b43215dcbc32c446677db603d30131230e544e795a90e738693d6ad1afa477",
+      "sha256_ats": "8c5f68e2f2c7525e47c3d3ad448bbcca58c885168ad7f154af14e55e3643144a"
     },
     {
       "id": "data",
       "use_for": "Market-data software and financial data platforms",
       "designed_pdf": "https://coder058.github.io/profile/assets/jordi-lluis-data-cv.pdf",
       "ats_pdf": "https://coder058.github.io/profile/assets/jordi-lluis-data-cv-ats.pdf",
-      "sha256_designed": "8ec173b10e495c95d26160b0709d09410788d280d3256c7815f3ae74ef2ae9a8",
-      "sha256_ats": "04eecfce21704c7dbbcaf27718f832d83df78a6559c67bf19fff8860f1092f67"
+      "sha256_designed": "6300a2ad28a229b55810c63ca12ecd230eca2681d0791d8ade643fa7265f3031",
+      "sha256_ats": "14440aa0be93e474bed271f21d48869cd1197e609434653da033f7dc88a0340b"
     }
   ]
 }

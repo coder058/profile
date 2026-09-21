@@ -3,7 +3,7 @@
 export const projects = [
   {
     slug: 'pattern-forge', name: 'Pattern Forge', stack: 'React · TypeScript · Next.js · WebSockets',
-    summary: 'Replay without look-ahead: later candles stay out of the indicators. CI runs tests, Docker and a PostgreSQL restart. The public demo does not serve that database.',
+    summary: 'Inspect a candlestick pattern, read its market context and rewind the recording. The chart recalculates from the available candle prefix, without using later prices.',
     problem: 'When reviewing a market, it is easy to let later prices influence an earlier decision. I wanted to inspect what an indicator could actually have shown at a chosen point in time.',
     contribution: 'I built the market controls, data validation, replay calculations, candle API and connection handling. TradingView Lightweight Charts renders the chart; I did not build that charting library.',
     demo: 'https://pattern-forge-five.vercel.app/',
@@ -17,11 +17,12 @@ export const projects = [
       ['Docker and GitHub Actions', 'Image build, tests and a restart check that the stored rows survive.']
     ],
     steps: [
-      'Open the workspace. Bitcoin loads by default. The live mid-price changes automatically; the candle chart is a separate snapshot.',
-      'Choose a timeframe or select a recorded market such as Gold. Recorded markets are labelled Historical recording.',
-      'Move the Replay slider left, then advance a candle at a time. Later candles stay out of indicator calculations.',
-      'Choose Compare timeframes to see which complete higher-timeframe candles were available at that point.',
-      'Export the selected data prefix. Refresh reloads public candles; it does not turn an archive into a live feed.'
+      'Choose a market and interval. Public Bitcoin loads a closed-candle snapshot; Gold and the other recorded markets use dated files.',
+      'Choose Candlestick patterns and Bullish engulfing. Inspect the highlighted candle pair; a shape is not a prediction of the next price.',
+      'Switch to Trend & location for Murphy-inspired context. Add supporting indicators only if you want them; drawing is optional.',
+      'Rewind a recording and step forward. Later candles stay out of indicator calculations.',
+      'For an hourly recording, select 4h and Preview forming 4h. The amber body uses only closed hourly input; it may change before the four-hour close.',
+      'Export the selected closed-candle prefix. Provisional bodies never enter the export. Refresh reloads public candles; it does not turn an archive into a live feed.'
     ],
     dependencies: [
       ['React workspace', 'Candle API and local analysis functions', 'Selection, chart controls and loading/error states.'],
@@ -35,8 +36,8 @@ export const projects = [
     recordsIntro: 'Closed candles and ingest runs can be stored in PostgreSQL locally and in CI. The public demo uses recording files and process memory; it does not serve that database.',
     recordsCaption: 'Stored records, keys and responsibility',
     records: [
-      ['candles table', 'Primary key (symbol, interval, open_time)', 'Prevents duplicate rows on repeated ingestion; stores OHLCV values and ingestion time.'],
-      ['ingest_runs table', 'Each ingestion attempt', 'Stores source, row counts, timing and errors separately from candle data.'],
+      ['candles table', 'Primary key (symbol, interval, open_time)', 'Upserts OHLCV and ingestion time. Revisions replace the row; this is not immutable history.'],
+      ['ingest_runs table', 'Each ingestion attempt', 'Stores source, counts, timing and errors in a separate transaction from candle writes.'],
       ['Stored-candle API (local/CI)', 'PostgreSQL through the pg client and DATABASE_URL', 'Reads saved candles into the existing chart. An empty store returns 404; an unavailable database returns 503.'],
       ['Public demo storage', 'Recording files and temporary process memory', 'No user accounts and no hosted PostgreSQL on Vercel.']
     ],

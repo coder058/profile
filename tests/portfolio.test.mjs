@@ -5,7 +5,7 @@ import { createHash } from 'node:crypto';
 const read = name => readFileSync(new URL('../' + name, import.meta.url), 'utf8');
 const html = read('index.html');
 
-test('featured selection leads with independent Polybow and includes external review', () => {
+test('featured selection preserves research and engineering work with separate external review', () => {
   const titles = [...html.matchAll(/<article class="project-card[^>]*>[\s\S]*?<h3>([^<]+)<\/h3>/g)].map(x => x[1]);
   assert.deepEqual(titles, ['Fly Brain', 'Polybow', 'Pattern Forge', 'Info Desk', 'Haystack']);
   assert.match(html, /Independent projects\s*<span>&amp; open source<\/span>/);
@@ -27,17 +27,16 @@ test('local assets and fragment destinations resolve', () => {
   }
 });
 
-test('hero names the person, the AI brief, and Amsterdam', () => {
+test('hero identifies a developer and practical work without a generic AI manifesto', () => {
   assert.match(html, /<p class="career-name">Jordi Lluis<\/p>/);
-  assert.match(html, /Take a step back/);
-  assert.match(html, /AI is not just a model/);
-  assert.match(html, /First of all, the model is a start/);
-  assert.match(html, /The reason for that is simple/);
-  assert.match(html, /I still go back to the data/);
+  assert.match(html, /Software developer/);
+  assert.match(html, /inspecting market data and checking AI-generated answers/);
+  assert.match(html, /Tools I build with/);
   assert.match(html, /AMSTERDAM/);
   assert.match(html, />Work<\/a>/);
   assert.match(html, />Resume<\/a>/);
-  assert.match(html, /what did the system actually know/);
+  assert.match(html, /Before the code/);
+  assert.doesNotMatch(html, /Take a step back|First of all|The reason for that is simple|I still go back to the data|SYSTEMS, NOT TYPING/);
   assert.doesNotMatch(html, /Engineering work|Résumé|Software Engineer|replaying what was known|Code\. Decisions\. Evidence|Explore the engineering|Get in touch|Using agentic AI|Domain-specific agents|My logistics work|It is a system sitting on the data/);
   assert.doesNotMatch(html, /I like tackling everyday problems|Full-stack developer|AI engineer/);
   for (const tool of ['Ruby on Rails', 'Python', 'PostgreSQL', 'JavaScript', 'React', 'Docker', 'AWS VPS', 'FastAPI', 'Git', 'HTML / CSS', 'MCP', 'Retrieval + evals', 'WebSockets']) {
@@ -47,11 +46,10 @@ test('hero names the person, the AI brief, and Amsterdam', () => {
 });
 
 test('demo and historical evidence boundaries stay explicit', () => {
-  assert.match(html, /An acknowledgement is not a fill/);
   assert.match(html, /Not proof of profitability/);
-  assert.match(html, /The public demo does not serve that database/);
-  assert.match(html, /recorded evidence case/);
-  assert.match(html, /local live-research workspace/);
+  assert.match(html, /PostgreSQL runs locally and in CI, not in the public demo/);
+  assert.match(html, /public case is recorded/);
+  assert.match(html, /live research runs in a separate local workspace/);
   assert.match(html, /cross-language misses/);
   assert.match(html, /public backend unavailable/);
   assert.match(html, /href="projects\/polybow\.html#depends"/);
