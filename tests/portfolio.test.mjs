@@ -8,7 +8,7 @@ const html = read('index.html');
 test('featured selection preserves research and engineering work with separate external review', () => {
   const titles = [...html.matchAll(/<article class="project-card[^>]*>[\s\S]*?<h3>([^<]+)<\/h3>/g)].map(x => x[1]);
   assert.deepEqual(titles, ['Fly Brain', 'Polybow', 'Pattern Forge', 'Info Desk', 'Energy Monitor']);
-  assert.match(html, /Independent projects/);
+  assert.match(html, /<h2 id="work-title">Projects<\/h2>/);
   assert.doesNotMatch(html, /Haystack|haystack/);
   assert.match(html, /https:\/\/energy-monitor-jordi.jlpmccs.chatgpt.site\//);
   assert.match(html, /href="projects\/fly-brain\.html"/);
@@ -34,7 +34,7 @@ test('hero identifies a developer and practical work without a generic AI manife
   assert.match(html, /I build, test and debug software to solve everyday problems/);
   assert.match(html, /I use AI tools throughout development and explore new technologies/);
   assert.doesNotMatch(html, /checking AI-generated answers|I like figuring out why/);
-  assert.match(html, /Tools I build with/);
+  assert.doesNotMatch(html, /Tools I build with|Independent projects/);
   assert.doesNotMatch(html, /amsterdam|netherlands/i);
   assert.match(html, />Work<\/a>/);
   assert.match(html, />Resume<\/a>/);
