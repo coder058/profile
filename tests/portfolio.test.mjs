@@ -31,7 +31,9 @@ test('local assets and fragment destinations resolve', () => {
 test('hero identifies a developer and practical work without a generic AI manifesto', () => {
   assert.match(html, /<p class="career-name">Jordi Lluis<\/p>/);
   assert.match(html, /Software developer/);
-  assert.match(html, /inspecting market data and checking AI-generated answers/);
+  assert.match(html, /I build, test and debug software to solve everyday problems/);
+  assert.match(html, /I use AI tools throughout development and explore new technologies/);
+  assert.doesNotMatch(html, /checking AI-generated answers|I like figuring out why/);
   assert.match(html, /Tools I build with/);
   assert.doesNotMatch(html, /amsterdam|netherlands/i);
   assert.match(html, />Work<\/a>/);
