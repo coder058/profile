@@ -22,7 +22,7 @@ test('cards distinguish interactive demos, recorded cases and external review', 
   const html = readFileSync(new URL('../index.html',import.meta.url),'utf8');
   assert.match(html, /href="https:\/\/pattern-forge-five\.vercel\.app\/"/);
   assert.match(html, /href="projects\/polybow\.html"/);
-  assert.match(html, /href="https:\/\/github.com\/deepset-ai\/haystack\/pull\/12635"/);
+  assert.match(html, /href="https:\/\/energy-monitor-jordi.jlpmccs.chatgpt.site\/"/);
   assert.match(html, /href="https:\/\/coder058\.github\.io\/info-desk\/"/);
   assert.match(html, /href="projects\/polybow\.html#depends"/);
   for (const slug of ['pattern-forge','info-desk']) assert.ok(html.includes(`href="projects/${slug}.html#data"`));

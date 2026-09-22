@@ -7,9 +7,10 @@ const html = read('index.html');
 
 test('featured selection preserves research and engineering work with separate external review', () => {
   const titles = [...html.matchAll(/<article class="project-card[^>]*>[\s\S]*?<h3>([^<]+)<\/h3>/g)].map(x => x[1]);
-  assert.deepEqual(titles, ['Fly Brain', 'Polybow', 'Pattern Forge', 'Info Desk', 'Haystack']);
-  assert.match(html, /Independent projects\s*<span>&amp; open source<\/span>/);
-  assert.match(html, /href="https:\/\/github.com\/deepset-ai\/haystack\/pull\/12635"/);
+  assert.deepEqual(titles, ['Fly Brain', 'Polybow', 'Pattern Forge', 'Info Desk', 'Energy Monitor']);
+  assert.match(html, /Independent projects/);
+  assert.doesNotMatch(html, /Haystack|haystack/);
+  assert.match(html, /https:\/\/energy-monitor-jordi.jlpmccs.chatgpt.site\//);
   assert.match(html, /href="projects\/fly-brain\.html"/);
   assert.doesNotMatch(html, /relay-ten-zeta|<h3>DispatchOps|enterprise customer|years of professional/);
 });
@@ -32,7 +33,7 @@ test('hero identifies a developer and practical work without a generic AI manife
   assert.match(html, /Software developer/);
   assert.match(html, /inspecting market data and checking AI-generated answers/);
   assert.match(html, /Tools I build with/);
-  assert.match(html, /AMSTERDAM/);
+  assert.doesNotMatch(html, /amsterdam|netherlands/i);
   assert.match(html, />Work<\/a>/);
   assert.match(html, />Resume<\/a>/);
   assert.match(html, /Before the code/);
@@ -60,20 +61,20 @@ test('Fly Brain leads the work grid and exposes progress without overclaiming', 
   const fly = read('projects/fly-brain.html');
   assert.ok(html.indexOf('href="projects/fly-brain.html"') < html.indexOf('href="projects/polybow.html"'));
   assert.match(fly, /The real problem/);
-  assert.match(fly, /165122 neurons/);
-  assert.match(fly, /25563197 edges/);
-  assert.match(fly, /Research path, step by step/);
-  assert.match(fly, /How the research architecture fits together/);
-  assert.match(fly, /How the data and evidence connect/);
+  assert.match(fly, /Can the wiring of a fruit fly/);
+  assert.match(fly, /The experiment, step by step/);
+  assert.match(fly, /How it works/);
+  assert.match(fly, /What gets saved/);
   assert.match(fly, /https:\/\/github\.com\/coder058\/fly-brain/);
-  assert.match(fly, /Architecture dependencies and responsibilities/);
-  assert.match(fly, /Data records, dependencies and responsibilities/);
+  assert.match(fly, /From source data to a result/);
+  assert.match(fly, /Data and experiment records/);
   assert.equal((fly.match(/<table>/g) || []).length, 3);
   assert.match(fly, /Component.*Depends on.*Responsibility/);
   assert.match(fly, /Record.*Depends on.*Responsibility/);
-  assert.match(fly, /Progress is real\. The result is not finished/);
-  assert.match(fly, /no eligible connectome\/DP delay/);
-  assert.match(fly, /claim about biological intelligence/);
+  assert.match(fly, /What works, and what is still missing/);
+  assert.match(fly, /did not produce a valid pair/);
+  assert.match(fly, /not a simulation of a living fly/);
+  assert.doesNotMatch(fly, /co-ignition|INST-001|MEM-003|operating point|preregistered/);
   assert.doesNotMatch(fly, /is a living-fly simulation|demonstrates biological intelligence|proves topology/);
 });
 

@@ -11,7 +11,8 @@ Independent engineering projects and open-source work, with a background in logi
 - Separate reconciliation lab, linked from the Polybow walkthrough: generated Python output on synthetic fixtures, atomic PostgreSQL imports and a local read-only FastAPI API. The homepage opens the historical engineering case. Database recovery is checked in the linked CI run, not performed by the static page.
 - Pattern Forge: interactive replay without look-ahead. Python/PostgreSQL ingestion and restart checks run locally/in CI; the public demo does not serve that database.
 - Info Desk: a recorded evidence case. The live research workspace requires local setup; evaluation limitations are linked.
-- Haystack: a focused merged validation fix, with regression test and maintainer review.
+- Energy Monitor: a public dashboard comparing German day-ahead electricity prices with generation and demand. Timestamped sources, missing-data handling and JSON export; not a streaming trading feed.
+- Haystack is a small external contribution, not a featured project.
 
 Relay remains available as a repository walkthrough, labelled as having an unavailable public backend. Training work is separate. No projects or deployments were deleted.
 

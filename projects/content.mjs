@@ -130,82 +130,53 @@ export const projects = [
   },
   {
     slug: 'fly-brain',
-    name: 'Fly Brain — research lab',
+    name: 'Fly Brain',
     pageClass: 'fly-brain-case',
     featuredStory: true,
-    summary: 'A CPU-only research lab that turns a frozen MaleCNS v1.0 connectome into auditable simulation checkpoints. Progress is recorded; unfinished gates stay visible.',
-    stack: 'PYTHON · SPARSE GRAPHS · CPU RESEARCH · REPRODUCIBLE EXPERIMENTS',
+    summary: 'Can the wiring of a fruit fly’s brain help a computer remember a signal? I am building small simulations to test that question. The experiment is still unfinished.',
+    stack: 'PYTHON · NUMPY · SCIPY · PYTEST',
     code: 'https://github.com/coder058/fly-brain',
     problem: [
-      'A connectome is a wiring map, not automatically a working neural system. The real engineering problem was to turn a frozen MaleCNS v1.0 graph into a testable instrument without hiding dead runs, rate mismatch or unsupported biological claims.',
-      'The lab therefore separates the object of study from the task around it: the graph is real frozen data, while the cue, probes and simulated dynamics are a controlled testbed. A passing script is not the same thing as a valid memory or topology result.',
-      'Every experiment must pre-register its question and gate, keep per-seed checkpoints, check train and test liveness independently, rate-match the arms and record missing cells instead of silently dropping them.'
+      'Scientists have mapped connections between a fruit fly’s neurons. A map tells us what connects to what; it does not tell us whether a computer using those connections can learn or remember.',
+      'I want to compare the original wiring with altered versions under the same conditions. First, both simulations need to respond reliably. Otherwise, a difference could come from a broken experiment rather than the wiring.'
     ],
     contribution: [
-      'I assembled the research-control layer around the connectome: append-only experiment directories, preregistered protocols, per-seed JSON checkpoints, a canonical ledger, conservative claims and a portfolio view that distinguishes code status from evidence status.',
-      'I added fail-closed liveness and rate gates to the experiment runners, read-only graph-integrity checks, nonzero-synapse ops accounting and a protected output guard so the frozen graph cannot be overwritten by an accidental rebuild.',
-      'The current lab records memory instrumentation, glutamate-polarity sensitivity and pair-ignition attempts. It keeps negative or incomplete outcomes visible rather than rewriting them into a success story.',
-      'This is an independent research testbed. It is not a living-fly simulation, a claim about biological intelligence, a product or a profitability result.'
+      'I built Python scripts that load the connection map, run controlled simulations and save what happened at each step.',
+      'The scripts check whether a run is active enough to compare, protect the original data and keep failed attempts in the results. I have not demonstrated memory or a useful advantage over another design.'
     ],
     skills: [
-      ['Python', 'Experiment runners, sparse dynamics, checkpoint writing and audit scripts.'],
-      ['NumPy / SciPy sparse graphs', 'CSR/CSC/COO graph representations and controlled subgraph variants.'],
-      ['Reproducible protocols', 'Pre-registration, frozen maps, seeds, gates and append-only result roots.'],
-      ['Liveness and rate instrumentation', 'Independent train/test checks and per-seed operating-point validation.'],
-      ['JSON / YAML evidence', 'Machine-readable summaries plus a human-auditable ledger and claims taxonomy.'],
-      ['pytest', 'Regression coverage for guards, experiment plumbing and the bounded local queue.'],
-      ['Git provenance', 'Local commits, result hashes and a continuity bundle because there is no origin.'],
-      ['CPU systems thinking', 'Resource-aware work on Ubuntu-1: 2 vCPU, 15 GiB RAM and no GPU.']
+      ['Python + NumPy/SciPy', 'Load a large connection map and calculate simulated activity without storing every possible connection.'],
+      ['JSON + experiment records', 'Save the settings, measurements and reasons a run failed.'],
+      ['pytest + Git', 'Check the code and track changes so an experiment can be repeated.']
     ],
-    stepsTitle: 'Research path, step by step',
+    stepsTitle: 'The experiment, step by step',
     steps: [
-      'Freeze the object of study: MaleCNS v1.0 is recorded as 165122 neurons and 25563197 edges. Raw inputs and the committed derived graph stay read-only.',
-      'Validate the instrument before interpreting it: INST-001 is preserved as a limited post-LIF feature-injection result, not as a topology or memory result.',
-      'Try the memory question with explicit controls: MEM-001 was invalidated, MEM-002 remained instrument-incomplete, and MEM-003 found no eligible connectome/DP delay pair under its two registered maps. No memory curve was produced.',
-      'Test polarity and operating points without changing the question after the fact: GLU-001 withheld its aggregate comparison, while IGNITE-001 and the single authorized IGNITE-002 follow-up found no primary co-ignition pair.',
-      'Preserve what the runs actually say: missing cells, seed validity, protocol hashes and conservative interpretations remain in the ledger, claims file and result directories.',
-      'Keep the next work honest: navigation is deferred until hardware or a reproducible simulator exists; the small continual-learning/architecture track is queued for a separately authorized protocol.'
+      'Load the published fruit-fly connection map.',
+      'Send a controlled signal into a small simulation.',
+      'Check that the original and comparison versions both respond.',
+      'Only then test whether information about the signal remains after a delay.',
+      'Save the result, including failures, so someone else can inspect it.'
     ],
-    dependenciesIntro: 'The research path moves from frozen data to a controlled testbed, then through liveness gates into versioned evidence. The queue is infrastructure for auditability, not another scientific result.',
-    dependencyMap: false,
-    dependsTitle: 'How the research architecture fits together',
-    dependsCaption: 'Architecture dependencies and responsibilities',
+    dependsTitle: 'How it works',
+    dependsCaption: 'From source data to a result',
     dependencies: [
-      ['Frozen source lock', 'MaleCNS v1.0 source files and source.lock.json', 'Defines the object of study and protects raw provenance.'],
-      ['Derived sparse graph', 'Read-only CSR/CSC/COO archives plus graph metadata', 'Provides the graph representation used by controlled runs.'],
-      ['Input / probe map', 'Frozen protocol map and non-input probe pool', 'Separates stimulation from readout and prevents direct cue leakage.'],
-      ['Dynamics and policy runner', 'Graph variant, polarity policy, seed and gain', 'Produces train/test activity checkpoints for one controlled arm.'],
-      ['Liveness / rate gate', 'Independent train/test activity and target band', 'Marks a candidate eligible, missing or invalid without scoring dead rows.'],
-      ['Experiment record', 'Preregistered protocol plus append-only JSON results', 'Preserves what was run, what was measured and what was withheld.'],
-      ['Control plane', 'Ledger, claims, portfolio and bounded local queue', 'Makes status, provenance and task boundaries inspectable; it does not execute agents.']
+      ['Connection map', 'Published MaleCNS v1.0 data', 'Keeps the original wiring fixed.'],
+      ['Simulation', 'The map and a written experiment plan', 'Calculates how activity changes after an input.'],
+      ['Checks', 'Activity from each simulation', 'Decides whether the runs can be compared fairly.'],
+      ['Result record', 'Settings, checks and measurements', 'Shows what ran and what remains unanswered.']
     ],
-    recordMap: false,
-    recordsTitle: 'How the data and evidence connect',
-    recordsCaption: 'Data records, dependencies and responsibilities',
-    recordsIntro: 'The same distinction runs through every file: source data, simulated activity, validity status and interpretation are separate records. A missing checkpoint is not a negative scientific score.',
+    recordsTitle: 'What gets saved',
+    recordsCaption: 'Data and experiment records',
+    recordsIntro: 'The original data, the experiment settings and the results are kept separate.',
     records: [
-      ['source.lock.json', 'Frozen source paths and hashes', 'Anchors MaleCNS v1.0 provenance before any simulation.'],
-      ['data/derived/graph/', 'Read-only sparse graph archives and metadata', 'Stores the graph consumed by the testbed; never a build output target.'],
-      ['protocol.md', 'Experiment ID, question, arms, seeds, delays, gates and cap', 'Records the design before metrics are inspected.'],
-      ['seed_*.json', 'Seed, arm, gain, rates, liveness and failure reason', 'Keeps each candidate visible, including MISSING rows.'],
-      ['summary.json', 'Stage status and eligible pair cells', 'Reports NO_COIGNITE or instrument completeness without accuracy when the gate is not met.'],
-      ['RESEARCH_LEDGER.yaml', 'Experiment and control-state entries', 'Canonical index of status, artifact paths and next authorized action.'],
-      ['SCIENTIFIC_CLAIMS.md', 'FACT / MEASURED / INTERPRETATION language', 'Stops an instrument outcome becoming a biological or topology claim.']
+      ['Source record', 'Original files and their hashes', 'Identifies the exact data used.'],
+      ['Experiment plan', 'Question, inputs and comparison rules', 'Records what will be tested before running it.'],
+      ['Run results', 'Measurements and failure reasons', 'Keeps unsuccessful runs visible too.']
     ],
-    build: [
-      'Freeze data and graph paths before loading the experiment harness.',
-      'Write the protocol first: define the question, arms, maps, seeds, target band, failure gate and compute budget.',
-      'Run smoke and sizing stages only as plumbing checks; write incremental seed artifacts and never tune the test set.',
-      'Run confirmation only when the preregistered gate permits it, then record the exact status even when no pair is eligible.',
-      'Update ledger, claims and portfolio together, run the tests and keep the repository boundary visible.'
-    ],
-    endingIndex: '06 / Current status',
-    endingTitle: 'Progress is real. The result is not finished.',
+    endingTitle: 'What works, and what is still missing',
     ending: [
-      'Progress: the graph is frozen and structurally verified; fail-closed liveness, rate instrumentation, ops accounting, protected graph output and provenance checks exist. The current repository suite passes 74 tests, and the bounded A2A queue is versioned as local infrastructure only.',
-      'Measured but not claim-ready: MEM-003 produced no eligible connectome/DP delay; GLU-001 withheld its aggregate polarity comparison; IGNITE-001 and IGNITE-002 produced no primary co-ignition pair. These are instrument and operating-point outcomes, not proof that the connectome has no memory or that topology has no value.',
-      'Still missing: a valid connectome/DP co-ignition pair, a preregistered memory curve, a powered comparison with valid controls, and a justified path into compute, robustness or camera testbeds. Navigation still needs hardware or a reproducible simulator; track 7 still needs a new authorized protocol.',
-      'The next credible breakthrough is therefore not a bigger claim. It is a valid operating point that survives liveness, rate matching, reproducibility and the pre-registered gate. Until that exists, this page shows the work and the boundary.'
+      'The code can load the map, run simulations and record checks. Recent experiments did not produce a valid pair of original and comparison runs for the intended memory test.',
+      'Next: get a repeatable comparison working before measuring memory. This is a research exercise, not a simulation of a living fly or a demonstrated AI product. The repository contains the detailed protocols and results.'
     ]
   },
   {
