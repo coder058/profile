@@ -7,7 +7,7 @@ const html = read('index.html');
 
 test('featured selection preserves research and engineering work with separate external review', () => {
   const titles = [...html.matchAll(/<article class="project-card[^>]*>[\s\S]*?<h3>([^<]+)<\/h3>/g)].map(x => x[1]);
-  assert.deepEqual(titles, ['Fly Brain', 'Polybow', 'Pattern Forge', 'Info Desk', 'Energy Monitor']);
+  assert.deepEqual(titles, ['Info Desk', 'Pattern Forge', 'Polybow', 'Energy Monitor']);
   assert.match(html, /<h2 id="work-title">Projects<\/h2>/);
   assert.doesNotMatch(html, /Haystack|haystack/);
   assert.match(html, /https:\/\/energy-monitor-jordi.jlpmccs.chatgpt.site\//);
@@ -35,7 +35,7 @@ test('hero identifies a developer and practical work without a generic AI manife
   assert.match(html, /I use AI tools throughout development and explore new technologies/);
   assert.doesNotMatch(html, /checking AI-generated answers|I like figuring out why/);
   assert.doesNotMatch(html, /Tools I build with|Independent projects/);
-  assert.doesNotMatch(html, /amsterdam|netherlands/i);
+  assert.doesNotMatch(html.split('id="work"')[0], /amsterdam|netherlands/i);
   assert.match(html, />Work<\/a>/);
   assert.match(html, />Resume<\/a>/);
   assert.match(html, /Before the code/);
@@ -59,9 +59,12 @@ test('demo and historical evidence boundaries stay explicit', () => {
   for (const slug of ['pattern-forge', 'info-desk']) assert.ok(html.includes('href="projects/' + slug + '.html#data"'));
 });
 
-test('Fly Brain leads the work grid and exposes progress without overclaiming', () => {
+test('Fly Brain stays in research and exposes progress without overclaiming', () => {
   const fly = read('projects/fly-brain.html');
-  assert.ok(html.indexOf('href="projects/fly-brain.html"') < html.indexOf('href="projects/polybow.html"'));
+  assert.ok(html.indexOf('href="projects/fly-brain.html"') > html.indexOf('href="projects/polybow.html"'));
+  assert.match(html, /Research in progress/);
+  assert.ok(html.includes('10/13 ranked first'));
+  assert.ok(html.includes('3/4 unanswerable questions still returned passages'));
   assert.match(fly, /The real problem/);
   assert.match(fly, /Can the wiring of a fruit fly/);
   assert.match(fly, /The experiment, step by step/);

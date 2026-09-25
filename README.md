@@ -6,12 +6,13 @@ Independent engineering projects and open-source work, with a background in logi
 
 ## Featured evidence
 
-- Fly Brain: CPU-only research in progress, with reproducible inputs, controls and explicit unfinished gates. Not a biological intelligence or memory claim.
+- Info Desk leads with the recorded case and its dated retrieval evaluation: expected evidence ranked first for 10/13 answerable questions; all three cross-language questions missed; 3/4 unanswerable questions still returned passages. These are not answer-accuracy scores.
 - Polybow: independently operated Python execution and recording, then reconciliation and a public postmortem. Private bot code and raw recordings are not published. No durable-profitability claim.
 - Separate reconciliation lab, linked from the Polybow walkthrough: generated Python output on synthetic fixtures, atomic PostgreSQL imports and a local read-only FastAPI API. The homepage opens the historical engineering case. Database recovery is checked in the linked CI run, not performed by the static page.
 - Pattern Forge: interactive replay without look-ahead. Python/PostgreSQL ingestion and restart checks run locally/in CI; the public demo does not serve that database.
 - Info Desk: a recorded evidence case. The live research workspace requires local setup; evaluation limitations are linked.
-- Energy Monitor: a public dashboard comparing German day-ahead electricity prices with generation and demand. Timestamped sources, missing-data handling and JSON export; not a streaming trading feed.
+- Energy Monitor: a public dashboard comparing day-ahead electricity prices, generation and demand across Germany, the Netherlands and France. Matched-interval zone differences, source records and JSON export; not a streaming trading feed or forecast.
+- Fly Brain sits separately under research in progress. Repeatable experiments do not yet establish the memory hypothesis.
 - Haystack is a small external contribution, not a featured project.
 
 Relay remains available as a repository walkthrough, labelled as having an unavailable public backend. Training work is separate. No projects or deployments were deleted.
