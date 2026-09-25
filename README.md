@@ -11,7 +11,7 @@ Independent engineering projects and open-source work, with a background in logi
 - Separate reconciliation lab, linked from the Polybow walkthrough: generated Python output on synthetic fixtures, atomic PostgreSQL imports and a local read-only FastAPI API. The homepage opens the historical engineering case. Database recovery is checked in the linked CI run, not performed by the static page.
 - Pattern Forge: interactive replay without look-ahead. Python/PostgreSQL ingestion and restart checks run locally/in CI; the public demo does not serve that database.
 - Info Desk: a recorded evidence case. The live research workspace requires local setup; evaluation limitations are linked.
-- Energy Monitor: a public dashboard comparing day-ahead electricity prices, generation and demand across Germany, the Netherlands and France. Matched-interval zone differences, source records and JSON export; not a streaming trading feed or forecast.
+- Energy Monitor: a public dashboard comparing day-ahead electricity prices, generation and demand across supported European markets. Explore each country's reported energy series, matched-interval zone differences and source-linked JSON; not a streaming trading feed or forecast.
 - Fly Brain sits separately under research in progress. Repeatable experiments do not yet establish the memory hypothesis.
 - Haystack is a small external contribution, not a featured project.
 
