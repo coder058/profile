@@ -23,9 +23,8 @@ test('cards distinguish interactive demos, recorded cases and external review', 
   assert.match(html, /href="https:\/\/pattern-forge-five\.vercel\.app\/"/);
   assert.match(html, /href="projects\/polybow\.html"/);
   assert.match(html, /href="https:\/\/energy-monitor-jordi.jlpmccs.chatgpt.site\/"/);
-  assert.match(html, /href="https:\/\/coder058\.github\.io\/info-desk\/"/);
-  assert.match(html, /href="projects\/polybow\.html#depends"/);
-  for (const slug of ['pattern-forge','info-desk']) assert.ok(html.includes(`href="projects/${slug}.html#data"`));
+  assert.match(html, /href="projects\/info-desk\.html"/);
+  assert.ok(!html.includes('class="project-data"'));
   assert.ok(!html.includes('<h3>City Gardens</h3>'));
 });
 
@@ -83,7 +82,7 @@ test('résumé page shows the one-page CV', () => {
   assert.ok(existsSync(new URL('../assets/jordi-lluis-cv.png', import.meta.url)));
   assert.ok(existsSync(new URL('../assets/jordi-lluis-cv-ats.pdf', import.meta.url)));
   const pack = JSON.parse(readFileSync(new URL('../apply-pack.json', import.meta.url), 'utf8'));
-  assert.deepEqual(pack.packs.map((item) => item.id), ['software', 'data']);
+  assert.deepEqual(pack.packs.map((item) => item.id), ['software', 'ai', 'data']);
   for (const [, target] of html.matchAll(/(?:href|src)="([^"#]+)"/g)) {
     if (/^(https?:|mailto:)/.test(target)) continue;
     assert.ok(existsSync(new URL('../' + target.split('?')[0], import.meta.url)), target);

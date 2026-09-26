@@ -47,9 +47,15 @@ export const projects = [
   },
   {
     slug: 'info-desk', name: 'Info Desk', stack: 'Python · FastAPI · SQLite · limited tools',
-    summary: 'A recorded evidence case: OFAC licenses, a White House oil fact sheet and AP quotes compared in one claims table. The repository also includes a local live-research workspace.',
-    problem: 'A model that “summarises the news” can flatten an OFAC license list and a White House fact sheet into one answer, pick a ranking, or confuse an absent mention with confirmation. I wanted a desk that preserves what each source actually says and keeps publication approval separate from drafting.',
-    contribution: 'The public case stores dated recordings of the OFAC Venezuela page, the 31 August 2026 fact sheet and AP quotes (not the full article). Python builds a claims table: stated, absent, denied or attributed. Named extractors keep 65 billion field barrels separate from 46 billion U.S. territorial barrels. SQLite inserts a note only when a human approves publish_draft. The repository also includes a local-only live workspace with allowlisted EIA, Federal Register and OFAC connectors, versioned captures and cited retrieval.',
+    summary: 'Which claims are actually supported by the sources? Info Desk puts a finding beside its original passage, keeps disagreements visible and lets a person review the result.',
+    problem: 'A fluent summary can make different sources sound as though they agree. A government announcement, a license list and a news report do not necessarily support the same claim. Reading the summary alone can hide those differences.',
+    contribution: 'I built a comparison table that links findings to exact passages, plus checks for cited numbers and a database approval step in the local app. This page includes the recorded case below. Fresh source collection and AI answers run in a separate local service; they are not running inside this public example.',
+    inlineDemo: true,
+    overview: [
+      ['Do the sources agree?', 'Compare each claim with the actual passages.', 'Different wording and missing information remain visible instead of becoming one confident summary.'],
+      ['Can I check an AI draft?', 'Attach references and reject unknown citations or unsupported numbers.', 'A traceable quote is a starting point for review, not proof that the interpretation is correct.'],
+      ['Who decides what gets saved?', 'Keep drafts separate from approved notes in the local database.', 'Model output cannot approve its own write. The public recording does not perform database writes.']
+    ],
     demo: 'https://coder058.github.io/info-desk/',
     demoLabel: 'Open the oil desk',
     code: 'https://github.com/coder058/info-desk',

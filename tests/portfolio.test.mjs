@@ -42,7 +42,7 @@ test('hero identifies a developer and practical work without a generic AI manife
   assert.doesNotMatch(html, /Take a step back|First of all|The reason for that is simple|I still go back to the data|SYSTEMS, NOT TYPING/);
   assert.doesNotMatch(html, /Engineering work|Résumé|Software Engineer|replaying what was known|Code\. Decisions\. Evidence|Explore the engineering|Get in touch|Using agentic AI|Domain-specific agents|My logistics work|It is a system sitting on the data/);
   assert.doesNotMatch(html, /I like tackling everyday problems|Full-stack developer|AI engineer/);
-  for (const tool of ['Ruby on Rails', 'Python', 'PostgreSQL', 'JavaScript', 'React', 'Docker', 'AWS VPS', 'FastAPI', 'Git', 'HTML / CSS', 'MCP', 'Retrieval + evals', 'WebSockets']) {
+  for (const tool of ['Ruby on Rails', 'Python', 'PostgreSQL', 'JavaScript', 'React', 'Docker', 'FastAPI', 'Git', 'HTML / CSS', 'MCP', 'Retrieval + evals', 'WebSockets']) {
     assert.match(html, new RegExp('<li class="[^"]*">' + tool.replace(/[+]/g, '\\+') + '<\\/li>'));
   }
   assert.doesNotMatch(html, /Recorded cases are labelled; source and checks are linked/);
@@ -53,18 +53,22 @@ test('demo and historical evidence boundaries stay explicit', () => {
   assert.match(html, /PostgreSQL runs locally and in CI, not in the public demo/);
   assert.match(html, /public case is recorded/);
   assert.match(html, /live research runs in a separate local workspace/);
-  assert.match(html, /cross-language misses/);
+  assert.match(read('projects/info-desk.html'), /cross-language/);
   assert.match(html, /public backend unavailable/);
-  assert.match(html, /href="projects\/polybow\.html#depends"/);
-  for (const slug of ['pattern-forge', 'info-desk']) assert.ok(html.includes('href="projects/' + slug + '.html#data"'));
+  assert.match(html, /href="projects\/polybow\.html"/);
+  assert.match(html, /href="projects\/info-desk\.html"/);
+  for (const card of html.matchAll(/<article class="project-card[^>]*>([\s\S]*?)<\/article>/g)) assert.equal((card[1].match(/<a /g) || []).length, 1);
+  const desk = read('projects/info-desk.html');
+  assert.ok(desk.indexOf('Problem and solution') < desk.indexOf('<iframe'));
+  assert.match(desk, /title="Info Desk recorded interactive case"/);
 });
 
 test('Fly Brain stays in research and exposes progress without overclaiming', () => {
   const fly = read('projects/fly-brain.html');
   assert.ok(html.indexOf('href="projects/fly-brain.html"') > html.indexOf('href="projects/polybow.html"'));
   assert.match(html, /Research in progress/);
-  assert.ok(html.includes('10/13 ranked first'));
-  assert.ok(html.includes('3/4 unanswerable questions still returned passages'));
+  assert.ok(read('projects/info-desk.html').includes('10/13 answerable questions'));
+  assert.ok(read('projects/info-desk.html').includes('3/4 unanswerable questions still returned passages'));
   assert.match(fly, /The real problem/);
   assert.match(fly, /Can the wiring of a fruit fly/);
   assert.match(fly, /The experiment, step by step/);
@@ -107,7 +111,7 @@ test('resume offers both focused packs and keeps projects distinct from jobs', (
 
 test('public manifest is private-data-free and checksums match shipped files', () => {
   const raw = read('apply-pack.json'), pack = JSON.parse(raw);
-  assert.deepEqual(pack.packs.map(x => x.id), ['software', 'data']);
+  assert.deepEqual(pack.packs.map(x => x.id), ['software', 'ai', 'data']);
   assert.equal(pack.default_pack, 'software');
   for (const leak of ['form_answers', 'how_to_submit', 'pack_selection', 'never_claim', 'salary', 'notice_period', 'C:\\\\Users', 'output/pdf']) assert.ok(!raw.includes(leak), leak);
   const hash = url => createHash('sha256').update(readFileSync(new URL('../assets/' + url.split('/').at(-1), import.meta.url))).digest('hex');

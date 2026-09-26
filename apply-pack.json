@@ -2,8 +2,8 @@
   "$comment": "Public CV manifest. One page per pack, same facts, different emphasis. The ATS file is single-column and text-selectable.",
   "person": {
     "name": "Jordi Lluis",
-    "location": "Amsterdam, Netherlands",
-    "email": "joord918@gmail.com",
+    "location": "Netherlands; open to relocation across Europe",
+    "email": "joord911@gmail.com",
     "work_authorization": "EU citizen; no sponsorship needed in the EU",
     "languages": {
       "Spanish": "Native",
@@ -15,15 +15,14 @@
   "links": {
     "portfolio": "https://coder058.github.io/profile/",
     "resume": "https://coder058.github.io/profile/resume.html",
-    "github": "https://github.com/coder058",
-    "linkedin": "https://www.linkedin.com/in/jordi-lluis-14228242a/"
+    "github": "https://github.com/coder058"
   },
   "default_pack": "software",
   "default_pdf": {
     "designed": "https://coder058.github.io/profile/assets/jordi-lluis-cv.pdf",
     "ats": "https://coder058.github.io/profile/assets/jordi-lluis-cv-ats.pdf",
-    "sha256_designed": "b9a56dbfff7094d1b18eaa599861bc35b8af21de4290e455356aadd51ffc9ebd",
-    "sha256_ats": "c488f26a44b499f58e9268f8a56ab24e8804f2943fb857cd781deb755d22ca4a"
+    "sha256_designed": "c56143da3af824b77a4f5eec9989008f709770a976815e71d65730b06a579648",
+    "sha256_ats": "a76163f7364c928401c9eaf18ef12a3c794f761744956c0426aec99006113c00"
   },
   "packs": [
     {
@@ -31,16 +30,24 @@
       "use_for": "Python backend and operations software",
       "designed_pdf": "https://coder058.github.io/profile/assets/jordi-lluis-software-cv.pdf",
       "ats_pdf": "https://coder058.github.io/profile/assets/jordi-lluis-software-cv-ats.pdf",
-      "sha256_designed": "92b43215dcbc32c446677db603d30131230e544e795a90e738693d6ad1afa477",
-      "sha256_ats": "8c5f68e2f2c7525e47c3d3ad448bbcca58c885168ad7f154af14e55e3643144a"
+      "sha256_designed": "aee851371abdd6c3e6e874b83f9a3681ae35ae4a9a8504b83b513b9604c1cf2d",
+      "sha256_ats": "a5bdffcde38d0fcbe10f97e4c9cc8ce090853c4fc7b65a6c9bb9364e7a94108a"
+    },
+    {
+      "id": "ai",
+      "use_for": "Applied AI integrations, retrieval and evaluation",
+      "designed_pdf": "https://coder058.github.io/profile/assets/jordi-lluis-ai-cv.pdf",
+      "ats_pdf": "https://coder058.github.io/profile/assets/jordi-lluis-ai-cv-ats.pdf",
+      "sha256_designed": "81c542f5bc71a270678def3e64091efbdd6ebae4335c68f48eb75c7b4a90fa1d",
+      "sha256_ats": "b065a0fc6df81a5ba8353bb8df714893394f70eb4dd91334723f3cafab56057f"
     },
     {
       "id": "data",
       "use_for": "Market-data software and financial data platforms",
       "designed_pdf": "https://coder058.github.io/profile/assets/jordi-lluis-data-cv.pdf",
       "ats_pdf": "https://coder058.github.io/profile/assets/jordi-lluis-data-cv-ats.pdf",
-      "sha256_designed": "6300a2ad28a229b55810c63ca12ecd230eca2681d0791d8ade643fa7265f3031",
-      "sha256_ats": "14440aa0be93e474bed271f21d48869cd1197e609434653da033f7dc88a0340b"
+      "sha256_designed": "54d1308dc2acbef2b17907a740e8dd5331e20bb09c974c0147e2034509f23e78",
+      "sha256_ats": "ba42f7a7d025b2b91c75b6ee0683fb3a795316127bcfd4d8e81b7e49ff517aa9"
     }
   ]
 }
