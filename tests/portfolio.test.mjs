@@ -106,14 +106,18 @@ test('earlier team work stays separate and private exercises are not linked', ()
 test('resume offers both focused packs and keeps projects distinct from jobs', () => {
   const resume = read('resume.html');
   assert.match(resume, /class="resume-text"/);
-  assert.match(resume, /ATS PDF \(text-selectable\)/);
+  assert.match(resume, /<th scope="col">ATS PDF<\/th>/);
+  assert.match(resume, /Choose the version closest to the vacancy/);
   assert.match(resume, /Independent projects &amp; open source/);
   assert.match(resume, /Polybow - independent project, 2026/);
   assert.match(resume, /<h2>Experience<\/h2>/);
   assert.match(resume, /<h2>Education &amp; training<\/h2>/);
   assert.match(resume, /De Bommel/);
   assert.match(resume, /Haystack #12635/);
-  assert.match(resume, /jordi-lluis-data-cv-ats.pdf/);
+  for (const variant of ['software', 'ai', 'data']) {
+    assert.match(resume, new RegExp(`jordi-lluis-${variant}-cv\\.pdf`));
+    assert.match(resume, new RegExp(`jordi-lluis-${variant}-cv-ats\\.pdf`));
+  }
   assert.doesNotMatch(resume, /Further learning|Internal verification|professional software years/);
   assert.doesNotMatch(read('resume-packs.css'), /\.resume-text\{[^}]*display:none/);
 });

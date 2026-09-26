@@ -82,8 +82,8 @@ test('résumé page shows the one-page CV', () => {
   assert.match(html, /<h1>Jordi Lluis<\/h1>/);
   assert.match(html, /assets\/jordi-lluis-cv\.png/);
   assert.match(html, /<figure class="resume-sheet">/);
-  assert.match(html, /assets\/jordi-lluis-cv\.pdf/);
-  assert.match(html, /assets\/jordi-lluis-cv-ats\.pdf/);
+  assert.match(html, /assets\/jordi-lluis-software-cv\.pdf/);
+  assert.match(html, /assets\/jordi-lluis-software-cv-ats\.pdf/);
   assert.match(index, /href="resume\.html\?v=cv"/);
   assert.doesNotMatch(html, /One page\. The designed file|volume pack|scientist-light|apply-pack\.json|FDE-shaped/i);
   assert.ok(existsSync(new URL('../assets/jordi-lluis-cv.pdf', import.meta.url)));
