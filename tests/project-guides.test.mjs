@@ -20,9 +20,17 @@ test('each project renders its declared evidence sections', () => {
 });
 test('cards distinguish interactive demos, recorded cases and external review', () => {
   const html = readFileSync(new URL('../index.html',import.meta.url),'utf8');
-  assert.match(html, /href="https:\/\/pattern-forge-five\.vercel\.app\/"/);
+  assert.match(html, /href="projects\/pattern-forge\.html"/);
+  const forge = readFileSync(new URL('../projects/pattern-forge.html',import.meta.url),'utf8');
+  assert.match(forge, /https:\/\/pattern-forge-five\.vercel\.app\//);
   assert.match(html, /href="projects\/polybow\.html"/);
-  assert.match(html, /href="https:\/\/energy-monitor-jordi.jlpmccs.chatgpt.site\/"/);
+  assert.match(html, /href="projects\/energy-monitor\.html"/);
+  const energy = readFileSync(new URL('../projects/energy-monitor.html',import.meta.url),'utf8');
+  assert.match(energy, /matching delivery periods/);
+  assert.match(energy, /33 country\/territory entries/);
+  assert.match(energy, /21 zones across 16 countries/);
+  assert.match(energy, /does not produce a validated forecast/);
+  assert.match(energy, /Open the Energy Monitor/);
   assert.match(html, /href="projects\/info-desk\.html"/);
   assert.ok(!html.includes('class="project-data"'));
   assert.ok(!html.includes('<h3>City Gardens</h3>'));

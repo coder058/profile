@@ -10,9 +10,18 @@ test('featured selection preserves research and engineering work with separate e
   assert.deepEqual(titles, ['Info Desk', 'Pattern Forge', 'Polybow', 'Energy Monitor']);
   assert.match(html, /<h2 id="work-title">Projects<\/h2>/);
   assert.doesNotMatch(html, /Haystack|haystack/);
-  assert.match(html, /https:\/\/energy-monitor-jordi.jlpmccs.chatgpt.site\//);
+  assert.match(html, /href="projects\/energy-monitor\.html"/);
+  assert.doesNotMatch(html, /href="https:\/\/energy-monitor-jordi\.jlpmccs\.chatgpt\.site\//);
+  assert.match(read('projects/energy-monitor.html'), /https:\/\/energy-monitor-jordi\.jlpmccs\.chatgpt\.site\//);
   assert.match(html, /href="projects\/fly-brain\.html"/);
   assert.doesNotMatch(html, /relay-ten-zeta|<h3>DispatchOps|enterprise customer|years of professional/);
+});
+
+test('featured project cards open their walkthroughs before the demos', () => {
+  const cards = [...html.matchAll(/<article class="project-card[^>]*>([\s\S]*?)<\/article>/g)].map(x => x[1]);
+  const slugs = ['info-desk', 'pattern-forge', 'polybow', 'energy-monitor'];
+  assert.equal(cards.length, slugs.length);
+  cards.forEach((card, index) => assert.ok(card.includes(`href="projects/${slugs[index]}.html"`), slugs[index]));
 });
 
 test('local assets and fragment destinations resolve', () => {

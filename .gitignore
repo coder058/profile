@@ -1,0 +1,2 @@
+# Private application metadata stays in the job workspace, never in GitHub Pages.
+/apply-pack.json

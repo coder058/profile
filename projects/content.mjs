@@ -3,7 +3,7 @@
 export const projects = [
   {
     slug: 'pattern-forge', name: 'Pattern Forge', stack: 'React · TypeScript · Next.js · WebSockets',
-    summary: 'Inspect a candlestick pattern, read its market context and rewind the recording. The chart recalculates from the available candle prefix, without using later prices.',
+    summary: 'Choose a market, inspect a candle pattern and rewind the chart. At every point, the reading uses only prices that were already visible—not what happened next.',
     problem: 'When reviewing a market, it is easy to let later prices influence an earlier decision. I wanted to inspect what an indicator could actually have shown at a chosen point in time.',
     contribution: 'I built the market controls, data validation, replay calculations, candle API and connection handling. TradingView Lightweight Charts renders the chart; I did not build that charting library.',
     demo: 'https://pattern-forge-five.vercel.app/',
