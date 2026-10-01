@@ -103,11 +103,11 @@ test('earlier team work stays separate and private exercises are not linked', ()
   assert.doesNotMatch(html, /js-geocoder|js-weather|lewagon-api-lab|200 challenges/);
 });
 
-test('resume offers both focused packs and keeps projects distinct from jobs', () => {
+test('resume hides variant downloads and keeps projects distinct from jobs', () => {
   const resume = read('resume.html');
   assert.match(resume, /class="resume-text"/);
-  assert.match(resume, /<th scope="col">ATS PDF<\/th>/);
-  assert.match(resume, /Choose the version closest to the vacancy/);
+  assert.doesNotMatch(resume, /class="resume-pack-table"/);
+  assert.doesNotMatch(resume, /Choose the version closest to the vacancy|Three role-focused versions/);
   assert.match(resume, /Independent projects &amp; open source/);
   assert.match(resume, /Polybow - independent project, 2026/);
   assert.match(resume, /<h2>Experience<\/h2>/);
@@ -115,8 +115,8 @@ test('resume offers both focused packs and keeps projects distinct from jobs', (
   assert.match(resume, /De Bommel/);
   assert.match(resume, /Haystack #12635/);
   for (const variant of ['software', 'ai', 'data']) {
-    assert.match(resume, new RegExp(`jordi-lluis-${variant}-cv\\.pdf`));
-    assert.match(resume, new RegExp(`jordi-lluis-${variant}-cv-ats\\.pdf`));
+    assert.doesNotMatch(resume, new RegExp(`jordi-lluis-${variant}-cv\\.pdf`));
+    assert.doesNotMatch(resume, new RegExp(`jordi-lluis-${variant}-cv-ats\\.pdf`));
   }
   assert.doesNotMatch(resume, /Further learning|Internal verification|professional software years/);
   assert.doesNotMatch(read('resume-packs.css'), /\.resume-text\{[^}]*display:none/);
