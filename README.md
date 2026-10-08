@@ -12,7 +12,7 @@ Independent engineering projects and open-source work, with a background in logi
 - Pattern Forge: interactive replay without look-ahead. Python/PostgreSQL ingestion and restart checks run locally/in CI; the public demo does not serve that database.
 - Info Desk: a recorded evidence case. The live research workspace requires local setup; evaluation limitations are linked.
 - Energy Monitor: a public dashboard comparing day-ahead electricity prices, generation and demand across supported European markets. Explore each country's reported energy series, matched-interval zone differences and source-linked JSON; not a streaming trading feed or forecast.
-- Fly Brain sits separately under research in progress. Repeatable experiments do not yet establish the memory hypothesis.
+- Fly Brain sits separately under research in progress. Fair comparisons on two groups of neurons found no advantage for the real wiring over a matched shuffle; the memory question remains open.
 - Haystack is a small external contribution, not a featured project.
 
 Relay remains available as a repository walkthrough, labelled as having an unavailable public backend. Training work is separate. No projects or deployments were deleted.

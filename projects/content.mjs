@@ -139,50 +139,53 @@ export const projects = [
     name: 'Fly Brain',
     pageClass: 'fly-brain-case',
     featuredStory: true,
-    summary: 'Can the wiring of a fruit fly’s brain help a computer remember a signal? I am building small simulations to test that question. The experiment is still unfinished.',
-    stack: 'PYTHON · NUMPY · SCIPY · PYTEST',
+    summary: 'Can the wiring of a fruit fly’s brain help a computer simulation carry a signal better than random wiring? I tested it on real data, wrote each test plan down before running it, and the final answer was no.',
+    stack: 'PYTHON · NUMPY · SCIPY · PYTEST · GITHUB ACTIONS',
     code: 'https://github.com/coder058/fly-brain',
     problem: [
-      'Scientists have mapped connections between a fruit fly’s neurons. A map tells us what connects to what; it does not tell us whether a computer using those connections can learn or remember.',
-      'I want to compare the original wiring with altered versions under the same conditions. First, both simulations need to respond reliably. Otherwise, a difference could come from a broken experiment rather than the wiring.'
+      'Scientists have mapped connections between a fruit fly’s neurons: 165,122 neurons and 25.6 million connections in the version I used. A map tells us what connects to what; it does not tell us whether a computer using those connections works better than one wired at random.',
+      'Comparing the two fairly is the hard part. Random wiring differs from the real map in many dull ways — size, how busy the network gets, how many connections each neuron has — and any of them can produce a difference that has nothing to do with the wiring itself.'
     ],
     contribution: [
-      'I built Python scripts that load the connection map, run controlled simulations and save what happened at each step.',
-      'The scripts check whether a run is active enough to compare, protect the original data and keep failed attempts in the results. I have not demonstrated memory or a useful advantage over another design.'
+      'I built Python code that downloads and checks the published map, turns 500-neuron sections of it into simulated networks, and compares them with shuffled versions under the same conditions. Every run saves its settings and results, failures included.',
+      'Most of the work was checking my own tests. Six times a fault in the comparison changed the answer, including a shuffled network that silently lost 8% of its connections, settings tuned for the wrong input, a readout watching the wrong neurons, and a shuffled network where neurons both excited and inhibited, which real neurons do not do. After each fix I wrote the next test plan down and published it before running anything.',
+      'At one point the real wiring appeared to win. Repeated with a stricter test on two different groups of neurons, it did no better than a fair shuffle on one group and worse on the other. I published that result.'
     ],
     skills: [
-      ['Python + NumPy/SciPy', 'Load a large connection map and calculate simulated activity without storing every possible connection.'],
-      ['JSON + experiment records', 'Save the settings, measurements and reasons a run failed.'],
-      ['pytest + Git', 'Check the code and track changes so an experiment can be repeated.']
+      ['Python + NumPy/SciPy', 'Load a 25-million-connection map and simulate activity without storing every possible connection.'],
+      ['Statistics', 'Paired comparisons with confidence intervals over many repeats, and rules for when a run counts.'],
+      ['pytest + GitHub Actions', 'About 100 tests that pin down each fault so it cannot come back, run on every change.'],
+      ['Reproducibility', 'A fresh copy of the project reproduced 3,960 of 3,960 results exactly; rebuilding from the original data gives the same totals.']
     ],
     stepsTitle: 'The experiment, step by step',
     steps: [
-      'Load the published fruit-fly connection map.',
-      'Send a controlled signal into a small simulation.',
-      'Check that the original and comparison versions both respond.',
-      'Only then test whether information about the signal remains after a delay.',
-      'Save the result, including failures, so someone else can inspect it.'
+      'Load the published fruit-fly connection map and check its file hashes.',
+      'Take a 500-neuron section and build shuffled versions that keep chosen properties of the real one.',
+      'Tune every network to the same level of activity, then send the same noisy signals into each.',
+      'Measure how well a simple readout can tell the signals apart from the network’s activity.',
+      'Write the plan down and publish it first, run on fresh random seeds, and save every result.'
     ],
     dependsTitle: 'How it works',
     dependsCaption: 'From source data to a result',
     dependencies: [
-      ['Connection map', 'Published MaleCNS v1.0 data', 'Keeps the original wiring fixed.'],
-      ['Simulation', 'The map and a written experiment plan', 'Calculates how activity changes after an input.'],
-      ['Checks', 'Activity from each simulation', 'Decides whether the runs can be compared fairly.'],
-      ['Result record', 'Settings, checks and measurements', 'Shows what ran and what remains unanswered.']
+      ['Connection map', 'Published MaleCNS v1.0 data', 'Keeps the original wiring fixed and verified.'],
+      ['Shuffled networks', 'The map and a shuffling rule', 'Keep some properties of the real wiring and randomise the rest.'],
+      ['Simulation', 'Each network and a written experiment plan', 'Calculates how activity changes after an input.'],
+      ['Checks', 'Activity from each simulation', 'Decide whether the runs can be compared fairly.'],
+      ['Result record', 'Settings, checks and measurements', 'Shows what ran, what failed and what was concluded.']
     ],
     recordsTitle: 'What gets saved',
     recordsCaption: 'Data and experiment records',
-    recordsIntro: 'The original data, the experiment settings and the results are kept separate.',
+    recordsIntro: 'The original data, the experiment plans and the results are kept separate, and results are never overwritten.',
     records: [
       ['Source record', 'Original files and their hashes', 'Identifies the exact data used.'],
-      ['Experiment plan', 'Question, inputs and comparison rules', 'Records what will be tested before running it.'],
+      ['Experiment plan', 'Question, inputs and decision rule', 'Records what will be tested, and how it will be judged, before running it.'],
       ['Run results', 'Measurements and failure reasons', 'Keeps unsuccessful runs visible too.']
     ],
     endingTitle: 'What works, and what is still missing',
     ending: [
-      'The code can load the map, run simulations and record checks. Recent experiments did not produce a valid pair of original and comparison runs for the intended memory test.',
-      'Next: get a repeatable comparison working before measuring memory. This is a research exercise, not a simulation of a living fly or a demonstrated AI product. The repository contains the detailed protocols and results.'
+      'The code loads the full map, runs fair comparisons and reproduces its own results exactly. Against fully random wiring, the real map did better on one group of neurons and worse on another. Against a fair shuffle that keeps each neuron’s connection counts and signal type, it did no better on either group.',
+      'Still missing: a task that needs real memory (here a reader with no network at all already scores 83%), and groups of neurons chosen by brain region rather than by how connected they are. This is a research exercise, not a simulation of a living fly or a demonstrated AI product. The repository contains every plan and result.'
     ]
   },
   {
