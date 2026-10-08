@@ -90,7 +90,7 @@ test('Fly Brain stays in research and exposes progress without overclaiming', ()
   assert.match(fly, /Component.*Depends on.*Responsibility/);
   assert.match(fly, /Record.*Depends on.*Responsibility/);
   assert.match(fly, /What works, and what is still missing/);
-  assert.match(fly, /did not produce a valid pair/);
+  assert.match(fly, /it did no better on either group/);
   assert.match(fly, /not a simulation of a living fly/);
   assert.doesNotMatch(fly, /co-ignition|INST-001|MEM-003|operating point|preregistered/);
   assert.doesNotMatch(fly, /is a living-fly simulation|demonstrates biological intelligence|proves topology/);
